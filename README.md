@@ -18,7 +18,7 @@ OPENAI_API_KEY=your_key_here
 OPENAI_MODEL=gpt-5.4-mini
 ```
 
-To make completed runs appear in the dashboard automatically, set `DATABASE_URL` in either the root `.env` file or `dashboard/.env.local`. The script loads both files, applies `dashboard/db/schema.sql` automatically when it saves a run, and then inserts the completed run into PostgreSQL. You only need to create the empty PostgreSQL database first.
+To make completed runs appear in the dashboard automatically, set `DATABASE_URL` in this same root `.env` file. The script applies `dashboard/db/schema.sql` automatically when it saves a run, so you only need to create the empty PostgreSQL database first.
 
 ```bash
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/data_annotation
@@ -45,14 +45,6 @@ You can also supply a readable run id:
 python layer_annotation.py --run-id prompt-v3-gpt-5-4-mini
 ```
 
-If you prefer not to store `DATABASE_URL` in an env file, pass it directly for a run:
-
-```bash
-python layer_annotation.py --database-url "postgres://postgres:your_password@localhost:5432/data_annotation"
-```
-
-When database saving is configured, the script prints `Run saved to PostgreSQL for dashboard comparison.` at the end. If it prints that `DATABASE_URL` is not set, the run exists only as local files and will not appear in the dashboard until you backfill it.
-
 Each run is written to `V2/runs/<run-id>/` with:
 
 - `annotations.csv` — gold labels plus model predictions in `GPTGeometry` and `GPTEntity`.
@@ -70,9 +62,18 @@ The dashboard lives in `dashboard/` and uses Next.js with PostgreSQL. PgAdmin ca
 
 ### 1. Create the database
 
-Create an empty PostgreSQL database in PgAdmin, for example `data_annotation`. You do not have to manually import run artifacts after every script run: if `DATABASE_URL` is set when `layer_annotation.py` runs, it saves the run directly to PostgreSQL and the dashboard will list it automatically. Use the same `DATABASE_URL` for the script and the dashboard.
+Create an empty PostgreSQL database in PgAdmin, for example `data_annotation`. You do not have to manually import run artifacts after every script run: if `DATABASE_URL` is set when `layer_annotation.py` runs, it saves the run directly to PostgreSQL and the dashboard will list it automatically.
 
 The schema file is still available at `dashboard/db/schema.sql` if you want to inspect or apply it manually. It creates:
+### 1. Create the database schema
+
+Create a PostgreSQL database, then run the schema in PgAdmin or with `psql`:
+
+```bash
+psql "$DATABASE_URL" -f dashboard/db/schema.sql
+```
+
+The schema creates:
 
 - `annotation_runs`
 - `annotation_results`
@@ -89,22 +90,6 @@ npm run dev
 
 Open <http://localhost:3000> to see all saved runs, compare headline metrics, inspect confusion matrices and row-level mismatches, and delete runs. By default, deleting a run removes the database rows and that run's `V2/runs/<run-id>` artifact folder. Set `DELETE_RUN_ARTIFACTS=false` in `dashboard/.env.local` if you want dashboard deletes to keep files on disk.
 
-
-### If a completed run is not visible
-
-The dashboard reads runs from PostgreSQL, not directly from `V2/runs`. Check the Python output first:
-
-- `Run saved to PostgreSQL for dashboard comparison.` means the run was inserted into the dashboard database. Restart the dashboard and confirm `dashboard/.env.local` points to the same database.
-- `DATABASE_URL is not set; dashboard database was not updated.` means the run was only written to `V2/runs/<run-id>/`. Add `DATABASE_URL` or pass `--database-url`, then rerun the script or backfill the existing run folder.
-
-You can confirm what the dashboard can see by running this in PgAdmin:
-
-```sql
-SELECT id, model, started_at, completed_at, total_rows
-FROM annotation_runs
-ORDER BY started_at DESC;
-```
-
 ### Backfilling older runs
 
 “Importing artifacts” means loading an existing `V2/runs/<run-id>/` folder into PostgreSQL. You only need this for older runs that were created before `DATABASE_URL` was configured, or for runs copied in from another machine. New runs do not need a separate import step.
@@ -114,3 +99,24 @@ cd dashboard
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/data_annotation \
   python scripts/import_run_to_db.py ../V2/runs/<run-id>
 ```
+### 2. Import a run
+
+After running `layer_annotation.py`, import its artifacts:
+
+```bash
+cd dashboard
+python -m pip install 'psycopg[binary]'
+DATABASE_URL=postgres://postgres:postgres@localhost:5432/data_annotation \
+  python scripts/import_run_to_db.py ../V2/runs/<run-id>
+```
+
+### 3. Start the dashboard
+
+```bash
+cd dashboard
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+Open <http://localhost:3000> to see all runs, compare headline metrics, and inspect confusion matrices and row-level mismatches.
