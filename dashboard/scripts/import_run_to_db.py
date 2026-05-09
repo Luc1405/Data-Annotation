@@ -20,14 +20,6 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def apply_database_schema(cursor: Any) -> None:
-    schema_path = Path(__file__).resolve().parents[1] / "db" / "schema.sql"
-    for statement in schema_path.read_text(encoding="utf-8").split(";"):
-        statement = statement.strip()
-        if statement:
-            cursor.execute(statement)
-
-
 def import_run(run_dir: Path, database_url: str) -> None:
     metrics = load_json(run_dir / "run_metrics.json")
     matrices = load_json(run_dir / "confusion_matrices.json")
@@ -35,7 +27,6 @@ def import_run(run_dir: Path, database_url: str) -> None:
 
     with psycopg.connect(database_url) as conn:
         with conn.cursor() as cur:
-            apply_database_schema(cur)
             cur.execute(
                 """
                 INSERT INTO annotation_runs (
@@ -72,10 +63,7 @@ def import_run(run_dir: Path, database_url: str) -> None:
                 ),
             )
 
-            cur.execute(
-                "DELETE FROM annotation_results WHERE run_id = %s",
-                (metrics["run_id"],),
-            )
+            cur.execute("DELETE FROM annotation_results WHERE run_id = %s", (metrics["run_id"],))
             with annotations_path.open(newline="", encoding="utf-8") as handle:
                 reader = csv.DictReader(handle)
                 for row in reader:
@@ -105,10 +93,7 @@ def import_run(run_dir: Path, database_url: str) -> None:
                         ),
                     )
 
-            cur.execute(
-                "DELETE FROM confusion_matrix_cells WHERE run_id = %s",
-                (metrics["run_id"],),
-            )
+            cur.execute("DELETE FROM confusion_matrix_cells WHERE run_id = %s", (metrics["run_id"],))
             for matrix_type in ("geometry", "entity"):
                 for cell in matrices.get(matrix_type, []):
                     cur.execute(

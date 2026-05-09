@@ -65,6 +65,15 @@ The dashboard lives in `dashboard/` and uses Next.js with PostgreSQL. PgAdmin ca
 Create an empty PostgreSQL database in PgAdmin, for example `data_annotation`. You do not have to manually import run artifacts after every script run: if `DATABASE_URL` is set when `layer_annotation.py` runs, it saves the run directly to PostgreSQL and the dashboard will list it automatically.
 
 The schema file is still available at `dashboard/db/schema.sql` if you want to inspect or apply it manually. It creates:
+### 1. Create the database schema
+
+Create a PostgreSQL database, then run the schema in PgAdmin or with `psql`:
+
+```bash
+psql "$DATABASE_URL" -f dashboard/db/schema.sql
+```
+
+The schema creates:
 
 - `annotation_runs`
 - `annotation_results`
@@ -90,3 +99,24 @@ cd dashboard
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/data_annotation \
   python scripts/import_run_to_db.py ../V2/runs/<run-id>
 ```
+### 2. Import a run
+
+After running `layer_annotation.py`, import its artifacts:
+
+```bash
+cd dashboard
+python -m pip install 'psycopg[binary]'
+DATABASE_URL=postgres://postgres:postgres@localhost:5432/data_annotation \
+  python scripts/import_run_to_db.py ../V2/runs/<run-id>
+```
+
+### 3. Start the dashboard
+
+```bash
+cd dashboard
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+Open <http://localhost:3000> to see all runs, compare headline metrics, and inspect confusion matrices and row-level mismatches.

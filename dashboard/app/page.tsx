@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { deleteRunAction } from "./actions";
 import { formatNumber, formatPercent, getRuns } from "../lib/db";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ compare?: string }> }) {
@@ -22,7 +21,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
 
       {!process.env.DATABASE_URL ? (
         <div className="notice">
-          <strong>Database is not configured.</strong> Set <code>DATABASE_URL</code>, run <code>layer_annotation.py</code>, and restart the dashboard.
+          <strong>Database is not configured.</strong> Set <code>DATABASE_URL</code>, apply <code>db/schema.sql</code>, import a run, and restart the dashboard.
         </div>
       ) : null}
 
@@ -63,7 +62,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
         <div className="table-wrap">
           <table>
             <thead>
-              <tr><th>Run</th><th>Model</th><th>Started</th><th>Rows</th><th>Errors</th><th>Geometry</th><th>Entity</th><th>Actions</th></tr>
+              <tr><th>Run</th><th>Model</th><th>Started</th><th>Rows</th><th>Errors</th><th>Geometry</th><th>Entity</th><th></th></tr>
             </thead>
             <tbody>
               {runs.map((run) => (
@@ -75,15 +74,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
                   <td>{run.error_rows}</td>
                   <td>{formatPercent(run.geometry_accuracy)}</td>
                   <td>{formatPercent(run.entity_accuracy)}</td>
-                  <td>
-                    <div className="actions">
-                      <Link href={`/runs/${run.id}`}>Open</Link>
-                      <form action={deleteRunAction}>
-                        <input type="hidden" name="runId" value={run.id} />
-                        <button className="link-button danger" type="submit">Delete</button>
-                      </form>
-                    </div>
-                  </td>
+                  <td><Link href={`/runs/${run.id}`}>Open</Link></td>
                 </tr>
               ))}
               {runs.length === 0 ? <tr><td colSpan={8}>No runs found yet.</td></tr> : null}
