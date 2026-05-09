@@ -43,3 +43,7 @@ th { color: #344054; background: #f9fafb; font-size: 12px; text-transform: upper
 .matrix td:not(:first-child), .matrix th:not(:first-child) { text-align: right; }
 .matrix .diagonal { background: #ecfdf3; font-weight: 800; }
 .matrix .off-diagonal { background: #fff7ed; }
+
+.button.danger { background: var(--danger); }
+.link-button { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; font: inherit; }
+.link-button.danger { color: var(--danger); }
