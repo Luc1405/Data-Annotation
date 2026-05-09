@@ -13,7 +13,6 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-import psycopg
 from dotenv import load_dotenv
 from openai import APIConnectionError, APITimeoutError, OpenAI, RateLimitError
 
@@ -39,13 +38,6 @@ CONFUSION_MATRIX_GEOMETRY_CSV_PATH = OUTPUT_DIR / "confusion_matrix_geometry.csv
 CONFUSION_MATRIX_ENTITY_CSV_PATH = OUTPUT_DIR / "confusion_matrix_entity.csv"
 CONFUSION_MATRICES_JSON_PATH = OUTPUT_DIR / "confusion_matrices.json"
 RUN_METRICS_JSON_PATH = OUTPUT_DIR / "run_metrics.json"
-DATABASE_SCHEMA_PATH = BASE_DIR / "dashboard" / "db" / "schema.sql"
-DASHBOARD_ENV_PATH = BASE_DIR / "dashboard" / ".env.local"
-
-# Load environment files before reading module-level configuration.
-# The dashboard env is a fallback so users do not have to duplicate DATABASE_URL.
-load_dotenv(BASE_DIR / ".env")
-load_dotenv(DASHBOARD_ENV_PATH, override=False)
 
 
 # -----------------------------
@@ -643,136 +635,10 @@ def calculate_accuracy(
     return float((completed[actual_column] == completed[predicted_column]).mean())
 
 
-
-def normalize_database_value(value: Any) -> Any:
-    if pd.isna(value):
-        return None
-
-    if hasattr(value, "item"):
-        return value.item()
-
-    return value
-
-
-def apply_database_schema(cursor: Any) -> None:
-    if not DATABASE_SCHEMA_PATH.exists():
-        raise FileNotFoundError(f"Database schema not found: {DATABASE_SCHEMA_PATH}")
-
-    schema_sql = DATABASE_SCHEMA_PATH.read_text(encoding="utf-8")
-    for statement in schema_sql.split(";"):
-        statement = statement.strip()
-        if statement:
-            cursor.execute(statement)
-
-
-def persist_run_to_database(
-    df: pd.DataFrame,
-    metrics: dict[str, Any],
-    matrices: dict[str, list[dict[str, Any]]],
-    database_url: str,
-) -> None:
-    """
-    Persists a completed run directly to PostgreSQL.
-
-    This keeps the dashboard in sync without a separate artifact-import step.
-    """
-    with psycopg.connect(database_url) as connection:
-        with connection.cursor() as cursor:
-            apply_database_schema(cursor)
-            cursor.execute(
-                """
-                INSERT INTO annotation_runs (
-                    id, model, started_at, completed_at, input_csv_path, output_dir,
-                    total_rows, completed_rows, error_rows, geometry_accuracy,
-                    entity_accuracy, mean_confidence
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (id) DO UPDATE SET
-                    model = EXCLUDED.model,
-                    started_at = EXCLUDED.started_at,
-                    completed_at = EXCLUDED.completed_at,
-                    input_csv_path = EXCLUDED.input_csv_path,
-                    output_dir = EXCLUDED.output_dir,
-                    total_rows = EXCLUDED.total_rows,
-                    completed_rows = EXCLUDED.completed_rows,
-                    error_rows = EXCLUDED.error_rows,
-                    geometry_accuracy = EXCLUDED.geometry_accuracy,
-                    entity_accuracy = EXCLUDED.entity_accuracy,
-                    mean_confidence = EXCLUDED.mean_confidence
-                """,
-                (
-                    metrics["run_id"],
-                    metrics["model"],
-                    metrics.get("started_at"),
-                    metrics.get("completed_at"),
-                    metrics.get("input_csv_path"),
-                    metrics.get("output_dir"),
-                    metrics.get("total_rows", 0),
-                    metrics.get("completed_rows", 0),
-                    metrics.get("error_rows", 0),
-                    metrics.get("geometry_accuracy"),
-                    metrics.get("entity_accuracy"),
-                    metrics.get("mean_confidence"),
-                ),
-            )
-
-            cursor.execute(
-                "DELETE FROM annotation_results WHERE run_id = %s",
-                (metrics["run_id"],),
-            )
-            for _, row in df.iterrows():
-                cursor.execute(
-                    """
-                    INSERT INTO annotation_results (
-                        run_id, row_index, title, english_title, page_link, map_link,
-                        kaartlaag, gold_geometry, gold_entity, predicted_geometry,
-                        predicted_entity, confidence, reasoning_summary, error
-                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """,
-                    (
-                        metrics["run_id"],
-                        int(row["RowIndex"]),
-                        normalize_database_value(row.get("Title")),
-                        normalize_database_value(row.get("EnglishTitle")),
-                        normalize_database_value(row.get("PageLink")),
-                        normalize_database_value(row.get("MapLink")),
-                        normalize_database_value(row.get("Kaartlaag")),
-                        normalize_database_value(row.get("Geometry")),
-                        normalize_database_value(row.get("Entity")),
-                        normalize_database_value(row.get("GPTGeometry")),
-                        normalize_database_value(row.get("GPTEntity")),
-                        normalize_database_value(row.get("GPTConfidence")),
-                        normalize_database_value(row.get("GPTReasoningSummary")),
-                        normalize_database_value(row.get("GPTError")),
-                    ),
-                )
-
-            cursor.execute(
-                "DELETE FROM confusion_matrix_cells WHERE run_id = %s",
-                (metrics["run_id"],),
-            )
-            for matrix_type, cells in matrices.items():
-                for cell in cells:
-                    cursor.execute(
-                        """
-                        INSERT INTO confusion_matrix_cells (
-                            run_id, matrix_type, actual_label, predicted_label, count
-                        ) VALUES (%s, %s, %s, %s, %s)
-                        """,
-                        (
-                            metrics["run_id"],
-                            matrix_type,
-                            cell["actual_label"],
-                            cell["predicted_label"],
-                            cell["count"],
-                        ),
-                    )
-        connection.commit()
-
 def write_run_artifacts(
     df: pd.DataFrame,
     run_dir: Path,
     run_metadata: dict[str, Any],
-    database_url: str | None = None,
 ) -> dict[str, Any]:
     run_dir.mkdir(parents=True, exist_ok=True)
 
@@ -827,15 +693,6 @@ def write_run_artifacts(
     shutil.copyfile(matrices_json_path, CONFUSION_MATRICES_JSON_PATH)
     shutil.copyfile(metrics_json_path, RUN_METRICS_JSON_PATH)
 
-    if database_url:
-        persist_run_to_database(df, metrics, matrices, database_url)
-        print("Run saved to PostgreSQL for dashboard comparison.")
-    else:
-        print(
-            "DATABASE_URL is not set; dashboard database was not updated. "
-            "Set DATABASE_URL in .env or dashboard/.env.local, or pass --database-url."
-        )
-
     return metrics
 
 
@@ -848,20 +705,6 @@ def parse_args() -> argparse.Namespace:
         default=os.getenv("RUN_ID"),
         help="Optional run identifier. Defaults to a UTC timestamp plus a random suffix.",
     )
-    parser.add_argument(
-        "--database-url",
-        default=os.getenv("DATABASE_URL"),
-        help=(
-            "Optional PostgreSQL connection string. Defaults to DATABASE_URL from "
-            ".env or dashboard/.env.local. When set, the completed run is saved "
-            "to the dashboard database."
-        ),
-    )
-    parser.add_argument(
-        "--skip-db-save",
-        action="store_true",
-        help="Write local artifacts only and skip saving the run to PostgreSQL.",
-    )
     return parser.parse_args()
 
 
@@ -869,18 +712,13 @@ def parse_args() -> argparse.Namespace:
 # Main
 # -----------------------------
 def main() -> None:
+    load_dotenv()
     args = parse_args()
 
     if not os.getenv("OPENAI_API_KEY"):
         raise EnvironmentError(
             "OPENAI_API_KEY is missing. Add it to your .env file."
         )
-
-    database_url = None if args.skip_db_save else args.database_url
-    if database_url:
-        print("PostgreSQL dashboard save is enabled for this run.")
-    else:
-        print("PostgreSQL dashboard save is disabled for this run.")
 
     run_id = args.run_id or create_run_id()
     run_dir = RUNS_DIR / run_id
@@ -992,12 +830,7 @@ def main() -> None:
         "input_csv_path": str(CSV_PATH.relative_to(BASE_DIR)),
         "output_dir": str(run_dir.relative_to(BASE_DIR)),
     }
-    metrics = write_run_artifacts(
-        df=df,
-        run_dir=run_dir,
-        run_metadata=run_metadata,
-        database_url=database_url,
-    )
+    metrics = write_run_artifacts(df, run_dir, run_metadata)
 
     print("Done.")
     print(f"Run ID: {run_id}")

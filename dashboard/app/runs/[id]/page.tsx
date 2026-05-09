@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { deleteRunAction } from "../../actions";
 import { notFound } from "next/navigation";
 import { formatNumber, formatPercent, getConfusionCells, getResults, getRun, type ConfusionCell } from "../../../lib/db";
 
@@ -53,19 +52,11 @@ export default async function RunDetail({ params }: { params: Promise<{ id: stri
           <h1>{run?.id ?? id}</h1>
           <p>Inspect row-level predictions against gold labels and identify common label confusions.</p>
         </div>
-        <div className="actions">
-          <Link className="button" href="/">All runs</Link>
-          {run ? (
-            <form action={deleteRunAction}>
-              <input type="hidden" name="runId" value={run.id} />
-              <button className="button danger" type="submit">Delete run</button>
-            </form>
-          ) : null}
-        </div>
+        <Link className="button" href="/">All runs</Link>
       </section>
 
       {!run ? (
-        <div className="notice">Run data is unavailable. Check <code>DATABASE_URL</code> and run <code>layer_annotation.py</code> with database saving enabled.</div>
+        <div className="notice">Run data is unavailable. Check <code>DATABASE_URL</code> and import the run artifacts.</div>
       ) : (
         <>
           <section className="grid metrics">
