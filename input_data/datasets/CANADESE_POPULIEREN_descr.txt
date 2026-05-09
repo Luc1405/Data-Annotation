@@ -1,0 +1,11 @@
+7805 entities in the dataset
+�..OBJECTNUMMER : [english] : integer : 7805 unique values : 2917; 901; 5102; 1762; 7933; 7632; 3669; 4941; 6566; 3786
+Boomnummer : [english] : integer : 7414 unique values : 230048; 234472; 58462; 55931; 167349; 351006; 187750; 322460; 111361; 20263
+Stadsdeel : [english] : character : 12 unique values : Zuidoost; Amsterdamse bos; Amsterdamse Bos; Amssterdamse Bo; Centrum; Oost; Zuid; West; Nieuw-West; Noord
+Boomsoort : [english] : character : 32 unique values : Populus; Populus canadensis; Fruitboom; Populus x canadensis `Serotina de Selys`; Populus nigra &#096;Brandaris&#096;; Populus x canadensis `Robusta`; Populus europeus; Quercus coccinca; Populus x canadensis `Agathe F`; Populus trichocarpa
+Maatregel : [english] : character : 9 unique values : Voorbereiding; Geen; Kap; Veiligheidssnoei; Afwijkend; Gekapt geen herplant; Gekapt; Gesnoeid; Herplant
+Maatregel_extra : [english] : character : 269 unique values : 12661; gekapt 21/11/2019 (week 47); 12699; 12687; Gekapt vanuit project ‘Spoorpark’; gesnoeid 13/8/2019 (week 33); Nest 100419; Boomnummer 476724; 12668; Ganzennest 170619
+Herplantsoort : [english] : character : 82 unique values : Platanus orientalis `Digitata`; Ulmus Rebona; Robinia pseudoacacia; Populus nigra &#096;Italica&#096;; Quercus coccinea; Nog te bepalen; Liriodendron tulipifera; Populier al geplant; ; Sophora japonica
+Planning_kap_snoei : [english] : character : 120 unique values : 031219; Start januari 2019; 010319; 251119; 100519; 210619; 020519; 130519; 031219 N; 170519
+Planning_herplant : [english] : character : 24 unique values : Nov 2018 - Maart 2019; 080420; 260419; 240419; 250419; 070420; 2018; herplant later i.v.m. bou; Kwartaal 1 2020; 230320
+Takbreuk : [english] : character : 2 unique values : ; Ja

@@ -1,0 +1,14 @@
+70000 entities in the dataset
+�..OBJECTNUMMER : [english] : integer : 70000 unique values : 133634; 81943; 107008; 106401; 97727; 108950; 126939; 122729; 81212; 98527
+Soortnaam_NL : [english] : character : 392 unique values : Krimlinde; Wilgbladige peer; Gedeelde lijsterbes (cultuurvariëteit); Tamarisk; Kaukasische schijniep; Toona; Balsempopulier; Valse Christusdoorn (cultuurvariëteit); Prieeliep; Japanse lariks
+Boomnummer : [english] : integer : 69981 unique values : 522934; 458826; 456552; 502551; 510978; 478875; 466013; 453275; 501696; 468380
+Soortnaam_WTS : [english] : character : 762 unique values : Quercus cerris; Fraxinus excelsior `Doorenbos`; Quercus warei `Long`; Nothofagus antarctica; Acer palmatum `Dissectum`; Prunus avium `Mierlose Zwarte`; Tilia flavescens `Glenleven`; Pinus nigra; Chamaecyparis lawsoniana `Glauca`; Fraxinus excelsior `Grift`
+Boomtype : [english] : character : 8 unique values : ; Gekandelaberde boom; Vormboom; Leiboom; Boom vrij uitgroeiend; Boom niet vrij uitgroeiend; Knotboom; Fruitboom
+Boomhoogte : [english] : character : 10 unique values : 12 tot 15 m.; Onbekend; 6 tot 12 m.; 15 tot 18 m.; 9 tot 12 m.; 18 tot 24 m.; 24 m. en hoger; tot 6 m.; 6 tot 9 m.; 12 tot 18 m.
+Plantjaar : [english] : integer : 132 unique values : 1972; 1940; 1865; 1969; 1995; 1892; 1934; 2006; 1975; 1927
+Eigenaar : [english] : character : 2 unique values : Gemeente Amsterdam; Gemeentelijk Vastgoed
+Beheerder : [english] : character : 16 unique values : Rijkswaterstaat; Stadsdeel Centrum; Stadsdeel Oost; Volkstuinpark; Gemeentelijk Vastgoed; Stadsdeel Nieuw-West; Natuurlijk persoon; Gemeente Amsterdam, rve Sport; ; Stadsdeel West
+Categorie : [english] : character : 17 unique values : Tilia; Platanus; Quercus; Populus; Fraxinus; Aesculus; Carpinus; Prunus; Ulmus; Betula
+SOORT_KORT : [english] : character : 97 unique values : Ilex; Aesculus; Castanea; Taxus; Acer; Sambucus; Eucommia; Cedrus; Ailanthus; Aralia
+SDVIEW : [english] : character : 9 unique values : F; A; E; K; N; D; M; B; V
+RADIUS : [english] : integer : 7 unique values : 3; 5; 2; 7; 8; 4; 1

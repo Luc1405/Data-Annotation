@@ -1,0 +1,5 @@
+4617 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 4617 unique values : 3586; 816; 1533; 1042; 1620; 3806; 621; 501; 1821; 845
+Functie : [english] : character : 2 unique values : Wonen; NietWonen
+Gedetecteerde_panelen : [english] : double : 226 unique values : 617; 204; 666; 102; 8; 42; 163; 140; 541; 119
+Vermogen : [english] : integer : 98 unique values : 104000; 0; 4000; 109000; 13000; 79000; 65000; 46000; 2000; 26000

@@ -1,0 +1,64 @@
+680 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 680 unique values : 565; 115; 334; 608; 66; 21; 650; 540; 45; 16
+Stemlocatie : [english] : character : 340 unique values : Stadsloket Zuid; 2e Montessorischool Het Winterkoninkje; Molen van Sloten; O.B.S. Slootermeerschool; Vrouw en Vaart; Zorgcentrum De Buitenhof; Oceaan; Mixtup; Stayokay Amsterdam Zeeburg; Wooncentrum De Venser
+Opgeroepenen : [english] : integer : 299 unique values : 1428; 1305; 1447; 1499; 1030; 1693; 1445; 1157; 2279; 1375
+Blanco : [english] : integer : 15 unique values : 4; 0; 2; 10; 11; 12; 1; 13; 14; 8
+Ongeldig : [english] : integer : 35 unique values : 3; 22; 6; 32; 11; 16; 14; 7; 36; 1
+Geldig : [english] : integer : 316 unique values : 1248; 803; 1117; 1364; 2628; 1673; 2032; 1226; 887; 1633
+Opkomstpercentage : [english] : double : 275 unique values : 72.9; 65.6; 92.4; 66.7; 127; 93.9; 105.2; 78.5; 97.4; 56
+Grootste_partij : [english] : character : 8 unique values : Artikel 1; GroenLinks; D66; PVV; VVD; PvdA; DENK; D66 - VVD
+Grootste_aantal : [english] : integer : 247 unique values : 306; 179; 322; 475; 234; 134; 141; 249; 371; 517
+Grootste_percentage : [english] : double : 171 unique values : 25.1; 15.7; 19.4; 21.4; 25.7; 40.3; 37.2; 29.2; 20.9; 15.6
+Tweede_partij : [english] : character : 10 unique values : VVD; GroenLinks; PVV; VVD - GROENLINKS; SP; DENK; Artikel 1; GROENLINKS; D66; PvdA
+Tweede_aantal : [english] : integer : 233 unique values : 27; 198; 363; 174; 421; 186; 122; 61; 311; 288
+Tweede_percentage : [english] : double : 145 unique values : 15.1; 25.7; 21.7; 25.2; 13.7; 27.1; 12.1; 12.5; 18.8; 19.8
+X_1__VVD : [english] : integer : 232 unique values : 423; 377; 168; 139; 201; 122; 166; 278; 154; 82
+X_2__PvdA : [english] : integer : 158 unique values : 173; 78; 58; 56; 122; 109; 92; 165; 116; 113
+X_3__PVV : [english] : integer : 157 unique values : 64; 59; 301; 53; 200; 149; 55; 147; 104; 105
+X_4__SP : [english] : integer : 150 unique values : 34; 72; 84; 22; 55; 23; 92; 256; 82; 160
+X_5__CDA : [english] : integer : 94 unique values : 48; 73; 64; 42; 47; 87; 78; 143; 59; 58
+X_6__D66 : [english] : integer : 245 unique values : 400; 131; 480; 269; 733; 201; 191; 458; 296; 180
+X_7__ChristenUnie : [english] : integer : 58 unique values : 28; 20; 56; 14; 48; 0; 2; 40; 39; 78
+X_8__GroenLinks : [english] : integer : 237 unique values : 476; 162; 84; 190; 57; 180; 339; 264; 47; 286
+X_9__SGP : [english] : integer : 14 unique values : 4; 17; 14; 9; 2; 5; 11; 10; 7; 3
+X_10__Partij_voor_de_Dieren : [english] : integer : 143 unique values : 114; 17; 135; 113; 154; 41; 220; 0; 103; 152
+X_11__50PLUS : [english] : integer : 79 unique values : 59; 48; 84; 52; 86; 6; 42; 88; 71; 66
+X_12__OndernemersPartij : [english] : integer : 11 unique values : 7; 4; 1; 5; 2; 0; 9; 3; 14; 8
+X_13__VoorNederland : [english] : integer : 13 unique values : 8; 14; 2; 5; 4; 10; 3; 0; 6; 9
+X_14__DENK : [english] : integer : 169 unique values : 30; 430; 29; 35; 69; 536; 111; 4; 27; 353
+X_15__NIEUWE_WEGEN : [english] : integer : 10 unique values : 10; 0; 2; 5; 1; 8; 37; 6; 4; 3
+X_16__Forum_voor_Democratie : [english] : integer : 45 unique values : 14; 42; 55; 35; 12; 22; 7; 36; 10; 33
+X_17__De_Burger_Beweging : [english] : integer : 6 unique values : 5; 3; 2; 1; 0; 4
+X_18__Vrijzinnige_Partij : [english] : integer : 6 unique values : 6; 3; 4; 0; 1; 2
+X_19__GeenPeil : [english] : integer : 6 unique values : 0; 5; 4; 3; 1; 2
+X_20__Piratenpartij : [english] : integer : 27 unique values : 31; 14; 2; 12; 23; 19; 0; 18; 10; 3
+X_21__Artikel_1 : [english] : integer : 89 unique values : 78; 17; 76; 107; 86; 63; 8; 37; 34; 64
+X_22__Niet_Stemmers : [english] : integer : 9 unique values : 2; 3; 0; 6; 30; 5; 1; 4; 7
+X_23__Libertarische_Partij : [english] : integer : 5 unique values : 1; 3; 2; 4; 0
+X_24__Lokaal_in_de_Kamer : [english] : integer : 6 unique values : 3; 0; 2; 5; 1; 4
+X_Overig_totaal : [english] : integer : 49 unique values : 17; 49; 6; 45; 13; 62; 14; 27; 34; 29
+X__1__VVD : [english] : double : 182 unique values : 6.4; 17.5; 16.1; 7.2; 5.9; 8.7; 9.9; 12.6; 26.2; 9.6
+X__2__PvdA : [english] : double : 94 unique values : 9.5; 8.3; 13.9; 6; 10.2; 2.1; 10.8; 6.2; 13.6; 6.7
+X__3__PVV : [english] : double : 139 unique values : 5.7; 1.6; 2.1; 15; 16.5; 5.5; 4.3; 7.4; 1.3; 0.8
+X__4__SP : [english] : double : 106 unique values : 8.3; 2.5; 8.4; 0; 7; 7.6; 12.9; 9.4; 6.3; 12.1
+X__5__CDA : [english] : double : 64 unique values : 2; 2.7; 4.1; 5.1; 5.8; 2.4; 4.7; 0; 1.7; 1.4
+X__6__D66 : [english] : double : 168 unique values : 12.8; 20.2; 7; 26.1; 16.4; 24; 8.5; 10.3; 13.6; 11.8
+X__7__ChristenUnie : [english] : double : 54 unique values : 3.3; 2.9; 0.8; 6.3; 5.3; 2.1; 5.5; 0; 6.4; 5.8
+X__8__GroenLinks : [english] : double : 184 unique values : 12.5; 12.8; 26.8; 16.5; 21.5; 29.1; 8.6; 15.5; 19; 21.9
+X__9__SGP : [english] : double : 11 unique values : 0; 1; 0.5; 0.2; 0.8; 0.9; 0.7; 0.4; 0.6; 0.1
+X__10__Partij_voor_de_Dieren : [english] : double : 87 unique values : 7.1; 3; 2.7; 3.4; 3.3; 9.1; 5.1; 2.2; 7.9; 6.3
+X__11__50PLUS : [english] : double : 58 unique values : 3.1; 0; 0.2; 1.7; 1.3; 0.8; 0.1; 4.5; 4.2; 3.6
+X__12__OndernemersPartij : [english] : double : 9 unique values : 0.3; 0.4; 0.1; 0.6; 1; 0.2; 0; 0.5; 1.1
+X__13__VoorNederland : [english] : double : 11 unique values : 0.2; 0.7; 0.8; 0.3; 1.5; 0.1; 0; 0.4; 0.9; 0.6
+X__14__DENK : [english] : double : 157 unique values : 3.4; 21.1; 17.7; 1; 21.5; 10.1; 19.3; 7.3; 2.3; 11.3
+X__15__NIEUWE_WEGEN : [english] : double : 8 unique values : 5.6; 0.6; 0.4; 0.1; 0.2; 0.5; 0; 0.3
+X__16__Forum_voor_Democratie : [english] : double : 30 unique values : 1.1; 2.7; 2.6; 1.6; 1.4; 2; 0.7; 2.1; 2.4; 1.5
+X__17__De_Burger_Beweging : [english] : double : 5 unique values : 0.1; 0; 0.3; 0.2; 0.4
+X__18__Vrijzinnige_Partij : [english] : double : 6 unique values : 0.3; 0.5; 0.4; 0.1; 0.2; 0
+X__19__GeenPeil : [english] : double : 8 unique values : 0.6; 0.5; 0; 1; 0.3; 0.4; 0.2; 0.1
+X__20__Piratenpartij : [english] : double : 17 unique values : 0.9; 0.2; 1.1; 1; 0.5; 0.4; 0.8; 0.1; 0.6; 0
+X__21__Artikel_1 : [english] : double : 77 unique values : 3.1; 2.5; 11.5; 14.4; 1.7; 4.7; 5.5; 2; 12.6; 12.4
+X__22__Niet_Stemmers : [english] : double : 9 unique values : 0.6; 0.4; 0.7; 0.3; 0.1; 0.2; 2.9; 0; 0.5
+X__23__Libertarische_Partij : [english] : double : 6 unique values : 0.2; 1; 0; 0.4; 0.1; 0.3
+X__24__Lokaal_in_de_Kamer : [english] : double : 5 unique values : 1.1; 0.3; 0.1; 0.2; 0
+X__Overig_totaal : [english] : double : 29 unique values : 3.3; 1.4; 1.9; 4.3; 2.2; 3.8; 0.4; 2; 1.8; 1

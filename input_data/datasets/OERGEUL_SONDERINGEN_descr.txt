@@ -1,0 +1,10 @@
+18771 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 18771 unique values : 16503; 15274; 7573; 5244; 18305; 8580; 1595; 13753; 14743; 17478
+Naam : [english] : character : 18639 unique values : CPT000000051015A; CPT000000060208A; CPT000000073224A; C05-878; CPT000000050640A; H9439; CPT000000033729A; B42201; B42194; C5957
+Bron : [english] : character : 3 unique values : Waternet; DINO-loket; IB
+ProjectID : [english] : character : 1509 unique values : 13.317; 6668; 30677; 9016-0922-000; 3350146; 10.542; 12.087; 12.54; 10.322; 464002
+Uitvoerder : [english] : character : 44 unique values : BAM; BAMNelisDeRuiter; Bureau Grondmechanic; VWBBodemB.V.; HOO; Multiconsult; 0; Inpijn-Blokpoel; GemeentewerkenRotterdam; uitvoerder
+Datum : [english] : character : 1387 unique values : 7-3-1989; 17-7-1992; 20-12-1994; 25-4-1989; 30-3-1999; 30-8-1983; 23-8-2001; 13-9-2000; 7-8-1976; 31-1-1995
+Maaiveld_hoogte : [english] : character : 198 unique values : -9.7; 6.5; -8.6; -3.5; -3.4; 3.2; -12.0; -4.6; 7.5; 7.8
+Diepte_to_maaiveld : [english] : character : 734 unique values : 15.4; 17.9; 55.7; 38.3; 29.0; 39.3; 35.4; -25.0; 15.6; 62.0
+Top_Pleistoceen : [english] : double : 241 unique values : -45.8; -16.8; -23.8; -29.4; -22.2; -10.4; -25.2; -31.2; -46.7; -23.2

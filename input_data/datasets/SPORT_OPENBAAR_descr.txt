@@ -1,0 +1,12 @@
+818 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 818 unique values : 133; 276; 271; 857; 220; 113; 466; 826; 141; 240
+Naam : [english] : character : 622 unique values : BOTTESKERKSINGEL; Aragohof; Oudeschans 10d; Tafeltennistafel 1 Balboaplein; EKINGENSTRAAT; REINIER CLAESZENPLEIN; WG-plein; Wethouder Den Hertogstraat; Tafeltennistafel Michel de Klerkhof; Speeltuin Ons Genoegen
+Sportvoorziening : [english] : character : 9 unique values : Skate; Beachvolley; Fitness / Bootcamp; Tennis; Overig; Basketbal; Tafeltennis; Jeu de boules; Voetbal
+Locatie : [english] : character : 10 unique values : Schoolplein; ; Sportveld; Dak sporthal; Plantsoen; Sportpark; Stoep; Plein; Speeltuin; Park
+Omheining : [english] : character : 10 unique values : Ballenvangers; Kooi; Kooi open; ; Veldafscheiding; Kooi gesloten; Hekwerk; Gedeeltelijk; Geen; Hekwerk laag
+Ondergrond : [english] : character : 11 unique values : Zand; Tegels; Kunstgras; Onverhard; Valdempend materiaal; Beton; Stoeptegels; ; Asfalt; Gras
+Verlichting : [english] : character : 3 unique values : ; Nee; Ja
+Overdekt : [english] : character : 2 unique values : Ja; Nee
+Omschrijving : [english] : character : 236 unique values : Basketbalpaal, originele oplossing veldafzetting (zie foto), zitbanken naast veld; Voetbalveld, zitbanken naast veld, combi-veld; Voetbalveld met belijning, veld ligt verdiept, combi-veld, zitbanken naast veld; Tafeltennis; Trapveldje, speeltuin &#096;t Twiske; Voetbalveld met belijning, zitbanken naast veld; Voetbaldoel, kleine doelen, veld ligt verdiept; Voetbaldoel, zitbanken naast veld; Basketbalveld, combi-veld, zitbanken naast veld; Verschillende fitnesstoestellen op een rubberen gietvloer
+Oppervlak : [english] : integer : 376 unique values : 6104; 323; 1304; 281; 383; 252; 433; 250; 199; 469
+Foto : [english] : character : 430 unique values : Azaleastraat.jpg; KorteBergpad.jpg; Borneolaan.jpg; Antarusstraat_1.jpg; Klimopweg.jpg; Zuidplein.jpg; Fitnesstoestellen Sarphatipark.JPG; Bloemenkwartier.jpg; Voetbaldoelen Rembrandtpark.JPG; SpeeltuinOost_1.jpg

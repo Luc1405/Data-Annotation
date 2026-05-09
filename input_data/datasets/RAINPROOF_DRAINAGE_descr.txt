@@ -1,0 +1,4 @@
+192 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 192 unique values : 81; 189; 178; 84; 54; 96; 109; 165; 39; 1
+Locatie : [english] : character : 44 unique values : Transvaalbuurt; Westerpark  (Fannius Scholten); Zonneplein; Lutkemeer; De Pijp; Galileiplantsoen eo; Oostzanerwerf; Buiksloot; Jordaan; Irenebuurt
+Drainage : [english] : character : 2 unique values : Niet mogelijk; Mogelijk

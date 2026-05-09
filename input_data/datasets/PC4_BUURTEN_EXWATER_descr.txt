@@ -1,0 +1,4 @@
+80 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 80 unique values : 27; 36; 70; 72; 4; 28; 66; 77; 63; 19
+Postcode4 : [english] : integer : 80 unique values : 1096; 1034; 1011; 1093; 1081; 1103; 1108; 1031; 1025; 1066
+Opp_m2 : [english] : integer : 80 unique values : 871625; 2817709; 1136065; 2919420; 1393542; 2061779; 1415272; 1195495; 814604; 11316937

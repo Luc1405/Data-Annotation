@@ -1,0 +1,4 @@
+7164 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 7164 unique values : 2837; 774; 4215; 7010; 1871; 6357; 4249; 1631; 4565; 718
+NETTYPE : [english] : character : 2 unique values : KOUDE TRANSPORT; WARMTE TRANSPORT
+STATUS : [english] : character : 2 unique values : IN AANLEG; IN BEDRIJF

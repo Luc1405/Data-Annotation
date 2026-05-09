@@ -1,0 +1,14 @@
+124 entities in the dataset
+�..OBJECTNUMMER : [english] : integer : 124 unique values : 102; 301; 285; 11; 289; 227; 28; 111; 138; 108
+Naam_project : [english] : character : 102 unique values : Schepenlaan - Koopvaardersplantsoen; Buiksloterham 3B; Oude Modeschool; Zeeburgereiland 2A; RI Oost 3A; Eenhoorngebied kavel E; Centrumeiland blok 14/15; Driemond; Maria Montessori locatie; Centrumeiland Blok 4
+Gebouwtype : [english] : character : 8 unique values : Naast elkaar; Bestaand gebouw (CPO/MO); Samen in het groot (MO); Samen in het klein; Vrijstaand; Samen in het groot (CPO); Bestaand gebouw; Samen in het groot (Wooncoöperatie)
+Jaar_beschikbaar : [english] : character : 2 unique values : In uitvoering; Gerealiseerd
+Oppervlak_kavel_m2 : [english] : character : 2 unique values : ; 2284m2
+Aantal_woningen : [english] : character : 8 unique values : 46; 2 kavels voor 17/18 woningen; 11-20 woningen; ; 2 ligplaatsen voor varende woonschepen; 8-12 woningen; 10 à 14 woningen; Max. 88
+Start_bouw_mogelijk : [english] : integer : 2 unique values : 2015; 0
+Niet_woonfunctie_mogelijk : [english] : character : 3 unique values : ja; ; Ja, in gemeenschappelijke ruimtes
+Contactpersoon : [english] : character : 2 unique values : Suzanne de Wit; 
+Telefoon : [english] : integer : 2 unique values : NA; 2012345667
+Organisatie : [english] : character : 6 unique values : De Alliantie; ; Stadgenoot; Stadsdeel Nieuw-West; Gebiedsontwikkeling Oost; De Key
+Mailadres : [english] : character : 2 unique values : s.de.wit@amsterdam.nl; 
+Opmerking : [english] : character : 18 unique values : Start inschrijving 22 november 2019 voor geregistreerde bouwgroepen; Start inschrijving 8 juli 2017; Inschrijving 14 dec-25 januari 2019; Inschrijving 14 december tot 25 januari 2019; Start inschrijving 14 december 2018; Publicatie op TenderNed; Inschrijving gesloten; Start inschrijving naar verwachting 4 juli 2019; Start inschrijving 3 juli-21 augustus; contracten gesloten, via formulier website aanmelden voor reservelijst  

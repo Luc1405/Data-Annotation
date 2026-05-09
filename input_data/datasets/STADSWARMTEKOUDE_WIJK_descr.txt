@@ -1,0 +1,4 @@
+322 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 322 unique values : 81; 18; 167; 113; 171; 303; 104; 52; 178; 25
+NETTYPE : [english] : character : 2 unique values : WARMTE WIJK; KOUDE WIJK
+STATUS : [english] : character : 2 unique values : IN AANLEG; IN BEDRIJF

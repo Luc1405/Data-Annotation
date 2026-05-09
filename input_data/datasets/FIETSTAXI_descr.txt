@@ -1,0 +1,4 @@
+25 entities in the dataset
+�..OBJECTNUMMER : [english] : integer : 25 unique values : 53; 18; 60; 2; 52; 22; 62; 5; 48; 12
+Regel : [english] : character : 14 unique values :  Fietstaxi’s wel toegestaan ; Fietstaxi’s wel toegestaan; Fietstaxis toegestaan tussen 7-19 uur; Fietstaxis niet toegestaan tussen 20-03 uur; Niet wachten en instappen - wel uitstappen; Alleen op standplaats en fietstaxis niet toegestaan vr en za 21-04 uur; Verbodsgebied in- en uitstappen; Fietstaxis niet toegestaan 24 uur; Verboden voor fietstaxi`s tussen 20h en 3h; Niet wachten, instappen of uitstappen
+SELECTIE : [english] : character : 3 unique values : NIET_INUITSTAP; WEL; NIET

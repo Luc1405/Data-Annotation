@@ -1,0 +1,14 @@
+49431 entities in the dataset
+�..OBJECTNUMMER : [english] : integer : 49431 unique values : 239212; 220282; 256197; 221829; 255987; 255891; 230682; 219374; 213649; 253060
+Soortnaam_NL : [english] : character : 377 unique values : Chinese rode berk; Trachycarpus; Walnoot (cultuurvariëteit); Witte moerbei (cultuurvariëteit); Populier; Scharlaken eik; Noorse esdoorn (cultuurvariëteit); Moseik (cultuurvariëteit); Japanse grootbloemige kornoelje (cultuurvariëteit); Eik (cultuurvariëteit)
+Boomnummer : [english] : integer : 34927 unique values : 2278414; 373144; 346292; 361546; 2278402; 341094; 2276410; 364137; 346766; 344797
+Soortnaam_WTS : [english] : character : 674 unique values : Malus domestica `Elstar`; Thuja occidentalis; Robinia pseudoacacia `Umbraculifera`; Crataegus laevigata `Masekii`; Aesculus hippocastanum; Acer buergerianum; Ulmus davidiana mandshurica; Betula albosinensis; Morus alba `Macrophylla`; Cercidiphyllum japonicum
+Boomtype : [english] : character : 8 unique values : Gekandelaberde boom; Vormboom; ; Fruitboom; Knotboom; Boom niet vrij uitgroeiend; Leiboom; Boom vrij uitgroeiend
+Boomhoogte : [english] : character : 10 unique values : Onbekend; 15 tot 18 m.; 12 tot 18 m.; 24 m. en hoger; 18 tot 24 m.; tot 6 m.; 6 tot 12 m.; 12 tot 15 m.; 6 tot 9 m.; 9 tot 12 m.
+Plantjaar : [english] : integer : 82 unique values : 1938; 2015; 1935; 1955; 1997; 2017; 1900; 1890; 2002; 1982
+Eigenaar : [english] : character : 6 unique values : Gemeente Amstelveen; Gemeente Amsterdam; Gemeente Diemen; Gemeente Ouder-Amstel; Natuurlijk persoon; Woningcorporatie
+Beheerder : [english] : character : 18 unique values : Stadsdeel West; Natuurlijk persoon; Amsterdamse Bos - eigen dienst; RVE Spieringhorn Sportpark; Woningcorporatie; Recreatieschap Noord-Holland; Stadsdeel Centrum; Stadsdeel Zuid; Stadsdeel Noord; Amsterdamse Bos
+Categorie : [english] : character : 17 unique values : Populus; Tilia; Acer; Platanus; Alnus; Quercus; Fraxinus; Prunus; Overig; Betula
+SOORT_KORT : [english] : character : 97 unique values : Morus; Davidia; Ficus; Abies; Sambucus; Juniperus; Metasequoia; Pyrus; Paulownia; Ilex
+SDVIEW : [english] : character : 9 unique values : M; V; F; D; N; A; K; T; E
+RADIUS : [english] : integer : 7 unique values : 3; 2; 5; 1; 8; 4; 7

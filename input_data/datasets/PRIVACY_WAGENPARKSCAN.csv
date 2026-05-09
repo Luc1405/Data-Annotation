@@ -1,0 +1,9 @@
+﻿OBJECTNUMMER;Locatienummer;Locatienaam;Locatieadres;Te_meten_rijstrook;Privacyverklaring;WKT_LNG_LAT;WKT_LAT_LNG;LNG;LAT;
+1;"01";"GASK-01-A-Stadhouderskade-O";"Stadhouderskade 86";"";"https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/wagenparkscan/";"POINT(4.8945537,52.3578527)";"POINT(52.3578527,4.8945537)";4.8945537;52.3578527;
+2;"02";"GASK-02-A-Weesperstraat-N";"Weesperstraat 113";"";"https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/wagenparkscan/";"POINT(4.9071666,52.3625765)";"POINT(52.3625765,4.9071666)";4.9071666;52.3625765;
+3;"03";"GASK-03-A-Valkenburgerstraat-N";"Valkenburgerstraat";"";"https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/wagenparkscan/";"POINT(4.9064064,52.3694364)";"POINT(52.3694364,4.9064064)";4.9064064;52.3694364;
+4;"04A";"GASK-04-A-Wibautstraat-N";"Wibautstraat 45";"";"https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/wagenparkscan/";"POINT(4.9107997,52.3568955)";"POINT(52.3568955,4.9107997)";4.9107997;52.3568955;
+5;"04B";"GASK-04-B-Wibautstraat-Z";"Wibautstraat 45";"";"https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/wagenparkscan/";"POINT(4.9102458,52.3571118)";"POINT(52.3571118,4.9102458)";4.9102458;52.3571118;
+6;"";"Oudezijde";"";"";"https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/artikel-2/";"POINT(4.8959646,52.3701274)";"POINT(52.3701274,4.8959646)";4.8959646;52.3701274;
+7;"";"Rusland";"Rusland 6 ";"Linker rijstrook";"www.amsterdam.nl/privacy/specifieke/privacyverklarigen-b/artikel-2/";"POINT(4.8959695,52.3701405)";"POINT(52.3701405,4.8959695)";4.8959695;52.3701405;
+

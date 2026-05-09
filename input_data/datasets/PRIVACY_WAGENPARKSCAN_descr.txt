@@ -1,0 +1,7 @@
+7 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 7 unique values : 5; 4; 7; 2; 1; 6; 3
+Locatienummer : [english] : character : 6 unique values : 04A; 03; 01; 02; ; 04B
+Locatienaam : [english] : character : 7 unique values : GASK-03-A-Valkenburgerstraat-N; Oudezijde; GASK-04-A-Wibautstraat-N; GASK-04-B-Wibautstraat-Z; GASK-02-A-Weesperstraat-N; GASK-01-A-Stadhouderskade-O; Rusland
+Locatieadres : [english] : character : 6 unique values : Rusland 6 ; Valkenburgerstraat; Wibautstraat 45; Weesperstraat 113; ; Stadhouderskade 86
+Te_meten_rijstrook : [english] : character : 2 unique values : ; Linker rijstrook
+Privacyverklaring : [english] : character : 3 unique values : https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/wagenparkscan/; https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/artikel-2/; www.amsterdam.nl/privacy/specifieke/privacyverklarigen-b/artikel-2/

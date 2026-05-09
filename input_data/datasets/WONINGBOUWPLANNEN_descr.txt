@@ -1,0 +1,23 @@
+1560 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 1560 unique values : 1543; 1299; 870; 793; 1111; 310; 1007; 645; 242; 36
+Projectnaam : [english] : character : 1500 unique values : Swammerdamstraat 38; Postjesweg 175; Weespertrekvaart - Bajes Kwartier (3) F&G; Banneplein 2e fase; Reigersbos - fase 3; Hamerkwartier - fase 6; Nieuwendammerdijk 461; Noorddok (B2-2 fase 2); Paasheuvelweg 22AB; Weespertrekvaart - Oost blok 6 en 7
+Project_ID : [english] : integer : 1560 unique values : 6675; 8105; 7372; 8267; 7961; 7910; 7577; 7641; 1126; 7256
+Fase_ID : [english] : integer : 4 unique values : 5; 4; 2; 3
+Fase : [english] : character : 4 unique values : Principebesluit genomen; In aanbouw genomen; Investeringsbesluit genomen; Verkenning
+Start_bouw : [english] : integer : 28 unique values : 2024; 2040; 2029; 2026; 2019; 2037; 2018; 2039; 2021; 2023
+Totaal : [english] : integer : 305 unique values : 83; 10; 151; 448; 380; 219; 263; 5; 28; 53
+Sociale_huur : [english] : integer : 177 unique values : 8; 56; 124; 17; 143; 177; 32; 89; 14; 130
+Middeldure_huur : [english] : integer : 150 unique values : 7; 134; 202; 240; 148; 170; 41; 162; 84; 83
+Dure_huur_of_Koop : [english] : integer : 136 unique values : 132; 110; 97; 158; 213; 250; 15; 27; 169; 166
+Dure_huur : [english] : integer : 102 unique values : 120; 25; 66; 45; 270; 13; 17; 86; 53; 149
+Koop : [english] : integer : 102 unique values : 235; 36; 102; 40; 4; 34; 27; 24; 133; 88
+Nader_te_bepalen : [english] : integer : 14 unique values : 5; 2; 120; 6; 80; 30; 48; 114; 8; 4
+Plus_Onzelfstandig : [english] : integer : 15 unique values : 240; 230; 349; 356; 217; 116; 141; 0; 80; 5
+Stadsdeelcode : [english] : character : 9 unique values : K; A; F; D; M; B; E; N; T
+Stadsdeel : [english] : character : 10 unique values : Centrum; Oost; Zuid; Zuidoost; West; ; Noord; Westpoort; Duivendrecht; Nieuw-West
+Gebiedcode : [english] : character : 24 unique values : DX11; DX04; DX06; DX05; DX18; DX03; DX22; DX02; DX14; DX01
+Gebied : [english] : character : 25 unique values : Centrum-West; Osdorp; De Aker, Sloten en Nieuw Sloten; Ijburg / Eiland Zeeburg; Bijlmer Centrum; Watergraafsmeer; Noord West; Duivendrecht; Indische Buurt / Oostelijk Havengebied; Noord Oost
+Projectgebied : [english] : character : 83 unique values : De Nieuwe Kern; Hamerkwartier; K_buurt; Gaasperdam/Driemond; Overamstel/Bijlmerkwartier; Overamstel/Weespertrekvaart Oost; Amsteloever; Zuidas; Overamstel/Kauwgomballenkwartier; West/Westerpark overig
+GREX : [english] : character : 128 unique values : n.v.t.; 453.22; 223.10; 230.22; 213.43; 526.70; 580.30; 455.01; 998.01; 213.24
+Plaberum : [english] : character : 7 unique values : Fase 1: Verkenning; Uitvoering - in aanbouw; Fase 2&3: Haalbaarheid en ontwerp; Fase 4: Voorbereiding en uitvoering; Opgeleverd; Fase 6; Fase 5
+fid : [english] : integer : 1559 unique values : 9; 3837; 1206; 2644; 2725; 80; 506; 2352; 2990; 2707

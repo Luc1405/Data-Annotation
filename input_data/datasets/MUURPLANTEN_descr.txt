@@ -1,0 +1,16 @@
+1530 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 1530 unique values : 839; 587; 1433; 1460; 799; 874; 1013; 51; 168; 307
+SELECTIE : [english] : character : 23 unique values : NB_990; NB_9017; BE_290; NB_2021; NB_2023; NB_2638; BE_1013; NB_824; BE_288; BE_1838
+Nederlandse_naam : [english] : character : 23 unique values : Rotsnavelkruid; Brede eikvaren; Vijgenboom; Spoorbloem; Halsbloem; Smalle ijzervaren; Groensteel; Zwartsteel; Moerasvaren; Koningsvaren
+Wetenschappelijke_naam : [english] : character : 23 unique values : Centranthus ruber; Polystichum setiferum; Erysimum cheiri; Asplenium scolopendrium; Thelypteris palustris; Erigeron karvinskianus; Cyrtomium falcatum; Ceterach officinarum; Pseudofumaria lutea; Cyrtomium fortunei
+Kademuur : [english] : character : 2 unique values : Ja; Nee
+Beschermd : [english] : character : 3 unique values : F1; F2; 
+Rode_lijst : [english] : character : 3 unique values : ; BE; GE
+Water : [english] : character : 108 unique values : Entrepotdok; Slotervaart; Oosterdok; Egelantiersgracht; Kromboomsloot; Dijksgracht=Wittenburgervaart; Binnenhaven; Amstelkanaal; Dijksgracht; Reguliersgracht
+Straat : [english] : character : 296 unique values : Egelantiersgracht; Doorgang Singelgracht; Nieuwe Prinsengracht bij Onbekende gracht; Brug Doorvaart; Wittenkade; Brug Raampoort; Brug Nassaukade; Brug Peperstraat; Gosschalklaan; Weesperzijde
+Brugnummer : [english] : character : 116 unique values : 91; 286; 110; 166; 270; 12; 97; 36; 22; 189
+Aantal_in_2009 : [english] : character : 72 unique values : 13; 99; 1797; 4; 56; 23; 75; 8; 5; 9
+Aantal_in_2010 : [english] : character : 55 unique values : 45; 65; 20; 24; 74; 28; 119; 200; 27; 17
+Aantal_in_2011 : [english] : character : 74 unique values : 21; 23; 74; 90; 33; 27; 31; 78; 35; 43
+Aantal_in_2012 : [english] : character : 62 unique values : 17; 120; 22; 3; 4; 64; 51; 11; 105; 36
+Aantal_in_2013 : [english] : character : 90 unique values : 168; 97; 64; 200; ; 254; 2; 488; 21; 45

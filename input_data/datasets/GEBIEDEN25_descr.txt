@@ -1,0 +1,5 @@
+26 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 26 unique values : 8; 6; 23; 4; 5; 20; 7; 18; 11; 15
+Gebied25_naam : [english] : character : 26 unique values : Oud-West, De Baarsjes; Indische Buurt; Geuzenveld, Slotermeer; De Aker, Sloten, Nieuw-Sloten; Centrum-Oost; Centrum-West; Oud-Noord; Westerpark; Watergraafsmeer; Bijlmer-Centrum
+Stadsdeel_code : [english] : character : 8 unique values : E; K; M; A; T; B; N; F
+Opp_m2 : [english] : integer : 26 unique values : 7699097; 9605922; 9174622; 7613555; 5068157; 4075928; 7584546; 4017825; 28991298; 2234750

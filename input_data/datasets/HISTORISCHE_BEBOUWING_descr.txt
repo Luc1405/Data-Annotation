@@ -1,0 +1,11 @@
+200 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 200 unique values : 233; 252; 54; 239; 187; 173; 57; 49; 12; 228
+Naam : [english] : character : 191 unique values : Bolwerk Haarlem 1613-1815; Oudevrouwenhuis Diaconie 1683; Stadsbank van Lening 1614; De Waag 1617; Glashuis Jan Hendriksz Soop 1601-1631; Toren Leeuwenburg ca. 1490-1614; Rondeel 1535-1895; Regulierenklooster 1394-1532; Waag Westerhal 1619-1857; Olofspoort 1380-1618
+Hoofdgroep : [english] : character : 4 unique values : Religie; Militair; Productie; Openbaar
+Functie : [english] : character : 13 unique values : Financieel; Kerk; Admiraliteit; Synagoge; Klooster; ; Schuilkerk; Poort; Gasthuis; Strafinrichting
+Foto : [english] : character : 176 unique values : Realeneiland25.jpg; bolwerk 2e B.jpg; B9.jpg; B26Molen.jpg; B19Molen.jpg; Giethuis.jpg; B19.jpg; Waag Nieuwmarkt.jpg; pietersgasthuis.jpg; Stadsschuitenmakerswerf.jpg
+Website : [english] : logical : 1 unique values : NA
+Opmerking : [english] : character : 7 unique values : Bron: Balthasar Florisz. van Berckenrode 1657; Bron: Gerrit de Broen 1774-1782; ; Bron: Pieter Bast 1597; Bron: Cornelis Anthonisz 1544; Bron: Balthasar Florisz. van Berckenrode 1625; Bron: Jacob van Deventer rond 1560
+Begin : [english] : integer : 96 unique values : 1609; 1535; 1417; 1350; 1611; 1650; 1408; 1754; 1766; 1307
+Eind : [english] : integer : 96 unique values : 1898; 1601; 1861; 1882; 1878; 1610; 1657; 1679; 1805; 1797
+SELECTIE : [english] : character : 4 unique values : PRODUCTIE; RELIGIE; MILITAIR; OPENBAAR

@@ -1,0 +1,5 @@
+5159 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 5159 unique values : 192; 3968; 1758; 2556; 8; 3488; 2578; 2832; 1807; 4988
+Nummer : [english] : integer : 5159 unique values : 750; 1956; 1155; 5100; 1985; 2945; 1258; 4545; 587; 4102
+Kastanjesoort : [english] : character : 18 unique values : Aesculus carnea `Briottii`; Aesculus flava; Aesculus hippocastanum `Pyramidalis`; Aesculus hybrida; Aesculus hippocastanum; Aesculus hippocastanum `Umbraculifera`; Aesculus flava `Vestita`; Aesculus parviflora; Aesculus pavia `Atrosanguinea`; Aesculus pavia `Atrosanquinea`
+Aantasting : [english] : character : 6 unique values : Licht aangetast; Matig aangetast; Boom is dood; Ernstig aangetast; Niet aangetast; Boom niet aanwezig

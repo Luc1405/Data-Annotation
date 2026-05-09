@@ -1,0 +1,12 @@
+580 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 580 unique values : 251; 523; 48; 151; 256; 39; 504; 544; 345; 467
+Kruispuntnummer : [english] : integer : 514 unique values : 225; 987; 357; 954; 315; 1323; 649; 1854; 331; 693
+Kruispunt : [english] : character : 579 unique values : Amsteldijk / Ceintuurbaan; VOP Herensingel; Churchillaan / Maasstraat; IJdoornlaan / Nieuwe Leeuwarderweg WZ; Hobbemakade / Ruysdaelstraat; Leidsestraat / Lange Leidsedwarsstraat; Nieuwe Leeuwarderweg / A10 Buitenring (noordzijde); Baerlestraat, Van / Paulus Potterstraat; Aansluiting op A10 bij 309; Olympiaplein / Wateaustraat
+Geregeld_sinds_schatting : [english] : integer : 75 unique values : 1932; 1968; 1975; 1993; 1936; 1983; 1990; 1933; 1978; 2007
+Vervallen_sinds_schatting : [english] : integer : 42 unique values : 1981; 1995; 2002; 2018; 1983; 2000; 1980; 1950; 1985; 1998
+Regeling : [english] : character : 4 unique values : Voertuig afhankelijk; Star; ; Halfstar
+Soort : [english] : character : 3 unique values : Regulier; Verkeersplein; Langzaam verkeer oversteek
+Koppeling : [english] : character : 4 unique values : ; Harde koppeling; Groene golf koppeling; Zachte koppeling
+Status : [english] : character : 2 unique values : In bedrijf; Vervallen
+Foto : [english] : character : 7 unique values : http://beeldbank.amsterdam.nl/afbeelding/010028000803; Leidseplein_1932.jpg; vanBaerlestraatWillemsparkweg_1934.jpg; ; Alexanderplein_1965.jpg; http://beeldbank.amsterdam.nl/afbeelding/010009000745; Frederiksplein_1968.jpg
+Weblink : [english] : character : 68 unique values : https://archief.amsterdam/beeldbank/detail/ee505168-85bc-8acd-024c-13063fdc1277; http://beeldbank.amsterdam.nl/afbeelding/010122019695; https://archief.amsterdam/beeldbank/detail/0c336bee-6dfa-3384-6a7e-7f3f816ecebe; http://beeldbank.amsterdam.nl/afbeelding/010122023710; http://www.beeldbank.amsterdam.nl/afbeelding/010122011719; http://disseminate.objectrepository.org/file/level2/10622/30051002128285; http://afbeeldingen.gahetna.nl/naa/thumb/1280x1280/22f7b4a2-b1d2-9ebe-511a-fd03c45f9243.jpg; http://beeldbank.amsterdam.nl/afbeelding/010003032266; https://archief.amsterdam/inventarissen/inventaris/5225.nl.html#A35110000001; http://beeldbank.amsterdam.nl/afbeelding/B00000026729

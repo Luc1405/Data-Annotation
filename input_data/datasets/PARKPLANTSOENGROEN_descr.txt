@@ -1,0 +1,6 @@
+121 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 121 unique values : 101; 8; 30; 41; 11; 92; 120; 100; 79; 122
+Stadsdeel : [english] : character : 9 unique values : Amstelveen; Nieuw-West; Noord; Zuid; Zuidoost; Centrum; West; Diemen; Oost
+Naam : [english] : character : 93 unique values : Diermerpark; W.H. Vliegenbos; Rembrandtplein; De Oeverlanden; Sarphatipark; Museumplein; Flevopark; Geuzenbos; Gijsbrecht van Aemstelpark; `t Kleine Loopveld
+Stadspark : [english] : character : 2 unique values : J; N
+Oppervlakte_m2 : [english] : integer : 121 unique values : 108378; 7358; 39891; 231357; 13346; 17570; 11045; 270262; 40608; 5648

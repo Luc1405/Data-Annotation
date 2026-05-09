@@ -1,0 +1,18 @@
+3292 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 3292 unique values : 2081; 1623; 3027; 940; 2995; 2011; 1392; 1434; 2196; 1591
+CodeW : [english] : character : 302 unique values : 553WAZ; ZL1; ZL6; JAVA700; BOR79; LOK13; RS91; VH42; STDK137; L1
+Jaar : [english] : integer : 11 unique values : 2013; 2014; 2012; 2016; 2015; 2011; 2010; 2020; 2019; 2018
+Lopend_gemiddelde : [english] : double : 389 unique values : 15.2; 19.8; 16; 12.9; 44.2; 18.2; 58.1; 54.5; 23.1; 35.3
+Vierweekse_1 : [english] : double : 201 unique values : 28.9; 31.1; 32.6; 20.2; 41.5; 24; 18.2; 49; 23.5; 38.3
+Vierweekse_2 : [english] : double : 212 unique values : 23; 30.3; 20.7; 35.9; 32.8; 44; 36.5; 48.2; 47.3; 30.6
+Vierweekse_3 : [english] : double : 254 unique values : 12.6; 24.5; 44.9; 26.3; 28.6; 21.1; 41.5; 17.4; 24.9; 38.4
+Vierweekse_4 : [english] : double : 267 unique values : 26.2; 27; 36.8; 29.5; 15.4; 20; 45.9; 25.5; 15.1; 43.1
+Vierweekse_5 : [english] : double : 201 unique values : 23.7; 13.4; 46.7; 52.3; 17.6; 16.3; 21.3; 25.4; 15.4; 50.1
+Vierweekse_6 : [english] : double : 193 unique values : 39.7; 20.6; 6.5; 28; 23.4; 36.5; 25.8; 9.3; 20.7; 30.8
+Vierweekse_7 : [english] : double : 186 unique values : 8; 28.5; 30.3; 16.4; 11.9; 17.4; 20.5; 26.5; 12.2; 10.6
+Vierweekse_8 : [english] : double : 197 unique values : 24.2; 20.6; 29.4; 27; 34.4; 38.3; 25.6; 13.9; 23.3; 26.1
+Vierweekse_9 : [english] : double : 178 unique values : 44.1; 22.3; 27.3; 32.9; 20.3; 12.7; 23.5; 40.1; 22.7; 17.3
+Vierweekse_10 : [english] : double : 180 unique values : 17.7; 36.8; 27.2; 28.9; 16.3; 22.9; 29.7; 30.3; 31.6; 23.2
+Vierweekse_11 : [english] : double : 185 unique values : 22.2; 26.2; 23.7; 19.5; 20.9; 46.4; 42.4; 18.2; 48.4; 37.3
+Vierweekse_12 : [english] : double : 165 unique values : 39.3; 28; 26.1; 33.4; 32.3; 27.4; 45.7; 29.3; 29.5; 35
+Vierweekse_13 : [english] : double : 169 unique values : 25.5; 31.2; 35.3; 27.3; 29.2; 38.8; 33.3; 31.7; 25.3; 23.4

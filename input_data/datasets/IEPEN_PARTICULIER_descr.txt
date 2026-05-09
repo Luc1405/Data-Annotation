@@ -1,0 +1,7 @@
+1462 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 1462 unique values : 28198; 28100; 27706; 28060; 28061; 28301; 27775; 28272; 27194; 27561
+Soort : [english] : character : 27 unique values : ULGEXONI; WW; ULMMIN; WN; ULGSERPE; ULCSARNI; ULHOLL; Ulmus minor; Ulmus x hollandica; ULCWREDE
+Plantjaar : [english] : integer : 23 unique values : 2000; 1880; 1875; 2003; 1950; 2006; 1930; 1970; 1965; 2010
+Stamdiameter : [english] : character : 6 unique values : > 100 cm; Onbekend; 30 - 50 cm; 0 - 20 cm; 50 - 100 cm; 20 - 30 cm
+Hoogte : [english] : character : 7 unique values : 9-12 m; 18-24 m; 12-15 m; ; 15-18 m; 6-9 m; 0-6 m
+Beplantingssituatie : [english] : character : 3 unique values : Heesters; Gras; 

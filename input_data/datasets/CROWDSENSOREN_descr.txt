@@ -1,0 +1,8 @@
+96 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 96 unique values : 104; 102; 90; 74; 2; 96; 26; 75; 19; 99
+Objectnummer : [english] : character : 76 unique values : CMSA-GAABM-04; CMSA-GAVM-03-1; CMSA-MT Waterfront Camera; CMSA-GAVM-03-2; GAWW-10; CMSA-GAVM-05-1; GAWW-06; CMSA-GAVM-01-1; CMSA-GVCV-07-PontsteigerN; CMSA-GAABM-05
+Soort : [english] : character : 4 unique values : Telcamera; 3D sensor; Corona CMSA; WiFi sensor
+Voeding : [english] : character : 2 unique values : Vaste spanning; Eigen voeding via lichtnet
+Rotatie : [english] : integer : 21 unique values : 225; 50; 150; 175; 340; 110; 160; 20; 60; 185
+Actief : [english] : character : 2 unique values : Ja; Nee
+Privacyverklaring : [english] : character : 4 unique values : https://www.amsterdam.nl/privacy/specifieke/privacyverklaring-parkeren-verkeer-bouw/cmsa-corona-privacy/; https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-e/crowdmanagement/; ; https://www.amsterdam.nl/privacy/specifieke/privacyverklaring-parkeren-verkeer-bouw/crowdmanagement/

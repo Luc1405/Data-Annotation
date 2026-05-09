@@ -1,0 +1,6 @@
+241 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 241 unique values : 101; 114; 95; 44; 46; 236; 17; 198; 66; 221
+Modaliteit : [english] : character : 2 unique values : Tram; Metro
+Lijn : [english] : character : 70 unique values : 50 | 51; 2 | 11 | 12 | 13 | 17; 5 | 51; 51 | 53 | 54; 4 | 14 | 24 | 52; 5 | 50 | 51 | 52; 1; 5 | 13 | 17 | 19; 1 | 17; 4 | 14
+Lijn_select : [english] : character : 71 unique values : 05|50|51|52; 03|05|12; 02|50; 02|11|12; 04|14; 04|14|24|52; 13|17; 01|03; 01|04|07|19; 04|50|51
+RADIUS : [english] : integer : 2 unique values : 5; 3

@@ -1,0 +1,3 @@
+11 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 11 unique values : 5; 9; 11; 6; 7; 10; 2; 1; 3; 8
+Categorie : [english] : character : 3 unique values : A; C; B

@@ -1,0 +1,19 @@
+45 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 45 unique values : 24; 65; 23; 66; 9; 21; 19; 44; 33; 11
+Locatie : [english] : character : 40 unique values : Ganzenhoef; De Foodhallen; Lindengracht; Spui; Pure Markt Frankendael; Nieuwezijds Voorburgwal; Noordermarkt; Bos en Lommerplein; Haarlemmerplein; Mercatormarkt
+Artikelen : [english] : character : 6 unique values : Bloemen en planten; Kunst / Antiek en curiosa; Algemene waren; Boerenmarkt / Bioversmarkt; Postzegels en munten; Boeken
+SELECTIE : [english] : character : 6 unique values : KUNSTANTIEK; POSTZEGELS; ALGEMEEN; BOERENMARKT; BLOEMEN; BOEKEN
+FILTER_DAG : [english] : character : 14 unique values : Vr; Wo|Vr|Za|; Wo|Za; Zo; Ma|Do|Vr; Ma|Di|Wo|Do|Vr|Za; Di; Ma|Di|Wo|Do|Vr|Za|; Ma|Di|Wo|Do|Vr|Za|Zo; Wo
+Maandag : [english] : character : 10 unique values : ; 10.00-17.00 uur ; 09.00-17.30 uur; 09.00-13.00 uur; 11:00-20:00; 12.00-18.00 uur; 09.00-18.00 uur; 09.00-17.00 uur; 9.00-18.00 uur; 11.00-17.00 uur
+Dinsdag : [english] : character : 8 unique values : 10.00-17.00 uur; 9.00-17.00 uur; ; 09.00-18.00 uur; 09.00-17.30 uur; 9.00-18.00 uur; 09.00-17.00 uur; 11:00-20:00
+Woensdag : [english] : character : 12 unique values : 09.00-16.00 uur; 12.00-17.00 uur; 9.00-18.00 uur; 09.00-17.30 uur; 9.00-17.00 uur; 10.00-17.00 uur; 11:00-20:00; 09.00-18.00 uur; 9.00-16.30 uur; 10-17 uur
+Donderdag : [english] : character : 8 unique values : 11:00-21:00; 09.00-18.00 uur; ; 09.00-17.30 uur; 9.00-18.00 uur; 10.00-17.00 uur; 9.00-17.00 uur; 09.00-17.00 uur
+Vrijdag : [english] : character : 10 unique values : 10.00-17.00 uur; 10.00-18.00 uur; 9.00-16.30 uur; ; 09.00-17.30 uur; 9.00-18.00 uur; 11:00-21:00; 09.00-18.00 uur; 9.00-17.00 uur; 09.00-17.00 uur
+Zaterdag : [english] : character : 14 unique values : 10:00-17:00 (zie website voor data); 11.00-17.30 uur; 10.00-17.00 uur; 09.00-17.00 uur; 09:00 - 16:00 uur; 11:00-21:00; 09:00-16:30 uur (maandelijks); 9.00-18.00 uur; 9.00-16.30 uur; 9.00-17.00 uur
+Zondag : [english] : character : 11 unique values : 09:00-16:30 uur (maandelijks); 11:00-18:00 (laatste zondag vd maand, niet nov, jan, feb); mei-november 09.00-17.00 ; 11:00-18:00 uur (2e zondag vd maand, niet in nov jan feb mrt); 11:00-20:00; 11:00-18:00 (zie website voor data); 10.30-18.00 uur; ; 12:00-18:00 (eerste zondag vd maand); 10:00-16:00 (laatste zondag in apr, t/m sep)
+Dagen : [english] : character : 15 unique values : Ma - Di - Wo - Do - Vr - Za; Di - Wo - Do - Vr - Za; Za; Vr; Di - Do - Ma - Vr - Wo - Za; Zo; Di; Za - Zo; Di - Do - Ma - Vr - Wo - Za - Zo; Di - Do - Vr - Wo - Za
+Gemeente : [english] : character : 2 unique values : Nee; Ja
+Foto : [english] : character : 20 unique values : markt_plein_40-45_04_mrt_2004.jpg; ten_katemarkt_3_apr_2003.jpg; fruitstala.cuypmarktmaart2007.jpg; 2. Amstelveld Edwin van Eis 2013.jpg; boerenmarkt_haarlemmerplein_004_19mei2010-2a.jpg; boerenmarkt mosveld.jpg; Noordermarkt web Edwin van Eis.jpg; 12. Van Eesterenlaan Biomarkt Edwin van Eis 2007.jpg; ; spui-kunstmarktt-02_9nov2012_e_v_eis.jpg
+Website : [english] : character : 13 unique values : https://nl-nl.facebook.com/foodhallen; http://www.sundaymarket.nl/; www.zuidermrkt.nl; www.ijhallen.nl; www.albertcuypmarkt.nl; www.albertcuypmarkt.nl/; www.reuringmarkt.nl; ; http://debrugkrant.nl/agenda/trek-je-klep-open-de-kofferbakmarkt-van-blijburg-2012-04-29/; http://www.deboekenmarktophetspui.nl/
+Meer_informatie : [english] : character : 3 unique values : ; Joris Ivensplein; www.dappermarkt.nl
+Plattegrond : [english] : character : 3 unique values : Plattegrond_Van_der_Pekstraat.pdf; ; Plattegrond Buikslotermeerplein.pdf

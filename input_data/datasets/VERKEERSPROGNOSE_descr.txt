@@ -1,0 +1,25 @@
+17737 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 17737 unique values : 14853; 6203; 15077; 13544; 11776; 2416; 14148; 11486; 1244; 6687
+LABEL : [english] : character : 4435 unique values : Link 195841; Link 253960; Link 209774; Link 210784; Link 202669; Link 24220; Link 205967; Link 207990; Link 210509; Link 203465
+linknr : [english] : integer : 4435 unique values : 30543; 36256; 218817; 216964; 214680; 122993; 31590; 218907; 196420; 36141
+modeljaar : [english] : integer : 4 unique values : 2025; 2020; 2030; 2040
+name : [english] : character : 624 unique values : Gustav Mahlerlaan; Baden Powellweg; 0025 BRUG; Ferdinand Bolstraat; Rooseveltlaan; Stenendokweg; SPAARNDAMMERTUNNEL; Hoogoorddreef; Adelaarsweg; Foeliestraat
+etmaal : [english] : integer : 8917 unique values : 19811; 36269; 6186; 8851; 1942; 15526; 2181; 8417; 324; 10924
+daglv : [english] : integer : 1634 unique values : 1919; 281; 30; 7; 1411; 1241; 1297; 2112; 793; 300
+avondlv : [english] : integer : 1167 unique values : 1548; 310; 795; 420; 364; 97; 1041; 620; 414; 383
+nachtlv : [english] : integer : 591 unique values : 137; 306; 139; 348; 232; 301; 176; 676; 70; 178
+dagmv : [english] : integer : 107 unique values : 66; 43; 73; 70; 36; 48; 51; 10; 29; 8
+avondmv : [english] : integer : 36 unique values : 19; 27; 14; 20; 18; 10; 23; 7; 9; 31
+nachtmv : [english] : integer : 24 unique values : 1; 10; 4; 20; 6; 5; 3; 11; 9; 14
+dagzv : [english] : integer : 78 unique values : 54; 39; 52; 45; 65; 85; 3; 41; 34; 4
+avondzv : [english] : integer : 30 unique values : 25; 26; 17; 15; 21; 28; 8; 27; 13; 16
+nachtzv : [english] : integer : 17 unique values : 14; 1; 15; 5; 4; 7; 10; 16; 6; 2
+dagbus : [english] : integer : 59 unique values : 51; 49; 18; 53; 47; 76; 27; 4; 7; 54
+avondbus : [english] : integer : 45 unique values : 11; 19; 33; 10; 14; 39; 1; 20; 42; 16
+nachtbus : [english] : integer : 19 unique values : 13; 11; 9; 4; 6; 0; 5; 17; 7; 15
+dagtram : [english] : integer : 35 unique values : 14; 24; 35; 15; 88; 43; 28; 34; 67; 32
+avondtram : [english] : integer : 28 unique values : 19; 7; 32; 8; 31; 27; 61; 11; 26; 22
+nachttram : [english] : integer : 12 unique values : 0; 1; 7; 15; 12; 9; 3; 2; 8; 6
+dagmr : [english] : integer : 23 unique values : 9; 2; 20; 0; 6; 11; 8; 5; 16; 13
+avondmr : [english] : integer : 14 unique values : 8; 10; 11; 1; 7; 4; 12; 0; 9; 5
+nachtmr : [english] : integer : 6 unique values : 1; 0; 5; 3; 2; 4

@@ -1,0 +1,4 @@
+18280 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 18280 unique values : 17408; 4360; 17998; 8652; 8644; 8871; 16188; 7721; 12173; 2980
+Postcode6 : [english] : character : 18280 unique values : 1107WZ; 1053LE; 1022CB; 1012SX; 1066XZ; 1063ZJ; 1064PX; 1031VP; 1061AD; 1087MC
+Buurtcode : [english] : character : 471 unique values : A09e; N64b; A05c; K47a; T93e; T92e; M55e; K26a; M28d; T93f

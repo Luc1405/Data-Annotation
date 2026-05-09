@@ -1,0 +1,5 @@
+8633 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 8633 unique values : 15971; 13009; 13396; 13637; 11617; 14048; 9768; 8837; 10687; 13715
+SELECTIE : [english] : integer : 5 unique values : 55; 70; 60; 65; 50
+KLASSE : [english] : character : 5 unique values : 60-65 dB; >70 dB; 50-55 dB; 55-60 dB; 65-70 dB
+SOORT : [english] : character : 3 unique values : TREINMETRO_NIGHT; WEGTRAM_NIGHT; TREINMETRO_LDEN

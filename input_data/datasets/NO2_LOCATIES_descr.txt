@@ -1,0 +1,9 @@
+302 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 302 unique values : 74; 92; 4; 245; 14; 71; 175; 133; 286; 266
+Code : [english] : character : 302 unique values : RIJN31; BRAN4; TPBV; Z14; LEP4; TOR68; CCL137; ZMP5; NGS97; BL4
+Locatie : [english] : character : 300 unique values : Plataanlaan; Zwanebloemkade; Holendrechterweg; Amstelveenseweg 211; Havenstraat 6; GGD meetstation Stadhouderskade; Pieter Vlamingstraat 143; Admiraliteitsstraat 58; 2e Hugo de Grootstraat 7; Tempeliersstraat 57
+Type_meetpunt : [english] : character : 6 unique values : Industrie; Snelweg; Straat; Waterweg; Achtergrond; Luchtvaart
+Afstand_tot_gevel_m : [english] : double : 30 unique values : 4.1; 6; 4.9; 0.1; 31.3; 14; 17.4; 13; 3; 6.9
+Meting_op_wettelijke_toetsafstand : [english] : character : 5 unique values : nee; Nee; Ja; ja; 
+Type_meting : [english] : character : 2 unique values : Palmes; Automatisch meetnet
+Opmerkingen : [english] : character : 13 unique values : ; NDD/OM; HLW/OM; STDK/OM; KANT; OVT/OM/E1; 701ZAA; OS; ESW; VDS

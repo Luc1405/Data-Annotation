@@ -1,0 +1,6 @@
+99 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 99 unique values : 52; 94; 81; 55; 92; 41; 28; 71; 12; 60
+Buurtcombinatie_code : [english] : character : 99 unique values : F80; N69; M35; E42; K45; K24; M32; T98; F86; M34
+Buurtcombinatie : [english] : character : 99 unique values : Nieuwe Pijp; Nieuwmarkt/Lastage; Burgwallen-Oude Zijde; Houthavens; Burgwallen-Nieuwe Zijde; Rijnbuurt; Centrale Markt; Weesperbuurt/Plantage; Noordelijke IJ-oevers West; Kinkerbuurt
+Stadsdeel_code : [english] : character : 8 unique values : M; A; E; K; N; B; T; F
+Opp_m2 : [english] : integer : 99 unique values : 1553720; 1108580; 1066820; 2948670; 446704; 1921430; 2421420; 1294580; 3552380; 291715

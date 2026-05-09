@@ -1,0 +1,5 @@
+5 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 5 unique values : 8; 10; 12; 9; 11
+Soort : [english] : character : 4 unique values : Risicoanalyse pilot zelfrijdend vervoer; Touringcaronderzoek; Onderzoek recreatiedrukte; Risicoanalyse pilot zelfrijdend vervoer 
+Omschrijving : [english] : character : 2 unique values : Verkeersonderzoek ; 
+Privacyverklaring : [english] : character : 3 unique values : www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/artikel-3/ ; www.amsterdam.nl/privacy/specifieke/privacyverklaringen-9/privacy-reactiedrukte-marineterrein/; www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/pilot-zelfrijdend-vervoer-privacy/

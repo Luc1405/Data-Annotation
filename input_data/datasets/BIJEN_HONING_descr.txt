@@ -1,0 +1,4 @@
+111 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 111 unique values : 32; 19; 90; 41; 112; 23; 58; 61; 74; 98
+Aantal_kasten : [english] : character : 20 unique values : 30 kasten/volken; 21 kasten/volken; 6 + 2 kleintjes kasten/volken; 60 kasten/volken; 1 kast/volk; 3 kasten/volken; 12 kasten/volken; 10 kasten/volken; 4 kasten/volken; 6 kasten/volken
+Aantal_volken : [english] : integer : 19 unique values : 1; 10; 14; 9; 12; 3; 21; 8; 2; 120

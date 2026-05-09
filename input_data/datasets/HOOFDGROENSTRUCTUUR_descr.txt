@@ -1,0 +1,9 @@
+364 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 364 unique values : 146; 314; 177; 343; 304; 330; 211; 273; 288; 71
+Naam : [english] : character : 173 unique values : Rust en Vreugd; Tuinwijck (Liergouw); Zeeburgereiland; Sarphatipark; De Schinkel; Spaarndammerplantsoen; Diemerzeedijk; IJssloot; Holysloot; Zorgvlied
+Nummer : [english] : integer : 212 unique values : 207; 181; 39; 160; 14; 80; 209; 112; 105; 94
+Groentype : [english] : character : 8 unique values : Ruigtegebied/struinnatuur; Curiosa; Volkstuinpark/schoolwerktuin; Sportpark; Begraafplaats; Stadspark; Stadsrandpolder; Corridor
+Oppervlakte_m2 : [english] : integer : 354 unique values : 11477; 4238; 9124; 755; 131342; 40021; 5513; 879054; 9230; 266012
+Oppervlakte_ha : [english] : double : 147 unique values : 3.6; 15.5; 149.6; 13.1; 78.1; 1.8; 3.7; 0.1; 3; 23.3
+SELECTIE : [english] : character : 8 unique values : CORRIDOR; VOLKSCHOOL; BEGRAAFPLAATS; STADSPARK; SPORTPARK; CURIOSA; RUIGSTRUIN; STADSRANDPOLDER
+PDF : [english] : character : 8 unique values : groentype_curiosa.pdf; groentype_begraafplaats.pdf; groentype_corridor.pdf; groentype_sportpark.pdf; groentype_stadspark.pdf; groentype_stadsrandpolder.pdf; groentype_volksschooltuin.pdf; groentype_ruigtestruin.pdf

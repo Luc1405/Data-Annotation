@@ -1,0 +1,3 @@
+10 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 10 unique values : 2; 5; 3; 8; 9; 10; 7; 6; 1; 4
+Categorie : [english] : integer : 2 unique values : 2; 1

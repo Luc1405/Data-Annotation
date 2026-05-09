@@ -1,0 +1,15 @@
+9230 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 9230 unique values : 6163; 2220; 6973; 3641; 1263; 1373; 7179; 7151; 6475; 4465
+STT_NAAM : [english] : character : 1465 unique values : Dam; Nassauplein; Czaar Peterstraat; Laarderhoogtweg; Van Heenvlietlaan; Haarlemmerplein; Sara Burgerhartstraat; Zuiderakerweg; TWISKEBRUG; Empangeni
+WVK_ID : [english] : integer : 9170 unique values : 248371031; 242369026; 999000113; 241375016; 242382086; 250362085; 216373012; 252376019; 240374092; 241377046
+RIJRICHTINGEN : [english] : integer : 3 unique values : 1; 0; 2
+VOET : [english] : character : 4 unique values : PLUS; VEER; HOOFD; 
+FIETS : [english] : character : 5 unique values : PLUS_BGG; PLUS; ; HOOFD; VEER
+TRAM : [english] : character : 5 unique values : PLUS; ; BASIS; HOOFD; PLUS_BGG
+BUS : [english] : character : 5 unique values : ; PLUS; HOOFD_BGG; PLUS_BGG; HOOFD
+AUTO : [english] : character : 6 unique values : HOOFD; ; CORRIDOR; PLUS; CORRIDOR_B; PLUS_BGG
+BREED_VERVOER : [english] : character : 3 unique values : ; Gewenst; Gewenst maar niet mogeli
+MAX_SNELHEID : [english] : integer : 8 unique values : 0; 70; 50; 80; 12; 30; 60; 100
+LINKNR : [english] : integer : 9015 unique values : 55969; 54489; 58428; 54850; 58928; 55551; 54159; 58782; 56639; 57112
+WPSNAAMNEN : [english] : character : 33 unique values : HALFWEG; ZWANENBURG; WATERGANG; MONNICKENDAM; VIJFHUIZEN; OUDERKERK AAN DE AMSTEL; MARKEN; UITDAM; amsterdam; Amstelveen
+GME_NAAM : [english] : character : 12 unique values : Ouder-Amstel; Muiden; Amstelveen; Waterland; Diemen; Haarlemmermeer; Amsterdam; Oostzaan; Haarlemmerliede ca; Landsmeer

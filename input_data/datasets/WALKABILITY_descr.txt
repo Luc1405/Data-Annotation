@@ -1,0 +1,12 @@
+9617 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 9617 unique values : 8443; 6704; 1193; 3340; 4258; 8934; 13; 7846; 3694; 1438
+Straatvaknummer : [english] : integer : 9617 unique values : 1620; 6188; 8099; 6645; 3148; 8981; 9523; 1823; 6602; 6428
+Loopruimte : [english] : character : 4 unique values : zeer krap; zeer ruim; krap; ruim
+Walkability_algemeen : [english] : character : 4 unique values : uitstekend; slecht; goed; matig
+Drukte_algemeen : [english] : character : 4 unique values : zeer druk; druk; rustig; zeer rustig
+Walkability_recreatief : [english] : character : 4 unique values : matig; slecht; uitstekend; goed
+Drukte_recreatief : [english] : character : 4 unique values : druk; zeer rustig; zeer druk; rustig
+Walkability_toeristisch : [english] : character : 4 unique values : slecht; goed; matig; uitstekend
+Drukte_toeristisch : [english] : character : 4 unique values : zeer rustig; rustig; druk; zeer druk
+Walkability_werkgerelateerd : [english] : character : 4 unique values : slecht; goed; matig; uitstekend
+Drukte_werkgerelateerd : [english] : character : 4 unique values : zeer druk; rustig; zeer rustig; druk

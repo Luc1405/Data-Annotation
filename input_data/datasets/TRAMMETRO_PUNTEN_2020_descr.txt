@@ -1,0 +1,8 @@
+224 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 224 unique values : 69; 63; 174; 168; 112; 79; 187; 52; 107; 64
+Naam : [english] : character : 199 unique values : Overamstel; Dintelstraat; Scheldestraat; Flevopark; Artis; Bloemgracht; VUmc; Burg.Eliasstraat; Amstelstation; Rijksmuseum
+Modaliteit : [english] : character : 2 unique values : Metro; Tram
+Lijn : [english] : character : 70 unique values : 52; 2 | 5 | 12; 1 | 7 | 19; 14 | 51 | 53 | 54; 14; 26; 7 | 14 | 19; 24; 19 | 50 | 51; 7 | 26
+Lijn_select : [english] : character : 70 unique values : 14; 03|13|19; 04|50|51; 17; 05|13|17|19; 01|17|50|51; 11; 50|53|54; 04; 07|14
+RADIUS : [english] : integer : 2 unique values : 7; 5
+Label : [english] : character : 210 unique values : 14 - Pontanusstraat; 19 - Wiltzanghlaan; 4 - Dintelstraat; 2 | 3 | 5 | 12 - Van Baerlestraat; 17 - Baden Powellweg; 5 | 6 - Oranjebaan; 26 - Muziekgebouw Bimhuis; 1 | 3 - Muiderpoortstation; 3 | 14 - Flevopark; 1 - Louis Davidsstraat

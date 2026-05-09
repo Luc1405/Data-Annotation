@@ -1,0 +1,4 @@
+8 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 8 unique values : 3; 8; 7; 2; 1; 4; 10; 5
+Regel : [english] : character : 3 unique values : Standplaats fietstaxiâ€™s (max. 2); Standplaats fietstaxi; Standplaats koets
+SELECTIE : [english] : character : 2 unique values : STAND_FIETSTAXI; STAND_KOETS

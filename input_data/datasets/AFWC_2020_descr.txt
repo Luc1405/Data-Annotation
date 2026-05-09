@@ -1,0 +1,13 @@
+37014 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 37014 unique values : 14994; 1737; 24357; 6778; 12322; 35184; 26634; 27526; 26387; 913
+Corporatie : [english] : character : 30 unique values : Rochdale; de Key; Elan Wonen; Dudok Wonen; Parteon; Ymere; Woonopmaat; Brederode Wonen; Intermaris; De Vooruitgang
+Corporatie_woningen : [english] : integer : 260 unique values : 50; 27; 58; 212; 20; 152; 33; 250; 19; 85
+Zelfstandig : [english] : integer : 237 unique values : 162; 325; 20; 410; 193; 92; 195; 204; 10; 24
+Onzelfstandig : [english] : integer : 102 unique values : 460; 95; 27; 356; 80; 318; 94; 33; 70; 84
+Woningen_in_blok : [english] : integer : 277 unique values : 204; 69; 308; 248; 325; 162; 13; 260; 127; 84
+Percentage_zelfstandig : [english] : integer : 145 unique values : 43; 83; 105; 70; 57; 62; 137; 37; 700; 1
+Gemeente : [english] : character : 32 unique values : Amsterdam; Uitgeest; Purmerend; Beemster; Zaanstad; Amstelveen; Haarlem; Diemen; Landsmeer; Ouder-Amstel
+Bouwjaar_rond : [english] : integer : 205 unique values : 1968; 1883; 2006; 1721; 1992; 1869; 1932; 1796; 1889; 1860
+PERC : [english] : integer : 6 unique values : 50; 1; 25; 999; 75; 100
+CORP : [english] : character : 30 unique values : CD; RC; WN; SW; IM; EH; VS; DR; ZV; VU
+BOUW : [english] : integer : 9 unique values : 1946; 1006; 1005; 1976; 1909; 1919; 1990; 1967; 2008

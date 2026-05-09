@@ -1,0 +1,4 @@
+45 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 45 unique values : 144; 63; 61; 52; 137; 148; 111; 139; 158; 67
+Naam_locatie : [english] : character : 41 unique values : De Mirandabad; Zandstrand, Ouderkerkerplas; Marnixbad; Gaasperplas; Jeugdland; Westerpark; Adelaarsweg; Het Twiske, Vennegatstrand; Oosterpark; Sportplaza Mercator
+Categorie : [english] : character : 5 unique values : Binnenzwembad; Zwemplek; Buitenzwembad; Pierenbadje; Waterspeeltuin

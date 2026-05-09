@@ -1,0 +1,11 @@
+457 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 457 unique values : 48; 245; 354; 371; 386; 276; 298; 336; 194; 441
+Volgnummer : [english] : integer : 450 unique values : 879; 252; 148; 286; 424; 11; 271; 822; 251; 29
+Adres : [english] : character : 375 unique values : Panamakade; John Coltranestraat; Bennebroekstraat; Fahrenheitsraat; Stadionweg ; Ben Websterstraat; De Cuserstraat 3  ; ABN-AMRO; Rutherfordstraat ; Bilderdijkstraat
+Soort_tuin : [english] : character : 6 unique values : Grasdak; Sedumdak; Solar-sedumdak; Daktuin; Kruidendak; Muur
+Sinds : [english] : character : 41 unique values : 2016; 40; 2002; 2015; 1987; Oost; 2012; 2014; 2010; 1994
+Oppervlakte_m2 : [english] : character : 188 unique values : 230; 340; 240; West; 92; 60; 30; 97; 750; 238
+Stadsdeel : [english] : character : 52 unique values : POINT(4.806165,52.3438918); Nieuw-West; POINT(4.8652651,52.3873946); retiefstraat.jpg; POINT(4.829335,52.3501937); POINT(4.8811052,52.3781935); POINT(4.9066651,52.3697936); da_costakade.jpg; POINT(4.864495,52.3511931); Zuidoost
+Foto : [english] : character : 316 unique values : POINT(4.882045,52.3671919); uilenburgerstraat.jpg; marnix.jpg; roerstraat21.jpg; POINT(4.886245,52.3808943); kalfjeslaan.jpg; bickersgracht.jpg; bloemgr1.jpg; Kidz en friends.jpg; jacob_O.jpg
+Weblink : [english] : character : 106 unique values : POINT(4.8858249,52.3729941); POINT(4.8782952,52.3903929); POINT(52.3572928,4.7642252); POINT(52.3703925,4.9077752); 4.806165; 4.9152648; 4.8745148; http://amsterdam.nl/zuidas/nieuws/2013/10oktober/polderdak-old-school/; POINT(52.3632933,4.869735); POINT(52.3804938,4.889025)
+SELECTIE : [english] : character : 155 unique values : POINT(4.8857748,52.355992); 52.4044921; POINT(52.3716933,4.9031951); POINT(4.8895552,52.3689925); 4.8837349; KRUIDENDAK; MUUR; POINT(4.994395,52.3521926); POINT(4.9556949,52.3206946); POINT(52.3327948,4.8780849)

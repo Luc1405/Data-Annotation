@@ -1,0 +1,3 @@
+19 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 19 unique values : 8; 11; 1; 14; 2; 5; 4; 9; 10; 19
+Locatie : [english] : character : 18 unique values : Q - linnaeuspark; R - Zeeburgerdijk; F - Kattenlaan; H - Rustenburgerstraat; F - Vossiusstraat; N - Oetewalerpad; K - Schollenbrugstraat; P - James Wattstraat; M - Linnaeusstraat; O - Paardekraalstraat

@@ -1,0 +1,7 @@
+19 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 19 unique values : 17; 15; 5; 14; 9; 8; 19; 11; 6; 13
+Ontwikkelbuurtcode : [english] : character : 19 unique values : N5; NW19; ZO1; ZO3; N4; NW18; N7; ZO4; N3; NW17
+Ontwikkelbuurtnaam : [english] : character : 19 unique values : Banne Zuid; Wildeman- en Blomwijckerbuurt; Reimerswaalbuurt; De Punt; Reigersbos; Jacob Geelbuurt; Molenwijk; Banne Noord; Oud Noord Volewijck; De Kleine Wereld
+Stadsdeel : [english] : character : 3 unique values : Zuidoost; Noord; Nieuw-West
+Webpagina : [english] : character : 17 unique values : https://www.amsterdam.nl/projecten/molenwijk/; https://www.amsterdam.nl/buikslotermeer/; https://www.amsterdam.nl/projecten/banne-noord/; https://www.amsterdam.nl/projecten/jacob-geelbuurt/; https://www.amsterdam.nl/h-buurt; https://www.amsterdam.nl/projecten/geuzenveld; https://www.amsterdam.nl/ijplein-vogelbuurt/; https://www.amsterdam.nl/projecten/wildeman-blomwijck/; https://www.amsterdam.nl/projecten/punt-noord/; https://www.amsterdam.nl/projecten/bannezuid/
+Informatie_pdf : [english] : logical : 1 unique values : NA

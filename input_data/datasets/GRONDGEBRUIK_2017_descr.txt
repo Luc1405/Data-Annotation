@@ -1,0 +1,12 @@
+8764 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 8764 unique values : 413; 5167; 4184; 4908; 4214; 7487; 2566; 8594; 8055; 8367
+AMScode : [english] : integer : 44 unique values : 781; 242; 210; 120; 420; 752; 622; 780; 111; 500
+AMScode_Oms : [english] : character : 44 unique values : Open droog-natuurlijk terrein; Vliegveld (NIET het gras!!); Bedrijventerrein (overwegend kantoren/kantoorachtig); Wegverkeersterrein; Park en plantsoen; Bedrijventerrein (industrie, tentoonstellingsterrein, garagebedrijven); Overig agrarisch terrein; Artis; Open nat-natuurlijk terrein; Bouwterrein niet-woon bestemming
+AMScode_OmsEng : [english] : character : 44 unique values : Train-railway area; Cattle breeding, agricultural land; Automobile wreck dump areas and demontation; Temporary storage of ground; Metro-, free tramrail; Cultural, social, medical, educational; Busines- trade-areas; Mainroad system, paved roads; Development site residential area; Water with recreative mainfunction (lake)
+CBScode2 : [english] : integer : 26 unique values : 42; 51; 70; 23; 24; 50; 21; 35; 31; 43
+CBScode2_Oms : [english] : character : 26 unique values : Dagrecreatief terrein; Wrakkenopslagplaats; Woonterrein; IJsselmeer/Markermeer; Vliegveld; Bos; Terrein voor detailhandel, winkelcentra en horeca; Terrein voor openbare voorzieningen; Begraafplaats; Volkstuin
+CBScode2_OmsEng : [english] : character : 26 unique values : Busines- industrial- trade-areas; Shops, malls and hotels-restaurants-pubs; Glasshouses; Other water wider than 6 meter; Sporting areas and sportbuildings; Allotments, schoolallotments, childrenfarms; Other (not mentioned before); Parks and public gardens; Wood; IJselmeer (lakes very near to Amsterdam)
+CBScode1 : [english] : integer : 7 unique values : 3; 2; 7; 5; 6; 1; 4
+CBScode1_Oms : [english] : character : 7 unique values : Recreatieterrein; Agrarisch terrein; Binnenwater; Verkeersterrein; Bebouwd terrein; Semi-bebouwd terrein; Bos en natuurlijk terrein
+CBScode1_OmsEng : [english] : character : 7 unique values : Rural area; Wood and nature; Recreational area; Water; City area; Other sites; Traffic area
+Oppervlakte_m2 : [english] : integer : 7687 unique values : 15952; 62186; 6280; 49371; 74819; 181633; 461845; 58115; 14119; 57030

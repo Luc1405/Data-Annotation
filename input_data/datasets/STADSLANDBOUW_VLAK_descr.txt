@@ -1,0 +1,6 @@
+56 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 56 unique values : 1230; 1289; 1237; 1254; 1255; 1265; 1280; 1239; 1246; 1266
+Soort : [english] : character : 4 unique values : Volkstuin verblijfsrecreatief; Nutstuin; Schoolwerktuin; Volkstuin dagrecreatief
+Naam : [english] : character : 56 unique values : Nieuwe Diep; Roos Schooltuin; Tuinpark Tuinwijck; Tuinpark De Groote Braak; Tuinpark Ons Lustoord; Tuinpark Dijkzicht; Aemstel Schooltuin; Tuinpark Nut en Genoegen; Tuinpark Nieuw Vredelust; Tuinpark Buitenzorg
+Adres : [english] : character : 54 unique values : Nico Broekhuysenweg; Liergouw 55; Nico Broekhuysenweg 4; Durgerdammerdijk 1; Provincialeweg 53; Baron Schimmelpenninck van der Oyeweg 10; Heggerankweg 87; t.h.v. Sloterweg 787; Wijkergouw 30; Beemsterstraat
+Website : [english] : character : 45 unique values : www.onslustoord.wixsite.com/2017; http://www.sloterdijkermeer.nl; https://www.amsterdam.nl/onderwijs-jeugd/basisonderwijs/natuur-milieu/toorop/; www.tuinparknieuwelevenskracht.nl; www.tuinparkkweeklust.nl; http://www.volkstuin-linnaeus.nl; http://www.degrootebraak.nl; https://www.amsterdam.nl/onderwijs-jeugd/basisonderwijs/natuur-milieu/osdorp/; http://www.bijenpark.nl/index.htm; http://www.vat-sloten.nl

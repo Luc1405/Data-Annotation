@@ -1,0 +1,12 @@
+170 entities in the dataset
+Ô..OBJECTNUMMER : [english] : integer : 170 unique values : 61; 105; 18; 67; 31; 57; 144; 101; 140; 7
+Zaaknaam : [english] : character : 148 unique values : Golden Temple KIT BV; Tuinderij de Knotwilg; Geitenboerderij Ridammerhoeve; De Proeftuin; Boerderij Achtervennen; De Prael; Noord-hollands Hof; De Oude Boerderij; Zuivelboerderij Buys; Bolhoed, De
+Adres : [english] : character : 166 unique values : Amstelveenseweg 154, 1075 XM Amsterdam; Buikslotermeerplein; Haarlemmerstraat 68, 1013 ET Amsterdam; Kemphaanpad 14 Almere; Korte Dwarsweg 8, Ouderkerk aan de Amstel; Jollemanhof 9, 1019 GW Amsterdam; Noorddammerweg 108 Amstelveen; Warmoesstraat 56, 1012 JG Amsterdam; Oude Spiegelstraat 6; Leeuwenlaan 36 `s-Graveland
+Producten : [english] : character : 70 unique values : Boerderij-ijs, boeren Goudse kaas, perensap, appelsap, vruchtensap, scharreleieren; groente en fruit; Biologisch rundvlees (limousin), lamsvlees, eieren, melk; Aardappelen, groente, fruit; melk; Rund- en varkensvlees; melktappunt in het weekend/ zuivel; melktappunt; Aardappelen, eieren, fruit, groenten, geitenvlees, zuivel, groente/fruitpakketten; biologische en lokale produkten
+Horeca_soort : [english] : character : 18 unique values : Proeflokaal; Restaurant/cateraar; Bierbrouwerij; beheerder N. v Dijk (06 - 25 09 11 86); Snackbar; Eetcaf√©; Lunchroom; restaurant; ; Kookstudio/cateraar
+Dagen : [english] : character : 7 unique values : Zaterdag ; Woensdag, wekelijks; open per 15 maart 2015; elke dag; Iedere laatste zondag van de maand; ; Zaterdag, wekelijks
+Tijden : [english] : character : 8 unique values : 9.30 tot 17.00 uur; 09:00 - 17:00; 12:00 - 19:00; 24/7; ; 10:00 - 17:00; 11.00 -18.00 uur; 09:00 - 16:00
+Website : [english] : character : 104 unique values : www.ilovesla.com; http://www.imkerij.nl; http://www.claramaria.nl; www.tuinderijdeknotwilg.nl; http://www.vers-uit-west.nl; http://www.badcuyp.nl; ; http://www.gustavino.nl; http://www.brouwerijhetij.nl; www.de-ooievaar.nl
+BOERENMARKT : [english] : integer : 3 unique values : NA; 1; 0
+NATUURWINKEL : [english] : integer : 3 unique values : NA; 0; 1
+HORECA : [english] : character : 4 unique values : h; 0; 1;

@@ -1,0 +1,8 @@
+67 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 67 unique values : 57; 22; 64; 35; 7; 44; 34; 51; 10; 62
+HYDRO_ID : [english] : integer : 67 unique values : 45; 16; 48; 2; 66; 42; 6; 20; 64; 37
+Afbeelding : [english] : logical : 1 unique values : NA
+Toelichting : [english] : character : 5 unique values : Oplossingenkaart:; De Bellamybuurt is een extreem urgent knelpunt waar met behulp van een Rainproof-oplossingenkaart gewerkt wordt aan het herinrichten van de openbare ruimte om schade en overlast bij een hoosbui te beperken.  Oplossingenkaart:; ; Oplossingenkaart nog niet beschikbaar.; Oplossingenkaarten:
+Link_URL : [english] : logical : 1 unique values : NA
+PDF : [english] : character : 9 unique values : IB20170091_40_Rivierenbuurt.pdf; IB20170095_18a_Bos en Lommer.pdf; IB20180002_41A_Kenniskwartier Zuidas.pdf; IB20170098_38_ Stadion- en Apollobuurt.pdf; IB20190061_62b_VanderPekbuurt.pdf; 20170828_22_Bellamybuurt.pdf; IB20180124_14A_Middelveldsche Akerpolder.pdf; ; IB20190079_58b_Waterlandpleinbuurt.pdf
+PDF2 : [english] : character : 3 unique values : ; IB20190062_62c_Bloemenbuurt.pdf; IB20180125_14B_Middelveldsche Akerpolder.pdf

@@ -1,0 +1,12 @@
+17963 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 17963 unique values : 17093; 719; 11266; 10873; 15301; 1394; 8527; 17573; 4084; 3269
+LABEL : [english] : character : 1461 unique values : Wonen 90% - Voorzieningen 7% - Werken 2%; Wonen 54% - Voorzieningen 11% - Werken 36%; Wonen 83% - Voorzieningen 12% - Werken 5%; Wonen 15% - Voorzieningen 83% - Werken 2%; Wonen 0% - Voorzieningen 27% - Werken 73%; Wonen 52% - Voorzieningen 40% - Werken 9%; Wonen 55% - Voorzieningen 39% - Werken 5%; Wonen 83% - Voorzieningen 1% - Werken 16%; Wonen 85% - Voorzieningen 5% - Werken 10%; Wonen 13% - Voorzieningen 87% - Werken 0%
+BlokStraatCode : [english] : character : 17963 unique values : GL21_00003118; BA58_00003699; RJ29_11290897; UK34_00005608; LC10_00003864; AO27_00004098; FH17_00005224; MQ27_11942853; BE07_00004568; AB78_00000925
+WON : [english] : integer : 4235 unique values : 1312; 1322; 448; 1417; 3189; 1977; 3475; 4890; 57; 1743
+VZN : [english] : integer : 2323 unique values : 1260; 9466; 337; 281; 396; 1525; 528; 1442; 8136; 15057
+WRK : [english] : integer : 2086 unique values : 2376; 1396; 179; 881; 2062; 2363; 54; 1643; 1204; 195
+TOTAAL : [english] : integer : 5726 unique values : 11155; 2437; 3059; 121; 1436; 885; 1804; 1138; 4406; 3647
+WON_PERC : [english] : integer : 101 unique values : 29; 81; 60; 94; 0; 10; 78; 95; 45; 82
+VZN_PERC : [english] : integer : 101 unique values : 67; 88; 53; 5; 80; 29; 78; 25; 13; 70
+WRK_PERC : [english] : integer : 101 unique values : 82; 58; 47; 32; 21; 50; 89; 90; 73; 33
+CAT : [english] : character : 7 unique values : GEMENGD; WON_VZN; WRK; VZN; WON_WRK; VZN_WRK; WON

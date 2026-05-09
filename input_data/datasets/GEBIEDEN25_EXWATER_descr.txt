@@ -1,0 +1,5 @@
+26 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 26 unique values : 6; 18; 9; 3; 25; 20; 21; 10; 19; 11
+Gebied25_naam : [english] : character : 26 unique values : Westpoort; Westerpark; Sloterdijken; Amstel III; Bijlmer-Oost; Watergraafsmeer; De Pijp, Rivierenbuurt; Noord-Oost; Slotervaart; De Aker, Sloten, Nieuw-Sloten
+Stadsdeel_code : [english] : character : 8 unique values : T; K; M; E; F; N; A; B
+Opp_m2 : [english] : integer : 26 unique values : 1569600; 8701764; 7698720; 4076077; 3327071; 7370550; 5403399; 1463558; 3185348; 9068038

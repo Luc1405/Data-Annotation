@@ -1,0 +1,5 @@
+8 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 8 unique values : 1; 7; 5; 6; 8; 3; 2; 4
+Stadsdeel_code : [english] : character : 8 unique values : A; T; M; B; N; E; F; K
+Stadsdeel : [english] : character : 8 unique values : Zuidoost; Nieuw-West; Zuid; Centrum; Noord; Westpoort; West; Oost
+Opp_m2 : [english] : integer : 8 unique values : 30594900; 22113700; 63828800; 8043500; 38015500; 17274000; 28991600; 10629900

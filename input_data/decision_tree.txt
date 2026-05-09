@@ -1,0 +1,265 @@
+START
+
+Before choosing a label:
+- Do not classify only from geometry type.
+- First identify the main phenomenon represented by the layer.
+- Then classify Geometry and Entity using the rules below.
+
+
+==================================================
+GEOMETRY CLASSIFICATION
+==================================================
+
+Q1. What kind of geometry does the dataset contain?
+
+A. Points or icons
+B. Lines that are not part of polygon boundaries
+C. Regions / polygons / areas
+
+If A -> GEOMETRY = PointDS
+If B -> GEOMETRY = LineDS
+If C -> continue to Region Geometry questions
+
+
+--------------------------------------------------
+REGION GEOMETRY QUESTIONS
+--------------------------------------------------
+
+Q2. Do the regions form, or are they intended to form, a complete or near-complete partition of the study area?
+
+Typical examples:
+- neighbourhoods
+- districts
+- boroughs
+- postcode areas
+- census/statistical units
+- administrative areas
+- grid cells
+- land-use polygons
+- zoning polygons
+- area-wide thematic classifications
+
+Yes -> GEOMETRY = VectorTessellation
+No  -> continue
+
+Q3. Are the polygons gridded, tiled, or pixelated units that cover the area?
+
+Yes -> GEOMETRY = VectorTessellation
+No  -> GEOMETRY = PlainVectorRegion
+
+
+==================================================
+ENTITY CLASSIFICATION
+==================================================
+
+After Geometry is chosen, classify the entity.
+
+
+--------------------------------------------------
+PRIORITY ENTITY CHECKS
+--------------------------------------------------
+
+Use these checks before the branch-specific fallbacks.
+
+Q1. Is the dataset mainly about a route system, street system, transport system, utility system, connected line infrastructure, connections, links, or flows between places?
+
+Examples:
+- roads
+- streets
+- tram lines
+- metro lines
+- cycling routes
+- shipping routes
+- pipelines
+- heating/cooling transport lines
+- cables
+- waterways as connected transport infrastructure
+
+Yes -> ENTITY = NetworkDS
+No  -> continue
+
+Q2. Is the dataset mainly about something that happened, occurs, changes, or unfolds in time?
+
+Examples:
+- incidents
+- events
+- construction activities
+- temporary closures
+- observations tied to occurrence time
+- trajectories or movements over time
+
+Yes -> ENTITY = EventDS
+No  -> continue
+
+Q3. Is the main meaning a numeric magnitude?
+
+Examples:
+- count
+- total
+- amount
+- capacity
+- density
+- percentage
+- rate
+- intensity
+- forecast
+- volume
+- yield
+- number of objects
+- number of people
+- traffic volume
+- energy production
+- solar panel count or capacity
+
+Yes -> ENTITY = AmountDS
+No  -> continue
+
+
+--------------------------------------------------
+BRANCH A — POINTS OR ICONS
+--------------------------------------------------
+
+Q4. What does each point represent?
+
+A. A distinct, countable, real-world thing, place, facility, asset, or named object
+B. A measurement of a continuous phenomenon at that location
+C. Presence/absence of a phenomenon at that location
+D. Something that happened or occurred at that location
+E. An amount/count/quantity at that location
+F. None of the above
+
+If A -> ENTITY = ObjectDS
+If B -> ENTITY = PointMeasuresDS
+If C -> ENTITY = ExistenceDS
+If D -> ENTITY = EventDS
+If E -> ENTITY = AmountDS
+If F -> ENTITY = ObjectDS as fallback, unless another rule is clearly better
+
+
+--------------------------------------------------
+BRANCH B — REGIONS
+--------------------------------------------------
+
+Q4. Are the regions reporting/statistical/administrative units used to aggregate or attach attributes?
+
+Typical examples:
+- neighbourhoods
+- districts
+- boroughs
+- postcode areas
+- census areas
+- statistical zones
+- grid cells used as reporting units
+
+Yes -> ENTITY = LatticeDS
+No  -> continue
+
+Q5. Does the dataset provide a full-area thematic classification or homogeneous category field?
+
+Typical examples:
+- land use
+- zoning
+- functional mix
+- urban function categories
+- ground-use classifications
+- area-wide policy/function classes
+
+Yes -> ENTITY = CoverageDS
+No  -> continue
+
+Q6. Does each region represent an interval, band, class range, contour zone, or isoline-like value class?
+
+Yes -> ENTITY = ContourDS
+No  -> continue
+
+Q7. Does each region represent Boolean presence/absence of a phenomenon?
+
+Yes -> ENTITY = ExistenceDS
+No  -> continue
+
+Q8. Does the region depict identifiable real-world objects, places, managed assets, or named bounded entities?
+
+Examples:
+- parks
+- protected cityscapes
+- facilities
+- buildings
+- monuments
+- named areas treated as objects
+- managed green spaces
+- project objects
+
+Yes -> ENTITY = ObjectDS
+No  -> continue
+
+Q9. Is the region a bounded selected area, zone, patch, or occurrence area of a phenomenon, without being a reporting unit, full coverage classification, or object?
+
+Yes -> ENTITY = PatchDS
+No  -> PatchDS as fallback for bounded non-object regions
+
+
+--------------------------------------------------
+BRANCH C — LINES THAT ARE NOT PART OF REGIONS
+--------------------------------------------------
+
+Q4. Does the line dataset represent a network, route system, connection system, infrastructure system, or flow system?
+
+Examples:
+- streets
+- roads
+- tram lines
+- metro lines
+- cycle routes
+- utility lines
+- heating/cooling transport lines
+- pipelines
+- waterways used as transport links
+
+Yes -> ENTITY = NetworkDS
+No  -> continue
+
+Q5. Does each line represent an isoline, contour, interval boundary, or value band?
+
+Yes -> ENTITY = ContourDS
+No  -> continue
+
+Q6. Does the line represent movement, trajectory, or change in position over time?
+
+Yes -> ENTITY = EventDS
+No  -> continue
+
+Q7. Does the line carry a main numeric meaning such as count, capacity, traffic volume, intensity, or flow amount?
+
+Yes -> ENTITY = AmountDS
+No  -> continue
+
+Q8. Does each line represent a distinct real-world object or named linear feature?
+
+Yes -> ENTITY = ObjectDS
+No  -> ObjectDS as fallback for non-network line objects
+
+
+==================================================
+FINAL FALLBACK RULES
+==================================================
+
+If the dataset is mainly about:
+- connected infrastructure, routes, roads, transport lines, utility lines, or flows -> NetworkDS
+- identifiable real-world bounded things -> ObjectDS
+- measured values of a continuous phenomenon at sampled point locations -> PointMeasuresDS
+- interval/band/isoline representation of a field -> ContourDS
+- full-area categorical field -> CoverageDS
+- bounded selected area / area of presence -> PatchDS
+- aggregated reporting units / statistical zones -> LatticeDS
+- quantities / totals / counts / densities / rates / percentages / capacities / forecasts / flows -> AmountDS
+- something that happens or unfolds in time -> EventDS
+- Boolean presence/absence -> ExistenceDS
+
+Important distinction rules:
+- VectorTessellation is a Geometry label, not an Entity label.
+- CoverageDS is for full-area thematic classifications.
+- LatticeDS is for reporting/statistical units.
+- PatchDS is for selected bounded phenomenon areas, not for every polygon.
+- ObjectDS is for real-world objects or managed entities, even if represented as polygons.
+- NetworkDS should be preferred over ObjectDS for connected line systems.
+- AmountDS should be preferred when numeric magnitude is the main meaning, even if the geometry is point, line, or polygon.

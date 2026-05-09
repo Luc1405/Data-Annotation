@@ -1,0 +1,14 @@
+70000 entities in the dataset
+�..OBJECTNUMMER : [english] : integer : 70000 unique values : 209615; 205502; 142690; 195679; 152862; 195763; 147784; 174826; 189669; 149456
+Soortnaam_NL : [english] : character : 382 unique values : Siberische iep (cultuurvariëteit); Veldiep (cultuurvariëteit); Perzische slaapboom; Bitternoot; Japanse notenboom (cultuurvariëteit); Amerikaanse linde; Reuzenlevensboom; Treurbeuk; Spar; Kerspruim (cultuurvariëteit)
+Boomnummer : [english] : integer : 69907 unique values : 429542; 417315; 431800; 445377; 405696; 379005; 400184; 448385; 374687; 407570
+Soortnaam_WTS : [english] : character : 722 unique values : Prunus serrulata `Ukon`; Sorbus aria `Majestica`; Salix alba; Prunus avium `Wijnkers`; Acer saccharinum `Pulverulentum`; Alnus incana; Acer negundo; Pterocarya fraxinifolia; Taxus baccata aurea; Tilia tomentosa cv.
+Boomtype : [english] : character : 8 unique values : Vormboom; Leiboom; Fruitboom; Gekandelaberde boom; ; Knotboom; Boom vrij uitgroeiend; Boom niet vrij uitgroeiend
+Boomhoogte : [english] : character : 10 unique values : 9 tot 12 m.; 12 tot 15 m.; 18 tot 24 m.; 24 m. en hoger; 6 tot 9 m.; 6 tot 12 m.; tot 6 m.; 15 tot 18 m.; Onbekend; 12 tot 18 m.
+Plantjaar : [english] : integer : 107 unique values : 1968; 1926; 1914; 1880; 1988; 1915; 1959; 1957; 1972; 1989
+Eigenaar : [english] : character : 3 unique values : Natuurlijk persoon; Woningcorporatie; Gemeente Amsterdam
+Beheerder : [english] : character : 18 unique values : Stadsdeel West; RVE Spieringhorn Sportpark; Gemeente Amsterdam, rve Sport; RVE Spieringpark; Rijkswaterstaat; Volkstuinpark; Stadsdeel Oost; Schooltuinen; Begraafplaats De Nieuwe Noorder; Natuurlijk persoon
+Categorie : [english] : character : 17 unique values : Betula; Robinia; Ulmus; Acer; Carpinus; Onbekend; Quercus; Fraxinus; Aesculus; Salix
+SOORT_KORT : [english] : character : 92 unique values : Populus; Ginkgo; Salix; Cupressus; Catalpa; Picea; Hibiscus; Carya; Tsuga; Sambucus
+SDVIEW : [english] : character : 8 unique values : K; F; N; T; A; E; D; M
+RADIUS : [english] : integer : 7 unique values : 5; 4; 2; 8; 7; 1; 3

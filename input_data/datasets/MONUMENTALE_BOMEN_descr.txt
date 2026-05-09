@@ -1,0 +1,16 @@
+2615 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 2615 unique values : 31; 1335; 2347; 908; 2571; 674; 408; 1731; 868; 655
+Boomsoort : [english] : character : 196 unique values : Treurwilg; Tamme kastanje; Amerikaanse eik; Zoete kers; Gewone acacia cv.; Ratel populier; Amerikaanse vogelkers; Populier; Pluimiep; Zuilvormige haagbeuk
+Wetenschappelijke_naam : [english] : character : 220 unique values : Quercus frainetto; Ulmus hollandica `Christine Buisman`; Populus italica nigra; Corylus avellana `Pendula`; Tilia europaea `Zwarte Linde`; Tilia americana; Populus ca. `Serotina`; Liquidambar styraciflua; Betula nigra; Thuja occidendalis
+Plantjaar : [english] : integer : 99 unique values : 1924; 1955; 1988; 1966; 1915; 1968; 1963; 1984; 1961; 1905
+Stamomtrek : [english] : character : 10 unique values : > 500 cm; 50-100 cm; 300-400 cm; 200-300 cm; ; 0-50cm; 50  -100 cm; 400-500 cm; < 50 cm; 100-200 cm
+Stamdiameter : [english] : character : 15 unique values : 50 - 100 cm; 50-100 cm; 0 - 20 cm; 0-25 cm; 31 - 50 cm; 58 - 100 cm; 25-50 cm; 100-200 cm; 51 - 100 cm; Niet te beoordelen
+Beschermwaarde : [english] : character : 16 unique values : Beeldbepalende waarde - Cultuurhistorische waarde - Zeldzaamheidswaarde; Cultuurhistorische waarde - Zeldzaamheidswaarde; Beeldbepalende waarde - Cultuurhistorische waarde - Natuurwaarde; Natuurwaarde - Zeldzaamheidswaarde; Beeldbepalende waarde - Natuurwaarde; Beeldbepalende waarde - Cultuurhistorische waarde - Natuurwaarde - Zeldzaamheidswaarde; Cultuurhistorische waarde - Natuurwaarde; Beeldbepalende waarde - Natuurwaarde - Zeldzaamheidswaarde; Beeldbepalende waarde - Cultuurhistorische waarde; Cultuurhistorische waarde
+Toelichting : [english] : character : 18 unique values : Herdenkingsboom t.g.v. afschaffing slavernij 1 juli 1873. Foto: George Maas; Herdenkingsboom; Vrijheidsboom WO-II; Herdenkingsboom geboorte Prins Willem Alexander. Foto: George Maas; Monumentale boom; Boom staat op schaduwlijst. Foto: George Maas; Herdenkingsboom opening schooltuin Gaasperdam. Foto: George Maas; Staat op landelijke bomenlijst; Particuliere boom; Heel oude iep
+Referentienummer_stadsdeel : [english] : integer : 2209 unique values : 81996; 284726; 116014; 32213; 3315; 2083; 182322; 324810; 203032; 181487
+Volgnummer : [english] : character : 2615 unique values : NW255; O429; GRNW092; Z325; AM009; Z134; N453; N105; C414; O379
+Groep : [english] : character : 2 unique values : Beschermwaardige houtopstand; Monumentale boom
+SELECTIE_CAT : [english] : character : 8 unique values : HOUT_50MIN; HOUT_50PLUS; BOOM_100PLUS; BOOM_50_80; BOOM_80_100; BOOM_50MIN; BOOM_ONBEKEND; HOUT_ONBEKEND
+Foto : [english] : character : 1407 unique values : boom 1238 foto 1.jpg; 62.jpg; bomen 101822, 101823 foto 1.jpg; bomen 2810 en 2850 foto 1.jpg; 2723.jpg; 2981.jpg; 2807.jpg; 20658.jpg; mon027 georgemaas.jpg; 310563.jpg
+Vastgesteld : [english] : character : 2 unique values : Ja; Nee
+Achtergrond : [english] : character : 600 unique values : boom 228124.pdf; Boom_4043.pdf; Boom_4028.pdf; Boom_8967.pdf; Boom_3126.pdf; Boom_3179.pdf; Boom_4363.pdf; Boom_2049.pdf; Boom_8021.pdf; Boom_2097.pdf

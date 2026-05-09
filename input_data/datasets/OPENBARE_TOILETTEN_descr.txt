@@ -1,0 +1,9 @@
+206 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 206 unique values : 211; 137; 397; 241; 368; 189; 364; 378; 357; 377
+Soort : [english] : character : 10 unique values : Toilet in parkeergarage (m/v); Seizoen (m/v); Amsterdamse krul (m), verdwenen; Onzeker; Gewenst toilet; Openbaar toilet (m/v); Urilift (m); Overig urinoir (m); Openbaar toilet, toegankelijk voor mindervaliden (m/v); Amsterdamse krul (m)
+Prijs_per_gebruik : [english] : double : 2 unique values : 0.5; 0
+Dagen_geopend : [english] : character : 5 unique values : di; ; di - do - ma - vr - wo; di - do - ma - vr - wo - za - zo; do - vr - za - zo
+Openingstijden : [english] : character : 25 unique values : openingstijden van de kinderboerderij gesloten van november - januari februari - maart: 10 -17 uur april - oktober: 10 -18 uur alle dagen open tijdens de schoolvakanties; 24 uur per dag ; 24 uur; do - za: 15.30 tot 18.00; 24 uur per dag; do - zo: 15.30 - 18.00 uur en 20l.00 - 07.00 volgende ochtend; alleen tijdens de nachtelijke uren; do - za : 15.30 - 18.00; alleen tijdens nachtelijke uren; donderdag - za; 15.30 - 18.00
+Omschrijving : [english] : character : 110 unique values : Tijdelijk rolstoeltoegankelijk toilet; Toilet gewenst vanuit SD West, vaste voorziening + extra tijdens zomerseizoen; Oudezijds Achterburgwal tov 78; MVG of seizoens ; MVG in voorbereiding; toilet in voorbereiding, projectleider Roy van Gelder; seizoens(zomer); Gewenst MVG toilet park de Oeverlanden; Rai, P+R (alleen voor parkeerders); Lijnbaansgracht 282
+Foto : [english] : character : 75 unique values : IMG_8840.jpg; Westerpark MVG tijdelijk.jpg; Urinoir Amstelpark.JPG; IJDoornlaan_Beemsterstraat.JPG; ; IMG_8837.jpg; IMG_8930.jpg; 24882-stadsloket_west_01_23aug2016_e_v_eis.jpg; IMG_8838.jpg; 25473-160906-stadsloket-stadsdeel-noord_AN-6396.jpg
+SELECTIE : [english] : character : 10 unique values : PARKEER; URILIFT; OPENBAAR; GEWENST; VERDWENEN; SEIZOEN; ONZEKER; TOEGANG; OVERIG; KRUL

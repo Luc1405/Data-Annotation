@@ -1,0 +1,11 @@
+566 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 566 unique values : 37; 138; 456; 118; 50; 271; 532; 439; 283; 284
+Soort : [english] : character : 14 unique values : DRIP; TV Camera; Trigger-camera; Tekstregel; Lustelpunt; Lichtwijzer; Vol-Vrij display (VVX); Taxistandplaatssysteem; Kentekencamera, reistijd (MoCo); Kantelwals
+Soortcode : [english] : integer : 14 unique values : 127; 135; 128; 124; 133; 129; 111; 184; 146; 132
+Standplaats : [english] : character : 373 unique values : Afrit A10 buitenring; Europaboulevard ri. zuid (P1); Hobbemakade (s108) nabij Stadhouderskade (s100); Meibergdreef (s111) nabij Snijdersbergweg; Middenweg ri. Centrum; Wibautstraat; Ookmeerweg; Rijksweg A10 - S116 (binnenring) nabij hectometer 2,515 Re; Pr. Hendrikkade - NZ Voorburgwal; Voorburgstraat / Naaldwijkstraat
+Bouwjaar : [english] : integer : 21 unique values : 2020; 2001; 2005; 2019; 2012; 2015; 2010; 2016; 1998; 2008
+Voeding : [english] : character : 100 unique values : VRI 481; DRIP; VRI 479; VRI 463; VRI 470; VRI 309; Accu op OVL; VRI 571; Bermdrip BD106; VRI 687
+Objectnummer_Amsterdam : [english] : character : 541 unique values : TV-975-031; SD142; VVX050; ANPR-01027; ZX3712; ANPR-03011; ANPR-03029 ; TR010; SD301; KW033
+Objectnummer_leverancier : [english] : character : 464 unique values : 1034-A; 0832-L; 1311-L; 1535-R; AMSTD029; 60264/716 KW (linksaf,onder); TAC22; 66253/601 KW (PIJL) P Markenhoven; 12A101-C; SD196
+VRI_nummer : [english] : integer : 83 unique values : 580; 651; 312; 478; 915; 635; 220; 655; 309; 642
+Rotatie : [english] : integer : 52 unique values : 220; 305; 210; 0; 247; 165; 70; 13; 150; 170

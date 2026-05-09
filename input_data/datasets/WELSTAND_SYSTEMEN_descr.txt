@@ -1,0 +1,4 @@
+250 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 250 unique values : 119; 150; 71; 90; 50; 165; 95; 134; 101; 1
+SELECTIE : [english] : integer : 13 unique values : 10; 5; 12; 4; 6; 7; 9; 13; 1; 2
+Systeemnaam : [english] : character : 13 unique values : Kantoren en bedrijventerreinen; De IJ-landen; Noordelijk buitengebied; Historische kernen, linten en fragmenten; Tuindorpen; Transformatiegebied; Woongebieden na 1985; AUP en Post-AUP; Groen en Water; Woonerven en Meanders

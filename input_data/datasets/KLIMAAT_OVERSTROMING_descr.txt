@@ -1,0 +1,6 @@
+183 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 183 unique values : 78; 181; 90; 122; 53; 101; 158; 31; 17; 160
+Kans_code : [english] : integer : 4 unique values : 1; 4; 2; 3
+Kans : [english] : character : 4 unique values : Zeer kleine kans: 1/3.000 tot 1/30.000 per jaar; Geen significante overstromingskans; Extreem kleine kans: <1/30.000 per jaar; Kleine kans: 1/300 tot 1/3.000 per jaar
+Diepte_code : [english] : integer : 4 unique values : 4; 2; 3; 1
+Diepte : [english] : character : 4 unique values : ; Meer dan 200 cm; 0 tot 50 cm; 50 tot 200 cm

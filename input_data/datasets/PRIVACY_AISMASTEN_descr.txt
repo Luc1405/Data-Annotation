@@ -1,0 +1,4 @@
+6 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 6 unique values : 3; 6; 1; 2; 5; 4
+Locatienaam : [english] : character : 6 unique values : HQ Waternet; Nieuwe Meersluis; Walter Suskindbrug; Amstelsluizen; Floating office; Pomphuis
+Privacyverklaring : [english] : character : 1 unique values : https://www.amsterdam.nl/privacy/specifieke/privacyverklaringen-b/vaarwegbeheer/

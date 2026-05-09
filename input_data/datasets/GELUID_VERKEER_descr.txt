@@ -1,0 +1,5 @@
+7999 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 7999 unique values : 2567; 7219; 1195; 4295; 6544; 7085; 1464; 5448; 4337; 2132
+SELECTIE : [english] : integer : 5 unique values : 70; 60; 50; 65; 55
+KLASSE : [english] : character : 5 unique values : >70 dB; 60-65 dB; 50-55 dB; 65-70 dB; 55-60 dB
+SOORT : [english] : character : 2 unique values : WEGTRAM_NIGHT; WEGTRAM_LDEN

@@ -1,0 +1,6 @@
+2122 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 2122 unique values : 1268; 205; 1059; 1009; 1674; 1874; 868; 905; 2050; 1222
+PB : [english] : character : 2122 unique values : E07332A; E07239A; E05266A; C06208A; D06286A; C05016A; B06129A; G05016A; D04266A; F05032A
+Maaiveld : [english] : double : 544 unique values : -1.32; -2.81; 2.07; 1.8; -2.89; -0.25; -1.67; -1.38; 2.42; -2.2
+GLG : [english] : double : 506 unique values : -3.62; -2.53; 0.99; 0.08; -4.95; -4.26; -2.05; -3.47; 0.47; -1.79
+GLG_maaiveld : [english] : double : 229 unique values : 2.19; 1.73; 0.82; 0.61; 2.61; 1.81; 2.62; 0.6; 1.14; 0.86

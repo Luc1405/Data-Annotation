@@ -1,0 +1,5 @@
+636 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 636 unique values : 19; 92; 27; 178; 2559; 223; 2242; 186; 235; 231
+Locatienummer : [english] : integer : 636 unique values : 2866; 2941; 285; 2116; 112; 2271; 301; 2893; 319; 314
+Soort : [english] : character : 3 unique values : Verbodsgebied; Restrictiegebied; Losloopgebied
+Restrictie : [english] : character : 17 unique values : Losloopgebied van 1 oktober tot 1 mei; Verboden voor honden 1 april - 1 november; Dit losloopgebied is van tijdelijke aard: tot de geplande bebouwing daar van start gaat; Verboden voor honden 1 maart - 31 augustus; Verboden voor honden vanaf 1 mei tot 1 september; Losloopgebied van 1 november tot 1 maart; Losloopgebied van 1 juni tot 1 maart; Valt onder Groengebied Amstelland; Met opruimplicht; Het strand (zwem/recreatie gedeelte) is verboden voor honden vanaf 1 april tot 1 oktober.  Na 1 oktober tot 1 april is het strand ook losloopgebied.

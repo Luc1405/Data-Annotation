@@ -1,0 +1,10 @@
+289 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 289 unique values : 248; 125; 205; 204; 146; 148; 100; 59; 53; 290
+Banknummer : [english] : double : 288 unique values : 10.2; 5.04; 1.33; 3.03; 1.49; 4.08; 9.23; 2.07; 4.04; 10.22
+Huidig_type : [english] : character : 15 unique values : Oprichtersbank; Plankenbank; Mussenbank; Reigerbank; Nog niet geplaatst; Eekhoornbank; Beukenbank; Parkietenbank; Vleugelnootbank; Rondom boom
+Definitief_type : [english] : character : 13 unique values : Vleugelnootbank; Rondom boom; Parkietenbank; Lindebank; Kastanjebank; Oprichtersbank; Mussenbank; Reigerbank; Platanenbank; Beukenbank
+Definitief_foto : [english] : character : 14 unique values : rondom boom.jpg; parkietenbank.jpg; kastanjebank.jpg; vleugelnootbank.jpg; 6-eekhoornbank.jpg; mussenbank.jpg; rozenbank.jpg; platanenbank.jpg; reigerbank.jpg; lindebank.jpg
+Geadopteerd : [english] : character : 4 unique values : Beschikbaar, nog niet geplaatst; Ja; Niet beschikbaar; Beschikbaar
+Tekstplaat : [english] : character : 108 unique values : TP-06-26.jpg; TP-04-04.jpg; TP-04-11.jpg; TP-08-11.jpg; TP-04-08.jpg; TP-02-24.jpg; TP-01-32.jpg; TP-05-16.jpg; TP-06-25.jpg; TP-03-11.jpg
+Rotatie : [english] : integer : 162 unique values : 344; 237; 63; 157; 147; 299; 206; 173; 137; 218
+Categorie : [english] : character : 2 unique values : Bijzonder; Zitbank

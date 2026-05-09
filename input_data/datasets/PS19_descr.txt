@@ -1,0 +1,48 @@
+750 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 750 unique values : 389; 468; 340; 560; 399; 659; 469; 445; 364; 351
+ABSREL : [english] : character : 2 unique values : REL; ABS
+Stemdistrict : [english] : character : 375 unique values : 168; 436+437; 727; 729; 538; 038+039; 166; 232; 240; 325
+Stemlocatie : [english] : character : 372 unique values : Cordaan - Het Anker; Amsta De Raak; Molen van Sloten; Korfbalvereniging Swift; Het Parkhuis; Stichting Meevaart; Remise Lekstraat; Waternet; Willibrordschool IJburg; Buurtvereniging Bloemenkwartier
+Opgeroepenen : [english] : integer : 345 unique values : 984; 2182; 1234; 1003; 1426; 2816; 991; 1201; 2064; 1996
+Geldig : [english] : integer : 321 unique values : 433; 1106; 713; 1056; 620; 500; 1444; 360; 793; 468
+Blanco : [english] : integer : 10 unique values : 8; 4; 6; 7; 10; 1; 3; 5; 0; 2
+Ongeldig : [english] : integer : 18 unique values : 9; 6; 13; 4; 2; 5; 8; 12; 15; 1
+Opkomstpercentage : [english] : double : 281 unique values : 55.8; 57.9; 55.5; 48; 55; 71.4; 72.6; 39.9; 65.8; 79
+Grootste_partij : [english] : character : 10 unique values : D66 - GroenLinks; D66 - VVD; D66; PVV; PvdA; GroenLinks - PvdA; VVD; Forum voor Democratie; GroenLinks; DENK
+Grootste_aantal : [english] : integer : 233 unique values : 307; 266; 348; 94; 239; 147; 313; 333; 257; 213
+Grootste_percentage : [english] : double : 186 unique values : 27.7; 32.4; 15.6; 17.9; 30.7; 23.8; 49.8; 37.8; 26; 25
+Tweede_partij : [english] : character : 11 unique values : VVD; Partij voor de Dieren; D66; DENK; PvdA; GroenLinks; Forum voor Democratie; D66 - VVD; PVV; PvdA - Groenlinks
+Tweede_aantal : [english] : integer : 192 unique values : 92; 237; 18; 312; 189; 182; 236; 43; 125; 102
+Tweede_percentage : [english] : double : 111 unique values : 16.4; 15.1; 15.4; 14.4; 14.3; 22.3; 12.8; 16.7; 20.1; 21.8
+Verschil_aantal : [english] : integer : 172 unique values : 45; 148; 137; 63; 187; 52; 83; 29; 110; 9
+Verschil_percentage : [english] : double : 191 unique values : 2.5; 4.9; 13.5; 14.3; 1.7; 7.7; 13.4; 21.5; 9.9; 1
+GroenLinks : [english] : integer : 227 unique values : 251; 209; 127; 93; 340; 92; 147; 28; 74; 111
+D66 : [english] : integer : 199 unique values : 29; 145; 14; 33; 16; 282; 12; 35; 47; 51
+PvdA : [english] : integer : 146 unique values : 135; 261; 176; 120; 163; 136; 46; 126; 111; 178
+VVD : [english] : integer : 170 unique values : 156; 229; 34; 139; 55; 89; 340; 54; 295; 218
+Partij_voor_de_Dieren : [english] : integer : 130 unique values : 131; 84; 49; 10; 100; 55; 83; 99; 13; 34
+Forum_voor_Democratie : [english] : integer : 135 unique values : 106; 128; 129; 36; 118; 28; 105; 82; 87; 39
+DENK : [english] : integer : 134 unique values : 80; 125; 167; 186; 227; 6; 34; 56; 77; 32
+SP : [english] : integer : 89 unique values : 32; 29; 14; 75; 117; 107; 30; 53; 119; 60
+PVV : [english] : integer : 86 unique values : 37; 39; 74; 35; 43; 66; 112; 47; 22; 6
+CDA : [english] : integer : 56 unique values : 52; 9; 26; 5; 11; 32; 40; 24; 67; 41
+ChristenUnie : [english] : integer : 51 unique values : 19; 36; 29; 15; 8; 11; 4; 24; 18; 16
+X50PLUS_Partij_vd_Ouderen : [english] : integer : 54 unique values : 30; 9; 6; 29; 5; 52; 8; 39; 27; 24
+Code_Oranje : [english] : integer : 24 unique values : 4; 6; 30; 18; 14; 12; 17; 16; 11; 20
+NIDA : [english] : integer : 30 unique values : 15; 18; 3; 29; 20; 60; 10; 12; 11; 16
+Ouderenpartij_NH : [english] : integer : 19 unique values : 13; 11; 0; 10; 8; 3; 9; 15; 1; 4
+X_GroenLinks : [english] : double : 210 unique values : 26; 28.5; 26.5; 24.3; 21.1; 14.4; 16.6; 23.6; 34.1; 0
+X_D66 : [english] : double : 170 unique values : 15.2; 16.9; 25; 8.8; 7.9; 6.2; 11.5; 17.2; 17.1; 12.4
+X_PvdA : [english] : double : 109 unique values : 12.2; 13.4; 15.8; 8.7; 14; 7.1; 16.7; 12.8; 9.6; 14.9
+X_VVD : [english] : double : 161 unique values : 21; 7.7; 11.3; 10.7; 20.5; 19.2; 14.4; 13.4; 31.9; 5.9
+X_Partij_voor_de_Dieren : [english] : double : 109 unique values : 8; 12.1; 8.9; 9.6; 2.8; 5.2; 5.6; 10.5; 3.4; 11.5
+X_Forum_voor_Democratie : [english] : double : 135 unique values : 4.1; 20.2; 24.4; 17.3; 5; 22.9; 16.3; 17.5; 4.9; 2.5
+X_DENK : [english] : double : 152 unique values : 1; 6.7; 4.5; 8; 2.3; 31.1; 39.5; 31.7; 0.4; 16.1
+X_SP : [english] : double : 87 unique values : 9.6; 4.6; 5.8; 5.4; 3; 6.3; 2.5; 10.7; 3.2; 4.5
+X_PVV : [english] : double : 95 unique values : 3.8; 10.1; 10.7; 2; 2.1; 5.3; 10.6; 8.9; 0; 3.2
+X_CDA : [english] : double : 56 unique values : 2; 6.2; 2.2; 4.7; 2.6; 5.3; 0.9; 0; 0.2; 0.8
+X_ChristenUnie : [english] : double : 61 unique values : 5.2; 5.6; 0.4; 2.2; 6.3; 1.5; 7.1; 0.7; 5.4; 2.6
+X_50PLUS_Partij_vd_Ouderen : [english] : double : 61 unique values : 4.8; 4; 5.8; 1.5; 6; 2.6; 2.9; 5.9; 0.2; 2.8
+X_Code_Oranje : [english] : double : 25 unique values : 2.7; 1.8; 1.2; 0; 0.6; 1.4; 0.2; 1.5; 0.8; 1.6
+X_NIDA : [english] : double : 40 unique values : 3.3; 0.5; 3.9; 1.8; 1.3; 2.7; 0.2; 3.5; 0.4; 0.8
+X_Ouderenpartij_NH : [english] : double : 24 unique values : 0.7; 1.7; 2.4; 1.3; 1.8; 0.3; 2.1; 2.7; 0.6; 0.2

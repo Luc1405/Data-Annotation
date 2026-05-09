@@ -1,0 +1,7 @@
+476 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 476 unique values : 401; 142; 374; 298; 279; 347; 260; 225; 38; 85
+Buurt_code : [english] : character : 476 unique values : M58h; A06k; A00e; F78e; N62a; M30b; K44a; M31c; K48b; M51b
+Buurt : [english] : character : 476 unique values : F-buurt; Van der Pekbuurt; Erasmusparkbuurt West; Papaverweg e.o.; Vondelpark Oost; Kolenkitbuurt Noord; Markengouw Zuid; Amstelglorie; Entrepot-Noordwest; Da Costabuurt Zuid
+Buurtcombinatie_code : [english] : character : 99 unique values : E36; E20; N73; M50; F85; K25; A00; K45; E41; N69
+Stadsdeel_code : [english] : character : 8 unique values : T; E; B; M; F; A; K; N
+Opp_m2 : [english] : double : 476 unique values : 207792; 128037; 89405.1; 206494; 277037; 26845.5; 258379; 303281; 94255; 79352.4

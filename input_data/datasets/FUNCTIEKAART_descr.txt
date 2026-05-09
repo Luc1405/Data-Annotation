@@ -1,0 +1,14 @@
+32995 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 32995 unique values : 8200; 13407; 18317; 19710; 27321; 5956; 24698; 9701; 4534; 10551
+Functie : [english] : character : 148 unique values : bijeenkomstfunctie|onderwijsfunctie; winkelfunctie|kantoorfunctie; overige gebruiksfunctie|bijeenkomstfunctie; winkelfunctie|bijeenkomstfunctie; woning + agrarisch object; toonzaal; volkstuin; woning + horeca; energie en water; bordeel / relaxruimte
+Functie_gecorrigeerd : [english] : integer : 2 unique values : 0; 1
+VOT_ID : [english] : double : 32995 unique values : 363010001173321; 363010000948754; 363010000696586; 363010001025876; 363010000953179; 363010000557405; 363010000638347; 363010000726276; 363010000602990; 363010000782593
+Adres : [english] : character : 32991 unique values : Palembangstraat 52; Krijn Taconiskade 374; Heathrowstraat 10; Strawinskylaan 303; Elandsstraat 151; Vijzelstraat 45; Sint Antoniesbreestraat 77; Hasselaerssteeg 1; tt. Vasumweg 260; Albert Cuypstraat 90/H
+Aantal_adressen : [english] : integer : 35 unique values : 42; 45; 29; 2; 21; 7; 30; 28; 49; 6
+Gebruiksdoel : [english] : character : 75 unique values : overige gebruiksfunctie|industriefunctie|kantoorfunctie; winkelfunctie|overige gebruiksfunctie|kantoorfunctie; gezondheidszorgfunctie|kantoorfunctie; winkelfunctie|gezondheidszorgfunctie; bijeenkomstfunctie|kantoorfunctie|onderwijsfunctie|sportfunctie; winkelfunctie|bijeenkomstfunctie|logiesfunctie; woonfunctie|industriefunctie; overige gebruiksfunctie|industriefunctie; bijeenkomstfunctie|onderwijsfunctie|sportfunctie; onderwijsfunctie|sportfunctie
+WOZ_gebruik : [english] : character : 121 unique values : showroom / werkplaats / garage; kerk; kantoor; tuinbouwbedrijf (incl bloembollenteelt); woning + productie (fabriek); woning + horeca (overig); proefboerderij (zowel akkerbouw als veeteelt); brandweerkazerne; wijk- / buurtcentrum; overige agrarische niet-woningen
+Hoofdfunctie : [english] : character : 17 unique values : Onduidelijke functie; Sport en recreatie; Religie; Detailhandel; _Niet laten zien; Cultuur; Wijk / buurtcentrum; Logies; Agrarisch bedrijf; Atelier / werkruimte
+Hoofdfunctie_ID : [english] : character : 17 unique values : C; N; Z; A; H; K; O; Q; X; D
+Gebruiksoppervlakte : [english] : integer : 3438 unique values : 307; 27927; 223; 19644; 3780; 322; 4762; 23066; 6175; 1612
+Footprint : [english] : integer : 2 unique values : 0; 1
+Oppervlakte_gecorrigeerd : [english] : integer : 2 unique values : 1; 0

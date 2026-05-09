@@ -1,0 +1,5 @@
+9 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 9 unique values : 8; 9; 5; 3; 4; 7; 1; 2; 6
+Locatie : [english] : integer : 9 unique values : 3; 2; 8; 9; 6; 1; 5; 7; 4
+Vermogen_MW : [english] : double : 8 unique values : 100; 12; 31.5; 48; 18; 15; 24; 9
+Verwachte_Opbrengst_GWh_Jaar : [english] : integer : 9 unique values : 20; 31; 53; 200; 27; 74; 108; 42; 22

@@ -1,0 +1,7 @@
+481 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 481 unique values : 337; 214; 246; 161; 393; 450; 389; 423; 52; 399
+Buurt_code : [english] : character : 481 unique values : K45b; F87c; A00d; A06i; E37e; A01d; T94h; K47j; T96e; N69k
+Buurt : [english] : character : 481 unique values : Mercatorpark; Van Tuyllbuurt; Reigersbos Midden; Buiteneiland; Lizzy Ansinghbuurt; Buiksloterbreek; De Heining; Da Costabuurt Noord; Reigersbos Zuid; Gaasperdam Noord
+Buurtcombinatie_code : [english] : character : 99 unique values : F85; M33; A02; T98; A03; N70; M34; K44; A08; E22
+Stadsdeel_code : [english] : character : 8 unique values : N; M; F; K; T; E; B; A
+Opp_m2 : [english] : double : 481 unique values : 173446; 54677; 402284; 185583; 71869.3; 344108; 271557; 21598; 542327; 88445.7

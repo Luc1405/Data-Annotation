@@ -1,0 +1,3 @@
+34 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 34 unique values : 9; 63; 17; 2; 48; 6; 69; 16; 71; 37
+Gebied : [english] : character : 30 unique values : Wallen Nieuwendijk; ArenApoort; De Pijp; Dapperbuurt; Wildemanbuurt; Wittenburg - Oostelijke Eilanden; Delflandplein; Lambertus Zijlplein; Gein; Staalmanbuurt

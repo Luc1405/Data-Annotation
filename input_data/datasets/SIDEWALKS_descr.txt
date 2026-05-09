@@ -1,0 +1,13 @@
+4615 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 4615 unique values : 1356; 4184; 1840; 2237; 741; 134; 3710; 4588; 4519; 1114
+SidewalkID : [english] : integer : 4549 unique values : 778; 408; 501; 712; 2522; 2250; 2647; 2455; 1051; 626
+Streetname : [english] : character : 480 unique values : Gasthuismolensteeg; Majoor Bosshardtbrug; Vondelbrug; Pesthuysbrug; Rozengracht; Kruislaan; Nieuwe Doelenstraat; Gerard Douplein; IJ-promenade; Spiegelgracht
+Segments : [english] : integer : 56 unique values : 39; 35; 48; 19; 10; 6; 21; 13; 29; 27
+NetworkType : [english] : character : 2 unique values : ; Plus(suggestie)
+ComfortLevelCode : [english] : character : 8 unique values : 29; 36PLUS; 06; 22; 18; 09; 06MIN; PM
+ComfortLevel : [english] : character : 8 unique values : 2.2m; Smaller dan 0.6m; Nog onbepaald; 2.9m; 1.8m; 0.6m; 0.9m; 3.6m of breder
+SpaceclaimCode : [english] : character : 198 unique values : FIETSREG|GROEN|OVERIG; FIETSREG|BROM|GROEN|TERRAS; FIETSREG|WINKEL|GROEN|FIETSONREG; FIETSREG|BROM|MEUBEL; BROM|MEUBEL; WINKEL|TERRAS|FIETSONREG|PAAL; WINKEL|FIETSONREG; GROEN|OVERIG; WINKEL|TERRAS; FIETSREG|BROM|MEUBEL|GROEN|PAAL
+Spaceclaim : [english] : character : 223 unique values : Palen en masten; Geparkeerde fietsen ongereguleerd - Groen - Terrassen; Geparkeerde brommers/motoren - Geparkeerde fietsen ongereguleerd - Straatmeubilair; Geparkeerde brommers/motoren - Geparkeerde fietsen gereguleerd - Palen en masten; Geparkeerde brommers/motoren - Geparkeerde fietsen gereguleerd - Geparkeerde fietsen ongereguleerd -  - Winkeluitstalling & reclameborden; Geparkeerde fietsen gereguleerd - Geparkeerde fietsen ongereguleerd - Palen en masten; Geparkeerde brommers/motoren - Geparkeerde fietsen ongereguleerd - Groen - Winkeluitstalling & reclameborden; Geparkeerde brommers/motoren - Geparkeerde fietsen gereguleerd - Geparkeerde fietsen ongereguleerd - ; Geparkeerde brommers/motoren - Geparkeerde fietsen ongereguleerd - Winkeluitstalling & reclameborden; Geparkeerde fietsen gereguleerd - Straatmeubilair - Terrassen - Winkeluitstalling & reclameborden
+SpaceclaimAantal : [english] : integer : 8 unique values : 5; 7; 4; 3; 6; 1; 2; 0
+SituationCode : [english] : character : 6 unique values : VOETFIETS; VOETGEENFI; FIETSVOET; ANDERS; FIETSGEENV; STANDAARD
+Situation : [english] : character : 6 unique values : Standaard wegprofiel; Fietspad geen voetpad; Voetgangersgebied, fietsen toegestaan; Voetgangersgebied, fietsen verboden; Fietspad en voetpad; Anders

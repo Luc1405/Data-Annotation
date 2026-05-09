@@ -1,0 +1,4 @@
+27 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 27 unique values : 13; 17; 25; 26; 2; 14; 16; 12; 24; 3
+Soort : [english] : character : 2 unique values : TERREIN; 50DB
+Industrielawaai : [english] : character : 14 unique values : Cornelis Douwes; Nuon (Diemen); Westpoort; Schiphol; AMC Zuidoost; Amstel III / Amstel Businesspark; Hoogtij (Zaanstad); Schinkel; Kadijken; Achtersluispolder (Zaanstad)

@@ -1,0 +1,4 @@
+73 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 73 unique values : 31; 12; 1; 55; 34; 64; 66; 24; 8; 58
+Niveau : [english] : character : 10 unique values : Beschermd; Gewoon; Gewoon - Geen preventieve toetsing veel voorkomend; Gewoon - Transformatie kantoren welstandsvrij; Eenvoudig - Transformatie kantoren welstandsvrij; Eenvoudig - Binnengebied welstandsvrij; Eenvoudig - Geen preventieve toetsing; Bijzonder; Eenvoudig; Welstandsvrij
+SELECTIE : [english] : character : 10 unique values : EENVOUDIG_TRANSFORMATIE; BIJZONDER; GEWOON_PREVENTIEVE; GEWOON_TRANSFORMATIE; EENVOUDIG_BINNENGEBIED; EENVOUDIG; GEWOON; BESCHERMD; EENVOUDIG_PREVENTIEVE; VRIJ

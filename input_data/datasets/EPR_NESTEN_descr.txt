@@ -1,0 +1,6 @@
+4901 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 4901 unique values : 2881; 484; 1549; 1622; 3636; 667; 4619; 1418; 1304; 4041
+Boom_ID : [english] : character : 4442 unique values : 66826684; _N_104705527000; 1555626; 430471; T104773; _N_140014702000; T104860; 489041; _N_112853188000; NT902396
+Prioriteit : [english] : character : 5 unique values : Urgent; bestreden; Geen; Laag; Standaard
+Boomhoogte : [english] : character : 9 unique values : 15-18 m; 0-6 m; 18-24 m; 9-12 m; 6-9 m; ; >24 m; onbekend; 12-15 m
+Mutatiedatum : [english] : character : 34 unique values : 27-03-2020; 29-06-2020; 26-06-2020; 30-06-2020; 28-06-2020; 10-06-2020; 16-06-2020; 02-06-2020; 08-06-2020; 20-06-2020

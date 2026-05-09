@@ -1,0 +1,3 @@
+76671 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 76671 unique values : 39061; 46555; 35301; 32941; 16797; 55191; 3131; 12977; 21713; 45195
+Categorie : [english] : character : 5 unique values : Historisch beperkt; Niet-historisch ruim; Niet-historisch beperkt; Historisch ruim; Attentie

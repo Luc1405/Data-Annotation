@@ -1,0 +1,7 @@
+1796 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 1796 unique values : 1311; 391; 1119; 581; 1583; 1282; 1348; 1691; 1761; 617
+BOOMSOORT : [english] : character : 308 unique values : Fraxinus excelsior `Diversifolia`; Acer pseudoplatanus `Negenia`; Acer platanoides `Schwedleri`; Cedrus deodara; Cornus `Rutcan`; Platanus hispanica `Tremonia`; Paulownia tomentosa; Acer campestre `Elsrijk`; Malus `Golden Hornet`; Cercis siliquastrum
+BOOM_ID : [english] : integer : 1796 unique values : 366473; 409074; 416585; 504509; 462461; 566737; 542647; 364665; 373422; 495456
+PLANTJAAR : [english] : integer : 82 unique values : 1988; 1938; 1952; 2011; 1994; 1940; 1979; 1985; 1991; 1955
+DIAMETERKLASSE : [english] : character : 6 unique values : 50 tot 100 cm; 20 tot 30 cm; ; 100 tot 150 cm; Minder dan 20 cm; 30 tot 50 cm
+HOOGTEKLASSE : [english] : character : 10 unique values : 9 tot 12 m; 12 tot 15 m; 6 tot 9 m; ; Minder dan 6 m; 6 tot 12 m; 15 tot 18 m; 18 tot 24 m; Meer dan 24 m; 12 tot 18 m

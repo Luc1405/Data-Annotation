@@ -1,0 +1,5 @@
+191 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 191 unique values : 30; 74; 58; 35; 31; 129; 130; 92; 1; 73
+Lijnnummer : [english] : integer : 191 unique values : 58; 127; 106; 36; 5; 114; 97; 146; 55; 2
+Type_stadsstraat : [english] : character : 3 unique values : Potentiele stadsstraat; ; Stadsstraat
+Type_hoofdstraat : [english] : character : 2 unique values : Hoofdstraat; Potentiele hoofdstraat

@@ -1,0 +1,14 @@
+70000 entities in the dataset
+�..OBJECTNUMMER : [english] : integer : 70000 unique values : 49192; 11524; 15063; 32657; 486; 20277; 19757; 11546; 45856; 50691
+Soortnaam_NL : [english] : character : 563 unique values : Chimonanthus (cultuurvariëteit); Katsoeraboom; Amerikaanse linde; Kolchische esdoorn (cultuurvariëteit); Slangenhuidesdoorn; Aziatische lariks (cultuurvariëteit); Japanse cipres; Gewone beuk (cultuurvariëteit); Perzik (cultuurvariëteit); Veldesdoorn
+Boomnummer : [english] : integer : 69995 unique values : 569719; 535052; 566801; 590996; 559185; 595371; 561228; 574348; 541600; 543125
+Soortnaam_WTS : [english] : character : 1090 unique values : Philadelphus `Lemoinei`; Betula papyrifera; Sorbus aucuparia cv.; Acer platanoides cv.; Maackia amurensis; Acer negundo; Liriodendron tulpifera `Purgatory`; Acer platanoides `Schwedleri`; Abies koreana; Populus canescens `Enniger`
+Boomtype : [english] : character : 8 unique values : Boom niet vrij uitgroeiend; Gekandelaberde boom; Vormboom; Leiboom; ; Knotboom; Boom vrij uitgroeiend; Fruitboom
+Boomhoogte : [english] : character : 10 unique values : 12 tot 15 m.; 18 tot 24 m.; Onbekend; 6 tot 12 m.; 15 tot 18 m.; 12 tot 18 m.; 6 tot 9 m.; tot 6 m.; 24 m. en hoger; 9 tot 12 m.
+Plantjaar : [english] : integer : 107 unique values : 1936; 1965; 1956; 1991; 1968; 1947; 1985; 1975; 2003; 2009
+Eigenaar : [english] : character : 3 unique values : Gemeente Amsterdam; Gemeente Ouder-Amstel; Gemeente Diemen
+Beheerder : [english] : character : 8 unique values : Begraafplaats De Nieuwe Ooster; Stadsdeel Oost; Stadsdeel Zuidoost; Stadsdeel Noord; Stadsdeel Zuid; ; Stadsdeel West; Amsterdamse Bos
+Categorie : [english] : character : 17 unique values : Quercus; Crataegus; Betula; Platanus; Robinia; Prunus; Tilia; Overig; Populus; Alnus
+SOORT_KORT : [english] : character : 176 unique values : Rhus; Kalopanax; Sycoparrotia; Photinia; Koelreuteria; Tetradium; Itea; Weigela; Dipelta; Exochorda
+SDVIEW : [english] : character : 7 unique values : T; D; N; M; V; K; E
+RADIUS : [english] : integer : 7 unique values : 1; 7; 2; 8; 4; 5; 3

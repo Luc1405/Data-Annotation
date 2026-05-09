@@ -1,0 +1,6 @@
+678 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 678 unique values : 585; 507; 428; 726; 583; 558; 522; 780; 678; 708
+Initiatiefnemer : [english] : character : 641 unique values : Lucky Beat Music Club for Kids; Doina Kraal; Circus Treurdier; Het Kaufhaus; Chocoa; Skatemates; Historisch Materiaal Stadsreiniging; Bureau Monumenten & Archeologie; Turks consulaat; Medical Booking
+Activiteit : [english] : character : 566 unique values : import en export houtcomposiet tuinmaterialen; fietsenwinkel fabriek; productie kantoor;  wetenschappelijk en artistiek collectief voor onderzoek, interventie & ondersteuning; Opslag whisky vaten; krant; Huisartspraktijk; Japanse meubelwinkel; film en fotografie; kunstonderwijsinstelling
+Sector : [english] : character : 10 unique values : Cultuur; Kantoor, bedrijf en winkel; Leisure in- en outdoor; Kantoor en bedrijf; Religie; Sport; Maatschappelijk; Horeca; Detailhandel; Onderwijs
+Jaar : [english] : integer : 13 unique values : 2008; 2013; 2009; 2016; 2018; 2019; 2010; 2012; 2014; 2015

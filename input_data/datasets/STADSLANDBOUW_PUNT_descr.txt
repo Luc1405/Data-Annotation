@@ -1,0 +1,9 @@
+211 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 211 unique values : 80; 160; 123; 70; 119; 135; 240; 39; 64; 75
+Soort : [english] : character : 8 unique values : Moestuin; Kruidentuin; Stadsboerderij; Schooltuin; Voedselcooperatie; Kinderboerderij; Vertical farming; Voedselbos
+Naam : [english] : character : 211 unique values : Daktuin Woongroep `t Seepaerd; moestuintjes kavel 13a; Boerderij op IJburg; Open Coop Bite me canteen; Nellestein / Leksmondhof; moestuin Geldershoofd; Groene Vingers; boerderij Klarenbeek; restaurant de Kas; Voedselbos Houtrak
+Adres : [english] : character : 184 unique values : ; Plantage Middenlaan 2A, Plantage Parklaan 1A; Tugelaweg 77; Zaanstraat naast Brediusbad; Oosterpark; Makassarplein; Achillesstraat 85; Oude Haagseweg 51; Vrouw & Vaart, President Allendelaan 733; G.J. Scheurleerweg 6
+Status : [english] : character : 2 unique values : Bestaand; In uitvoering
+Beplantingssituatie : [english] : character : 45 unique values : Grond, bakken; plantoen / plantenbakken; Aquaponics; bakken met groenten, kruiden en bloemen; bakken; kas; ; moestuinen / ondernemers; natuurtuin met kleine boomgaard met hoogstamfruitb; Grond en bakken
+Initiatiefnemer : [english] : character : 87 unique values : SPIN - stichting speeltuinen in Noord; Bewoners rondom Pieter van der Doesstraat; Spinoza020firstschool; david@nmtzuid.nl; Jaap de Jong; Woningcorporatie Ijmere; Stichting Creating Edges; Stichting Vrouw en Vaart / Groene Ruimte Maken, Annet van Hoorn; tuin.sassenheimstraat@gmail.com; Dorette Evers
+Website : [english] : character : 155 unique values : https://www.facebook.com/Moes32; www.dedierencapel.nl; www.facebook.com/jeugdland.oost?group_id=0; www.zuidermrkt.nl; www.vokomokum.nl; www.bolenius-restaurant.nl/bolenius-moestuin; https://www.facebook.com/eeuwigemoes/; www.kinderboerderij-de-werf.nl; www.facebook.com/pages/kinderboerderij-de-strohalm/423887567621362; http://brediustuin.wordpress.com/

@@ -1,0 +1,6 @@
+23 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 23 unique values : 13; 2; 21; 6; 11; 1; 10; 18; 7; 16
+Gebied_code : [english] : character : 23 unique values : DX14; DX10; Dxxx; DX13; DX06; DX21; DX09; DX12; DX19; DX05
+Gebied : [english] : character : 23 unique values : Westerpark; IJburg, Zeeburgereiland; Bijlmer-Centrum, Amstel III; De Aker, Sloten, Nieuw-Sloten; Oud-West, De Baarsjes; Noord-West; De Pijp, Rivierenbuurt; Geuzenveld, Slotermeer, Sloterdijken; Centrum-Oost; Oud-Oost
+Stadsdeel_code : [english] : character : 8 unique values : T; N; M; B; E; K; A; F
+Opp_m2 : [english] : integer : 23 unique values : 8673760; 29483500; 7075160; 8701910; 3033130; 4076020; 20343200; 3233450; 5517480; 2118640

@@ -1,0 +1,50 @@
+744 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 744 unique values : 324; 30; 228; 278; 302; 726; 409; 424; 75; 296
+ABSREL : [english] : character : 2 unique values : ABS; REL
+Stemdistrict : [english] : character : 372 unique values : 600; 651+652; 292; 634; 331; 151; 424; 232; 009; 542
+Stemlocatie : [english] : character : 368 unique values : De Nieuwe KHL ; Museumwerf 't Kromhout; PlusPunt Eigenwijks Geuzenveld; OBA Osdorp; Tugelahuis; 4e Montessorischool De Pinksterbloem; School De Roos; OBS Oranje Nassauschool; IJburg College 1; Doven Ontmoetings Centrum
+Opgeroepenen : [english] : integer : 342 unique values : 758; 1109; 820; 1999; 1000; 1745; 1559; 1458; 1423; 2572
+Geldig : [english] : integer : 313 unique values : 590; 584; 1392; 434; 1144; 904; 679; 1000; 908; 481
+Blanco : [english] : integer : 8 unique values : 6; 4; 5; 1; 0; 3; 7; 2
+Ongeldig : [english] : integer : 14 unique values : 2; 5; 3; 19; 1; 9; 0; 8; 12; 11
+Opkomstpercentage : [english] : double : 291 unique values : 58; 18.6; 69.8; 79.7; 34.4; 22.2; 65.9; 45.4; 53.8; 26.2
+Grootste_partij : [english] : character : 6 unique values : Forum voor Democratie; VVD; PvdA; DENK; GROENLINKS; GROENLINKS - PvdA
+Grootste_aantal : [english] : integer : 222 unique values : 41; 199; 140; 118; 223; 150; 445; 130; 272; 584
+Grootste_percentage : [english] : double : 155 unique values : 30.7; 20.5; 24.6; 19.8; 18.8; 25.7; 19.5; 20.6; 30.6; 29.6
+Tweede_partij : [english] : character : 7 unique values : D66; VVD; Forum voor Democratie; GROENLINKS; PvdA - GROENLINKS; PvdA; DENK
+Tweede_aantal : [english] : integer : 204 unique values : 127; 84; 226; 194; 34; 97; 267; 48; 54; 50
+Tweede_percentage : [english] : double : 127 unique values : 25.1; 17.7; 20.9; 23.1; 14.3; 11.7; 22; 13.3; 22.6; 17.9
+Verschil_aantal : [english] : integer : 122 unique values : 33; 69; 122; 44; 39; 67; 111; 29; 27; 97
+Verschil_percentage : [english] : double : 154 unique values : 12.3; 6.6; 10.2; 12.8; 17.1; 2.5; 1.9; 21.6; 12.7; 1.6
+GROENLINKS : [english] : integer : 227 unique values : 75; 153; 32; 131; 58; 128; 162; 318; 82; 282
+PvdA : [english] : integer : 201 unique values : 99; 217; 71; 200; 199; 85; 300; 136; 211; 221
+D66 : [english] : integer : 164 unique values : 11; 163; 99; 276; 89; 157; 108; 15; 52; 49
+VVD : [english] : integer : 160 unique values : 35; 27; 180; 20; 235; 206; 17; 10; 9; 60
+Partij_voor_de_Dieren : [english] : integer : 104 unique values : 83; 52; 65; 60; 54; 19; 99; 94; 18; 17
+Forum_voor_Democratie : [english] : integer : 99 unique values : 14; 37; 106; 46; 91; 59; 19; 70; 126; 42
+VOLT : [english] : integer : 88 unique values : 4; 48; 20; 81; 74; 38; 23; 59; 135; 6
+DENK : [english] : integer : 82 unique values : 112; 89; 32; 2; 129; 45; 24; 70; 30; 50
+SP : [english] : integer : 55 unique values : 4; 32; 8; 21; 54; 39; 31; 69; 20; 41
+CDA : [english] : integer : 60 unique values : 20; 14; 8; 15; 31; 58; 25; 9; 37; 48
+PVV : [english] : integer : 43 unique values : 12; 47; 38; 24; 54; 3; 10; 8; 15; 23
+ChristenUnie_SGP : [english] : integer : 39 unique values : 1; 23; 9; 3; 15; 30; 43; 42; 7; 0
+X50PLUS : [english] : integer : 45 unique values : 46; 24; 17; 14; 13; 42; 35; 0; 22; 49
+JEZUS_LEEFT : [english] : integer : 8 unique values : 4; 6; 0; 2; 1; 5; 3; 7
+De_Groenen : [english] : integer : 10 unique values : 4; 8; 6; 1; 0; 9; 7; 3; 2; 5
+vandeRegio_Piratenpartij : [english] : integer : 11 unique values : 7; 5; 2; 9; 11; 6; 4; 0; 3; 1
+X_GROENLINKS : [english] : double : 204 unique values : 22.9; 21.9; 28.9; 22.4; 34.3; 19.1; 31; 21; 20.6; 34.9
+X_PvdA : [english] : double : 146 unique values : 13.4; 16.5; 15.7; 28.9; 22.4; 27.5; 20.2; 20.3; 14.4; 20.6
+X_D66 : [english] : double : 130 unique values : 17; 13.5; 10; 5; 14.4; 0; 4.4; 11.2; 12.4; 13.1
+X_VVD : [english] : double : 159 unique values : 11.1; 7.9; 3; 3.6; 20.5; 12.2; 9.9; 13.2; 13.4; 12.4
+X_Partij_voor_de_Dieren : [english] : double : 86 unique values : 5; 7.5; 8; 5.4; 7.9; 11.2; 4.9; 4.6; 5.8; 8.1
+X_Forum_voor_Democratie : [english] : double : 126 unique values : 4.6; 6.5; 10.3; 17.7; 5.2; 4.9; 8.2; 3.6; 9.3; 12.1
+X_VOLT : [english] : double : 79 unique values : 5.2; 5.4; 0.9; 4; 7.9; 6.5; 3.7; 1.3; 7.6; 2.7
+X_DENK : [english] : double : 121 unique values : 1.8; 6.6; 5.9; 4; 2.1; 0; 27.7; 14.8; 7.1; 8.5
+X_SP : [english] : double : 76 unique values : 1.2; 3.7; 6.7; 2.9; 1.8; 4.6; 7.7; 6; 5.6; 6.4
+X_CDA : [english] : double : 60 unique values : 2.8; 6.1; 5.1; 1.2; 5.7; 3.8; 2; 0; 2.4; 3.9
+X_PVV : [english] : double : 69 unique values : 1.9; 5.9; 4.6; 1.6; 2.1; 1.7; 2.9; 1.8; 6; 3.8
+X_ChristenUnie_SGP : [english] : double : 64 unique values : 0.3; 9.8; 1.8; 2.9; 5.7; 2.5; 0.9; 9.2; 3.4; 4.1
+X_50PLUS : [english] : double : 65 unique values : 4.2; 3.7; 4.8; 0.6; 0.7; 1.7; 2.1; 1; 2.9; 3.4
+X_JEZUS_LEEFT : [english] : double : 12 unique values : 0.3; 0.4; 0.7; 0; 0.8; 0.2; 0.9; 0.5; 0.6; 1.1
+X_De_Groenen : [english] : double : 15 unique values : 1; 0.1; 1.2; 0; 1.1; 1.5; 0.8; 1.3; 0.2; 0.7
+X_vandeRegio_Piratenpartij : [english] : double : 19 unique values : 1.3; 0.7; 2.6; 0.6; 0.1; 1.4; 2.1; 1.1; 1.6; 0.5

@@ -1,0 +1,6 @@
+99 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 99 unique values : 86; 27; 20; 68; 73; 53; 29; 90; 44; 3
+Buurtcombinatie_code : [english] : character : 99 unique values : F79; M50; K23; T98; E38; A05; N64; F89; M28; K47
+Buurtcombinatie : [english] : character : 99 unique values : Indische Buurt Oost; De Weteringschans; Osdorp-Oost; Driemond; Jordaan; Da Costabuurt; Frederik Hendrikbuurt; Tuindorp Nieuwendam; Hoofddorppleinbuurt; Waterlandpleinbuurt
+Stadsdeel_code : [english] : character : 8 unique values : A; M; N; B; F; T; K; E
+Opp_m2 : [english] : integer : 99 unique values : 405114; 698434; 433070; 372220; 946521; 258498; 599618; 1509620; 470595; 1073830

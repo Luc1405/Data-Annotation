@@ -1,0 +1,14 @@
+1023 entities in the dataset
+ï..OBJECTNUMMER : [english] : integer : 1023 unique values : 392; 737; 586; 887; 962; 16; 46; 526; 699; 913
+Gebiednummer : [english] : integer : 2 unique values : 1; 0
+Locatie : [english] : character : 346 unique values : Zuiderakerweg; Westrandweg A5; SchapenweiVondelpark; Schooltuin Wagner; Sloterpl watersportc; E v Meterenbuurt; Haarlemmerweg N200; Eurotank; Gaasperprk bebouwing; Wijkergouw
+Zone : [english] : character : 10 unique values : Te weinig gegevens; Infrastructuur; Saneringsgebied; Zone 5; Zone 2; Zone 4; Zone 7; Zone 6; Zone 3; Zone 1
+Zone_weg : [english] : character : 8 unique values : Te weinig gegevens; Rijksweg; Saneringsgebied; Spoorweg; Zone A; Zone D; Zone C; Zone B
+Bodemfunctie : [english] : character : 3 unique values : Wonen; Industrie; Landbouw
+Toplaag : [english] : character : 7 unique values : Industrie; > Industrie; ; Achtergrondwaarde; Wonen; Geen gegevens; Saneringslocatie
+Diepe_laag : [english] : character : 7 unique values : Geen gegevens; > Industrie; Achtergrondwaarde; Industrie; Saneringslocatie; Wonen; 
+Oorspronkelijk_maaiveld : [english] : character : 7 unique values : Industrie; Saneringslocatie; Wonen; Achtergrondwaarde; > Industrie; Geen gegevens; 
+Toelichting : [english] : character : 39 unique values : ZoneS25.pdf; ZoneS26.pdf; Zone7.pdf; ZoneS8.pdf; ZoneS11.pdf; ZoneS5.pdf; ; ZoneS12.pdf; ZoneW.pdf; ZoneS6b.pdf
+Toelichting_weg : [english] : character : 34 unique values : ZoneC.pdf; ZoneS19.pdf; ZoneS8.pdf; ZoneS2.pdf; ZoneB.pdf; ZoneS17.pdf; ZoneW.pdf; ZoneS7.pdf; ZoneS18.pdf; ZoneD.pdf
+Statistische_kentallen : [english] : character : 8 unique values : Kentallen_7.pdf; Kentallen_2.pdf; ; Kentallen_5.pdf; Kentallen_6.pdf; Kentallen_1.pdf; Kentallen_4.pdf; Kentallen_3.pdf
+Statistische_kentallen_weg : [english] : character : 5 unique values : Kentallen_D.pdf; Kentallen_A.pdf; Kentallen_B.pdf; Kentallen_C.pdf; 
