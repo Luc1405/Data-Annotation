@@ -2,6 +2,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { formatNumber, formatPercent, getConfusionCells, getResults, getRun, type ConfusionCell } from "../../../lib/db";
 
+function provenanceText(provenance: Record<string, unknown> | null, key: string) {
+  const value = provenance?.[key];
+  if (typeof value === "string") return value;
+  if (typeof value === "boolean") return value ? "Yes" : "No";
+  return "—";
+}
+
+function shortHash(value: string) {
+  return value.length > 12 ? value.slice(0, 12) : value;
+}
+
 function ConfusionMatrix({ title, cells }: { title: string; cells: ConfusionCell[] }) {
   const labels = Array.from(new Set(cells.flatMap((cell) => [cell.actual_label, cell.predicted_label])))
     .filter((label) => !label.startsWith("__"))
@@ -64,7 +75,23 @@ export default async function RunDetail({ params }: { params: Promise<{ id: stri
             <div className="metric"><div className="label">Completed rows</div><div className="value">{run.completed_rows}/{run.total_rows}</div></div>
             <div className="metric"><div className="label">Geometry accuracy</div><div className="value">{formatPercent(run.geometry_accuracy)}</div></div>
             <div className="metric"><div className="label">Entity accuracy</div><div className="value">{formatPercent(run.entity_accuracy)}</div></div>
+            <div className="metric"><div className="label">Joint accuracy</div><div className="value">{formatPercent(run.joint_accuracy)}</div></div>
+            <div className="metric"><div className="label">Exact mismatches</div><div className="value">{run.exact_mismatch_count ?? "—"}</div></div>
             <div className="metric"><div className="label">Mean confidence</div><div className="value">{formatNumber(run.mean_confidence)}</div></div>
+          </section>
+
+          <section className="card" style={{ marginBottom: 20 }}>
+            <h2>Run provenance</h2>
+            <div className="table-wrap">
+              <table>
+                <tbody>
+                  <tr><th>Git commit</th><td>{shortHash(provenanceText(run.provenance, "git_commit"))}</td><th>Git branch</th><td>{provenanceText(run.provenance, "git_branch")}</td></tr>
+                  <tr><th>Git dirty</th><td>{provenanceText(run.provenance, "git_dirty")}</td><th>Script</th><td>{provenanceText(run.provenance, "script_path")}</td></tr>
+                  <tr><th>Script SHA-256</th><td>{shortHash(provenanceText(run.provenance, "script_sha256"))}</td><th>Decision tree SHA-256</th><td>{shortHash(provenanceText(run.provenance, "decision_tree_sha256"))}</td></tr>
+                  <tr><th>Input CSV SHA-256</th><td>{shortHash(provenanceText(run.provenance, "input_csv_sha256"))}</td><th>Macro F1</th><td>Geometry {formatNumber(run.geometry_macro_f1)} / Entity {formatNumber(run.entity_macro_f1)}</td></tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", marginBottom: 20 }}>

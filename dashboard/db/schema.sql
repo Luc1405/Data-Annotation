@@ -10,7 +10,13 @@ CREATE TABLE IF NOT EXISTS annotation_runs (
     error_rows INTEGER NOT NULL DEFAULT 0,
     geometry_accuracy DOUBLE PRECISION,
     entity_accuracy DOUBLE PRECISION,
+    joint_accuracy DOUBLE PRECISION,
+    exact_mismatch_count INTEGER,
+    geometry_macro_f1 DOUBLE PRECISION,
+    entity_macro_f1 DOUBLE PRECISION,
     mean_confidence DOUBLE PRECISION,
+    provenance JSONB,
+    per_label_metrics JSONB,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
@@ -47,3 +53,11 @@ CREATE TABLE IF NOT EXISTS confusion_matrix_cells (
 CREATE INDEX IF NOT EXISTS idx_annotation_results_run_id ON annotation_results(run_id);
 CREATE INDEX IF NOT EXISTS idx_annotation_results_errors ON annotation_results(run_id, error);
 CREATE INDEX IF NOT EXISTS idx_confusion_matrix_cells_run_type ON confusion_matrix_cells(run_id, matrix_type);
+
+ALTER TABLE IF EXISTS annotation_runs
+    ADD COLUMN IF NOT EXISTS joint_accuracy DOUBLE PRECISION,
+    ADD COLUMN IF NOT EXISTS exact_mismatch_count INTEGER,
+    ADD COLUMN IF NOT EXISTS geometry_macro_f1 DOUBLE PRECISION,
+    ADD COLUMN IF NOT EXISTS entity_macro_f1 DOUBLE PRECISION,
+    ADD COLUMN IF NOT EXISTS provenance JSONB,
+    ADD COLUMN IF NOT EXISTS per_label_metrics JSONB;

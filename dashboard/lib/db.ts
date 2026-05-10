@@ -12,7 +12,13 @@ export type RunSummary = {
   error_rows: number;
   geometry_accuracy: number | null;
   entity_accuracy: number | null;
+  joint_accuracy: number | null;
+  exact_mismatch_count: number | null;
+  geometry_macro_f1: number | null;
+  entity_macro_f1: number | null;
   mean_confidence: number | null;
+  provenance: Record<string, unknown> | null;
+  per_label_metrics: Record<string, unknown> | null;
 };
 
 export type AnnotationResult = {
@@ -75,7 +81,9 @@ export async function getRuns(): Promise<RunSummary[]> {
 
   const result = await db.query<RunSummary>(
     `SELECT id, model, started_at, completed_at, total_rows, completed_rows,
-            error_rows, geometry_accuracy, entity_accuracy, mean_confidence
+            error_rows, geometry_accuracy, entity_accuracy, joint_accuracy,
+            exact_mismatch_count, geometry_macro_f1, entity_macro_f1,
+            mean_confidence, provenance, per_label_metrics
        FROM annotation_runs
       ORDER BY COALESCE(started_at, created_at) DESC`
   );
@@ -88,7 +96,9 @@ export async function getRun(id: string): Promise<RunSummary | null> {
 
   const result = await db.query<RunSummary>(
     `SELECT id, model, started_at, completed_at, total_rows, completed_rows,
-            error_rows, geometry_accuracy, entity_accuracy, mean_confidence
+            error_rows, geometry_accuracy, entity_accuracy, joint_accuracy,
+            exact_mismatch_count, geometry_macro_f1, entity_macro_f1,
+            mean_confidence, provenance, per_label_metrics
        FROM annotation_runs
       WHERE id = $1`,
     [id]

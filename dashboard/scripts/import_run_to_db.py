@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 import psycopg
+from psycopg.types.json import Jsonb
 
 
 def none_if_empty(value: str | None) -> str | None:
@@ -32,8 +33,10 @@ def import_run(run_dir: Path, database_url: str) -> None:
                 INSERT INTO annotation_runs (
                     id, model, started_at, completed_at, input_csv_path, output_dir,
                     total_rows, completed_rows, error_rows, geometry_accuracy,
-                    entity_accuracy, mean_confidence
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    entity_accuracy, joint_accuracy, exact_mismatch_count,
+                    geometry_macro_f1, entity_macro_f1, mean_confidence,
+                    provenance, per_label_metrics
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (id) DO UPDATE SET
                     model = EXCLUDED.model,
                     started_at = EXCLUDED.started_at,
@@ -45,7 +48,13 @@ def import_run(run_dir: Path, database_url: str) -> None:
                     error_rows = EXCLUDED.error_rows,
                     geometry_accuracy = EXCLUDED.geometry_accuracy,
                     entity_accuracy = EXCLUDED.entity_accuracy,
-                    mean_confidence = EXCLUDED.mean_confidence
+                    joint_accuracy = EXCLUDED.joint_accuracy,
+                    exact_mismatch_count = EXCLUDED.exact_mismatch_count,
+                    geometry_macro_f1 = EXCLUDED.geometry_macro_f1,
+                    entity_macro_f1 = EXCLUDED.entity_macro_f1,
+                    mean_confidence = EXCLUDED.mean_confidence,
+                    provenance = EXCLUDED.provenance,
+                    per_label_metrics = EXCLUDED.per_label_metrics
                 """,
                 (
                     metrics["run_id"],
@@ -59,7 +68,13 @@ def import_run(run_dir: Path, database_url: str) -> None:
                     metrics.get("error_rows", 0),
                     metrics.get("geometry_accuracy"),
                     metrics.get("entity_accuracy"),
+                    metrics.get("joint_accuracy"),
+                    metrics.get("exact_mismatch_count"),
+                    metrics.get("geometry_macro_f1"),
+                    metrics.get("entity_macro_f1"),
                     metrics.get("mean_confidence"),
+                    Jsonb(metrics.get("provenance", {})),
+                    Jsonb(metrics.get("per_label_metrics", {})),
                 ),
             )
 

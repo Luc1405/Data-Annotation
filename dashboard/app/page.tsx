@@ -32,6 +32,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
         <div className="metric"><div className="label">Runs</div><div className="value">{runs.length}</div></div>
         <div className="metric"><div className="label">Latest geometry accuracy</div><div className="value">{formatPercent(baseRun?.geometry_accuracy ?? null)}</div></div>
         <div className="metric"><div className="label">Latest entity accuracy</div><div className="value">{formatPercent(baseRun?.entity_accuracy ?? null)}</div></div>
+        <div className="metric"><div className="label">Latest joint accuracy</div><div className="value">{formatPercent(baseRun?.joint_accuracy ?? null)}</div></div>
         <div className="metric"><div className="label">Mean confidence</div><div className="value">{formatNumber(baseRun?.mean_confidence ?? null)}</div></div>
       </section>
 
