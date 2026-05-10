@@ -36,6 +36,25 @@ export type ConfusionCell = {
   count: number;
 };
 
+export type RunComparisonRow = {
+  row_index: number;
+  title: string | null;
+  english_title: string | null;
+  kaartlaag: string;
+  gold_geometry: string | null;
+  gold_entity: string | null;
+  baseline_predicted_geometry: string | null;
+  baseline_predicted_entity: string | null;
+  baseline_confidence: number | null;
+  baseline_reasoning_summary: string | null;
+  baseline_error: string | null;
+  candidate_predicted_geometry: string | null;
+  candidate_predicted_entity: string | null;
+  candidate_confidence: number | null;
+  candidate_reasoning_summary: string | null;
+  candidate_error: string | null;
+};
+
 let pool: Pool | null = null;
 
 function getPool() {
@@ -88,6 +107,49 @@ export async function getResults(runId: string): Promise<AnnotationResult[]> {
       WHERE run_id = $1
       ORDER BY row_index ASC`,
     [runId]
+  );
+  return result.rows;
+}
+
+
+export async function getRunComparisonRows(
+  baselineRunId: string,
+  candidateRunId: string
+): Promise<RunComparisonRow[]> {
+  const db = getPool();
+  if (!db) return [];
+
+  const result = await db.query<RunComparisonRow>(
+    `SELECT
+        COALESCE(baseline.row_index, candidate.row_index) AS row_index,
+        COALESCE(baseline.title, candidate.title) AS title,
+        COALESCE(baseline.english_title, candidate.english_title) AS english_title,
+        COALESCE(baseline.kaartlaag, candidate.kaartlaag) AS kaartlaag,
+        COALESCE(baseline.gold_geometry, candidate.gold_geometry) AS gold_geometry,
+        COALESCE(baseline.gold_entity, candidate.gold_entity) AS gold_entity,
+        baseline.predicted_geometry AS baseline_predicted_geometry,
+        baseline.predicted_entity AS baseline_predicted_entity,
+        baseline.confidence AS baseline_confidence,
+        baseline.reasoning_summary AS baseline_reasoning_summary,
+        baseline.error AS baseline_error,
+        candidate.predicted_geometry AS candidate_predicted_geometry,
+        candidate.predicted_entity AS candidate_predicted_entity,
+        candidate.confidence AS candidate_confidence,
+        candidate.reasoning_summary AS candidate_reasoning_summary,
+        candidate.error AS candidate_error
+       FROM (
+        SELECT *
+          FROM annotation_results
+         WHERE run_id = $1
+       ) baseline
+       FULL OUTER JOIN (
+        SELECT *
+          FROM annotation_results
+         WHERE run_id = $2
+       ) candidate
+         ON candidate.row_index = baseline.row_index
+      ORDER BY row_index ASC`,
+    [baselineRunId, candidateRunId]
   );
   return result.rows;
 }

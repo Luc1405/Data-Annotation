@@ -36,7 +36,10 @@ th, td { border-bottom: 1px solid var(--border); padding: 10px 12px; text-align:
 th { color: #344054; background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
 .badge { display: inline-flex; padding: 4px 8px; border-radius: 999px; background: #eef4ff; color: #3538cd; font-weight: 700; font-size: 12px; }
 .badge.error { background: #fef3f2; color: var(--danger); }
+.badge.success { background: #ecfdf3; color: #027a48; }
+.badge.warning { background: #fff7ed; color: #b54708; }
 .actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.field { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 13px; font-weight: 700; }
 .button { background: var(--accent); color: white; border-radius: 10px; padding: 10px 14px; text-decoration: none; font-weight: 700; border: 0; }
 .select { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; background: white; }
 .notice { border-left: 4px solid var(--accent); padding: 14px 16px; background: #eef4ff; border-radius: 10px; }
