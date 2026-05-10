@@ -65,10 +65,6 @@ function RunMetricTable({ baselineRun, candidateRun }: { baselineRun: RunSummary
             <tr><td>Errors</td><td>{baselineRun.error_rows}</td><td>{candidateRun.error_rows}</td><td>{candidateRun.error_rows - baselineRun.error_rows}</td></tr>
             <tr><td>Geometry accuracy</td><td>{formatPercent(baselineRun.geometry_accuracy)}</td><td>{formatPercent(candidateRun.geometry_accuracy)}</td><td>{metricDelta(candidateRun.geometry_accuracy, baselineRun.geometry_accuracy, formatPercent)}</td></tr>
             <tr><td>Entity accuracy</td><td>{formatPercent(baselineRun.entity_accuracy)}</td><td>{formatPercent(candidateRun.entity_accuracy)}</td><td>{metricDelta(candidateRun.entity_accuracy, baselineRun.entity_accuracy, formatPercent)}</td></tr>
-            <tr><td>Joint accuracy</td><td>{formatPercent(baselineRun.joint_accuracy)}</td><td>{formatPercent(candidateRun.joint_accuracy)}</td><td>{metricDelta(candidateRun.joint_accuracy, baselineRun.joint_accuracy, formatPercent)}</td></tr>
-            <tr><td>Exact mismatches</td><td>{baselineRun.exact_mismatch_count ?? "—"}</td><td>{candidateRun.exact_mismatch_count ?? "—"}</td><td>{candidateRun.exact_mismatch_count !== null && baselineRun.exact_mismatch_count !== null ? candidateRun.exact_mismatch_count - baselineRun.exact_mismatch_count : "—"}</td></tr>
-            <tr><td>Geometry macro F1</td><td>{formatNumber(baselineRun.geometry_macro_f1)}</td><td>{formatNumber(candidateRun.geometry_macro_f1)}</td><td>{metricDelta(candidateRun.geometry_macro_f1, baselineRun.geometry_macro_f1, formatNumber)}</td></tr>
-            <tr><td>Entity macro F1</td><td>{formatNumber(baselineRun.entity_macro_f1)}</td><td>{formatNumber(candidateRun.entity_macro_f1)}</td><td>{metricDelta(candidateRun.entity_macro_f1, baselineRun.entity_macro_f1, formatNumber)}</td></tr>
             <tr><td>Mean confidence</td><td>{formatNumber(baselineRun.mean_confidence)}</td><td>{formatNumber(candidateRun.mean_confidence)}</td><td>{metricDelta(candidateRun.mean_confidence, baselineRun.mean_confidence, formatNumber)}</td></tr>
           </tbody>
         </table>

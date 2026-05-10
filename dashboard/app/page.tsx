@@ -17,7 +17,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
           <p>View saved annotation runs, accuracy metrics, and confusion matrices from your local PostgreSQL database.</p>
         </div>
         <div className="actions">
-          <Link className="button" href="/run">Run script</Link>
           <Link className="button" href="/compare">Compare runs</Link>
           <Link className="button" href={baseRun ? `/runs/${baseRun.id}` : "#"}>Latest run</Link>
         </div>
@@ -56,7 +55,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
               <tbody>
                 <tr><td>Geometry accuracy</td><td>{formatPercent(baseRun.geometry_accuracy)}</td><td>{formatPercent(compareRun.geometry_accuracy)}</td><td>{formatPercent((compareRun.geometry_accuracy ?? 0) - (baseRun.geometry_accuracy ?? 0))}</td></tr>
                 <tr><td>Entity accuracy</td><td>{formatPercent(baseRun.entity_accuracy)}</td><td>{formatPercent(compareRun.entity_accuracy)}</td><td>{formatPercent((compareRun.entity_accuracy ?? 0) - (baseRun.entity_accuracy ?? 0))}</td></tr>
-                <tr><td>Joint accuracy</td><td>{formatPercent(baseRun.joint_accuracy)}</td><td>{formatPercent(compareRun.joint_accuracy)}</td><td>{formatPercent((compareRun.joint_accuracy ?? 0) - (baseRun.joint_accuracy ?? 0))}</td></tr>
                 <tr><td>Mean confidence</td><td>{formatNumber(baseRun.mean_confidence)}</td><td>{formatNumber(compareRun.mean_confidence)}</td><td>{formatNumber((compareRun.mean_confidence ?? 0) - (baseRun.mean_confidence ?? 0))}</td></tr>
               </tbody>
             </table>
