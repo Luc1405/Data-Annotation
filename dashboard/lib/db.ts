@@ -12,7 +12,13 @@ export type RunSummary = {
   error_rows: number;
   geometry_accuracy: number | null;
   entity_accuracy: number | null;
+  joint_accuracy: number | null;
+  exact_mismatch_count: number | null;
+  geometry_macro_f1: number | null;
+  entity_macro_f1: number | null;
   mean_confidence: number | null;
+  provenance: Record<string, unknown> | null;
+  per_label_metrics: Record<string, unknown> | null;
 };
 
 export type AnnotationResult = {
@@ -36,6 +42,25 @@ export type ConfusionCell = {
   count: number;
 };
 
+export type RunComparisonRow = {
+  row_index: number;
+  title: string | null;
+  english_title: string | null;
+  kaartlaag: string;
+  gold_geometry: string | null;
+  gold_entity: string | null;
+  baseline_predicted_geometry: string | null;
+  baseline_predicted_entity: string | null;
+  baseline_confidence: number | null;
+  baseline_reasoning_summary: string | null;
+  baseline_error: string | null;
+  candidate_predicted_geometry: string | null;
+  candidate_predicted_entity: string | null;
+  candidate_confidence: number | null;
+  candidate_reasoning_summary: string | null;
+  candidate_error: string | null;
+};
+
 let pool: Pool | null = null;
 
 function getPool() {
@@ -56,7 +81,9 @@ export async function getRuns(): Promise<RunSummary[]> {
 
   const result = await db.query<RunSummary>(
     `SELECT id, model, started_at, completed_at, total_rows, completed_rows,
-            error_rows, geometry_accuracy, entity_accuracy, mean_confidence
+            error_rows, geometry_accuracy, entity_accuracy, joint_accuracy,
+            exact_mismatch_count, geometry_macro_f1, entity_macro_f1,
+            mean_confidence, provenance, per_label_metrics
        FROM annotation_runs
       ORDER BY COALESCE(started_at, created_at) DESC`
   );
@@ -69,7 +96,9 @@ export async function getRun(id: string): Promise<RunSummary | null> {
 
   const result = await db.query<RunSummary>(
     `SELECT id, model, started_at, completed_at, total_rows, completed_rows,
-            error_rows, geometry_accuracy, entity_accuracy, mean_confidence
+            error_rows, geometry_accuracy, entity_accuracy, joint_accuracy,
+            exact_mismatch_count, geometry_macro_f1, entity_macro_f1,
+            mean_confidence, provenance, per_label_metrics
        FROM annotation_runs
       WHERE id = $1`,
     [id]
@@ -88,6 +117,49 @@ export async function getResults(runId: string): Promise<AnnotationResult[]> {
       WHERE run_id = $1
       ORDER BY row_index ASC`,
     [runId]
+  );
+  return result.rows;
+}
+
+
+export async function getRunComparisonRows(
+  baselineRunId: string,
+  candidateRunId: string
+): Promise<RunComparisonRow[]> {
+  const db = getPool();
+  if (!db) return [];
+
+  const result = await db.query<RunComparisonRow>(
+    `SELECT
+        COALESCE(baseline.row_index, candidate.row_index) AS row_index,
+        COALESCE(baseline.title, candidate.title) AS title,
+        COALESCE(baseline.english_title, candidate.english_title) AS english_title,
+        COALESCE(baseline.kaartlaag, candidate.kaartlaag) AS kaartlaag,
+        COALESCE(baseline.gold_geometry, candidate.gold_geometry) AS gold_geometry,
+        COALESCE(baseline.gold_entity, candidate.gold_entity) AS gold_entity,
+        baseline.predicted_geometry AS baseline_predicted_geometry,
+        baseline.predicted_entity AS baseline_predicted_entity,
+        baseline.confidence AS baseline_confidence,
+        baseline.reasoning_summary AS baseline_reasoning_summary,
+        baseline.error AS baseline_error,
+        candidate.predicted_geometry AS candidate_predicted_geometry,
+        candidate.predicted_entity AS candidate_predicted_entity,
+        candidate.confidence AS candidate_confidence,
+        candidate.reasoning_summary AS candidate_reasoning_summary,
+        candidate.error AS candidate_error
+       FROM (
+        SELECT *
+          FROM annotation_results
+         WHERE run_id = $1
+       ) baseline
+       FULL OUTER JOIN (
+        SELECT *
+          FROM annotation_results
+         WHERE run_id = $2
+       ) candidate
+         ON candidate.row_index = baseline.row_index
+      ORDER BY row_index ASC`,
+    [baselineRunId, candidateRunId]
   );
   return result.rows;
 }

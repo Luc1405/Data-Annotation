@@ -3,8 +3,10 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import hashlib
 import random
 import shutil
+import subprocess
 import time
 import uuid
 from collections import Counter, defaultdict
@@ -20,7 +22,8 @@ from openai import APIConnectionError, APITimeoutError, OpenAI, RateLimitError
 # -----------------------------
 # Paths
 # -----------------------------
-BASE_DIR = Path(__file__).resolve().parent
+SCRIPT_PATH = Path(__file__).resolve()
+BASE_DIR = SCRIPT_PATH.parent.parent if SCRIPT_PATH.parent.name == "annotation_versions" else SCRIPT_PATH.parent
 INPUT_DIR = BASE_DIR / "input_data"
 
 CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations.csv"
@@ -572,6 +575,58 @@ def call_gpt(
     raise RuntimeError("Unexpected retry loop exit.")
 
 
+
+def file_sha256(path: Path) -> str | None:
+    if not path.exists():
+        return None
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def run_git_command(args: list[str]) -> str | None:
+    try:
+        completed = subprocess.run(
+            ["git", *args],
+            cwd=BASE_DIR,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return completed.stdout.strip()
+
+
+def get_git_metadata() -> dict[str, Any]:
+    status = run_git_command(["status", "--porcelain"])
+    return {
+        "git_commit": run_git_command(["rev-parse", "HEAD"]),
+        "git_branch": run_git_command(["rev-parse", "--abbrev-ref", "HEAD"]),
+        "git_dirty": None if status is None else bool(status),
+    }
+
+
+def build_run_provenance(input_csv_path: Path) -> dict[str, Any]:
+    return {
+        **get_git_metadata(),
+        "script_path": str(SCRIPT_PATH.relative_to(BASE_DIR)),
+        "script_sha256": file_sha256(SCRIPT_PATH),
+        "decision_tree_path": str(DECISION_TREE_PATH.relative_to(BASE_DIR)),
+        "decision_tree_sha256": file_sha256(DECISION_TREE_PATH),
+        "input_csv_sha256": file_sha256(input_csv_path),
+        "runtime_config": {
+            "request_delay_seconds": REQUEST_DELAY_SECONDS,
+            "max_retries": MAX_RETRIES,
+            "max_backoff_seconds": MAX_BACKOFF_SECONDS,
+            "max_sample_features": MAX_SAMPLE_FEATURES,
+            "max_unique_values": MAX_UNIQUE_VALUES,
+            "max_property_string_length": MAX_PROPERTY_STRING_LENGTH,
+        },
+    }
+
 # -----------------------------
 # Confusion matrices and metrics
 # -----------------------------
@@ -623,6 +678,10 @@ def dataframe_to_records(matrix: pd.DataFrame) -> list[dict[str, Any]]:
     return records
 
 
+def completed_rows_for_metrics(df: pd.DataFrame) -> pd.DataFrame:
+    return df[df["GPTGeometry"].notna() & df["GPTEntity"].notna() & df["GPTError"].isna()]
+
+
 def calculate_accuracy(
     df: pd.DataFrame,
     actual_column: str,
@@ -633,6 +692,108 @@ def calculate_accuracy(
         return None
 
     return float((completed[actual_column] == completed[predicted_column]).mean())
+
+
+def calculate_joint_accuracy(df: pd.DataFrame) -> float | None:
+    completed = completed_rows_for_metrics(df)
+    if completed.empty:
+        return None
+
+    correct = (completed["Geometry"] == completed["GPTGeometry"]) & (
+        completed["Entity"] == completed["GPTEntity"]
+    )
+    return float(correct.mean())
+
+
+def calculate_exact_mismatch_count(df: pd.DataFrame) -> int:
+    completed = completed_rows_for_metrics(df)
+    if completed.empty:
+        return 0
+
+    mismatch = (completed["Geometry"] != completed["GPTGeometry"]) | (
+        completed["Entity"] != completed["GPTEntity"]
+    )
+    return int(mismatch.sum())
+
+
+def calculate_per_label_metrics(
+    df: pd.DataFrame,
+    actual_column: str,
+    predicted_column: str,
+    labels: list[str],
+) -> dict[str, Any]:
+    completed = df[df[predicted_column].notna() & df["GPTError"].isna()]
+    observed_labels = sorted(
+        set(completed[actual_column].dropna().astype(str))
+        | set(completed[predicted_column].dropna().astype(str))
+        | set(labels)
+    )
+
+    per_label: dict[str, dict[str, float | int]] = {}
+    f1_values: list[float] = []
+
+    for label in observed_labels:
+        actual_is_label = completed[actual_column].astype(str) == label
+        predicted_is_label = completed[predicted_column].astype(str) == label
+        true_positive = int((actual_is_label & predicted_is_label).sum())
+        false_positive = int((~actual_is_label & predicted_is_label).sum())
+        false_negative = int((actual_is_label & ~predicted_is_label).sum())
+        support = int(actual_is_label.sum())
+
+        precision = (
+            true_positive / (true_positive + false_positive)
+            if true_positive + false_positive > 0
+            else 0.0
+        )
+        recall = (
+            true_positive / (true_positive + false_negative)
+            if true_positive + false_negative > 0
+            else 0.0
+        )
+        f1 = (
+            2 * precision * recall / (precision + recall)
+            if precision + recall > 0
+            else 0.0
+        )
+
+        per_label[label] = {
+            "precision": float(precision),
+            "recall": float(recall),
+            "f1": float(f1),
+            "support": support,
+            "true_positive": true_positive,
+            "false_positive": false_positive,
+            "false_negative": false_negative,
+        }
+        if support > 0:
+            f1_values.append(float(f1))
+
+    return {
+        "macro_f1": None if not f1_values else float(sum(f1_values) / len(f1_values)),
+        "labels": per_label,
+    }
+
+
+def build_evaluation_metrics(df: pd.DataFrame) -> dict[str, Any]:
+    geometry_label_metrics = calculate_per_label_metrics(
+        df, "Geometry", "GPTGeometry", GEOMETRY_TYPES
+    )
+    entity_label_metrics = calculate_per_label_metrics(
+        df, "Entity", "GPTEntity", ENTITY_TYPES
+    )
+
+    return {
+        "geometry_accuracy": calculate_accuracy(df, "Geometry", "GPTGeometry"),
+        "entity_accuracy": calculate_accuracy(df, "Entity", "GPTEntity"),
+        "joint_accuracy": calculate_joint_accuracy(df),
+        "exact_mismatch_count": calculate_exact_mismatch_count(df),
+        "geometry_macro_f1": geometry_label_metrics["macro_f1"],
+        "entity_macro_f1": entity_label_metrics["macro_f1"],
+        "per_label_metrics": {
+            "geometry": geometry_label_metrics["labels"],
+            "entity": entity_label_metrics["labels"],
+        },
+    }
 
 
 def write_run_artifacts(
@@ -667,8 +828,7 @@ def write_run_artifacts(
         "total_rows": total_rows,
         "completed_rows": completed_rows,
         "error_rows": error_rows,
-        "geometry_accuracy": calculate_accuracy(df, "Geometry", "GPTGeometry"),
-        "entity_accuracy": calculate_accuracy(df, "Entity", "GPTEntity"),
+        **build_evaluation_metrics(df),
         "mean_confidence": None if pd.isna(mean_confidence) else float(mean_confidence),
     }
 
@@ -696,6 +856,25 @@ def write_run_artifacts(
     return metrics
 
 
+
+def apply_database_schema(database_url: str) -> None:
+    import psycopg
+
+    schema_sql = (BASE_DIR / "dashboard" / "db" / "schema.sql").read_text(encoding="utf-8")
+    with psycopg.connect(database_url) as conn:
+        with conn.cursor() as cur:
+            cur.execute(schema_sql)
+        conn.commit()
+
+
+def save_run_to_database(run_dir: Path, database_url: str) -> None:
+    import psycopg
+    from dashboard.scripts.import_run_to_db import import_run
+
+    apply_database_schema(database_url)
+    import_run(run_dir, database_url)
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Annotate Amsterdam core concept datasets with OpenAI and report performance."
@@ -704,6 +883,12 @@ def parse_args() -> argparse.Namespace:
         "--run-id",
         default=os.getenv("RUN_ID"),
         help="Optional run identifier. Defaults to a UTC timestamp plus a random suffix.",
+    )
+    parser.add_argument(
+        "--input-csv",
+        type=Path,
+        default=CSV_PATH,
+        help="Gold-label input CSV to evaluate against.",
     )
     return parser.parse_args()
 
@@ -728,8 +913,9 @@ def main() -> None:
 
     client = OpenAI()
 
+    input_csv_path = args.input_csv if args.input_csv.is_absolute() else BASE_DIR / args.input_csv
     decision_tree = load_text_file(DECISION_TREE_PATH)
-    df = load_annotations(CSV_PATH)
+    df = load_annotations(input_csv_path)
     df = ensure_output_columns(df)
     df["RunID"] = run_id
 
@@ -827,10 +1013,15 @@ def main() -> None:
         "model": MODEL,
         "started_at": started_at,
         "completed_at": completed_at,
-        "input_csv_path": str(CSV_PATH.relative_to(BASE_DIR)),
+        "input_csv_path": str(input_csv_path.relative_to(BASE_DIR)),
         "output_dir": str(run_dir.relative_to(BASE_DIR)),
+        "provenance": build_run_provenance(input_csv_path),
     }
     metrics = write_run_artifacts(df, run_dir, run_metadata)
+
+    database_url = os.getenv("DATABASE_URL")
+    if database_url:
+        save_run_to_database(run_dir, database_url)
 
     print("Done.")
     print(f"Run ID: {run_id}")
@@ -840,7 +1031,9 @@ def main() -> None:
     print(f"Entity confusion matrix written to: {run_dir / 'confusion_matrix_entity.csv'}")
     print(
         "Accuracy: "
-        f"Geometry={metrics['geometry_accuracy']}, Entity={metrics['entity_accuracy']}"
+        f"Geometry={metrics['geometry_accuracy']}, "
+        f"Entity={metrics['entity_accuracy']}, "
+        f"Joint={metrics['joint_accuracy']}"
     )
 
 

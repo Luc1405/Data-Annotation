@@ -52,9 +52,16 @@ Each run is written to `V2/runs/<run-id>/` with:
 - `confusion_matrix_geometry.csv` — actual-vs-predicted geometry matrix.
 - `confusion_matrix_entity.csv` — actual-vs-predicted entity matrix.
 - `confusion_matrices.json` — normalized matrix cells for database import.
-- `run_metrics.json` — accuracy, confidence, row counts, model, and timestamps.
+- `run_metrics.json` — accuracy, joint accuracy, mismatch counts, macro F1, per-label metrics, confidence, row counts, model, timestamps, and provenance hashes.
 
 For backward compatibility, the latest run is also copied to the top-level `V2/` output files.
+
+
+### Comparing script versions
+
+Best practice is to keep `layer_annotation.py` as the active experiment script and use git commits as the authoritative history for old versions. Each run records the current git commit, dirty state, script hash, decision-tree hash, input CSV hash, model, and runtime settings in `run_metrics.json`, so important benchmark runs should be made from a committed state.
+
+If you need a long-lived alternate implementation, place it in `annotation_versions/<name>.py`. The dashboard's **Run script** page offers `layer_annotation.py` plus any Python files in `annotation_versions/` as selectable scripts. Use readable run IDs such as `prompt-v4-gpt-5-4-mini` so comparisons remain understandable later.
 
 ## Local dashboard
 
@@ -88,7 +95,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open <http://localhost:3000> to see all saved runs, compare headline metrics, inspect confusion matrices and row-level mismatches, and delete runs. By default, deleting a run removes the database rows and that run's `V2/runs/<run-id>` artifact folder. Set `DELETE_RUN_ARTIFACTS=false` in `dashboard/.env.local` if you want dashboard deletes to keep files on disk.
+Open <http://localhost:3000> to see all saved runs, start new script runs, compare headline and joint metrics, inspect confusion matrices and row-level mismatches, and delete runs. By default, deleting a run removes the database rows and that run's `V2/runs/<run-id>` artifact folder. Set `DELETE_RUN_ARTIFACTS=false` in `dashboard/.env.local` if you want dashboard deletes to keep files on disk.
 
 ### Backfilling older runs
 
