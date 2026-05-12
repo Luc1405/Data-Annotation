@@ -9,9 +9,12 @@ import shutil
 import subprocess
 import time
 import uuid
+import urllib.error
+import urllib.request
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
+from dataclasses import dataclass
 from typing import Any
 
 import pandas as pd
@@ -42,11 +45,17 @@ CONFUSION_MATRIX_ENTITY_CSV_PATH = OUTPUT_DIR / "confusion_matrix_entity.csv"
 CONFUSION_MATRICES_JSON_PATH = OUTPUT_DIR / "confusion_matrices.json"
 RUN_METRICS_JSON_PATH = OUTPUT_DIR / "run_metrics.json"
 
+load_dotenv(BASE_DIR / ".env")
+
 
 # -----------------------------
 # Config
 # -----------------------------
-MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite-preview")
+GEMINI_API_URL_TEMPLATE = (
+    "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+)
 
 REQUEST_DELAY_SECONDS = float(os.getenv("REQUEST_DELAY_SECONDS", "0.75"))
 MAX_RETRIES = int(os.getenv("MAX_RETRIES", "8"))
@@ -76,6 +85,37 @@ ENTITY_TYPES = [
     "CoverageDS",
     "NetworkDS",
 ]
+
+
+
+
+@dataclass(frozen=True)
+class ProviderConfig:
+    name: str
+    run_suffix: str
+    model: str
+
+
+def get_gemini_api_key() -> str | None:
+    return os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
+
+def get_provider_configs(provider: str) -> list[ProviderConfig]:
+    providers = {
+        "gpt": ProviderConfig("gpt", "_gpt", OPENAI_MODEL),
+        "gemini": ProviderConfig("gemini", "_gemini", GEMINI_MODEL),
+    }
+
+    if provider == "both":
+        return [providers["gpt"], providers["gemini"]]
+
+    return [providers[provider]]
+
+
+def provider_run_id(base_run_id: str, provider_config: ProviderConfig) -> str:
+    if base_run_id.endswith(provider_config.run_suffix):
+        return base_run_id
+    return f"{base_run_id}{provider_config.run_suffix}"
 
 
 ANNOTATION_SCHEMA = {
@@ -519,6 +559,7 @@ def calculate_backoff_seconds(attempt: int) -> float:
 
 def call_gpt(
     client: OpenAI,
+    model: str,
     decision_tree: str,
     row: pd.Series,
     dataset_json: dict[str, Any] | list[Any],
@@ -532,7 +573,7 @@ def call_gpt(
     for attempt in range(MAX_RETRIES):
         try:
             response = client.responses.create(
-                model=MODEL,
+                model=model,
                 input=messages,
                 text={
                     "format": {
@@ -575,6 +616,119 @@ def call_gpt(
 
     raise RuntimeError("Unexpected retry loop exit.")
 
+
+def gemini_schema() -> dict[str, Any]:
+    return {
+        "type": "object",
+        "properties": ANNOTATION_SCHEMA["properties"],
+        "required": ANNOTATION_SCHEMA["required"],
+    }
+
+
+def parse_gemini_response(response_body: dict[str, Any]) -> dict[str, Any]:
+    candidates = response_body.get("candidates", [])
+    if not candidates:
+        raise RuntimeError(f"Gemini returned no candidates: {response_body}")
+
+    parts = candidates[0].get("content", {}).get("parts", [])
+    text = "".join(str(part.get("text", "")) for part in parts).strip()
+    if not text:
+        raise RuntimeError(f"Gemini returned an empty response: {response_body}")
+
+    return json.loads(text)
+
+
+def call_gemini(
+    api_key: str,
+    model: str,
+    decision_tree: str,
+    row: pd.Series,
+    dataset_json: dict[str, Any] | list[Any],
+) -> dict[str, Any]:
+    messages = build_messages(
+        decision_tree=decision_tree,
+        row=row,
+        dataset_json=dataset_json,
+    )
+    system_message = next(message["content"] for message in messages if message["role"] == "system")
+    user_message = next(message["content"] for message in messages if message["role"] == "user")
+
+    request_body = {
+        "systemInstruction": {
+            "parts": [{"text": system_message}],
+        },
+        "contents": [
+            {
+                "role": "user",
+                "parts": [{"text": user_message}],
+            }
+        ],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": gemini_schema(),
+        },
+    }
+    url = GEMINI_API_URL_TEMPLATE.format(model=model, api_key=api_key)
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            request = urllib.request.Request(
+                url,
+                data=json.dumps(request_body).encode("utf-8"),
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+            with urllib.request.urlopen(request, timeout=120) as response:
+                response_body = json.loads(response.read().decode("utf-8"))
+            return parse_gemini_response(response_body)
+
+        except urllib.error.HTTPError as e:
+            retryable = e.code == 429 or 500 <= e.code < 600
+            error_body = e.read().decode("utf-8", errors="replace")
+            if attempt == MAX_RETRIES - 1 or not retryable:
+                raise RuntimeError(f"Gemini API error {e.code}: {error_body}") from e
+
+            sleep_seconds = calculate_backoff_seconds(attempt)
+            print(
+                f"Gemini API error {e.code}. Retrying in {sleep_seconds:.1f} seconds "
+                f"after attempt {attempt + 1}/{MAX_RETRIES}."
+            )
+            time.sleep(sleep_seconds)
+
+        except (urllib.error.URLError, TimeoutError) as e:
+            if attempt == MAX_RETRIES - 1:
+                raise
+
+            sleep_seconds = calculate_backoff_seconds(attempt)
+            print(
+                f"Transient Gemini API error: {type(e).__name__}. "
+                f"Retrying in {sleep_seconds:.1f} seconds "
+                f"after attempt {attempt + 1}/{MAX_RETRIES}."
+            )
+            time.sleep(sleep_seconds)
+
+    raise RuntimeError("Unexpected Gemini retry loop exit.")
+
+
+def call_model(
+    provider_config: ProviderConfig,
+    openai_client: OpenAI | None,
+    gemini_api_key: str | None,
+    decision_tree: str,
+    row: pd.Series,
+    dataset_json: dict[str, Any] | list[Any],
+) -> dict[str, Any]:
+    if provider_config.name == "gpt":
+        if openai_client is None:
+            raise RuntimeError("OpenAI client is not configured.")
+        return call_gpt(openai_client, provider_config.model, decision_tree, row, dataset_json)
+
+    if provider_config.name == "gemini":
+        if not gemini_api_key:
+            raise RuntimeError("GEMINI_API_KEY or GOOGLE_API_KEY is missing. Add it to your .env file.")
+        return call_gemini(gemini_api_key, provider_config.model, decision_tree, row, dataset_json)
+
+    raise ValueError(f"Unsupported provider: {provider_config.name}")
 
 
 def file_sha256(path: Path) -> str | None:
@@ -619,6 +773,8 @@ def build_run_provenance(input_csv_path: Path) -> dict[str, Any]:
         "decision_tree_sha256": file_sha256(DECISION_TREE_PATH),
         "input_csv_sha256": file_sha256(input_csv_path),
         "runtime_config": {
+            "openai_model": OPENAI_MODEL,
+            "gemini_model": GEMINI_MODEL,
             "request_delay_seconds": REQUEST_DELAY_SECONDS,
             "max_retries": MAX_RETRIES,
             "max_backoff_seconds": MAX_BACKOFF_SECONDS,
@@ -891,42 +1047,101 @@ def parse_args() -> argparse.Namespace:
         default=CSV_PATH,
         help="Gold-label input CSV to evaluate against.",
     )
+    parser.add_argument(
+        "--provider",
+        choices=["both", "gpt", "gemini"],
+        default=os.getenv("ANNOTATION_PROVIDER", "both"),
+        help="Which model provider to run. Defaults to both GPT and Gemini.",
+    )
     return parser.parse_args()
 
 
 # -----------------------------
-# Main
+# Run status and execution
 # -----------------------------
-def main() -> None:
-    load_dotenv()
-    args = parse_args()
+def write_run_status(
+    run_dir: Path,
+    provider_config: ProviderConfig,
+    run_id: str,
+    status: str,
+    total_rows: int,
+    completed_rows: int,
+    error_rows: int,
+    current_row: int | None = None,
+    current_kaartlaag: str | None = None,
+    message: str | None = None,
+) -> None:
+    status_payload = {
+        "run_id": run_id,
+        "provider": provider_config.name,
+        "model": provider_config.model,
+        "status": status,
+        "total_rows": total_rows,
+        "completed_rows": completed_rows,
+        "error_rows": error_rows,
+        "current_row": current_row,
+        "current_kaartlaag": current_kaartlaag,
+        "message": message,
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+    }
+    (run_dir / "status.json").write_text(
+        json.dumps(status_payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
-    if not os.getenv("OPENAI_API_KEY"):
-        raise EnvironmentError(
-            "OPENAI_API_KEY is missing. Add it to your .env file."
-        )
 
-    run_id = args.run_id or create_run_id()
+def run_annotation_for_provider(
+    provider_config: ProviderConfig,
+    run_id: str,
+    input_csv_path: Path,
+    decision_tree: str,
+) -> dict[str, Any]:
     run_dir = RUNS_DIR / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
     run_jsonl_path = run_dir / "annotations.jsonl"
     started_at = datetime.now(timezone.utc).isoformat()
 
-    client = OpenAI()
+    openai_client = OpenAI() if provider_config.name == "gpt" else None
+    gemini_api_key = get_gemini_api_key() if provider_config.name == "gemini" else None
 
-    input_csv_path = args.input_csv if args.input_csv.is_absolute() else BASE_DIR / args.input_csv
-    decision_tree = load_text_file(DECISION_TREE_PATH)
     df = load_annotations(input_csv_path)
     df = ensure_output_columns(df)
     df["RunID"] = run_id
 
+    total_rows = int(len(df))
+    completed_count = 0
+    error_count = 0
+    write_run_status(
+        run_dir,
+        provider_config,
+        run_id,
+        "running",
+        total_rows,
+        completed_count,
+        error_count,
+        message="Run started.",
+    )
+
     with run_jsonl_path.open("w", encoding="utf-8") as jsonl_file:
         for idx, row in df.iterrows():
             kaartlaag = str(row["Kaartlaag"]).strip()
+            write_run_status(
+                run_dir,
+                provider_config,
+                run_id,
+                "running",
+                total_rows,
+                completed_count,
+                error_count,
+                current_row=int(idx),
+                current_kaartlaag=kaartlaag,
+                message=f"Processing {kaartlaag or 'empty Kaartlaag'}.",
+            )
 
             if not kaartlaag or kaartlaag.lower() == "nan":
-                print(f"Skipping row {idx}: empty Kaartlaag")
+                print(f"[{provider_config.name}] Skipping row {idx}: empty Kaartlaag")
                 df.at[idx, "GPTError"] = "Empty Kaartlaag"
+                error_count += 1
                 df.to_csv(run_dir / "annotations.csv", index=False)
                 continue
 
@@ -937,12 +1152,14 @@ def main() -> None:
                 summary_length = len(json.dumps(dataset_summary, ensure_ascii=False))
 
                 print(
-                    f"Processing row {idx}: {kaartlaag} "
+                    f"[{provider_config.name}] Processing row {idx}: {kaartlaag} "
                     f"(dataset summary length: {summary_length:,} chars)"
                 )
 
-                annotation = call_gpt(
-                    client=client,
+                annotation = call_model(
+                    provider_config=provider_config,
+                    openai_client=openai_client,
+                    gemini_api_key=gemini_api_key,
                     decision_tree=decision_tree,
                     row=row,
                     dataset_json=dataset_json,
@@ -958,9 +1175,12 @@ def main() -> None:
                 df.at[idx, "GPTConfidence"] = confidence
                 df.at[idx, "GPTReasoningSummary"] = reasoning_summary
                 df.at[idx, "GPTError"] = pd.NA
+                completed_count += 1
 
                 result = {
                     "run_id": run_id,
+                    "provider": provider_config.name,
+                    "model": provider_config.model,
                     "row_index": int(idx),
                     "kaartlaag": kaartlaag,
                     "status": "success",
@@ -983,17 +1203,32 @@ def main() -> None:
                 df.to_csv(run_dir / "annotations.csv", index=False)
 
                 print(
-                    f"Processed row {idx}: {kaartlaag} "
+                    f"[{provider_config.name}] Processed row {idx}: {kaartlaag} "
                     f"-> Geometry={geometry}, Entity={entity}, Confidence={confidence}"
+                )
+                write_run_status(
+                    run_dir,
+                    provider_config,
+                    run_id,
+                    "running",
+                    total_rows,
+                    completed_count,
+                    error_count,
+                    current_row=int(idx),
+                    current_kaartlaag=kaartlaag,
+                    message=f"Completed {kaartlaag}.",
                 )
 
                 time.sleep(REQUEST_DELAY_SECONDS)
 
             except Exception as e:
                 error_message = str(e)
+                error_count += 1
 
                 error_result = {
                     "run_id": run_id,
+                    "provider": provider_config.name,
+                    "model": provider_config.model,
                     "row_index": int(idx),
                     "kaartlaag": kaartlaag,
                     "status": "error",
@@ -1006,12 +1241,25 @@ def main() -> None:
                 df.at[idx, "GPTError"] = str(error_message)
                 df.to_csv(run_dir / "annotations.csv", index=False)
 
-                print(f"Error on row {idx} / {kaartlaag}: {error_message}")
+                print(f"[{provider_config.name}] Error on row {idx} / {kaartlaag}: {error_message}")
+                write_run_status(
+                    run_dir,
+                    provider_config,
+                    run_id,
+                    "running",
+                    total_rows,
+                    completed_count,
+                    error_count,
+                    current_row=int(idx),
+                    current_kaartlaag=kaartlaag,
+                    message=f"Error on {kaartlaag}: {error_message}",
+                )
 
     completed_at = datetime.now(timezone.utc).isoformat()
     run_metadata = {
         "run_id": run_id,
-        "model": MODEL,
+        "provider": provider_config.name,
+        "model": provider_config.model,
         "started_at": started_at,
         "completed_at": completed_at,
         "input_csv_path": str(input_csv_path.relative_to(BASE_DIR)),
@@ -1019,12 +1267,24 @@ def main() -> None:
         "provenance": build_run_provenance(input_csv_path),
     }
     metrics = write_run_artifacts(df, run_dir, run_metadata)
+    write_run_status(
+        run_dir,
+        provider_config,
+        run_id,
+        "completed",
+        total_rows,
+        int(metrics["completed_rows"]),
+        int(metrics["error_rows"]),
+        message="Run completed and artifacts were written.",
+    )
 
     database_url = os.getenv("DATABASE_URL")
     if database_url:
         save_run_to_database(run_dir, database_url)
 
     print("Done.")
+    print(f"Provider: {provider_config.name}")
+    print(f"Model: {provider_config.model}")
     print(f"Run ID: {run_id}")
     print(f"CSV output written to: {run_dir / 'annotations.csv'}")
     print(f"JSONL log written to: {run_jsonl_path}")
@@ -1036,6 +1296,32 @@ def main() -> None:
         f"Entity={metrics['entity_accuracy']}, "
         f"Joint={metrics['joint_accuracy']}"
     )
+    return metrics
+
+
+# -----------------------------
+# Main
+# -----------------------------
+def main() -> None:
+    args = parse_args()
+
+    provider_configs = get_provider_configs(args.provider)
+    if any(provider.name == "gpt" for provider in provider_configs) and not os.getenv("OPENAI_API_KEY"):
+        raise EnvironmentError(
+            "OPENAI_API_KEY is missing. Add it to your .env file."
+        )
+    if any(provider.name == "gemini" for provider in provider_configs) and not get_gemini_api_key():
+        raise EnvironmentError(
+            "GEMINI_API_KEY or GOOGLE_API_KEY is missing. Add it to your .env file."
+        )
+
+    base_run_id = args.run_id or create_run_id()
+    input_csv_path = args.input_csv if args.input_csv.is_absolute() else BASE_DIR / args.input_csv
+    decision_tree = load_text_file(DECISION_TREE_PATH)
+
+    for provider_config in provider_configs:
+        run_id = provider_run_id(base_run_id, provider_config) if args.provider == "both" else base_run_id
+        run_annotation_for_provider(provider_config, run_id, input_csv_path, decision_tree)
 
 
 if __name__ == "__main__":

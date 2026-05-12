@@ -28,6 +28,7 @@ export async function startAnnotationRunAction(formData: FormData) {
   const runId = String(formData.get("runId") ?? "").trim();
   const scriptPath = validateScriptPath(String(formData.get("scriptPath") ?? "layer_annotation.py").trim());
   const model = String(formData.get("model") ?? "").trim();
+  const geminiModel = String(formData.get("geminiModel") ?? "").trim();
 
   if (!runId) redirectWithRunError("Run ID is required.");
   validateRunId(runId);
@@ -38,10 +39,11 @@ export async function startAnnotationRunAction(formData: FormData) {
     redirectWithRunError("Selected script does not exist.");
   }
 
-  const env: NodeJS.ProcessEnv = { ...process.env, RUN_ID: runId };
+  const env: NodeJS.ProcessEnv = { ...process.env, RUN_ID: runId, ANNOTATION_PROVIDER: "both" };
   if (model) env.OPENAI_MODEL = model;
+  if (geminiModel) env.GEMINI_MODEL = geminiModel;
 
-  const child = spawn("python", [absoluteScriptPath, "--run-id", runId], {
+  const child = spawn("python", [absoluteScriptPath, "--run-id", runId, "--provider", "both"], {
     cwd: repositoryRoot,
     env,
     detached: true,
