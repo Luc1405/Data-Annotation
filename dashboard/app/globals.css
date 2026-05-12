@@ -51,3 +51,24 @@ th { color: #344054; background: #f9fafb; font-size: 12px; text-transform: upper
 .button.danger { background: var(--danger); }
 .link-button { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; font: inherit; }
 .link-button.danger { color: var(--danger); }
+.run-form { align-items: flex-end; }
+.field small { color: var(--muted); font-weight: 400; }
+.model-pair { display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 10px; min-width: 280px; }
+.model-pair div { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; background: #f9fafb; }
+.model-pair strong, .model-pair span { display: block; }
+.model-pair span { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.tracker-header { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.tracker-header h2 { margin: 0 0 6px; }
+.tracker-header p { margin: 0; }
+.tracker-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.tracker-card { border: 1px solid var(--border); border-radius: 16px; padding: 16px; background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%); }
+.tracker-card.gpt { border-top: 4px solid var(--accent); }
+.tracker-card.gemini { border-top: 4px solid #12b76a; }
+.tracker-title { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.tracker-card h3 { margin: 14px 0 4px; font-size: 18px; word-break: break-word; }
+.tracker-card p { margin: 0 0 12px; }
+.progress-bar { height: 12px; overflow: hidden; border-radius: 999px; background: #eaecf0; }
+.progress-bar div { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), #12b76a); transition: width .2s ease; }
+.tracker-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; color: var(--muted); font-size: 12px; }
+.tracker-stats span:first-child { color: var(--foreground); font-weight: 800; }
+.tracker-message { background: #f2f4f7; border-radius: 10px; padding: 10px; color: var(--foreground); }

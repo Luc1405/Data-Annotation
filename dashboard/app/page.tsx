@@ -17,6 +17,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
           <p>View saved annotation runs, accuracy metrics, and confusion matrices from your local PostgreSQL database.</p>
         </div>
         <div className="actions">
+          <Link className="button" href="/run">Start new run</Link>
           <Link className="button" href="/compare">Compare runs</Link>
           <Link className="button" href={baseRun ? `/runs/${baseRun.id}` : "#"}>Latest run</Link>
         </div>
