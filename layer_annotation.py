@@ -30,7 +30,7 @@ CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations.csv"
 DATASETS_DIR = INPUT_DIR / "datasets"
 DECISION_TREE_PATH = INPUT_DIR / "decision_tree.txt"
 
-OUTPUT_DIR = BASE_DIR / "V2"
+OUTPUT_DIR = BASE_DIR / "output"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 RUNS_DIR = OUTPUT_DIR / "runs"
 RUNS_DIR.mkdir(parents=True, exist_ok=True)
@@ -74,6 +74,7 @@ ENTITY_TYPES = [
     "ContourDS",
     "PointMeasuresDS",
     "CoverageDS",
+    "NetworkDS",
 ]
 
 
