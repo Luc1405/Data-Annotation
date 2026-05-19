@@ -1,6 +1,9 @@
 import { rm } from "fs/promises";
 import path from "path";
 import { Pool } from "pg";
+import { ensureRootEnvLoaded } from "./env";
+
+ensureRootEnvLoaded();
 
 export type RunSummary = {
   id: string;

@@ -6,6 +6,9 @@ import { spawn } from "child_process";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { deleteRunById } from "../lib/db";
+import { ensureRootEnvLoaded } from "../lib/env";
+
+ensureRootEnvLoaded();
 
 
 function redirectWithRunError(message: string): never {
@@ -19,14 +22,13 @@ function validateRunId(runId: string) {
 }
 
 function validateScriptPath(scriptPath: string) {
-  if (scriptPath === "layer_annotation.py") return scriptPath;
-  if (/^annotation_versions\/[A-Za-z0-9._-]+\.py$/.test(scriptPath)) return scriptPath;
+  if (/^annotation_versions\/(?:[A-Za-z0-9._-]+\/)*[A-Za-z0-9._-]+\.py$/.test(scriptPath)) return scriptPath;
   redirectWithRunError("Selected script is not allowed.");
 }
 
 export async function startAnnotationRunAction(formData: FormData) {
   const runId = String(formData.get("runId") ?? "").trim();
-  const scriptPath = validateScriptPath(String(formData.get("scriptPath") ?? "layer_annotation.py").trim());
+  const scriptPath = validateScriptPath(String(formData.get("scriptPath") ?? "annotation_versions/Baseline/layer_annotation.py").trim());
   const model = String(formData.get("model") ?? "").trim();
   const geminiModel = String(formData.get("geminiModel") ?? "").trim();
 
