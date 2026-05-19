@@ -24,8 +24,7 @@ export function ensureRootEnvLoaded() {
   if (loaded) return;
   loaded = true;
 
-  const cwd = process.cwd();
-  const repositoryRoot = path.basename(cwd) === "dashboard" ? path.resolve(cwd, "..") : cwd;
+  const repositoryRoot = path.resolve(process.cwd(), "..");
   const rootEnvPath = path.join(repositoryRoot, ".env");
   if (!existsSync(rootEnvPath)) return;
 
