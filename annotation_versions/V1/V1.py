@@ -26,7 +26,7 @@ from openai import APIConnectionError, APITimeoutError, OpenAI, RateLimitError
 # Paths
 # -----------------------------
 SCRIPT_PATH = Path(__file__).resolve()
-BASE_DIR = SCRIPT_PATH.parent.parent if SCRIPT_PATH.parent.name == "annotation_versions" else SCRIPT_PATH.parent
+BASE_DIR = SCRIPT_PATH.parents[2]
 INPUT_DIR = BASE_DIR / "input_data"
 
 CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations.csv"
