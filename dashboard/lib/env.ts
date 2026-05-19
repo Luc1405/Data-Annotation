@@ -20,13 +20,25 @@ function parseEnvLine(line: string) {
   process.env[key] = value;
 }
 
+function findRootEnvPath() {
+  const candidates = [
+    path.join(process.cwd(), ".env"),
+    path.join(process.cwd(), "..", ".env"),
+  ];
+
+  for (const candidate of candidates) {
+    if (existsSync(candidate)) return candidate;
+  }
+
+  return null;
+}
+
 export function ensureRootEnvLoaded() {
   if (loaded) return;
   loaded = true;
 
-  const repositoryRoot = path.resolve(process.cwd(), "..");
-  const rootEnvPath = path.join(repositoryRoot, ".env");
-  if (!existsSync(rootEnvPath)) return;
+  const rootEnvPath = findRootEnvPath();
+  if (!rootEnvPath) return;
 
   const content = readFileSync(rootEnvPath, "utf8");
   for (const line of content.split(/\r?\n/)) {
