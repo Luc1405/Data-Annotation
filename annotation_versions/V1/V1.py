@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import os
 import hashlib
@@ -1242,11 +1243,31 @@ def apply_database_schema(database_url: str) -> None:
         conn.commit()
 
 
+def load_import_run_callable() -> Any:
+    """Loads dashboard/scripts/import_run_to_db.py regardless of current working directory."""
+    module_name = "dashboard.scripts.import_run_to_db"
+    try:
+        module = __import__(module_name, fromlist=["import_run"])
+        return module.import_run
+    except ModuleNotFoundError:
+        module_path = BASE_DIR / "dashboard" / "scripts" / "import_run_to_db.py"
+        if not module_path.exists():
+            raise
+
+        spec = importlib.util.spec_from_file_location(module_name, module_path)
+        if spec is None or spec.loader is None:
+            raise ImportError(f"Unable to load module spec from {module_path}")
+
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module.import_run
+
+
 def save_run_to_database(run_dir: Path, database_url: str) -> None:
     import psycopg
-    from dashboard.scripts.import_run_to_db import import_run
 
     apply_database_schema(database_url)
+    import_run = load_import_run_callable()
     import_run(run_dir, database_url)
 
 
