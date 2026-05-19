@@ -1,0 +1,342 @@
+START
+
+Before choosing a label:
+- Do not classify only from geometry type.
+- First identify the main phenomenon represented by the layer.
+- Classify the entity by what each feature primarily represents.
+- Numeric fields are evidence, but they do not automatically make a layer AmountDS.
+- If numeric values are attributes of objects, routes, regions, facilities, or reporting units, classify the represented feature first.
+- Then classify Geometry and Entity using the rules below.
+
+
+==================================================
+GEOMETRY CLASSIFICATION
+==================================================
+
+Q1. What kind of geometry does the dataset contain?
+
+A. Points or icons
+B. Lines that are not part of polygon boundaries
+C. Regions / polygons / areas
+
+If A -> GEOMETRY = PointDS
+If B -> GEOMETRY = LineDS
+If C -> continue to Region Geometry questions
+
+
+--------------------------------------------------
+REGION GEOMETRY QUESTIONS
+--------------------------------------------------
+
+Use polygon topology hints when available:
+- If polygon_topology_hints is present, treat it as supporting evidence, not as a hard rule.
+- High shared_boundary_ratio, many adjacent_polygon_pairs, low overlap_ratio, and high convex_hull_fill_ratio support VectorTessellation.
+- Low shared_boundary_ratio, few adjacent_polygon_pairs, low convex_hull_fill_ratio, or isolated polygons support PlainVectorRegion.
+- suggested_region_geometry is a calculated hint. Follow it when it agrees with the metadata and layer meaning.
+- Override suggested_region_geometry when the layer name, attributes, or dataset description clearly indicate a different meaning.
+
+Typical calculated evidence:
+- shared_boundary_ratio near 0 and adjacent_polygon_pairs near 0 -> selected/isolated polygons -> usually PlainVectorRegion
+- shared_boundary_ratio >= 0.25, adjacent_polygon_pairs >= feature_count, and convex_hull_fill_ratio >= 0.50 -> likely VectorTessellation
+- overlap_ratio > 0.10 -> usually overlapping/stacked zones -> usually PlainVectorRegion, unless metadata clearly says otherwise
+
+
+Q2. Do the regions form, or are they intended to form, a complete or near-complete partition of the study area?
+
+Use both semantic evidence and topology evidence:
+- Semantic evidence includes layer name, attributes, codes, administrative/statistical names, and category fields.
+- Topology evidence includes polygon_topology_hints when present.
+
+Typical examples:
+- neighbourhoods
+- districts
+- boroughs
+- postcode areas
+- census/statistical units
+- administrative areas
+- grid cells
+- land-use polygons
+- zoning polygons
+- area-wide thematic classifications
+
+Yes -> GEOMETRY = VectorTessellation
+No  -> continue
+
+Q3. Are the polygons gridded, tiled, or pixelated units that cover the area?
+
+Yes -> GEOMETRY = VectorTessellation
+No  -> GEOMETRY = PlainVectorRegion
+
+
+==================================================
+ENTITY CLASSIFICATION
+==================================================
+
+After Geometry is chosen, classify the entity.
+
+Important entity principle:
+- Classify what the map features primarily represent, not just what attributes they contain.
+- Many object, network, lattice, and patch datasets contain numeric fields.
+- Choose AmountDS only when the numeric magnitude itself is the main mapped phenomenon.
+- Do not choose AmountDS merely because the dataset has counts, totals, percentages, capacities, scores, or other numeric columns.
+
+
+--------------------------------------------------
+PRIORITY ENTITY CHECKS
+--------------------------------------------------
+
+Use these checks before the branch-specific fallbacks.
+
+Q1. Is the dataset mainly about a route system, street system, transport system, utility system, connected line infrastructure, connections, links, or flows between places?
+
+Examples:
+- roads
+- streets
+- tram lines
+- metro lines
+- cycling routes
+- shipping routes
+- pipelines
+- heating/cooling transport lines
+- cables
+- waterways as connected transport infrastructure
+
+Yes -> ENTITY = NetworkDS
+No  -> continue
+
+Q2. Is the dataset mainly about something that happened, occurs, changes, or unfolds in time?
+
+Examples:
+- incidents
+- events
+- construction activities
+- temporary closures
+- observations tied to occurrence time
+- trajectories or movements over time
+
+Yes -> ENTITY = EventDS
+No  -> continue
+
+Q3. Is the dataset mainly a measurement layer where point locations sample a continuous phenomenon?
+
+Examples:
+- air quality measurement stations or sampled values
+- noise measurements at locations
+- temperature, pollution, groundwater, or other environmental measurements sampled at points
+
+Yes -> ENTITY = PointMeasuresDS
+No  -> continue
+
+Note:
+- AmountDS is not a global priority check.
+- Evaluate object/network/lattice/coverage/patch meaning first.
+- AmountDS is checked inside the relevant geometry branches only after asking what the features represent.
+
+
+--------------------------------------------------
+BRANCH A — POINTS OR ICONS
+--------------------------------------------------
+
+Q4. What does each point primarily represent?
+
+A. A distinct, countable, real-world thing, place, facility, asset, address, organization, or named object
+B. A measurement of a continuous phenomenon at that location
+C. Presence/absence of a phenomenon at that location
+D. Something that happened or occurred at that location
+E. A numeric amount/count/quantity/rate where the amount itself is the main mapped phenomenon
+F. None of the above
+
+If A -> ENTITY = ObjectDS
+If B -> ENTITY = PointMeasuresDS
+If C -> ENTITY = ExistenceDS
+If D -> ENTITY = EventDS
+If E -> continue to Point Amount check
+If F -> ENTITY = ObjectDS as fallback, unless another rule is clearly better
+
+Q5. Point Amount check: is the point layer mainly mapping a numeric magnitude rather than mapping point objects that merely have numeric attributes?
+
+Examples that should be AmountDS:
+- counts or totals shown as point values
+- capacities where the capacity is the main phenomenon
+- rates, percentages, scores, or quantities assigned to locations as the main message of the layer
+
+Examples that should usually remain ObjectDS:
+- polling stations with vote totals
+- schools with pupil counts
+- charging stations with capacity attributes
+- facilities with usage numbers
+- addresses or locations with numeric identifiers
+
+Yes -> ENTITY = AmountDS
+No  -> ENTITY = ObjectDS
+
+
+--------------------------------------------------
+BRANCH B — REGIONS
+--------------------------------------------------
+
+Q4. Are the regions reporting/statistical/administrative units used to aggregate or attach attributes?
+
+Typical examples:
+- neighbourhoods
+- districts
+- boroughs
+- postcode areas
+- census areas
+- statistical zones
+- grid cells used as reporting units
+
+Yes -> ENTITY = LatticeDS
+No  -> continue
+
+Q5. Does the dataset provide a full-area thematic classification or homogeneous category field?
+
+Typical examples:
+- land use
+- zoning
+- functional mix
+- urban function categories
+- ground-use classifications
+- area-wide policy/function classes
+
+Yes -> ENTITY = CoverageDS
+No  -> continue
+
+Q6. Does each region represent an interval, band, class range, contour zone, or isoline-like value class?
+
+Yes -> ENTITY = ContourDS
+No  -> continue
+
+Q7. Does the region depict identifiable real-world objects, places, managed assets, or named bounded entities?
+
+Examples:
+- parks
+- protected cityscapes
+- facilities
+- buildings
+- monuments
+- named areas treated as objects
+- managed green spaces
+- project objects
+- housing projects or development sites treated as discrete projects
+
+Yes -> ENTITY = ObjectDS
+No  -> continue
+
+Q8. Does each region represent Boolean presence/absence of a phenomenon?
+
+Use ExistenceDS when the main meaning is simply whether something exists or is present in those places.
+Do not use ExistenceDS if the polygons are better understood as selected bounded zones or patches of a phenomenon.
+
+Yes -> ENTITY = ExistenceDS
+No  -> continue
+
+Q9. Is the region a bounded selected area, zone, patch, or occurrence area of a phenomenon, without being a reporting unit, full coverage classification, contour band, or object?
+
+Use PatchDS when:
+- polygons are selected bounded areas rather than an exhaustive full-area classification
+- polygons mark special zones, restriction areas, affected areas, or phenomenon patches
+- the layer shows where a phenomenon applies, but the areas do not form a complete tessellation
+
+Yes -> ENTITY = PatchDS
+No  -> continue
+
+Q10. Region Amount check: is the region layer mainly mapping a numeric magnitude rather than mapping regions that merely have numeric attributes?
+
+Examples that should be AmountDS:
+- polygon values where the numeric amount/rate/score is the main phenomenon
+- density, percentage, capacity, forecast, total, or intensity layers where the number is the reason the region is mapped
+- thematic numeric value maps that are not merely reporting-unit attributes
+
+Examples that should usually not be AmountDS:
+- neighbourhoods, districts, postcode areas, or grid cells with statistics -> LatticeDS
+- housing projects with dwelling counts -> ObjectDS
+- selected zones with numeric attributes -> PatchDS
+- full-area land-use or function classes with codes -> CoverageDS
+
+Yes -> ENTITY = AmountDS
+No  -> PatchDS as fallback for bounded non-object regions
+
+
+--------------------------------------------------
+BRANCH C — LINES THAT ARE NOT PART OF REGIONS
+--------------------------------------------------
+
+Q4. Does the line dataset represent a network, route system, connection system, infrastructure system, or flow system?
+
+Examples:
+- streets
+- roads
+- tram lines
+- metro lines
+- cycle routes
+- utility lines
+- heating/cooling transport lines
+- pipelines
+- waterways used as transport links
+- connected route or accessibility networks
+
+Yes -> ENTITY = NetworkDS
+No  -> continue
+
+Q5. Does each line represent an isoline, contour, interval boundary, or value band?
+
+Yes -> ENTITY = ContourDS
+No  -> continue
+
+Q6. Does the line represent movement, trajectory, or change in position over time?
+
+Yes -> ENTITY = EventDS
+No  -> continue
+
+Q7. Does each line represent a distinct real-world object or named linear feature rather than a connected system?
+
+Examples:
+- a named boundary line
+- a single managed linear object
+- a non-network linear asset
+
+Yes -> ENTITY = ObjectDS
+No  -> continue
+
+Q8. Line Amount check: does the line carry a main numeric meaning such as count, capacity, traffic volume, intensity, or flow amount, and is that numeric magnitude the main phenomenon of the layer?
+
+Examples that should be AmountDS:
+- traffic volume lines where volume is the main mapped phenomenon
+- flow amount or capacity lines where the amount is the main meaning
+- intensity or forecast values represented on line segments
+
+Examples that should usually remain NetworkDS:
+- streets or routes with width, length, speed limit, capacity, or usage attributes
+- tram, metro, cycling, road, or utility networks with numeric attributes
+
+Yes -> ENTITY = AmountDS
+No  -> ObjectDS as fallback for non-network line objects
+
+
+==================================================
+FINAL FALLBACK RULES
+==================================================
+
+If the dataset is mainly about:
+- connected infrastructure, routes, roads, transport lines, utility lines, or flows -> NetworkDS
+- identifiable real-world bounded things, facilities, assets, places, or projects -> ObjectDS
+- measured values of a continuous phenomenon at sampled point locations -> PointMeasuresDS
+- interval/band/isoline representation of a field -> ContourDS
+- full-area categorical field or exhaustive thematic coverage -> CoverageDS
+- bounded selected area / special zone / phenomenon patch -> PatchDS
+- aggregated reporting units / statistical zones -> LatticeDS
+- quantities / totals / counts / densities / rates / percentages / capacities / forecasts / flows as the main mapped phenomenon -> AmountDS
+- something that happens or unfolds in time -> EventDS
+- Boolean presence/absence -> ExistenceDS
+
+Important distinction rules:
+- VectorTessellation is a Geometry label, not an Entity label.
+- CoverageDS is for full-area thematic classifications or exhaustive thematic coverage.
+- LatticeDS is for reporting/statistical units, even when they contain numeric statistics.
+- PatchDS is for selected bounded phenomenon areas, not for every polygon.
+- ObjectDS is for real-world objects or managed entities, even if represented as polygons and even if they have numeric attributes.
+- NetworkDS should be preferred over ObjectDS and AmountDS for connected line systems, route systems, street systems, transport systems, utility systems, and infrastructure networks.
+- AmountDS should be used only when numeric magnitude is the main mapped phenomenon.
+- Do not use AmountDS merely because numeric columns exist.
+- If the feature is a polling station, school, facility, route, project, park, building, or named asset with numeric attributes, classify the feature first instead of choosing AmountDS.
