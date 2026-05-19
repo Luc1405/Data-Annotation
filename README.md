@@ -36,13 +36,13 @@ RUN_ID=my-experiment-name
 ### Run annotation
 
 ```bash
-python layer_annotation.py
+python annotation_versions/Baseline/layer_annotation.py
 ```
 
 You can also supply a readable run id:
 
 ```bash
-python layer_annotation.py --run-id prompt-v3-gpt-5-4-mini
+python annotation_versions/Baseline/layer_annotation.py --run-id prompt-v3-gpt-5-4-mini
 ```
 
 Each run is written to `V2/runs/<run-id>/` with:
@@ -59,17 +59,17 @@ For backward compatibility, the latest run is also copied to the top-level `V2/`
 
 ### Comparing script versions
 
-Best practice is to keep `layer_annotation.py` as the active experiment script and use git commits as the authoritative history for old versions. Each run records the current git commit, dirty state, script hash, decision-tree hash, input CSV hash, model, and runtime settings in `run_metrics.json`, so important benchmark runs should be made from a committed state.
+Best practice is to keep all runnable scripts in `annotation_versions/<version>/` and use git commits as the authoritative history for old versions. Each run records the current git commit, dirty state, script hash, decision-tree hash, input CSV hash, model, and runtime settings in `run_metrics.json`, so important benchmark runs should be made from a committed state.
 
-If you need a long-lived alternate implementation, place it in `annotation_versions/<name>.py`. The dashboard's **Run script** page offers `layer_annotation.py` plus any Python files in `annotation_versions/` as selectable scripts. Use readable run IDs such as `prompt-v4-gpt-5-4-mini` so comparisons remain understandable later.
+Each version folder can include its own `decision_tree.txt` alongside the script. The dashboard's **Run script** page recursively offers every Python file in `annotation_versions/` as a selectable script. Use readable run IDs such as `prompt-v4-gpt-5-4-mini` so comparisons remain understandable later.
 
 ## Local dashboard
 
-The dashboard lives in `dashboard/` and uses Next.js with PostgreSQL. PgAdmin can create and inspect the database.
+The dashboard lives in `dashboard/` and uses Next.js with PostgreSQL. PgAdmin can create and inspect the database. The dashboard reads environment variables from the project root `.env`, so separate `dashboard/.env.local` is not required.
 
 ### 1. Create the database
 
-Create an empty PostgreSQL database in PgAdmin, for example `data_annotation`. You do not have to manually import run artifacts after every script run: if `DATABASE_URL` is set when `layer_annotation.py` runs, it saves the run directly to PostgreSQL and the dashboard will list it automatically.
+Create an empty PostgreSQL database in PgAdmin, for example `data_annotation`. You do not have to manually import run artifacts after every script run: if `DATABASE_URL` is set when your selected script runs, it saves the run directly to PostgreSQL and the dashboard will list it automatically.
 
 The schema file is still available at `dashboard/db/schema.sql` if you want to inspect or apply it manually. It creates:
 ### 1. Create the database schema
@@ -91,11 +91,10 @@ The schema creates:
 ```bash
 cd dashboard
 npm install
-cp .env.example .env.local
 npm run dev
 ```
 
-Open <http://localhost:3000> to see all saved runs, start new script runs, compare headline and joint metrics, inspect confusion matrices and row-level mismatches, and delete runs. By default, deleting a run removes the database rows and that run's `V2/runs/<run-id>` artifact folder. Set `DELETE_RUN_ARTIFACTS=false` in `dashboard/.env.local` if you want dashboard deletes to keep files on disk.
+Open <http://localhost:3000> to see all saved runs, start new script runs, compare headline and joint metrics, inspect confusion matrices and row-level mismatches, and delete runs. By default, deleting a run removes the database rows and that run's `V2/runs/<run-id>` artifact folder. Set `DELETE_RUN_ARTIFACTS=false` in the project root `.env` if you want dashboard deletes to keep files on disk.
 
 ### Backfilling older runs
 
@@ -108,7 +107,7 @@ DATABASE_URL=postgres://postgres:postgres@localhost:5432/data_annotation \
 ```
 ### 2. Import a run
 
-After running `layer_annotation.py`, import its artifacts:
+After running your annotation script, import its artifacts:
 
 ```bash
 cd dashboard
@@ -122,7 +121,6 @@ DATABASE_URL=postgres://postgres:postgres@localhost:5432/data_annotation \
 ```bash
 cd dashboard
 npm install
-cp .env.example .env.local
 npm run dev
 ```
 

@@ -2,6 +2,9 @@ import Link from "next/link";
 import { readFile, readdir } from "fs/promises";
 import path from "path";
 import { startAnnotationRunAction } from "../actions";
+import { ensureRootEnvLoaded } from "../../lib/env";
+
+ensureRootEnvLoaded();
 
 type RunStatus = {
   run_id: string;
@@ -76,18 +79,29 @@ function statusPercent(tracker: RunTracker) {
 
 async function getAvailableScripts() {
   const repositoryRoot = path.resolve(process.cwd(), "..");
-  const scripts = [{ label: "Current script: layer_annotation.py", value: "layer_annotation.py" }];
   const versionsDir = path.join(repositoryRoot, "annotation_versions");
+  const scripts: { label: string; value: string }[] = [];
 
-  try {
-    const entries = await readdir(versionsDir, { withFileTypes: true });
+  async function collectScripts(relativeDir = "") {
+    const absoluteDir = path.join(versionsDir, relativeDir);
+    const entries = await readdir(absoluteDir, { withFileTypes: true });
+
     for (const entry of entries) {
-      if (entry.isFile() && entry.name.endsWith(".py")) {
-        scripts.push({ label: `Versioned script: annotation_versions/${entry.name}`, value: `annotation_versions/${entry.name}` });
+      const entryRelativePath = path.posix.join(relativeDir, entry.name);
+      if (entry.isDirectory()) {
+        await collectScripts(entryRelativePath);
+      } else if (entry.isFile() && entry.name.endsWith(".py")) {
+        const versionedPath = `annotation_versions/${entryRelativePath}`;
+        scripts.push({ label: `Versioned script: ${versionedPath}`, value: versionedPath });
       }
     }
+  }
+
+  try {
+    await collectScripts();
+    scripts.sort((a, b) => a.value.localeCompare(b.value));
   } catch {
-    // The versions folder is optional; the page still works with the current script.
+    // The versions folder is optional; script list may be empty when it is missing.
   }
 
   return scripts;
@@ -131,7 +145,7 @@ export default async function RunScriptPage({ searchParams }: { searchParams: Pr
           </label>
           <label className="field">
             <span>Script</span>
-            <select className="select" name="scriptPath" defaultValue="layer_annotation.py">
+            <select className="select" name="scriptPath" defaultValue="annotation_versions/Baseline/layer_annotation.py">
               {scripts.map((script) => <option key={script.value} value={script.value}>{script.label}</option>)}
             </select>
           </label>
@@ -193,9 +207,9 @@ export default async function RunScriptPage({ searchParams }: { searchParams: Pr
         <h2>Recommended workflow for script versions</h2>
         <p>Use git as the source of truth for old versions. Each provider run records the git commit, dirty state, script hash, decision-tree hash, input CSV hash, model, and runtime settings in its provenance.</p>
         <ul>
-          <li>Edit <code>layer_annotation.py</code> for the next experiment and run it with a descriptive base run ID.</li>
+          <li>Add or update a script inside <code>annotation_versions/&lt;version&gt;/</code> for the next experiment and run it with a descriptive base run ID.</li>
           <li>Commit meaningful script or prompt changes before important runs so the run provenance points back to an immutable git commit.</li>
-          <li>If you want a long-lived alternate implementation, copy it into <code>annotation_versions/&lt;name&gt;.py</code>. This page will offer those files in the script selector.</li>
+          <li>Each version folder can keep its own <code>decision_tree.txt</code> next to its Python script. This page offers all scripts found under <code>annotation_versions/</code>, including nested folders.</li>
           <li>Avoid editing old files after using them for benchmark runs; create a new versioned file or use a new git commit instead.</li>
         </ul>
       </section>
