@@ -19,6 +19,7 @@ from dataclasses import dataclass
 from typing import Any
 
 import pandas as pd
+from hiclass.metrics import f1 as hiclass_f1
 from dotenv import load_dotenv
 from openai import APIConnectionError, APITimeoutError, OpenAI, RateLimitError
 
@@ -1058,6 +1059,42 @@ def completed_rows_for_metrics(df: pd.DataFrame) -> pd.DataFrame:
     return df[df["GPTGeometry"].notna() & df["GPTEntity"].notna() & df["GPTError"].isna()]
 
 
+def split_gold_labels(value: Any) -> list[str]:
+    if value is None or pd.isna(value):
+        return []
+    return [part.strip() for part in str(value).split(";") if part.strip()]
+
+
+def is_prediction_match(gold_value: Any, predicted_value: Any) -> bool:
+    predicted = "" if predicted_value is None or pd.isna(predicted_value) else str(predicted_value).strip()
+    if not predicted:
+        return False
+    gold_labels = split_gold_labels(gold_value)
+    if not gold_labels:
+        return False
+    return predicted in gold_labels
+
+
+def label_for_scoring(gold_value: Any, predicted_value: Any) -> str:
+    gold_labels = split_gold_labels(gold_value)
+    predicted = "" if predicted_value is None or pd.isna(predicted_value) else str(predicted_value).strip()
+    if predicted and predicted in gold_labels:
+        return predicted
+    return gold_labels[0] if gold_labels else ""
+
+
+def hierarchical_f1_for_column(df: pd.DataFrame, actual_column: str, predicted_column: str) -> float | None:
+    completed = df[df[predicted_column].notna() & df["GPTError"].isna()]
+    if completed.empty:
+        return None
+
+    y_true = [[label_for_scoring(actual, pred)] for actual, pred in zip(completed[actual_column], completed[predicted_column])]
+    y_pred = [[str(pred).strip()] for pred in completed[predicted_column]]
+    if not y_true:
+        return None
+    return float(hiclass_f1(y_true, y_pred, average="micro"))
+
+
 def calculate_accuracy(
     df: pd.DataFrame,
     actual_column: str,
@@ -1067,7 +1104,7 @@ def calculate_accuracy(
     if completed.empty:
         return None
 
-    return float((completed[actual_column] == completed[predicted_column]).mean())
+    return float(completed.apply(lambda row: is_prediction_match(row[actual_column], row[predicted_column]), axis=1).mean())
 
 
 def calculate_joint_accuracy(df: pd.DataFrame) -> float | None:
@@ -1075,8 +1112,10 @@ def calculate_joint_accuracy(df: pd.DataFrame) -> float | None:
     if completed.empty:
         return None
 
-    correct = (completed["Geometry"] == completed["GPTGeometry"]) & (
-        completed["Entity"] == completed["GPTEntity"]
+    correct = completed.apply(
+        lambda row: is_prediction_match(row["Geometry"], row["GPTGeometry"])
+        and is_prediction_match(row["Entity"], row["GPTEntity"]),
+        axis=1,
     )
     return float(correct.mean())
 
@@ -1086,8 +1125,10 @@ def calculate_exact_mismatch_count(df: pd.DataFrame) -> int:
     if completed.empty:
         return 0
 
-    mismatch = (completed["Geometry"] != completed["GPTGeometry"]) | (
-        completed["Entity"] != completed["GPTEntity"]
+    mismatch = completed.apply(
+        lambda row: (not is_prediction_match(row["Geometry"], row["GPTGeometry"]))
+        or (not is_prediction_match(row["Entity"], row["GPTEntity"])),
+        axis=1,
     )
     return int(mismatch.sum())
 
@@ -1109,7 +1150,7 @@ def calculate_per_label_metrics(
     f1_values: list[float] = []
 
     for label in observed_labels:
-        actual_is_label = completed[actual_column].astype(str) == label
+        actual_is_label = completed.apply(lambda row: label_for_scoring(row[actual_column], row[predicted_column]) == label, axis=1)
         predicted_is_label = completed[predicted_column].astype(str) == label
         true_positive = int((actual_is_label & predicted_is_label).sum())
         false_positive = int((~actual_is_label & predicted_is_label).sum())
@@ -1165,6 +1206,8 @@ def build_evaluation_metrics(df: pd.DataFrame) -> dict[str, Any]:
         "exact_mismatch_count": calculate_exact_mismatch_count(df),
         "geometry_macro_f1": geometry_label_metrics["macro_f1"],
         "entity_macro_f1": entity_label_metrics["macro_f1"],
+        "geometry_hier_f1": hierarchical_f1_for_column(df, "Geometry", "GPTGeometry"),
+        "entity_hier_f1": hierarchical_f1_for_column(df, "Entity", "GPTEntity"),
         "per_label_metrics": {
             "geometry": geometry_label_metrics["labels"],
             "entity": entity_label_metrics["labels"],

@@ -19,6 +19,8 @@ export type RunSummary = {
   exact_mismatch_count: number | null;
   geometry_macro_f1: number | null;
   entity_macro_f1: number | null;
+  geometry_hier_f1: number | null;
+  entity_hier_f1: number | null;
   mean_confidence: number | null;
   provenance: Record<string, unknown> | null;
   per_label_metrics: Record<string, unknown> | null;
@@ -86,7 +88,7 @@ export async function getRuns(): Promise<RunSummary[]> {
     `SELECT id, model, started_at, completed_at, total_rows, completed_rows,
             error_rows, geometry_accuracy, entity_accuracy, joint_accuracy,
             exact_mismatch_count, geometry_macro_f1, entity_macro_f1,
-            mean_confidence, provenance, per_label_metrics
+            geometry_hier_f1, entity_hier_f1, mean_confidence, provenance, per_label_metrics
        FROM annotation_runs
       ORDER BY COALESCE(started_at, created_at) DESC`
   );
@@ -101,7 +103,7 @@ export async function getRun(id: string): Promise<RunSummary | null> {
     `SELECT id, model, started_at, completed_at, total_rows, completed_rows,
             error_rows, geometry_accuracy, entity_accuracy, joint_accuracy,
             exact_mismatch_count, geometry_macro_f1, entity_macro_f1,
-            mean_confidence, provenance, per_label_metrics
+            geometry_hier_f1, entity_hier_f1, mean_confidence, provenance, per_label_metrics
        FROM annotation_runs
       WHERE id = $1`,
     [id]
@@ -181,13 +183,13 @@ export async function getConfusionCells(runId: string): Promise<ConfusionCell[]>
   return result.rows;
 }
 
-export function formatPercent(value: number | null) {
-  if (value === null || Number.isNaN(value)) return "—";
+export function formatPercent(value: number | null | undefined) {
+  if (value == null || Number.isNaN(value)) return "—";
   return `${(value * 100).toFixed(1)}%`;
 }
 
-export function formatNumber(value: number | null) {
-  if (value === null || Number.isNaN(value)) return "—";
+export function formatNumber(value: number | null | undefined) {
+  if (value == null || Number.isNaN(value)) return "—";
   return value.toFixed(3);
 }
 
