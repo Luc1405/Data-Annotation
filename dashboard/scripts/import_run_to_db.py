@@ -34,9 +34,9 @@ def import_run(run_dir: Path, database_url: str) -> None:
                     id, model, started_at, completed_at, input_csv_path, output_dir,
                     total_rows, completed_rows, error_rows, geometry_accuracy,
                     entity_accuracy, joint_accuracy, exact_mismatch_count,
-                    geometry_macro_f1, entity_macro_f1, mean_confidence,
+                    geometry_macro_f1, entity_macro_f1, geometry_hier_f1, entity_hier_f1, mean_confidence,
                     provenance, per_label_metrics
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (id) DO UPDATE SET
                     model = EXCLUDED.model,
                     started_at = EXCLUDED.started_at,
@@ -52,6 +52,8 @@ def import_run(run_dir: Path, database_url: str) -> None:
                     exact_mismatch_count = EXCLUDED.exact_mismatch_count,
                     geometry_macro_f1 = EXCLUDED.geometry_macro_f1,
                     entity_macro_f1 = EXCLUDED.entity_macro_f1,
+                    geometry_hier_f1 = EXCLUDED.geometry_hier_f1,
+                    entity_hier_f1 = EXCLUDED.entity_hier_f1,
                     mean_confidence = EXCLUDED.mean_confidence,
                     provenance = EXCLUDED.provenance,
                     per_label_metrics = EXCLUDED.per_label_metrics
@@ -72,6 +74,8 @@ def import_run(run_dir: Path, database_url: str) -> None:
                     metrics.get("exact_mismatch_count"),
                     metrics.get("geometry_macro_f1"),
                     metrics.get("entity_macro_f1"),
+                    metrics.get("geometry_hier_f1"),
+                    metrics.get("entity_hier_f1"),
                     metrics.get("mean_confidence"),
                     Jsonb(metrics.get("provenance", {})),
                     Jsonb(metrics.get("per_label_metrics", {})),
