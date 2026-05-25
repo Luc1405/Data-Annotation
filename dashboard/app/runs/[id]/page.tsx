@@ -88,7 +88,8 @@ export default async function RunDetail({ params }: { params: Promise<{ id: stri
                   <tr><th>Git commit</th><td>{shortHash(provenanceText(run.provenance, "git_commit"))}</td><th>Git branch</th><td>{provenanceText(run.provenance, "git_branch")}</td></tr>
                   <tr><th>Git dirty</th><td>{provenanceText(run.provenance, "git_dirty")}</td><th>Script</th><td>{provenanceText(run.provenance, "script_path")}</td></tr>
                   <tr><th>Script SHA-256</th><td>{shortHash(provenanceText(run.provenance, "script_sha256"))}</td><th>Decision tree SHA-256</th><td>{shortHash(provenanceText(run.provenance, "decision_tree_sha256"))}</td></tr>
-                  <tr><th>Input CSV SHA-256</th><td>{shortHash(provenanceText(run.provenance, "input_csv_sha256"))}</td><th>Macro F1</th><td>Geometry {formatNumber(run.geometry_macro_f1)} / Entity {formatNumber(run.entity_macro_f1)}</td></tr>
+                  <tr><th>Input CSV SHA-256</th><td>{shortHash(provenanceText(run.provenance, "input_csv_sha256"))}</td><th>Normal F1 (Macro)</th><td>Geometry {formatNumber(run.geometry_macro_f1)} / Entity {formatNumber(run.entity_macro_f1)}</td></tr>
+                  <tr><th>Hierarchical F1</th><td>Geometry {formatNumber(run.geometry_hier_f1)}</td><th></th><td>Entity {formatNumber(run.entity_hier_f1)}</td></tr>
                 </tbody>
               </table>
             </div>

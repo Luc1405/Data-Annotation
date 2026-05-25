@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS annotation_runs (
     exact_mismatch_count INTEGER,
     geometry_macro_f1 DOUBLE PRECISION,
     entity_macro_f1 DOUBLE PRECISION,
+    geometry_hier_f1 DOUBLE PRECISION,
+    entity_hier_f1 DOUBLE PRECISION,
     mean_confidence DOUBLE PRECISION,
     provenance JSONB,
     per_label_metrics JSONB,
@@ -59,5 +61,7 @@ ALTER TABLE IF EXISTS annotation_runs
     ADD COLUMN IF NOT EXISTS exact_mismatch_count INTEGER,
     ADD COLUMN IF NOT EXISTS geometry_macro_f1 DOUBLE PRECISION,
     ADD COLUMN IF NOT EXISTS entity_macro_f1 DOUBLE PRECISION,
+    ADD COLUMN IF NOT EXISTS geometry_hier_f1 DOUBLE PRECISION,
+    ADD COLUMN IF NOT EXISTS entity_hier_f1 DOUBLE PRECISION,
     ADD COLUMN IF NOT EXISTS provenance JSONB,
     ADD COLUMN IF NOT EXISTS per_label_metrics JSONB;
