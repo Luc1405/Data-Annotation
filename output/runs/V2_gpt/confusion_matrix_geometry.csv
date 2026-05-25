@@ -1,6 +1,6 @@
 ,PlainVectorRegion,PointDS,VectorTessellation,LineDS,__actual_total
-PlainVectorRegion,26,0,5,0,31
-PointDS,1,55,0,0,56
-VectorTessellation,1,0,17,0,18
+PlainVectorRegion,24,0,7,0,31
+PointDS,0,55,1,0,56
+VectorTessellation,4,0,14,0,18
 LineDS,0,0,0,9,9
 __predicted_total,28,55,22,9,114

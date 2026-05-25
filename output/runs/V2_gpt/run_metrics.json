@@ -1,22 +1,22 @@
 {
-  "run_id": "GPT-5.5-test_gpt",
+  "run_id": "V2_gpt",
   "provider": "gpt",
-  "model": "gpt-5.5",
-  "started_at": "2026-05-25T08:52:45.873839+00:00",
-  "completed_at": "2026-05-25T09:03:10.949014+00:00",
+  "model": "gpt-5.4-mini",
+  "started_at": "2026-05-19T10:56:14.089259+00:00",
+  "completed_at": "2026-05-19T11:00:33.813817+00:00",
   "input_csv_path": "input_data\\ams_coreconcept_annotations.csv",
-  "output_dir": "output\\runs\\GPT-5.5-test_gpt",
+  "output_dir": "output\\runs\\V2_gpt",
   "provenance": {
     "git_commit": "3dacac64796fea9e9da6774c57ad0ba0c5741e84",
     "git_branch": "main",
     "git_dirty": true,
-    "script_path": "annotation_versions\\Baseline\\layer_annotation.py",
-    "script_sha256": "4f54907564094bf697d350ce897bba9f373844f6c0812f32ec8e03b11ec96932",
-    "decision_tree_path": "annotation_versions\\Baseline\\decision_tree.txt",
-    "decision_tree_sha256": "e979438328c1963ab8d689a0730ebe2356881906ecb7877581ee18e76c237c94",
+    "script_path": "annotation_versions\\V2_patchobject\\V2_patchobject.py",
+    "script_sha256": "f9dc775f340c02f270e88d7b181514dceaa3a4758139421e12dc3899a713636f",
+    "decision_tree_path": "annotation_versions\\V2_patchobject\\decision_tree.txt",
+    "decision_tree_sha256": "ff0b2af8065f742de3c725b1c926343513978cf1422c96bddacde489fdb05bd6",
     "input_csv_sha256": "226ba9d3e9d38edb7a26d3917f7d958307b11415c8bcdb9bb8e896d534844be2",
     "runtime_config": {
-      "openai_model": "gpt-5.5",
+      "openai_model": "gpt-5.4-mini",
       "gemini_model": "gemini-3.1-flash-lite-preview",
       "request_delay_seconds": 0.75,
       "max_retries": 8,
@@ -29,12 +29,12 @@
   "total_rows": 114,
   "completed_rows": 114,
   "error_rows": 0,
-  "geometry_accuracy": 0.9385964912280702,
-  "entity_accuracy": 0.7982456140350878,
-  "joint_accuracy": 0.7894736842105263,
-  "exact_mismatch_count": 24,
-  "geometry_macro_f1": 0.9305867307985952,
-  "entity_macro_f1": 0.4635139724300563,
+  "geometry_accuracy": 0.8947368421052632,
+  "entity_accuracy": 0.7807017543859649,
+  "joint_accuracy": 0.7456140350877193,
+  "exact_mismatch_count": 29,
+  "geometry_macro_f1": 0.8761375782562223,
+  "entity_macro_f1": 0.4529554234472268,
   "per_label_metrics": {
     "geometry": {
       "LineDS": {
@@ -47,13 +47,13 @@
         "false_negative": 0
       },
       "PlainVectorRegion": {
-        "precision": 0.9285714285714286,
-        "recall": 0.8387096774193549,
-        "f1": 0.8813559322033899,
+        "precision": 0.8571428571428571,
+        "recall": 0.7741935483870968,
+        "f1": 0.8135593220338982,
         "support": 31,
-        "true_positive": 26,
-        "false_positive": 2,
-        "false_negative": 5
+        "true_positive": 24,
+        "false_positive": 4,
+        "false_negative": 7
       },
       "PointDS": {
         "precision": 1.0,
@@ -65,24 +65,24 @@
         "false_negative": 1
       },
       "VectorTessellation": {
-        "precision": 0.7727272727272727,
-        "recall": 0.9444444444444444,
-        "f1": 0.85,
+        "precision": 0.6363636363636364,
+        "recall": 0.7777777777777778,
+        "f1": 0.7000000000000001,
         "support": 18,
-        "true_positive": 17,
-        "false_positive": 5,
-        "false_negative": 1
+        "true_positive": 14,
+        "false_positive": 8,
+        "false_negative": 4
       }
     },
     "entity": {
       "AmountDS": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
+        "precision": 0.3333333333333333,
+        "recall": 0.25,
+        "f1": 0.28571428571428575,
         "support": 4,
-        "true_positive": 0,
-        "false_positive": 1,
-        "false_negative": 4
+        "true_positive": 1,
+        "false_positive": 2,
+        "false_negative": 3
       },
       "ContourDS": {
         "precision": 1.0,
@@ -94,21 +94,21 @@
         "false_negative": 0
       },
       "CoverageDS": {
-        "precision": 0.7142857142857143,
-        "recall": 0.8333333333333334,
-        "f1": 0.7692307692307692,
+        "precision": 0.5,
+        "recall": 0.3333333333333333,
+        "f1": 0.4,
         "support": 6,
-        "true_positive": 5,
+        "true_positive": 2,
         "false_positive": 2,
-        "false_negative": 1
+        "false_negative": 4
       },
       "EventDS": {
-        "precision": 0.3333333333333333,
+        "precision": 1.0,
         "recall": 0.3333333333333333,
-        "f1": 0.3333333333333333,
+        "f1": 0.5,
         "support": 3,
         "true_positive": 1,
-        "false_positive": 2,
+        "false_positive": 0,
         "false_negative": 2
       },
       "ExistenceDS": {
@@ -117,7 +117,7 @@
         "f1": 0.0,
         "support": 1,
         "true_positive": 0,
-        "false_positive": 2,
+        "false_positive": 0,
         "false_negative": 1
       },
       "LatticeDS": {
@@ -130,13 +130,13 @@
         "false_negative": 0
       },
       "NetworkDS": {
-        "precision": 0.875,
-        "recall": 0.875,
-        "f1": 0.875,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
         "support": 8,
-        "true_positive": 7,
-        "false_positive": 1,
-        "false_negative": 1
+        "true_positive": 6,
+        "false_positive": 0,
+        "false_negative": 2
       },
       "NetworkDS;ObjectDS": {
         "precision": 0.0,
@@ -148,22 +148,22 @@
         "false_negative": 1
       },
       "ObjectDS": {
-        "precision": 0.9310344827586207,
+        "precision": 0.9152542372881356,
         "recall": 0.8571428571428571,
-        "f1": 0.8925619834710743,
+        "f1": 0.8852459016393444,
         "support": 63,
         "true_positive": 54,
-        "false_positive": 4,
+        "false_positive": 5,
         "false_negative": 9
       },
       "PatchDS": {
-        "precision": 0.5,
-        "recall": 0.75,
-        "f1": 0.6,
+        "precision": 0.4,
+        "recall": 1.0,
+        "f1": 0.5714285714285715,
         "support": 8,
-        "true_positive": 6,
-        "false_positive": 6,
-        "false_negative": 2
+        "true_positive": 8,
+        "false_positive": 12,
+        "false_negative": 0
       },
       "PatchDS;AmountDS": {
         "precision": 0.0,
@@ -176,12 +176,12 @@
       },
       "PointMeasuresDS": {
         "precision": 0.5,
-        "recall": 1.0,
-        "f1": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5,
         "support": 2,
-        "true_positive": 2,
-        "false_positive": 2,
-        "false_negative": 0
+        "true_positive": 1,
+        "false_positive": 1,
+        "false_negative": 1
       },
       "PointMeasuresDS;EventDS": {
         "precision": 0.0,
@@ -194,5 +194,5 @@
       }
     }
   },
-  "mean_confidence": 0.9203508771929824
+  "mean_confidence": 0.9521929824561405
 }
