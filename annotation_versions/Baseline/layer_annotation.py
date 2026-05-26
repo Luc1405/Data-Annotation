@@ -54,7 +54,7 @@ load_dotenv(BASE_DIR / ".env")
 # Config
 # -----------------------------
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite-preview")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
 GEMINI_API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
 )

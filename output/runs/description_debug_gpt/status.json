@@ -1,0 +1,13 @@
+{
+  "run_id": "description_debug_gpt",
+  "provider": "gpt",
+  "model": "gpt-5.4-mini",
+  "status": "completed",
+  "total_rows": 114,
+  "completed_rows": 114,
+  "error_rows": 0,
+  "current_row": null,
+  "current_kaartlaag": null,
+  "message": "Run completed and artifacts were written.",
+  "updated_at": "2026-05-26T11:19:25.849390+00:00"
+}

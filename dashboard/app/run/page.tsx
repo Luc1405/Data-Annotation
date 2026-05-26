@@ -61,7 +61,7 @@ async function getRunTrackers(baseRunId?: string): Promise<RunTracker[]> {
       runId: providerInfo.runId,
       provider: providerInfo.provider,
       label: providerInfo.label,
-      model: status?.model ?? metrics?.model ?? (providerInfo.provider === "gpt" ? (process.env.OPENAI_MODEL ?? "gpt-5.4-mini") : (process.env.GEMINI_MODEL ?? "gemini-3.1-flash-lite-preview")),
+      model: status?.model ?? metrics?.model ?? (providerInfo.provider === "gpt" ? (process.env.OPENAI_MODEL ?? "gpt-5.4-mini") : (process.env.GEMINI_MODEL ?? "gemini-3.1-flash-lite")),
       status: status?.status ?? (metrics?.completed_at ? "completed" : "waiting"),
       totalRows: status?.total_rows ?? metrics?.total_rows ?? 0,
       completedRows: status?.completed_rows ?? metrics?.completed_rows ?? 0,

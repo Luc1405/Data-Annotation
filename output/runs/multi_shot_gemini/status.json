@@ -1,0 +1,13 @@
+{
+  "run_id": "multi_shot_gemini",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "status": "completed",
+  "total_rows": 114,
+  "completed_rows": 114,
+  "error_rows": 0,
+  "current_row": null,
+  "current_kaartlaag": null,
+  "message": "Run completed and artifacts were written.",
+  "updated_at": "2026-05-26T10:03:21.545643+00:00"
+}

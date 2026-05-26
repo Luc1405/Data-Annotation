@@ -1,0 +1,13 @@
+{
+  "run_id": "debug_manual",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite-preview",
+  "status": "running",
+  "total_rows": 114,
+  "completed_rows": 0,
+  "error_rows": 8,
+  "current_row": 8,
+  "current_kaartlaag": "BODEMKWALITEIT",
+  "message": "Processing BODEMKWALITEIT.",
+  "updated_at": "2026-05-25T18:07:31.299168+00:00"
+}

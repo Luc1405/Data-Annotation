@@ -1,0 +1,13 @@
+{
+  "run_id": "Hierarchical_F1_test_gemini",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite-preview",
+  "status": "completed",
+  "total_rows": 114,
+  "completed_rows": 0,
+  "error_rows": 114,
+  "current_row": null,
+  "current_kaartlaag": null,
+  "message": "Run completed and artifacts were written.",
+  "updated_at": "2026-05-25T17:29:14.046916+00:00"
+}

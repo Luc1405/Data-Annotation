@@ -55,7 +55,7 @@ load_dotenv(BASE_DIR / ".env")
 # Config
 # -----------------------------
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite-preview")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
 GEMINI_API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
 )
@@ -211,18 +211,16 @@ def load_annotations(csv_path: Path) -> pd.DataFrame:
     Loads the annotation CSV.
 
     Expected columns:
-    Title, EnglishTitle, PageLink, MapLink, Kaartlaag, Geometry, Entity
-
-    First tries comma-separated CSV.
-    If that produces one column, retries semicolon-separated CSV.
+    Title, EnglishTitle, PageLink, MapLink, Kaartlaag,
+    Geometry, Entity, MapDescriptionTitle, MapDescription, MapDescriptionSource
     """
     if not csv_path.exists():
         raise FileNotFoundError(f"CSV not found: {csv_path}")
 
-    df = pd.read_csv(csv_path, encoding="utf-8-sig")
-
-    if len(df.columns) == 1:
+    try:
         df = pd.read_csv(csv_path, sep=";", encoding="utf-8-sig")
+    except pd.errors.ParserError:
+        df = pd.read_csv(csv_path, sep=";", encoding="utf-8-sig", engine="python")
 
     expected_columns = [
         "Title",
@@ -232,6 +230,7 @@ def load_annotations(csv_path: Path) -> pd.DataFrame:
         "Kaartlaag",
         "Geometry",
         "Entity",
+        "MapDescription",
     ]
 
     missing = [col for col in expected_columns if col not in df.columns]
@@ -848,7 +847,8 @@ Decision tree:
 Important interpretation rules:
 - Do not classify only from the raw geometry type. First infer what phenomenon the dataset represents.
 - The dataset_summary may omit raw coordinates on purpose.
-- Geometry should be inferred from geometry_type_counts, metadata, layer name, attributes, and dataset description.
+- Geometry should be inferred from geometry_type_counts, metadata, layer name, MapDescription, attributes, and dataset description.
+- MapDescription is a human-readable description of the map layer. Use it as important evidence for what phenomenon the map represents, but still follow the decision tree and dataset summary.
 
 Geometry interpretation:
 - Point and MultiPoint usually indicate PointDS.
@@ -1071,12 +1071,24 @@ def call_model(
     if provider_config.name == "gpt":
         if openai_client is None:
             raise RuntimeError("OpenAI client is not configured.")
-        return call_gpt(openai_client, provider_config.model, decision_tree, row, dataset_json)
+        return call_gpt(
+            openai_client,
+            provider_config.model,
+            decision_tree,
+            row,
+            dataset_json,
+        )
 
     if provider_config.name == "gemini":
         if not gemini_api_key:
             raise RuntimeError("GEMINI_API_KEY or GOOGLE_API_KEY is missing. Add it to your .env file.")
-        return call_gemini(gemini_api_key, provider_config.model, decision_tree, row, dataset_json)
+        return call_gemini(
+            gemini_api_key,
+            provider_config.model,
+            decision_tree,
+            row,
+            dataset_json,
+        )
 
     raise ValueError(f"Unsupported provider: {provider_config.name}")
 

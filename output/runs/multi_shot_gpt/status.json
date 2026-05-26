@@ -1,0 +1,13 @@
+{
+  "run_id": "multi_shot_gpt",
+  "provider": "gpt",
+  "model": "gpt-5.4-mini",
+  "status": "completed",
+  "total_rows": 114,
+  "completed_rows": 114,
+  "error_rows": 0,
+  "current_row": null,
+  "current_kaartlaag": null,
+  "message": "Run completed and artifacts were written.",
+  "updated_at": "2026-05-26T09:59:38.451641+00:00"
+}
