@@ -801,17 +801,25 @@ def build_confusion_matrix(
     labels: list[str],
 ) -> pd.DataFrame:
     completed = df[df[predicted_column].notna() & df["GPTError"].isna()].copy()
+    completed["__actual_for_scoring"] = completed.apply(
+        lambda row: label_for_scoring(row[actual_column], row[predicted_column]),
+        axis=1,
+    )
+    completed["__predicted_for_scoring"] = completed[predicted_column].apply(
+        lambda value: "" if value is None or pd.isna(value) else str(value).strip()
+    )
+
     matrix = pd.crosstab(
-        completed[actual_column],
-        completed[predicted_column],
+        completed["__actual_for_scoring"],
+        completed["__predicted_for_scoring"],
         rownames=["Actual"],
         colnames=["Predicted"],
         dropna=False,
     )
 
     observed_labels = sorted(
-        set(completed[actual_column].dropna().astype(str))
-        | set(completed[predicted_column].dropna().astype(str))
+        set(completed["__actual_for_scoring"].dropna().astype(str))
+        | set(completed["__predicted_for_scoring"].dropna().astype(str))
     )
     ordered_labels = labels + [label for label in observed_labels if label not in labels]
 
@@ -922,9 +930,16 @@ def calculate_per_label_metrics(
     labels: list[str],
 ) -> dict[str, Any]:
     completed = df[df[predicted_column].notna() & df["GPTError"].isna()]
+    actual_for_scoring = completed.apply(
+        lambda row: label_for_scoring(row[actual_column], row[predicted_column]),
+        axis=1,
+    )
+    predicted_for_scoring = completed[predicted_column].apply(
+        lambda value: "" if value is None or pd.isna(value) else str(value).strip()
+    )
     observed_labels = sorted(
-        set(completed[actual_column].dropna().astype(str))
-        | set(completed[predicted_column].dropna().astype(str))
+        set(actual_for_scoring.dropna().astype(str))
+        | set(predicted_for_scoring.dropna().astype(str))
         | set(labels)
     )
 
@@ -932,8 +947,8 @@ def calculate_per_label_metrics(
     f1_values: list[float] = []
 
     for label in observed_labels:
-        actual_is_label = completed.apply(lambda row: label_for_scoring(row[actual_column], row[predicted_column]) == label, axis=1)
-        predicted_is_label = completed[predicted_column].astype(str) == label
+        actual_is_label = actual_for_scoring == label
+        predicted_is_label = predicted_for_scoring == label
         true_positive = int((actual_is_label & predicted_is_label).sum())
         false_positive = int((~actual_is_label & predicted_is_label).sum())
         false_negative = int((actual_is_label & ~predicted_is_label).sum())

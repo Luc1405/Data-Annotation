@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { formatNumber, formatPercent, getConfusionCells, getResults, getRun, type ConfusionCell } from "../../../lib/db";
+import { isPredictionMatch } from "../../../lib/scoring";
 
 function provenanceText(provenance: Record<string, unknown> | null, key: string) {
   const value = provenance?.[key];
@@ -33,7 +34,7 @@ function ConfusionMatrix({ title, cells }: { title: string; cells: ConfusionCell
                 <th>{actual}</th>
                 {labels.map((predicted) => {
                   const value = countByPair.get(`${actual}|${predicted}`) ?? 0;
-                  return <td className={actual === predicted ? "diagonal" : value > 0 ? "off-diagonal" : ""} key={predicted}>{value}</td>;
+                  return <td className={isPredictionMatch(actual, predicted) ? "diagonal" : value > 0 ? "off-diagonal" : ""} key={predicted}>{value}</td>;
                 })}
                 <td>{countByPair.get(`${actual}|__actual_total`) ?? 0}</td>
               </tr>
@@ -111,7 +112,7 @@ export default async function RunDetail({ params }: { params: Promise<{ id: stri
                 </thead>
                 <tbody>
                   {results.map((result) => {
-                    const hasMismatch = result.gold_geometry !== result.predicted_geometry || result.gold_entity !== result.predicted_entity;
+                    const hasMismatch = !isPredictionMatch(result.gold_geometry, result.predicted_geometry) || !isPredictionMatch(result.gold_entity, result.predicted_entity);
                     return (
                       <tr key={result.row_index}>
                         <td>{result.row_index}</td>
