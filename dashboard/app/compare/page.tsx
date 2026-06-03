@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { formatNumber, formatPercent, getRunComparisonRows, getRuns, type RunComparisonRow, type RunSummary } from "../../lib/db";
+import { isPredictionMatch } from "../../lib/scoring";
 
 function metricDelta(candidateValue: number | null, baselineValue: number | null, formatter: (value: number | null) => string) {
   if (candidateValue === null || baselineValue === null) return "—";
@@ -10,12 +11,12 @@ function metricDelta(candidateValue: number | null, baselineValue: number | null
 
 function isGeometryCorrect(row: Pick<RunComparisonRow, "gold_geometry" | "baseline_predicted_geometry" | "candidate_predicted_geometry">, side: "baseline" | "candidate") {
   const predicted = side === "baseline" ? row.baseline_predicted_geometry : row.candidate_predicted_geometry;
-  return row.gold_geometry !== null && row.gold_geometry === predicted;
+  return isPredictionMatch(row.gold_geometry, predicted);
 }
 
 function isEntityCorrect(row: Pick<RunComparisonRow, "gold_entity" | "baseline_predicted_entity" | "candidate_predicted_entity">, side: "baseline" | "candidate") {
   const predicted = side === "baseline" ? row.baseline_predicted_entity : row.candidate_predicted_entity;
-  return row.gold_entity !== null && row.gold_entity === predicted;
+  return isPredictionMatch(row.gold_entity, predicted);
 }
 
 function isJointCorrect(row: RunComparisonRow, side: "baseline" | "candidate") {
