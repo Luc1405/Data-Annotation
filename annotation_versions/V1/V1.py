@@ -31,7 +31,7 @@ SCRIPT_PATH = Path(__file__).resolve()
 BASE_DIR = SCRIPT_PATH.parents[2]
 INPUT_DIR = BASE_DIR / "input_data"
 
-CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations.csv"
+CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations_descr.csv"
 DATASETS_DIR = INPUT_DIR / "datasets"
 DECISION_TREE_PATH = SCRIPT_PATH.parent / "decision_tree.txt"
 
@@ -169,18 +169,16 @@ def load_annotations(csv_path: Path) -> pd.DataFrame:
     Loads the annotation CSV.
 
     Expected columns:
-    Title, EnglishTitle, PageLink, MapLink, Kaartlaag, Geometry, Entity
-
-    First tries comma-separated CSV.
-    If that produces one column, retries semicolon-separated CSV.
+    Title, EnglishTitle, PageLink, MapLink, Kaartlaag,
+    Geometry, Entity, MapDescriptionTitle, MapDescription, MapDescriptionSource
     """
     if not csv_path.exists():
         raise FileNotFoundError(f"CSV not found: {csv_path}")
 
-    df = pd.read_csv(csv_path, encoding="utf-8-sig")
-
-    if len(df.columns) == 1:
+    try:
         df = pd.read_csv(csv_path, sep=";", encoding="utf-8-sig")
+    except pd.errors.ParserError:
+        df = pd.read_csv(csv_path, sep=";", encoding="utf-8-sig", engine="python")
 
     expected_columns = [
         "Title",
@@ -190,6 +188,7 @@ def load_annotations(csv_path: Path) -> pd.DataFrame:
         "Kaartlaag",
         "Geometry",
         "Entity",
+        "MapDescription",
     ]
 
     missing = [col for col in expected_columns if col not in df.columns]
