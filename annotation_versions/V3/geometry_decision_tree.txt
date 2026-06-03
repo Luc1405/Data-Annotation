@@ -1,0 +1,64 @@
+START
+
+GEOMETRY CLASSIFICATION ONLY
+
+Before choosing a geometry label:
+- Do not classify only from raw GeoJSON geometry type.
+- First identify what spatial structure the dataset represents.
+- Use geometry_type_counts, polygon_topology_hints, metadata, layer name, attributes, and MapDescription.
+- The dataset summary may omit raw coordinates on purpose.
+
+Allowed Geometry labels:
+- PlainVectorRegion
+- PointDS
+- VectorTessellation
+- LineDS
+
+==================================================
+GEOMETRY CLASSIFICATION
+==================================================
+
+Q1. What kind of geometry does the dataset contain?
+
+A. Points or icons
+B. Lines that are not part of polygon boundaries
+C. Regions / polygons / areas
+
+If A -> GEOMETRY = PointDS
+If B -> GEOMETRY = LineDS
+If C -> continue to Region Geometry questions
+
+--------------------------------------------------
+REGION GEOMETRY QUESTIONS
+--------------------------------------------------
+
+Q2. Do the regions form, or are they intended to form, a complete or near-complete partition of the study area?
+
+Typical examples:
+- neighbourhoods
+- districts
+- boroughs
+- postcode areas
+- census/statistical units
+- administrative areas
+- grid cells
+- land-use polygons
+- zoning polygons
+- area-wide thematic classifications
+
+Yes -> GEOMETRY = VectorTessellation
+No  -> continue
+
+Q3. Are the polygons gridded, tiled, or pixelated units that cover the area?
+
+Yes -> GEOMETRY = VectorTessellation
+No  -> GEOMETRY = PlainVectorRegion
+
+--------------------------------------------------
+POLYGON TOPOLOGY HINTS
+--------------------------------------------------
+
+If dataset_summary.polygon_topology_hints exists, use it as supporting evidence only:
+- High shared_boundary_ratio, many adjacent_polygon_pairs, low overlap_ratio, and high convex_hull_fill_ratio support VectorTessellation.
+- Low shared_boundary_ratio, few adjacent_polygon_pairs, low convex_hull_fill_ratio, or isolated polygons support PlainVectorRegion.
+- Treat suggested_region_geometry as a hint, not as a mandatory label. Override it when metadata, layer name, attributes, or dataset meaning clearly indicate another geometry label.

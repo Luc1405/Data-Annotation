@@ -63,6 +63,10 @@ Best practice is to keep all runnable scripts in `annotation_versions/<version>/
 
 Each version folder can include its own `decision_tree.txt` alongside the script. The dashboard's **Run script** page recursively offers every Python file in `annotation_versions/` as a selectable script. Use readable run IDs such as `prompt-v4-gpt-5-4-mini` so comparisons remain understandable later.
 
+### V3 split annotation experiment
+
+`annotation_versions/V3/V3.py` is an isolated experiment that leaves earlier runnable scripts unchanged. It uses `input_data/ams_coreconcept_annotations_descr.csv`, predicts geometry and entity in separate model calls, and stores the predictions in the same compatibility columns (`GPTGeometry`, `GPTEntity`, `GPTConfidence`, and `GPTReasoningSummary`). V3 also writes split-stage diagnostics (`GPTGeometryConfidence`, `GPTEntityConfidence`, `GPTGeometryReasoningSummary`, and `GPTEntityReasoningSummary`). Its geometry step uses `geometry_decision_tree.txt` plus the V1 polygon topology hints, while its entity step uses `entity_decision_tree.txt`, the predicted geometry, and the V2 entity/shape hints.
+
 ## Local dashboard
 
 The dashboard lives in `dashboard/` and uses Next.js with PostgreSQL. PgAdmin can create and inspect the database. The dashboard reads environment variables from the project root `.env`, so separate `dashboard/.env.local` is not required.
