@@ -7,6 +7,7 @@ Before choosing a geometry label:
 - First identify what spatial structure the dataset represents.
 - Use geometry_type_counts, polygon_topology_hints, metadata, layer name, attributes, and MapDescription.
 - The dataset summary may omit raw coordinates on purpose.
+- Entity labels are not relevant in this step. Do not use ObjectDS/PatchDS reasoning for geometry.
 
 Allowed Geometry labels:
 - PlainVectorRegion

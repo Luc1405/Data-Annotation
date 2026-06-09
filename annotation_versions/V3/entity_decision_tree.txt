@@ -8,6 +8,8 @@ Before choosing an entity label:
 - Classify what the map features primarily represent, not just what attributes they contain.
 - Numeric fields are evidence, but they do not automatically make a layer AmountDS.
 - If numeric values are attributes of objects, routes, regions, facilities, or reporting units, classify the represented feature first.
+- The script may provide entity_evidence and polygon_shape_hints. These are weak supporting evidence only, not labels.
+- entity_evidence is meant to ensure all plausible labels are considered. Do not choose the label with the highest keyword count automatically.
 
 Allowed Entity labels:
 - ObjectDS
@@ -25,52 +27,19 @@ Allowed Entity labels:
 ENTITY CLASSIFICATION
 ==================================================
 
-After Geometry is chosen, classify the entity.
-
 Important entity principle:
-- Classify what the map features primarily represent, not just what attributes they contain.
-- Many object, network, lattice, and patch datasets contain numeric fields.
+- Classify what the map features primarily represent.
+- Many object, network, lattice, coverage, contour, patch, and event datasets contain numeric fields.
 - Choose AmountDS only when the numeric magnitude itself is the main mapped phenomenon.
-- Do not choose AmountDS merely because the dataset has counts, totals, percentages, capacities, scores, or other numeric columns.
-- The script may provide entity_hints and polygon_shape_hints. These are weak supporting evidence only.
-- Do not classify from entity_hints alone. Clear metadata, layer meaning, and the branch questions below take precedence.
-
-
---------------------------------------------------
-OBJECTDS VS PATCHDS HINTS
---------------------------------------------------
-
-Use this section only after ruling out the stronger labels above it in the tree, especially NetworkDS, EventDS, PointMeasuresDS, LatticeDS, CoverageDS, ContourDS, and clear AmountDS cases.
-
-Core distinction:
-- ObjectDS means the feature is the mapped thing.
-- PatchDS means the feature is an area where a condition, policy, restriction, phenomenon, or applicability rule holds.
-
-Conceptual divisibility test:
-- If cutting the polygon in half would usually destroy the identity of the feature, this supports ObjectDS.
-  Examples: a building, monument, school, bridge, facility, named managed asset, housing project, project site, or park treated as a managed place.
-- If cutting the polygon in half would still leave two parts of the same kind of area, this supports PatchDS.
-  Examples: a restriction area, affected area, risk area, policy area, environmental zone, influence area, attention area, or phenomenon extent.
-
-How to use calculated hints:
-- object_keywords_found supports ObjectDS when the terms point to concrete things, assets, facilities, places, or projects.
-- patch_keywords_found supports PatchDS when the terms point to zones, areas of effect, restrictions, policies, risks, buffers, or phenomenon extents.
-- polygon_shape_hints.shape_hint = more_object_like supports ObjectDS only weakly; it usually means many compact polygon features.
-- polygon_shape_hints.shape_hint = more_patch_like supports PatchDS only weakly; it usually means large area spread, low compactness, or high boundary complexity.
-- reporting_unit_keywords_found should push you back toward LatticeDS if the regions are administrative/statistical/reporting units.
-- coverage_keywords_found should push you back toward CoverageDS if the regions form full-area thematic coverage or classifications.
-
-Never use geometry-derived hints as a hard rule:
-- Some real objects are irregular, such as parks, protected cityscapes, managed green spaces, and development sites.
-- Some patches can be compact.
-- Metadata and the meaning of the layer are more important than compactness or area statistics.
-
+- Do not choose AmountDS merely because the dataset has counts, totals, percentages, capacities, scores, identifiers, codes, or other numeric columns.
+- Treat entity_evidence as weak evidence and branch-check support only.
+- Clear metadata, layer meaning, MapDescription, layer name, and branch questions take precedence.
 
 --------------------------------------------------
 PRIORITY ENTITY CHECKS
 --------------------------------------------------
 
-Use these checks before the branch-specific fallbacks.
+Use these checks before ObjectDS/PatchDS reasoning.
 
 Q1. Is the dataset mainly about a route system, street system, transport system, utility system, connected line infrastructure, connections, links, or flows between places?
 
@@ -114,9 +83,44 @@ No  -> continue
 
 Note:
 - AmountDS is not a global priority check.
-- Evaluate object/network/lattice/coverage/patch meaning first.
+- Evaluate object/network/lattice/coverage/contour/patch meaning first.
 - AmountDS is checked inside the relevant geometry branches only after asking what the features represent.
 
+--------------------------------------------------
+GEOMETRY-COMPATIBLE CANDIDATE GUIDANCE
+--------------------------------------------------
+
+Use predicted geometry as branch guidance:
+
+PointDS usually considers:
+- ObjectDS
+- PointMeasuresDS
+- ExistenceDS
+- EventDS
+- AmountDS
+
+LineDS usually considers:
+- NetworkDS
+- ContourDS
+- EventDS
+- ObjectDS
+- AmountDS
+
+PlainVectorRegion usually considers:
+- LatticeDS if the regions are reporting/statistical/administrative units
+- CoverageDS if the regions are full-area thematic classes
+- ContourDS if the regions are interval/band/value classes
+- ObjectDS if the polygons are identifiable bounded things or managed places
+- ExistenceDS if the main meaning is presence/absence
+- PatchDS if the polygons are selected applicability/phenomenon/restriction areas
+- AmountDS only if the numeric magnitude is the main mapped phenomenon
+
+VectorTessellation usually considers:
+- LatticeDS for reporting/statistical/administrative/grid units
+- CoverageDS for exhaustive thematic classifications
+- ContourDS for exhaustive interval or value-band partitions
+- AmountDS only if the numeric value is the main phenomenon
+- PatchDS only when the tessellation-looking regions are actually selected applicability/phenomenon zones and not reporting/coverage units
 
 --------------------------------------------------
 BRANCH A — POINTS OR ICONS
@@ -155,12 +159,11 @@ Examples that should usually remain ObjectDS:
 Yes -> ENTITY = AmountDS
 No  -> ENTITY = ObjectDS
 
-
 --------------------------------------------------
 BRANCH B — REGIONS
 --------------------------------------------------
 
-Q4. Are the regions reporting/statistical/administrative units used to aggregate or attach attributes?
+Q4. Are the regions reporting/statistical/administrative units used to aggregate, report, compare, index, or attach attributes?
 
 Typical examples:
 - neighbourhoods
@@ -170,6 +173,7 @@ Typical examples:
 - census areas
 - statistical zones
 - grid cells used as reporting units
+- administrative subdivisions
 
 Yes -> ENTITY = LatticeDS
 No  -> continue
@@ -183,11 +187,19 @@ Typical examples:
 - urban function categories
 - ground-use classifications
 - area-wide policy/function classes
+- exhaustive thematic category polygons
 
 Yes -> ENTITY = CoverageDS
 No  -> continue
 
-Q6. Does each region represent an interval, band, class range, contour zone, or isoline-like value class?
+Q6. Does each region represent an interval, band, class range, contour zone, isoline-like value class, or distance/time band?
+
+Examples:
+- noise contour zones
+- flood-depth bands
+- distance bands
+- isochrone areas
+- elevation or value intervals
 
 Yes -> ENTITY = ContourDS
 No  -> continue
@@ -200,7 +212,7 @@ If yes, that supports ObjectDS.
 
 Examples:
 - parks
-- protected cityscapes
+- protected cityscapes treated as named managed areas
 - facilities
 - buildings
 - monuments
@@ -216,7 +228,7 @@ No  -> continue
 Q8. Does each region represent Boolean presence/absence of a phenomenon?
 
 Use ExistenceDS when the main meaning is simply whether something exists or is present in those places.
-Do not use ExistenceDS if the polygons are better understood as selected bounded zones or patches of a phenomenon.
+Do not use ExistenceDS if the polygons are better understood as selected bounded zones, policy areas, affected areas, or patches of a phenomenon.
 
 Yes -> ENTITY = ExistenceDS
 No  -> continue
@@ -230,7 +242,7 @@ If yes, that supports PatchDS.
 Use PatchDS when:
 - polygons are selected bounded areas rather than an exhaustive full-area classification
 - polygons mark special zones, restriction areas, affected areas, policy areas, risk areas, influence areas, attention areas, buffers, or phenomenon patches
-- the layer shows where a phenomenon applies, but the areas do not form a complete tessellation
+- the layer shows where a phenomenon applies, but the areas do not form a complete thematic coverage
 - the area is selected because a condition, policy, restriction, or phenomenon applies there
 
 Yes -> ENTITY = PatchDS
@@ -248,10 +260,10 @@ Examples that should usually not be AmountDS:
 - housing projects with dwelling counts -> ObjectDS
 - selected zones with numeric attributes -> PatchDS
 - full-area land-use or function classes with codes -> CoverageDS
+- contour/value bands -> ContourDS
 
 Yes -> ENTITY = AmountDS
 No  -> PatchDS as fallback for bounded non-object regions
-
 
 --------------------------------------------------
 BRANCH C — LINES THAT ARE NOT PART OF REGIONS
@@ -308,6 +320,33 @@ Examples that should usually remain NetworkDS:
 Yes -> ENTITY = AmountDS
 No  -> ObjectDS as fallback for non-network line objects
 
+--------------------------------------------------
+OBJECTDS VS PATCHDS SUPPORTING TESTS
+--------------------------------------------------
+
+Use this section only after ruling out the stronger labels above it, especially NetworkDS, EventDS, PointMeasuresDS, LatticeDS, CoverageDS, ContourDS, and clear AmountDS cases.
+
+Core distinction:
+- ObjectDS means the feature is the mapped thing.
+- PatchDS means the feature is an area where a condition, policy, restriction, phenomenon, or applicability rule holds.
+
+Conceptual divisibility test:
+- If cutting the polygon in half would usually destroy the identity of the feature, this supports ObjectDS.
+  Examples: a building, monument, school, bridge, facility, named managed asset, housing project, project site, or park treated as a managed place.
+- If cutting the polygon in half would still leave two parts of the same kind of area, this supports PatchDS.
+  Examples: a restriction area, affected area, risk area, policy area, environmental zone, influence area, attention area, or phenomenon extent.
+
+How to use calculated evidence:
+- ObjectDS keyword signals support ObjectDS only when the terms point to concrete things, assets, facilities, places, or projects.
+- PatchDS keyword signals support PatchDS only when the terms point to zones, areas of effect, restrictions, policies, risks, buffers, or phenomenon extents.
+- polygon_shape_hints.shape_hint = more_object_like supports ObjectDS only weakly; it usually means many compact polygon features.
+- polygon_shape_hints.shape_hint = more_patch_like supports PatchDS only weakly; it usually means large area spread, low compactness, or high boundary complexity.
+- LatticeDS and CoverageDS signals should push you back toward LatticeDS or CoverageDS before ObjectDS/PatchDS.
+
+Never use geometry-derived hints as a hard rule:
+- Some real objects are irregular, such as parks, protected cityscapes, managed green spaces, and development sites.
+- Some patches can be compact.
+- Metadata and the meaning of the layer are more important than compactness or area statistics.
 
 ==================================================
 FINAL FALLBACK RULES
@@ -315,20 +354,21 @@ FINAL FALLBACK RULES
 
 If the dataset is mainly about:
 - connected infrastructure, routes, roads, transport lines, utility lines, or flows -> NetworkDS
-- identifiable real-world bounded things, facilities, assets, places, or projects -> ObjectDS
-- measured values of a continuous phenomenon at sampled point locations -> PointMeasuresDS
-- interval/band/isoline representation of a field -> ContourDS
-- full-area categorical field or exhaustive thematic coverage -> CoverageDS
-- bounded selected area / special zone / phenomenon patch -> PatchDS
-- aggregated reporting units / statistical zones -> LatticeDS
-- quantities / totals / counts / densities / rates / percentages / capacities / forecasts / flows as the main mapped phenomenon -> AmountDS
 - something that happens or unfolds in time -> EventDS
+- measured values of a continuous phenomenon at sampled point locations -> PointMeasuresDS
+- aggregated reporting units / statistical zones -> LatticeDS
+- full-area categorical field or exhaustive thematic coverage -> CoverageDS
+- interval/band/isoline representation of a field -> ContourDS
+- identifiable real-world bounded things, facilities, assets, places, or projects -> ObjectDS
 - Boolean presence/absence -> ExistenceDS
+- bounded selected area / special zone / phenomenon patch -> PatchDS
+- quantities / totals / counts / densities / rates / percentages / capacities / forecasts / flows as the main mapped phenomenon -> AmountDS
 
 Important distinction rules:
 - VectorTessellation is a Geometry label, not an Entity label.
 - CoverageDS is for full-area thematic classifications or exhaustive thematic coverage.
 - LatticeDS is for reporting/statistical units, even when they contain numeric statistics.
+- ContourDS is for interval, contour, isoline, isochrone, or value-band representations.
 - PatchDS is for selected bounded phenomenon areas, applicability areas, affected areas, policy areas, or restriction zones, not for every polygon.
 - ObjectDS is for real-world objects, places, projects, facilities, assets, or managed entities, even if represented as polygons and even if they have numeric attributes.
 - ObjectDS vs PatchDS: ObjectDS means the feature is the mapped thing; PatchDS means the feature is an area where something applies.

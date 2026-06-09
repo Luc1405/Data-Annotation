@@ -70,9 +70,10 @@ MAX_UNIQUE_VALUES = int(os.getenv("MAX_UNIQUE_VALUES", "10"))
 MAX_PROPERTY_STRING_LENGTH = int(os.getenv("MAX_PROPERTY_STRING_LENGTH", "300"))
 MAX_METADATA_STRING_LENGTH = int(os.getenv("MAX_METADATA_STRING_LENGTH", "2500"))
 
-# Entity hint settings.
-# These hints are weak evidence for the LLM, not automatic labels.
-# They are mainly intended to reduce ObjectDS/PatchDS/AmountDS mistakes.
+# Entity evidence settings.
+# These signals are weak evidence for the LLM, not automatic labels.
+# Keep them balanced across all Entity labels so ObjectDS/PatchDS do not become over-salient.
+# Generic words such as "area/gebied/location/site" are intentionally avoided or kept weak.
 OBJECT_KEYWORDS = {
     "gebouw", "gebouwen", "building", "buildings",
     "pand", "panden", "bag", "adres", "address", "adressen",
@@ -82,13 +83,13 @@ OBJECT_KEYWORDS = {
     "brug", "bridge", "bruggen", "kade", "quay",
     "asset", "assets", "object", "objects", "objecten",
     "facility", "facilities", "voorziening", "voorzieningen",
-    "project", "projects", "projecten", "site", "sites",
-    "speeltuin", "playground", "sport", "sporthal", "cemetery", "begraafplaats",
-    "station", "halte", "stop", "locatie", "location", "plaats",
+    "project", "projects", "projecten",
+    "speeltuin", "playground", "sporthal", "cemetery", "begraafplaats",
+    "station", "halte", "stop",
 }
 
 PATCH_KEYWORDS = {
-    "zone", "zones", "gebied", "gebieden", "area", "areas",
+    "zone", "zones",
     "buffer", "buffers", "restriction", "restricted", "beperking", "beperkingen",
     "verbod", "verboden", "affected", "invloed", "influence",
     "risk", "risico", "risicogebied", "veiligheidszone",
@@ -96,19 +97,82 @@ PATCH_KEYWORDS = {
     "protection", "protected", "milieuzone", "environmental", "aandachtsgebied",
     "overlast", "nuisance", "zoekgebied", "search area",
     "werkgebied", "werkingsgebied", "werkingsgebieden",
-    "contourgebied", "impact", "hinder", "maatregel", "maatregelen",
+    "impact", "hinder", "maatregel", "maatregelen",
 }
 
 REPORTING_UNIT_KEYWORDS = {
     "buurt", "buurten", "wijk", "wijken", "stadsdeel", "stadsdelen",
     "district", "districts", "postcode", "pc4", "census", "statistisch",
     "statistical", "administrative", "administratief", "grid", "raster", "cell", "cells",
+    "gebiedsindeling", "gebiedsgericht", "aggregation", "aggregatie",
 }
 
 COVERAGE_KEYWORDS = {
     "landgebruik", "land use", "zoning", "bestemming", "bestemmingsplan",
     "functie", "function", "functional", "classificatie", "classification",
     "dekking", "coverage", "bodemgebruik", "ground use",
+    "categorie", "category", "type", "klasse", "class", "use", "gebruik",
+}
+
+NETWORK_KEYWORDS = {
+    "weg", "wegen", "straat", "straten", "road", "roads", "street", "streets",
+    "route", "routes", "fietsroute", "cycle route", "cycling route",
+    "tram", "metro", "bus", "spoor", "rail", "railway",
+    "waterway", "vaarroute", "vaart", "kanaal",
+    "leiding", "pipeline", "kabel", "cable", "network", "netwerk",
+    "verbinding", "connection", "connections", "link", "links", "flow", "flows", "transport",
+}
+
+EVENT_KEYWORDS = {
+    "incident", "incidents", "ongeval", "accident", "evenement", "event", "events",
+    "werkzaamheden", "construction", "closure", "afsluiting", "temporary", "tijdelijk",
+    "melding", "meldingen", "report", "reports", "startdatum", "einddatum",
+    "date", "datum", "tijd", "time", "timestamp", "periode", "period",
+}
+
+POINT_MEASURE_KEYWORDS = {
+    "meetpunt", "meetpunten", "measurement", "measurements", "station", "stations",
+    "sensor", "sensoren", "monitoring", "sample", "sampling", "monster", "meting", "metingen",
+    "luchtkwaliteit", "air quality", "geluid", "noise", "temperatuur", "temperature",
+    "grondwater", "pollution", "vervuiling", "concentratie", "concentration",
+}
+
+CONTOUR_KEYWORDS = {
+    "contour", "contours", "contourgebied", "isoline", "isolijn", "isochrone",
+    "band", "bands", "klasse", "class", "range", "interval", "waardegebied",
+    "geluidscontour", "noise contour", "hoogtelijn", "elevation line",
+}
+
+AMOUNT_KEYWORDS = {
+    "aantal", "count", "counts", "total", "totaal", "percentage", "rate", "ratio",
+    "score", "index", "density", "dichtheid", "capacity", "capaciteit",
+    "forecast", "prognose", "intensity", "intensiteit", "waarde", "value",
+    "gemiddelde", "average", "som", "sum",
+}
+
+EXISTENCE_KEYWORDS = {
+    "aanwezigheid", "presence", "exists", "existence", "yes/no", "ja/nee",
+    "boolean", "true", "false", "wel/niet", "presence absence", "aanwezig", "afwezig",
+}
+
+ENTITY_KEYWORD_GROUPS = {
+    "ObjectDS": OBJECT_KEYWORDS,
+    "PatchDS": PATCH_KEYWORDS,
+    "LatticeDS": REPORTING_UNIT_KEYWORDS,
+    "CoverageDS": COVERAGE_KEYWORDS,
+    "NetworkDS": NETWORK_KEYWORDS,
+    "EventDS": EVENT_KEYWORDS,
+    "PointMeasuresDS": POINT_MEASURE_KEYWORDS,
+    "ContourDS": CONTOUR_KEYWORDS,
+    "AmountDS": AMOUNT_KEYWORDS,
+    "ExistenceDS": EXISTENCE_KEYWORDS,
+}
+
+GEOMETRY_COMPATIBLE_ENTITY_CANDIDATES = {
+    "PointDS": ["ObjectDS", "PointMeasuresDS", "ExistenceDS", "EventDS", "AmountDS"],
+    "LineDS": ["NetworkDS", "ContourDS", "EventDS", "ObjectDS", "AmountDS"],
+    "PlainVectorRegion": ["LatticeDS", "CoverageDS", "ContourDS", "ObjectDS", "ExistenceDS", "PatchDS", "AmountDS", "EventDS"],
+    "VectorTessellation": ["LatticeDS", "CoverageDS", "ContourDS", "AmountDS", "PatchDS"],
 }
 
 
@@ -212,11 +276,20 @@ ENTITY_SCHEMA = {
                 "Do not include hidden chain-of-thought."
             ),
         },
+        "decisive_rule": {
+            "type": "string",
+            "description": (
+                "Short label or sentence naming the decisive decision-tree rule used, "
+                "for example: Network priority check, Region Q4 LatticeDS, Region Q5 CoverageDS, "
+                "Region Q7 ObjectDS, Region Q9 PatchDS, or Amount check."
+            ),
+        },
     },
     "required": [
         "entity",
         "confidence",
         "reasoning_summary",
+        "decisive_rule",
     ],
 }
 
@@ -300,6 +373,7 @@ def ensure_output_columns(df: pd.DataFrame) -> pd.DataFrame:
         "GPTReasoningSummary",
         "GPTGeometryReasoningSummary",
         "GPTEntityReasoningSummary",
+        "GPTEntityDecisiveRule",
         "GPTError",
     ]
 
@@ -569,12 +643,36 @@ def keywords_found(text: str, keywords: set[str]) -> list[str]:
     return sorted(keyword for keyword in keywords if keyword.lower() in normalized)
 
 
-def build_entity_hints(metadata: dict[str, Any], dataset_summary: dict[str, Any]) -> dict[str, Any]:
-    """
-    Produces weak, inspectable hints for entity classification.
+def signal_payload(label: str, matches: list[str], score: int) -> dict[str, Any]:
+    """Builds one weak evidence entry for an entity label."""
+    return {
+        "score": int(score),
+        "keywords_found": matches[:20],
+        "interpretation": {
+            "NetworkDS": "connected routes, transport, utilities, links, or flow systems",
+            "EventDS": "things that happen, occur, change, or unfold in time",
+            "PointMeasuresDS": "point samples or sensors measuring a continuous phenomenon",
+            "LatticeDS": "reporting, statistical, administrative, postcode, grid, or aggregation units",
+            "CoverageDS": "full-area thematic classes such as land use, zoning, function, or category coverage",
+            "ContourDS": "intervals, bands, contours, isolines, isochrones, or value classes",
+            "AmountDS": "numeric magnitude is the mapped phenomenon, not merely an attribute",
+            "ExistenceDS": "presence/absence is the main mapped phenomenon",
+            "ObjectDS": "features are identifiable things, places, assets, facilities, projects, or managed entities",
+            "PatchDS": "features are selected bounded areas where a condition, policy, restriction, or phenomenon applies",
+        }.get(label, "weak evidence signal"),
+    }
 
-    The LLM still has to follow the decision tree. These hints are intended to make
-    ambiguous ObjectDS/PatchDS/AmountDS cases easier to reason about.
+
+def build_entity_evidence(
+    metadata: dict[str, Any],
+    dataset_summary: dict[str, Any],
+    predicted_geometry: str | None = None,
+) -> dict[str, Any]:
+    """
+    Produces weak, inspectable evidence for all entity classes.
+
+    The LLM still has to follow the decision tree. The purpose is to avoid making
+    ObjectDS/PatchDS more salient than NetworkDS, LatticeDS, CoverageDS, etc.
     """
     text_parts: list[str] = []
     text_parts.extend(flatten_text_values(metadata))
@@ -583,55 +681,60 @@ def build_entity_hints(metadata: dict[str, Any], dataset_summary: dict[str, Any]
     text_parts.extend(flatten_text_values(dataset_summary.get("field_summaries", {})))
     corpus = " | ".join(text_parts).lower()
 
-    object_matches = keywords_found(corpus, OBJECT_KEYWORDS)
-    patch_matches = keywords_found(corpus, PATCH_KEYWORDS)
-    reporting_unit_matches = keywords_found(corpus, REPORTING_UNIT_KEYWORDS)
-    coverage_matches = keywords_found(corpus, COVERAGE_KEYWORDS)
+    signals: dict[str, Any] = {}
+    for label, keywords in ENTITY_KEYWORD_GROUPS.items():
+        matches = keywords_found(corpus, keywords)
+        signals[label] = signal_payload(label, matches, len(matches))
 
     polygon_shape_hints = dataset_summary.get("polygon_shape_hints", {})
     shape_hint = None
     if isinstance(polygon_shape_hints, dict):
         shape_hint = polygon_shape_hints.get("shape_hint")
 
-    object_score = len(object_matches)
-    patch_score = len(patch_matches)
-
+    # Shape is only a weak tie-breaker for ObjectDS/PatchDS, never a direct label.
     if shape_hint == "more_object_like":
-        object_score += 1
+        signals["ObjectDS"]["score"] += 1
+        signals["ObjectDS"].setdefault("extra_support", []).append(
+            "polygon_shape_hints suggest many compact polygons"
+        )
     elif shape_hint == "more_patch_like":
-        patch_score += 1
+        signals["PatchDS"]["score"] += 1
+        signals["PatchDS"].setdefault("extra_support", []).append(
+            "polygon_shape_hints suggest irregular/large bounded areas"
+        )
 
-    object_patch_hint = "mixed_or_weak"
-    if object_score >= patch_score + 2:
-        object_patch_hint = "more_object_like"
-    elif patch_score >= object_score + 2:
-        object_patch_hint = "more_patch_like"
-
-    warning = (
-        "Hints are weak evidence. Do not classify from hints alone. "
-        "Clear metadata and the decision-tree branches take precedence."
+    compatible_candidates = GEOMETRY_COMPATIBLE_ENTITY_CANDIDATES.get(
+        str(predicted_geometry), ENTITY_TYPES
     )
 
-    if reporting_unit_matches:
-        warning += " Reporting-unit terms may indicate LatticeDS before ObjectDS/PatchDS."
-    if coverage_matches:
-        warning += " Coverage/classification terms may indicate CoverageDS before ObjectDS/PatchDS."
+    sorted_signals = sorted(
+        signals.items(),
+        key=lambda item: (item[1]["score"], item[0] in compatible_candidates),
+        reverse=True,
+    )
+
+    warning = (
+        "These are weak evidence signals, not labels. Apply the decision tree first. "
+        "Do not classify from keyword counts alone. Before ObjectDS/PatchDS, actively rule out "
+        "NetworkDS, EventDS, PointMeasuresDS, LatticeDS, CoverageDS, ContourDS, and clear AmountDS cases."
+    )
 
     return {
-        "object_patch_hint": object_patch_hint,
-        "object_keyword_score": object_score,
-        "patch_keyword_score": patch_score,
-        "object_keywords_found": object_matches[:20],
-        "patch_keywords_found": patch_matches[:20],
-        "reporting_unit_keywords_found": reporting_unit_matches[:20],
-        "coverage_keywords_found": coverage_matches[:20],
-        "interpretation": (
-            "ObjectDS means the feature is the mapped thing; "
-            "PatchDS means the feature is an area where a condition, policy, restriction, "
-            "or phenomenon applies."
+        "primary_candidate_labels_for_predicted_geometry": compatible_candidates,
+        "candidate_signals": signals,
+        "highest_keyword_signal_labels": [label for label, payload in sorted_signals if payload["score"] > 0][:5],
+        "object_patch_distinction": (
+            "ObjectDS means the feature is the mapped thing. PatchDS means the feature is an area "
+            "where a condition, policy, restriction, or phenomenon applies. Use this distinction only "
+            "after stronger labels have been checked."
         ),
         "warning": warning,
     }
+
+
+# Backwards-compatible alias in case external code imports the old name.
+def build_entity_hints(metadata: dict[str, Any], dataset_summary: dict[str, Any]) -> dict[str, Any]:
+    return build_entity_evidence(metadata, dataset_summary)
 
 
 # -----------------------------
@@ -1052,6 +1155,7 @@ def output_columns_to_hide() -> list[str]:
         "GPTReasoningSummary",
         "GPTGeometryReasoningSummary",
         "GPTEntityReasoningSummary",
+        "GPTEntityDecisiveRule",
         "GPTError",
         "RunID",
         "RowIndex",
@@ -1128,7 +1232,7 @@ def build_entity_payload(
     compact_entity_summary = {
         key: value for key, value in entity_summary.items() if value not in (None, [], {})
     }
-    compact_entity_summary["entity_hints"] = build_entity_hints(metadata, summary)
+    compact_entity_summary["entity_evidence"] = build_entity_evidence(metadata, summary, predicted_geometry)
 
     return {
         "predicted_geometry": predicted_geometry,
@@ -1241,16 +1345,19 @@ Important entity interpretation rules:
 - Use ObjectDS for discrete identifiable objects, places, facilities, assets, projects, or named managed entities.
 - Use PatchDS for selected bounded zones, affected areas, restriction areas, policy areas, or phenomenon extents that do not represent discrete real-world objects and do not form a full-area classification.
 - ObjectDS vs PatchDS distinction: ObjectDS means the feature is the mapped thing; PatchDS means the feature is an area where a condition, policy, phenomenon, or restriction applies.
-- The dataset_summary may contain entity_hints and polygon_shape_hints. Treat these as weak supporting evidence only; never let them override clear metadata or the decision tree.
+- The dataset_summary may contain entity_evidence and polygon_shape_hints. Treat these as weak supporting evidence only; never let them override clear metadata or the decision tree.
+- Use entity_evidence to make sure all plausible labels are considered, not as a scoring system.
+- Before selecting ObjectDS or PatchDS, actively rule out stronger labels when plausible: NetworkDS, EventDS, PointMeasuresDS, LatticeDS, CoverageDS, ContourDS, and clear AmountDS.
 - Use AmountDS only when the numeric magnitude itself is the main mapped phenomenon.
 - MapDescription is a human-readable description of the map layer. Use it as important evidence for what phenomenon the map represents.
 
 Output rules:
 - Return only valid JSON matching the required schema.
 - Do not invent labels outside the allowed labels.
-- Use the predicted geometry, dataset summary, entity hints, attributes, metadata, and MapDescription as evidence.
+- Use the predicted geometry, dataset summary, entity_evidence, attributes, metadata, and MapDescription as evidence.
 - If the evidence is imperfect, choose the most likely valid label and lower the confidence.
 - The reasoning_summary should be short and practical, and should mention the decisive entity rule used.
+- The decisive_rule field must name the branch or priority check that determined the final label.
 """.strip()
 
     user_input = f"""
@@ -2004,6 +2111,7 @@ def run_annotation_for_provider(
                 entity = str(entity_annotation["entity"])
                 entity_confidence = float(entity_annotation["confidence"])
                 entity_reasoning_summary = str(entity_annotation["reasoning_summary"])
+                entity_decisive_rule = str(entity_annotation.get("decisive_rule", ""))
                 confidence = (geometry_confidence + entity_confidence) / 2
                 reasoning_summary = (
                     f"Geometry: {geometry_reasoning_summary} | "
@@ -2018,6 +2126,7 @@ def run_annotation_for_provider(
                 df.at[idx, "GPTReasoningSummary"] = reasoning_summary
                 df.at[idx, "GPTGeometryReasoningSummary"] = geometry_reasoning_summary
                 df.at[idx, "GPTEntityReasoningSummary"] = entity_reasoning_summary
+                df.at[idx, "GPTEntityDecisiveRule"] = entity_decisive_rule
                 df.at[idx, "GPTError"] = pd.NA
                 completed_count += 1
 
@@ -2041,6 +2150,7 @@ def run_annotation_for_provider(
                         "entity_confidence": entity_confidence,
                         "geometry_reasoning_summary": geometry_reasoning_summary,
                         "entity_reasoning_summary": entity_reasoning_summary,
+                        "entity_decisive_rule": entity_decisive_rule,
                     },
                     "dataset_summary_length_chars": summary_length,
                 }

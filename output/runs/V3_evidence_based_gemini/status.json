@@ -1,0 +1,13 @@
+{
+  "run_id": "V3_evidence_based_gemini",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "status": "completed",
+  "total_rows": 114,
+  "completed_rows": 114,
+  "error_rows": 0,
+  "current_row": null,
+  "current_kaartlaag": null,
+  "message": "Run completed and artifacts were written.",
+  "updated_at": "2026-06-08T17:58:01.939626+00:00"
+}
