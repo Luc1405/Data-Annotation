@@ -20,7 +20,6 @@ from dataclasses import dataclass
 from typing import Any
 
 import pandas as pd
-from hiclass.metrics import f1 as hiclass_f1
 from dotenv import load_dotenv
 from openai import APIConnectionError, APITimeoutError, OpenAI, RateLimitError
 
@@ -132,6 +131,26 @@ ENTITY_TYPES = [
 
 
 
+
+ENTITY_HIERARCHY = {
+    "ObjectDS": ["Entity", "DiscreteEntity", "ObjectDS"],
+    "EventDS": ["Entity", "DiscreteEntity", "EventDS"],
+    "PatchDS": ["Entity", "RegionEntity", "PatchDS"],
+    "LatticeDS": ["Entity", "RegionEntity", "TessellatedRegionEntity", "LatticeDS"],
+    "CoverageDS": ["Entity", "RegionEntity", "TessellatedRegionEntity", "CoverageDS"],
+    "ContourDS": ["Entity", "RegionEntity", "ValueRegionEntity", "ContourDS"],
+    "NetworkDS": ["Entity", "LineEntity", "NetworkDS"],
+    "PointMeasuresDS": ["Entity", "FieldObservationEntity", "PointMeasuresDS"],
+    "AmountDS": ["Entity", "AttributeEntity", "AmountDS"],
+    "ExistenceDS": ["Entity", "AttributeEntity", "ExistenceDS"],
+}
+
+GEOMETRY_HIERARCHY = {
+    "PointDS": ["Geometry", "PointDS"],
+    "LineDS": ["Geometry", "LineDS"],
+    "PlainVectorRegion": ["Geometry", "RegionGeometry", "PlainVectorRegion"],
+    "VectorTessellation": ["Geometry", "RegionGeometry", "VectorTessellation"],
+}
 
 @dataclass(frozen=True)
 class ProviderConfig:
@@ -1233,16 +1252,63 @@ def label_for_scoring(gold_value: Any, predicted_value: Any) -> str:
     return gold_labels[0] if gold_labels else ""
 
 
+def hierarchy_for_column(actual_column: str, predicted_column: str) -> dict[str, list[str]]:
+    column_names = {actual_column, predicted_column}
+    if column_names <= {"Entity", "GPTEntity"}:
+        return ENTITY_HIERARCHY
+    if column_names <= {"Geometry", "GPTGeometry"}:
+        return GEOMETRY_HIERARCHY
+    raise ValueError(f"No hierarchy configured for {actual_column!r}/{predicted_column!r}")
+
+
+def best_gold_path_for_prediction(
+    gold_value: Any,
+    predicted_label: str,
+    hierarchy: dict[str, list[str]],
+) -> list[str]:
+    gold_paths = [hierarchy[label] for label in split_gold_labels(gold_value) if label in hierarchy]
+    if not gold_paths:
+        return []
+
+    predicted_path = set(hierarchy.get(predicted_label, []))
+    if not predicted_path:
+        return gold_paths[0]
+
+    return max(gold_paths, key=lambda gold_path: len(set(gold_path) & predicted_path))
+
+
 def hierarchical_f1_for_column(df: pd.DataFrame, actual_column: str, predicted_column: str) -> float | None:
     completed = df[df[predicted_column].notna() & df["GPTError"].isna()]
     if completed.empty:
         return None
 
-    y_true = [[label_for_scoring(actual, pred)] for actual, pred in zip(completed[actual_column], completed[predicted_column])]
-    y_pred = [[str(pred).strip()] for pred in completed[predicted_column]]
-    if not y_true:
-        return None
-    return float(hiclass_f1(y_true, y_pred, average="micro"))
+    hierarchy = hierarchy_for_column(actual_column, predicted_column)
+    true_positive_nodes = 0
+    predicted_nodes = 0
+    gold_nodes = 0
+
+    for actual, predicted in zip(completed[actual_column], completed[predicted_column]):
+        predicted_label = str(predicted).strip()
+        predicted_path = set(hierarchy.get(predicted_label, []))
+        gold_path = set(best_gold_path_for_prediction(actual, predicted_label, hierarchy))
+        if not predicted_path or not gold_path:
+            continue
+
+        true_positive_nodes += len(gold_path & predicted_path)
+        predicted_nodes += len(predicted_path)
+        gold_nodes += len(gold_path)
+
+    if predicted_nodes == 0 or gold_nodes == 0 or true_positive_nodes == 0:
+        return 0.0
+
+    hierarchical_precision = true_positive_nodes / predicted_nodes
+    hierarchical_recall = true_positive_nodes / gold_nodes
+    return float(
+        2
+        * hierarchical_precision
+        * hierarchical_recall
+        / (hierarchical_precision + hierarchical_recall)
+    )
 
 
 def calculate_accuracy(

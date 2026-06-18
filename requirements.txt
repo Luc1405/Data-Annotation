@@ -2,5 +2,4 @@ pandas
 python-dotenv
 openai
 psycopg[binary]
-hiclass
 shapely
