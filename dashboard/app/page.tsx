@@ -34,6 +34,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
         <div className="metric"><div className="label">Latest geometry accuracy</div><div className="value">{formatPercent(baseRun?.geometry_accuracy ?? null)}</div></div>
         <div className="metric"><div className="label">Latest entity accuracy</div><div className="value">{formatPercent(baseRun?.entity_accuracy ?? null)}</div></div>
         <div className="metric"><div className="label">Latest joint accuracy</div><div className="value">{formatPercent(baseRun?.joint_accuracy ?? null)}</div></div>
+        <div className="metric"><div className="label">Geometry hierarchical F1</div><div className="value">{formatNumber(baseRun?.geometry_hier_f1 ?? null)}</div></div>
+        <div className="metric"><div className="label">Entity hierarchical F1</div><div className="value">{formatNumber(baseRun?.entity_hier_f1 ?? null)}</div></div>
         <div className="metric"><div className="label">Mean confidence</div><div className="value">{formatNumber(baseRun?.mean_confidence ?? null)}</div></div>
       </section>
 
@@ -56,6 +58,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
               <tbody>
                 <tr><td>Geometry accuracy</td><td>{formatPercent(baseRun.geometry_accuracy)}</td><td>{formatPercent(compareRun.geometry_accuracy)}</td><td>{formatPercent((compareRun.geometry_accuracy ?? 0) - (baseRun.geometry_accuracy ?? 0))}</td></tr>
                 <tr><td>Entity accuracy</td><td>{formatPercent(baseRun.entity_accuracy)}</td><td>{formatPercent(compareRun.entity_accuracy)}</td><td>{formatPercent((compareRun.entity_accuracy ?? 0) - (baseRun.entity_accuracy ?? 0))}</td></tr>
+                <tr><td>Geometry hierarchical F1</td><td>{formatNumber(baseRun.geometry_hier_f1)}</td><td>{formatNumber(compareRun.geometry_hier_f1)}</td><td>{formatNumber((compareRun.geometry_hier_f1 ?? 0) - (baseRun.geometry_hier_f1 ?? 0))}</td></tr>
+                <tr><td>Entity hierarchical F1</td><td>{formatNumber(baseRun.entity_hier_f1)}</td><td>{formatNumber(compareRun.entity_hier_f1)}</td><td>{formatNumber((compareRun.entity_hier_f1 ?? 0) - (baseRun.entity_hier_f1 ?? 0))}</td></tr>
                 <tr><td>Mean confidence</td><td>{formatNumber(baseRun.mean_confidence)}</td><td>{formatNumber(compareRun.mean_confidence)}</td><td>{formatNumber((compareRun.mean_confidence ?? 0) - (baseRun.mean_confidence ?? 0))}</td></tr>
               </tbody>
             </table>
@@ -68,7 +72,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
         <div className="table-wrap">
           <table>
             <thead>
-              <tr><th>Run</th><th>Model</th><th>Started</th><th>Rows</th><th>Errors</th><th>Geometry</th><th>Entity</th><th></th></tr>
+              <tr><th>Run</th><th>Model</th><th>Started</th><th>Rows</th><th>Errors</th><th>Geometry</th><th>Entity</th><th>Hier. F1</th><th></th></tr>
             </thead>
             <tbody>
               {runs.map((run) => (
@@ -80,10 +84,11 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
                   <td>{run.error_rows}</td>
                   <td>{formatPercent(run.geometry_accuracy)}</td>
                   <td>{formatPercent(run.entity_accuracy)}</td>
+                  <td>G {formatNumber(run.geometry_hier_f1)}<br />E {formatNumber(run.entity_hier_f1)}</td>
                   <td><Link href={`/runs/${run.id}`}>Open</Link></td>
                 </tr>
               ))}
-              {runs.length === 0 ? <tr><td colSpan={8}>No runs found yet.</td></tr> : null}
+              {runs.length === 0 ? <tr><td colSpan={9}>No runs found yet.</td></tr> : null}
             </tbody>
           </table>
         </div>
