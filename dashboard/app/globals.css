@@ -72,3 +72,16 @@ th { color: #344054; background: #f9fafb; font-size: 12px; text-transform: upper
 .tracker-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; color: var(--muted); font-size: 12px; }
 .tracker-stats span:first-child { color: var(--foreground); font-weight: 800; }
 .tracker-message { background: #f2f4f7; border-radius: 10px; padding: 10px; color: var(--foreground); }
+
+.performance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin: 20px 0; }
+.performance-card { background: linear-gradient(135deg, #ffffff 0%, #eef4ff 100%); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 14px 36px rgba(16, 24, 40, 0.08); }
+.performance-card-header { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; margin-bottom: 18px; }
+.hero-value { font-size: 44px; font-weight: 900; line-height: 1; margin-top: 8px; letter-spacing: -0.03em; }
+.metric-bars { display: grid; gap: 14px; }
+.metric-bars span { color: var(--muted); font-size: 13px; font-weight: 700; }
+.metric-bars strong { float: right; }
+.metrics-detail { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); margin-bottom: 20px; align-items: start; }
+.score-cell { min-width: 130px; }
+.score-cell span { display: inline-block; min-width: 44px; font-weight: 800; }
+.mini-bar { display: inline-block; vertical-align: middle; width: 72px; height: 8px; margin-left: 8px; overflow: hidden; border-radius: 999px; background: #eaecf0; }
+.mini-bar div { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), #12b76a); }

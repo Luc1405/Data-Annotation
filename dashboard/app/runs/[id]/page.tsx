@@ -1,7 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { formatNumber, formatPercent, getConfusionCells, getResults, getRun, type ConfusionCell } from "../../../lib/db";
+import { formatNumber, formatPercent, getConfusionCells, getResults, getRun, type ConfusionCell, type RunSummary } from "../../../lib/db";
 import { isPredictionMatch } from "../../../lib/scoring";
+
+type LabelMetric = {
+  label: string;
+  precision: number | null;
+  recall: number | null;
+  f1: number | null;
+  support: number | null;
+  true_positive: number | null;
+  false_positive: number | null;
+  false_negative: number | null;
+};
 
 function provenanceText(provenance: Record<string, unknown> | null, key: string) {
   const value = provenance?.[key];
@@ -12,6 +23,96 @@ function provenanceText(provenance: Record<string, unknown> | null, key: string)
 
 function shortHash(value: string) {
   return value.length > 12 ? value.slice(0, 12) : value;
+}
+
+function toFiniteNumber(value: unknown) {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function getPerLabelMetrics(run: RunSummary, metricType: "geometry" | "entity") {
+  const metrics = run.per_label_metrics?.[metricType];
+  if (!metrics || typeof metrics !== "object" || Array.isArray(metrics)) return [];
+
+  return Object.entries(metrics as Record<string, Record<string, unknown>>)
+    .map(([label, values]) => ({
+      label,
+      precision: toFiniteNumber(values.precision),
+      recall: toFiniteNumber(values.recall),
+      f1: toFiniteNumber(values.f1),
+      support: toFiniteNumber(values.support),
+      true_positive: toFiniteNumber(values.true_positive),
+      false_positive: toFiniteNumber(values.false_positive),
+      false_negative: toFiniteNumber(values.false_negative),
+    }))
+    .sort((a, b) => (b.support ?? 0) - (a.support ?? 0) || a.label.localeCompare(b.label));
+}
+
+function barWidth(value: number | null) {
+  return `${Math.max(0, Math.min(1, value ?? 0)) * 100}%`;
+}
+
+function ScoreBar({ value }: { value: number | null }) {
+  return (
+    <div className="score-cell">
+      <span>{formatNumber(value)}</span>
+      <div className="mini-bar" aria-hidden="true"><div style={{ width: barWidth(value) }} /></div>
+    </div>
+  );
+}
+
+function PerformanceHero({ run }: { run: RunSummary }) {
+  const metricGroups = [
+    { title: "Geometry", accuracy: run.geometry_accuracy, macroF1: run.geometry_macro_f1, hierarchicalF1: run.geometry_hier_f1 },
+    { title: "Entity", accuracy: run.entity_accuracy, macroF1: run.entity_macro_f1, hierarchicalF1: run.entity_hier_f1 },
+  ];
+
+  return (
+    <section className="performance-grid">
+      {metricGroups.map((group) => (
+        <div className="performance-card" key={group.title}>
+          <div className="performance-card-header">
+            <div>
+              <div className="label">{group.title} evaluation</div>
+              <div className="hero-value">{formatNumber(group.hierarchicalF1)}</div>
+            </div>
+            <span className="badge success">Hierarchical F1</span>
+          </div>
+          <div className="metric-bars">
+            <div><span>Accuracy</span><strong>{formatPercent(group.accuracy)}</strong><div className="progress-bar"><div style={{ width: barWidth(group.accuracy) }} /></div></div>
+            <div><span>Macro F1</span><strong>{formatNumber(group.macroF1)}</strong><div className="progress-bar"><div style={{ width: barWidth(group.macroF1) }} /></div></div>
+            <div><span>Hierarchical F1</span><strong>{formatNumber(group.hierarchicalF1)}</strong><div className="progress-bar"><div style={{ width: barWidth(group.hierarchicalF1) }} /></div></div>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+function PerLabelMetricsTable({ title, metrics }: { title: string; metrics: LabelMetric[] }) {
+  return (
+    <section className="card">
+      <h2>{title}</h2>
+      <p>Precision, recall, and F1 by label, sorted by support so high-volume classes are easiest to audit.</p>
+      <div className="table-wrap">
+        <table>
+          <thead><tr><th>Label</th><th>F1</th><th>Precision</th><th>Recall</th><th>Support</th><th>TP / FP / FN</th></tr></thead>
+          <tbody>
+            {metrics.map((metric) => (
+              <tr key={metric.label}>
+                <td><strong>{metric.label}</strong></td>
+                <td><ScoreBar value={metric.f1} /></td>
+                <td><ScoreBar value={metric.precision} /></td>
+                <td><ScoreBar value={metric.recall} /></td>
+                <td>{metric.support ?? "—"}</td>
+                <td>{metric.true_positive ?? "—"} / {metric.false_positive ?? "—"} / {metric.false_negative ?? "—"}</td>
+              </tr>
+            ))}
+            {metrics.length === 0 ? <tr><td colSpan={6}>No per-label metrics were saved for this run.</td></tr> : null}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
 }
 
 function ConfusionMatrix({ title, cells }: { title: string; cells: ConfusionCell[] }) {
@@ -55,6 +156,8 @@ export default async function RunDetail({ params }: { params: Promise<{ id: stri
   const cells = run ? await getConfusionCells(run.id) : [];
   const geometryCells = cells.filter((cell) => cell.matrix_type === "geometry");
   const entityCells = cells.filter((cell) => cell.matrix_type === "entity");
+  const geometryMetrics = run ? getPerLabelMetrics(run, "geometry") : [];
+  const entityMetrics = run ? getPerLabelMetrics(run, "entity") : [];
 
   return (
     <main className="shell">
@@ -62,7 +165,7 @@ export default async function RunDetail({ params }: { params: Promise<{ id: stri
         <div>
           <div className="eyebrow">Run detail</div>
           <h1>{run?.id ?? id}</h1>
-          <p>Inspect row-level predictions against gold labels and identify common label confusions.</p>
+          <p>Inspect headline performance, per-label precision/recall/F1, row-level predictions, and common label confusions.</p>
         </div>
         <Link className="button" href="/">All runs</Link>
       </section>
@@ -71,15 +174,20 @@ export default async function RunDetail({ params }: { params: Promise<{ id: stri
         <div className="notice">Run data is unavailable. Check <code>DATABASE_URL</code> and import the run artifacts.</div>
       ) : (
         <>
+          <PerformanceHero run={run} />
+
           <section className="grid metrics">
             <div className="metric"><div className="label">Model</div><div className="value" style={{ fontSize: 18 }}>{run.model}</div></div>
             <div className="metric"><div className="label">Completed rows</div><div className="value">{run.completed_rows}/{run.total_rows}</div></div>
-            <div className="metric"><div className="label">Geometry accuracy</div><div className="value">{formatPercent(run.geometry_accuracy)}</div></div>
-            <div className="metric"><div className="label">Entity accuracy</div><div className="value">{formatPercent(run.entity_accuracy)}</div></div>
             <div className="metric"><div className="label">Joint accuracy</div><div className="value">{formatPercent(run.joint_accuracy)}</div></div>
             <div className="metric"><div className="label">Exact mismatches</div><div className="value">{run.exact_mismatch_count ?? "—"}</div></div>
             <div className="metric"><div className="label">Mean confidence</div><div className="value">{formatNumber(run.mean_confidence)}</div></div>
           </section>
+
+          <div className="grid metrics-detail">
+            <PerLabelMetricsTable title="Geometry label performance" metrics={geometryMetrics} />
+            <PerLabelMetricsTable title="Entity label performance" metrics={entityMetrics} />
+          </div>
 
           <section className="card" style={{ marginBottom: 20 }}>
             <h2>Run provenance</h2>
