@@ -1,0 +1,475 @@
+{
+  "source_file": "annotations_latest.jsonl",
+  "requested_layers": [
+    "BBQ",
+    "BESCHERMDESTADSGEZICHTEN",
+    "BIJEN",
+    "BIJEN_HONING",
+    "CAMERAGEBIEDEN",
+    "CULTUURHISTORIE_VERKENNINGEN",
+    "ENERGIE_WINDVISIE",
+    "FUNCTIEMIX",
+    "KLIMAAT_OVERSTROMING",
+    "OVERNACHTINGSBELEID",
+    "PC6_VLAKKEN_BAG",
+    "PS19",
+    "RAINPROOF_HYDRO_EENHEDEN",
+    "RAINPROOF_KNELPUNTEN",
+    "ZONNEPANELEN2017"
+  ],
+  "requested_count": 15,
+  "extracted_count": 15,
+  "missing_layers": [],
+  "records": [
+    {
+      "row_index": 4,
+      "name": "BBQ",
+      "kaartlaag": "BBQ",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "ObjectDS",
+      "llm_geometry": "PlainVectorRegion",
+      "llm_entity": "PatchDS",
+      "llm_classification": {
+        "geometry": "PlainVectorRegion",
+        "entity": "PatchDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The map layer contains polygons representing specific barbecue locations in parks. These are distinct, isolated zones rather than a continuous partitioning or grid of the city, fitting the PlainVectorRegion classification. | Entity: The map delineates zones where specific barbecue regulations (permitted, prohibited, or restricted) apply. These polygons represent policy areas or restriction zones rather than discrete managed objects, falling directly into the PatchDS definition.",
+        "geometry": "The map layer contains polygons representing specific barbecue locations in parks. These are distinct, isolated zones rather than a continuous partitioning or grid of the city, fitting the PlainVectorRegion classification.",
+        "entity": "The map delineates zones where specific barbecue regulations (permitted, prohibited, or restricted) apply. These polygons represent policy areas or restriction zones rather than discrete managed objects, falling directly into the PatchDS definition.",
+        "entity_decisive_rule": "Region Q9 PatchDS"
+      },
+      "confidence": {
+        "overall": 0.95,
+        "geometry": 1.0,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 5,
+      "name": "BESCHERMDESTADSGEZICHTEN",
+      "kaartlaag": "BESCHERMDESTADSGEZICHTEN",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "ObjectDS",
+      "llm_geometry": "PlainVectorRegion",
+      "llm_entity": "PatchDS",
+      "llm_classification": {
+        "geometry": "PlainVectorRegion",
+        "entity": "PatchDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The layer represents protected conservation areas in Amsterdam. These are distinct, non-contiguous, or partially overlapping special interest zones rather than an exhaustive, non-overlapping partition (tessellation) of the entire city area. | Entity: The map displays designated conservation areas (beschermde stads- en dorpsgezichten). These are bounded policy or restriction zones where specific cultural-historical status and associated regulations apply, rather than being discrete objects or exhaustive thematic coverage. Following the PatchDS definition, they represent areas where a specific policy/phenomenon applies.",
+        "geometry": "The layer represents protected conservation areas in Amsterdam. These are distinct, non-contiguous, or partially overlapping special interest zones rather than an exhaustive, non-overlapping partition (tessellation) of the entire city area.",
+        "entity": "The map displays designated conservation areas (beschermde stads- en dorpsgezichten). These are bounded policy or restriction zones where specific cultural-historical status and associated regulations apply, rather than being discrete objects or exhaustive thematic coverage. Following the PatchDS definition, they represent areas where a specific policy/phenomenon applies.",
+        "entity_decisive_rule": "Region Q9 PatchDS"
+      },
+      "confidence": {
+        "overall": 0.9,
+        "geometry": 0.9,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 6,
+      "name": "BIJEN",
+      "kaartlaag": "BIJEN",
+      "actual_geometry": "PointDS",
+      "actual_entity": "AmountDS",
+      "llm_geometry": "PointDS",
+      "llm_entity": "PointMeasuresDS",
+      "llm_classification": {
+        "geometry": "PointDS",
+        "entity": "PointMeasuresDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset represents locations where wild bees were inventoried, and the geometry type is explicitly listed as Point with 213 occurrences. | Entity: The map represents scientific observations (bee inventories) taken at specific geographic locations (sampling points) over time. Each point represents an ecological survey result for a specific location, fitting the definition of PointMeasuresDS.",
+        "geometry": "The dataset represents locations where wild bees were inventoried, and the geometry type is explicitly listed as Point with 213 occurrences.",
+        "entity": "The map represents scientific observations (bee inventories) taken at specific geographic locations (sampling points) over time. Each point represents an ecological survey result for a specific location, fitting the definition of PointMeasuresDS.",
+        "entity_decisive_rule": "Q3. PointMeasuresDS priority check"
+      },
+      "confidence": {
+        "overall": 0.9,
+        "geometry": 1.0,
+        "entity": 0.8
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 7,
+      "name": "BIJEN_HONING",
+      "kaartlaag": "BIJEN_HONING",
+      "actual_geometry": "PointDS",
+      "actual_entity": "AmountDS",
+      "llm_geometry": "PointDS",
+      "llm_entity": "ObjectDS",
+      "llm_classification": {
+        "geometry": "PointDS",
+        "entity": "ObjectDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset represents specific locations of bee hives (bijenkasten) and contains exclusively point geometries, as indicated by the metadata and geometry_type_counts. | Entity: The dataset represents locations of honey bee colonies (bijenvolken/bijenkasten). Each point corresponds to a physical facility or site where these bees are kept. Although numeric counts of colonies are provided as attributes, the map primarily identifies the location of these managed assets rather than mapping the numeric quantity as the main phenomenon. Therefore, it follows the ObjectDS classification for discrete real-world objects.",
+        "geometry": "The dataset represents specific locations of bee hives (bijenkasten) and contains exclusively point geometries, as indicated by the metadata and geometry_type_counts.",
+        "entity": "The dataset represents locations of honey bee colonies (bijenvolken/bijenkasten). Each point corresponds to a physical facility or site where these bees are kept. Although numeric counts of colonies are provided as attributes, the map primarily identifies the location of these managed assets rather than mapping the numeric quantity as the main phenomenon. Therefore, it follows the ObjectDS classification for discrete real-world objects.",
+        "entity_decisive_rule": "Branch A Q5 (ObjectDS vs AmountDS)"
+      },
+      "confidence": {
+        "overall": 0.95,
+        "geometry": 1.0,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 14,
+      "name": "CAMERAGEBIEDEN",
+      "kaartlaag": "CAMERAGEBIEDEN",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "ExistenceDS",
+      "llm_geometry": "PlainVectorRegion",
+      "llm_entity": "PatchDS",
+      "llm_classification": {
+        "geometry": "PlainVectorRegion",
+        "entity": "PatchDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset represents specific camera-monitored zones rather than an exhaustive partition of Amsterdam. The low shared_boundary_ratio and low convex_hull_fill_ratio indicate these are isolated or scattered polygons, which fits the PlainVectorRegion classification. | Entity: The layer maps 'Camera areas' (Cameragebieden), which are defined zones where a specific policy or security condition (CCTV surveillance) applies. These are not exhaustive statistical reporting units (LatticeDS) nor are they discrete objects (like a single building); they are specific zones of intervention, fitting the definition of PatchDS.",
+        "geometry": "The dataset represents specific camera-monitored zones rather than an exhaustive partition of Amsterdam. The low shared_boundary_ratio and low convex_hull_fill_ratio indicate these are isolated or scattered polygons, which fits the PlainVectorRegion classification.",
+        "entity": "The layer maps 'Camera areas' (Cameragebieden), which are defined zones where a specific policy or security condition (CCTV surveillance) applies. These are not exhaustive statistical reporting units (LatticeDS) nor are they discrete objects (like a single building); they are specific zones of intervention, fitting the definition of PatchDS.",
+        "entity_decisive_rule": "Region Q9 PatchDS"
+      },
+      "confidence": {
+        "overall": 0.925,
+        "geometry": 0.95,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 17,
+      "name": "CULTUURHISTORIE_VERKENNINGEN",
+      "kaartlaag": "CULTUURHISTORIE_VERKENNINGEN",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "EventDS",
+      "llm_geometry": "PlainVectorRegion",
+      "llm_entity": "PatchDS",
+      "llm_classification": {
+        "geometry": "PlainVectorRegion",
+        "entity": "PatchDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The layer represents cultural historic exploration areas that do not form a complete, non-overlapping partition of the city. The metadata notes that the coverage is incomplete and boundaries are based on specific planning studies, confirming it is not a tessellation. | Entity: The map displays 'Cultuurhistorische verkenningen' (Cultural historic explorations), which are designated zones or study areas identified by researchers for urban planning purposes. These regions represent the spatial extent of specific planning-related studies rather than discrete real-world objects or exhaustive coverage classifications. They function as policy/applicability zones, fitting the definition of PatchDS.",
+        "geometry": "The layer represents cultural historic exploration areas that do not form a complete, non-overlapping partition of the city. The metadata notes that the coverage is incomplete and boundaries are based on specific planning studies, confirming it is not a tessellation.",
+        "entity": "The map displays 'Cultuurhistorische verkenningen' (Cultural historic explorations), which are designated zones or study areas identified by researchers for urban planning purposes. These regions represent the spatial extent of specific planning-related studies rather than discrete real-world objects or exhaustive coverage classifications. They function as policy/applicability zones, fitting the definition of PatchDS.",
+        "entity_decisive_rule": "Region Q9 PatchDS"
+      },
+      "confidence": {
+        "overall": 0.9,
+        "geometry": 0.9,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 20,
+      "name": "ENERGIE_WINDVISIE",
+      "kaartlaag": "ENERGIE_WINDVISIE",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "AmountDS",
+      "llm_geometry": "PlainVectorRegion",
+      "llm_entity": "PatchDS",
+      "llm_classification": {
+        "geometry": "PlainVectorRegion",
+        "entity": "PatchDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset contains a small number of isolated polygons representing specific potential wind energy sites rather than a complete administrative or thematic partition of the city. | Entity: The dataset represents potential wind energy areas. These polygons indicate zones where wind energy projects could be developed, rather than existing objects or exhaustive coverage, fitting the definition of PatchDS. They do not constitute a network, statistical lattice, or contour map, and they are not simply numeric magnitude layers.",
+        "geometry": "The dataset contains a small number of isolated polygons representing specific potential wind energy sites rather than a complete administrative or thematic partition of the city.",
+        "entity": "The dataset represents potential wind energy areas. These polygons indicate zones where wind energy projects could be developed, rather than existing objects or exhaustive coverage, fitting the definition of PatchDS. They do not constitute a network, statistical lattice, or contour map, and they are not simply numeric magnitude layers.",
+        "entity_decisive_rule": "Region Q9 PatchDS"
+      },
+      "confidence": {
+        "overall": 0.95,
+        "geometry": 1.0,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 26,
+      "name": "FUNCTIEMIX",
+      "kaartlaag": "FUNCTIEMIX",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "PatchDS;AmountDS",
+      "llm_geometry": "VectorTessellation",
+      "llm_entity": "CoverageDS",
+      "llm_classification": {
+        "geometry": "VectorTessellation",
+        "entity": "CoverageDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset represents 'blokstraten' (block-streets) which form an administrative/functional partition of the city. The polygons cover the study area based on built-up blocks to categorize land-use functions, consistent with the definition of a VectorTessellation. | Entity: The map layer provides an exhaustive thematic classification of urban blocks based on their functional mix (Wonen, Voorzieningen, Werken). These blocks form a complete coverage of the city's built-up area where each feature is categorized based on the percentage of use, acting as a functional land-use map. This falls under CoverageDS as a full-area thematic category classification.",
+        "geometry": "The dataset represents 'blokstraten' (block-streets) which form an administrative/functional partition of the city. The polygons cover the study area based on built-up blocks to categorize land-use functions, consistent with the definition of a VectorTessellation.",
+        "entity": "The map layer provides an exhaustive thematic classification of urban blocks based on their functional mix (Wonen, Voorzieningen, Werken). These blocks form a complete coverage of the city's built-up area where each feature is categorized based on the percentage of use, acting as a functional land-use map. This falls under CoverageDS as a full-area thematic category classification.",
+        "entity_decisive_rule": "Region Q5 CoverageDS"
+      },
+      "confidence": {
+        "overall": 0.875,
+        "geometry": 0.9,
+        "entity": 0.85
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 52,
+      "name": "KLIMAAT_OVERSTROMING",
+      "kaartlaag": "KLIMAAT_OVERSTROMING",
+      "actual_geometry": "VectorTessellation",
+      "actual_entity": "CoverageDS",
+      "llm_geometry": "VectorTessellation",
+      "llm_entity": "ContourDS",
+      "llm_classification": {
+        "geometry": "VectorTessellation",
+        "entity": "ContourDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset represents flood risk zones characterized by depth and probability. The high number of adjacent polygon pairs and high shared boundary ratio indicate these areas form a partition of the city surface, consistent with a thematic zoning map or tessellation. | Entity: The map features represent bands of flood risk probability (Kans) and water depth (Diepte) resulting from stress tests. As these polygons classify areas into discrete risk intervals and value bands, they are best represented as a contour-like classification of an environmental field.",
+        "geometry": "The dataset represents flood risk zones characterized by depth and probability. The high number of adjacent polygon pairs and high shared boundary ratio indicate these areas form a partition of the city surface, consistent with a thematic zoning map or tessellation.",
+        "entity": "The map features represent bands of flood risk probability (Kans) and water depth (Diepte) resulting from stress tests. As these polygons classify areas into discrete risk intervals and value bands, they are best represented as a contour-like classification of an environmental field.",
+        "entity_decisive_rule": "Region Q6 ContourDS"
+      },
+      "confidence": {
+        "overall": 0.875,
+        "geometry": 0.95,
+        "entity": 0.8
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 64,
+      "name": "OVERNACHTINGSBELEID",
+      "kaartlaag": "OVERNACHTINGSBELEID",
+      "actual_geometry": "VectorTessellation",
+      "actual_entity": "CoverageDS",
+      "llm_geometry": "VectorTessellation",
+      "llm_entity": "PatchDS",
+      "llm_classification": {
+        "geometry": "VectorTessellation",
+        "entity": "PatchDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset represents a spatial partition of the city based on neighborhood boundaries for policy classification. The high shared boundary ratio and adjacency metrics indicate a complete tessellation of the study area. | Entity: The layer maps zones where specific 'overnight policy' (Overnachtingsbeleid) conditions apply. Since these areas define policy restrictions (e.g., hotel development allowed or restricted) rather than being administrative reporting units (LatticeDS) or exhaustive thematic classifications (CoverageDS), PatchDS is the correct classification.",
+        "geometry": "The dataset represents a spatial partition of the city based on neighborhood boundaries for policy classification. The high shared boundary ratio and adjacency metrics indicate a complete tessellation of the study area.",
+        "entity": "The layer maps zones where specific 'overnight policy' (Overnachtingsbeleid) conditions apply. Since these areas define policy restrictions (e.g., hotel development allowed or restricted) rather than being administrative reporting units (LatticeDS) or exhaustive thematic classifications (CoverageDS), PatchDS is the correct classification.",
+        "entity_decisive_rule": "Region Q9 PatchDS"
+      },
+      "confidence": {
+        "overall": 0.925,
+        "geometry": 0.95,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 69,
+      "name": "PC6_VLAKKEN_BAG",
+      "kaartlaag": "PC6_VLAKKEN_BAG",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "ObjectDS",
+      "llm_geometry": "VectorTessellation",
+      "llm_entity": "LatticeDS",
+      "llm_classification": {
+        "geometry": "VectorTessellation",
+        "entity": "LatticeDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset represents Postcode6 areas, which are administrative units intended to cover the city completely. Although the polygon topology hints suggest PlainVectorRegion due to the specific creation method (buffering), the end result is a systematic partition of the study area into non-overlapping or boundary-aligned units, which fits the definition of VectorTessellation. | Entity: The dataset represents postcode6 areas, which serve as statistical and administrative reporting units for spatial data aggregation in the Netherlands, aligning with the definition of LatticeDS.",
+        "geometry": "The dataset represents Postcode6 areas, which are administrative units intended to cover the city completely. Although the polygon topology hints suggest PlainVectorRegion due to the specific creation method (buffering), the end result is a systematic partition of the study area into non-overlapping or boundary-aligned units, which fits the definition of VectorTessellation.",
+        "entity": "The dataset represents postcode6 areas, which serve as statistical and administrative reporting units for spatial data aggregation in the Netherlands, aligning with the definition of LatticeDS.",
+        "entity_decisive_rule": "Region Q4 LatticeDS"
+      },
+      "confidence": {
+        "overall": 0.9,
+        "geometry": 0.9,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 75,
+      "name": "PS19",
+      "kaartlaag": "PS19",
+      "actual_geometry": "PointDS",
+      "actual_entity": "EventDS",
+      "llm_geometry": "PointDS",
+      "llm_entity": "ObjectDS",
+      "llm_classification": {
+        "geometry": "PointDS",
+        "entity": "ObjectDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset contains 750 points representing election results at specific voting locations, as indicated by the geometry_type_counts and the MapDescription referring to circle sizes on the map. | Entity: The map depicts voting locations as distinct, real-world facilities or places. While the layer contains numerous numeric attributes (election results), the primary features mapped are the specific polling locations (Stemlocaties) themselves. According to the entity classification rules, polling stations with attribute data are classified as objects rather than AmountDS or PointMeasuresDS.",
+        "geometry": "The dataset contains 750 points representing election results at specific voting locations, as indicated by the geometry_type_counts and the MapDescription referring to circle sizes on the map.",
+        "entity": "The map depicts voting locations as distinct, real-world facilities or places. While the layer contains numerous numeric attributes (election results), the primary features mapped are the specific polling locations (Stemlocaties) themselves. According to the entity classification rules, polling stations with attribute data are classified as objects rather than AmountDS or PointMeasuresDS.",
+        "entity_decisive_rule": "Branch A, Q4, A"
+      },
+      "confidence": {
+        "overall": 0.95,
+        "geometry": 1.0,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 77,
+      "name": "RAINPROOF_HYDRO_EENHEDEN",
+      "kaartlaag": "RAINPROOF_HYDRO_EENHEDEN",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "ObjectDS",
+      "llm_geometry": "PlainVectorRegion",
+      "llm_entity": "PatchDS",
+      "llm_classification": {
+        "geometry": "PlainVectorRegion",
+        "entity": "PatchDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset contains polygon features representing discrete 'hydro-units' derived from a 3Di model. Topology hints show a low shared boundary ratio and low overlap, indicating these are individual analysis zones rather than a continuous partition of the city. | Entity: The map depicts 'hydro-units' that are identified as specific locations where water-related issues (knelpunten) occur or where urban 'Rainproof' measures are planned or implemented. These are not exhaustive administrative units (LatticeDS), not exhaustive land-use classifications (CoverageDS), and not real-world objects in the 'managed asset' sense (like a building or park). They represent bounded areas where a specific policy, attention, or remediation measure applies, which aligns with the PatchDS definition.",
+        "geometry": "The dataset contains polygon features representing discrete 'hydro-units' derived from a 3Di model. Topology hints show a low shared boundary ratio and low overlap, indicating these are individual analysis zones rather than a continuous partition of the city.",
+        "entity": "The map depicts 'hydro-units' that are identified as specific locations where water-related issues (knelpunten) occur or where urban 'Rainproof' measures are planned or implemented. These are not exhaustive administrative units (LatticeDS), not exhaustive land-use classifications (CoverageDS), and not real-world objects in the 'managed asset' sense (like a building or park). They represent bounded areas where a specific policy, attention, or remediation measure applies, which aligns with the PatchDS definition.",
+        "entity_decisive_rule": "Region Q9 PatchDS"
+      },
+      "confidence": {
+        "overall": 0.9,
+        "geometry": 0.9,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 78,
+      "name": "RAINPROOF_KNELPUNTEN",
+      "kaartlaag": "RAINPROOF_KNELPUNTEN",
+      "actual_geometry": "PlainVectorRegion",
+      "actual_entity": "ObjectDS",
+      "llm_geometry": "PlainVectorRegion",
+      "llm_entity": "PatchDS",
+      "llm_classification": {
+        "geometry": "PlainVectorRegion",
+        "entity": "PatchDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset maps specific 'bottlenecks' (knelpunten) for water drainage at extreme rainfall events. These are discrete, identified problem areas rather than a systematic partition of the entire city, which is confirmed by the low shared_boundary_ratio and low convex_hull_fill_ratio. | Entity: The layer maps identified bottleneck locations ('knelpunten') in Amsterdam based on hydrological modeling. These areas are specific zones where rainfall-related water management issues occur. They are not administrative reporting units (LatticeDS), exhaustive land-use coverage (CoverageDS), or transport infrastructure networks (NetworkDS), but rather 'affected areas' where a specific drainage/overflow phenomenon applies, making PatchDS the best fit.",
+        "geometry": "The dataset maps specific 'bottlenecks' (knelpunten) for water drainage at extreme rainfall events. These are discrete, identified problem areas rather than a systematic partition of the entire city, which is confirmed by the low shared_boundary_ratio and low convex_hull_fill_ratio.",
+        "entity": "The layer maps identified bottleneck locations ('knelpunten') in Amsterdam based on hydrological modeling. These areas are specific zones where rainfall-related water management issues occur. They are not administrative reporting units (LatticeDS), exhaustive land-use coverage (CoverageDS), or transport infrastructure networks (NetworkDS), but rather 'affected areas' where a specific drainage/overflow phenomenon applies, making PatchDS the best fit.",
+        "entity_decisive_rule": "Region Q9 PatchDS"
+      },
+      "confidence": {
+        "overall": 0.925,
+        "geometry": 0.95,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    },
+    {
+      "row_index": 112,
+      "name": "ZONNEPANELEN2017",
+      "kaartlaag": "ZONNEPANELEN2017",
+      "actual_geometry": "PointDS",
+      "actual_entity": "AmountDS",
+      "llm_geometry": "PointDS",
+      "llm_entity": "ObjectDS",
+      "llm_classification": {
+        "geometry": "PointDS",
+        "entity": "ObjectDS"
+      },
+      "llm_reasoning": {
+        "combined": "Geometry: The dataset contains 4617 entries all identified as points, representing individual solar panel detections across the city. | Entity: Each point represents a distinct solar panel system installed on buildings or facilities, which are discrete real-world assets. The presence of numeric attributes like panel counts and power capacity (Watt-peak) describes these assets rather than defining the map as an AmountDS.",
+        "geometry": "The dataset contains 4617 entries all identified as points, representing individual solar panel detections across the city.",
+        "entity": "Each point represents a distinct solar panel system installed on buildings or facilities, which are discrete real-world assets. The presence of numeric attributes like panel counts and power capacity (Watt-peak) describes these assets rather than defining the map as an AmountDS.",
+        "entity_decisive_rule": "BRANCH A Q5"
+      },
+      "confidence": {
+        "overall": 0.95,
+        "geometry": 1.0,
+        "entity": 0.9
+      },
+      "run": {
+        "run_id": "V3_evidence_based_gemini",
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "status": "success"
+      }
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
-  "run_id": "V4_gemini",
-  "provider": "gemini",
-  "model": "gemini-3.1-flash-lite",
-  "started_at": "2026-06-11T10:13:42.318203+00:00",
-  "completed_at": "2026-06-11T10:19:18.758964+00:00",
+  "run_id": "V4_gpt",
+  "provider": "gpt",
+  "model": "gpt-5.4-mini",
+  "started_at": "2026-06-11T10:03:32.400603+00:00",
+  "completed_at": "2026-06-11T10:13:42.052406+00:00",
   "input_csv_path": "input_data\\ams_coreconcept_annotations_descr.csv",
-  "output_dir": "output\\runs\\V4_gemini",
+  "output_dir": "output\\runs\\V4_gpt",
   "provenance": {
     "git_commit": "e45347ec2cfcbd47e93e6d90eb256cedbf5428a7",
     "git_branch": "main",
@@ -32,14 +32,14 @@
   "total_rows": 114,
   "completed_rows": 114,
   "error_rows": 0,
-  "geometry_accuracy": 0.956140350877193,
-  "entity_accuracy": 0.8333333333333334,
-  "joint_accuracy": 0.8157894736842105,
-  "exact_mismatch_count": 21,
-  "geometry_macro_f1": 0.9475823705605477,
-  "entity_macro_f1": 0.6280079920079921,
-  "geometry_hier_f1": 0.956140350877193,
-  "entity_hier_f1": 0.8333333333333334,
+  "geometry_accuracy": 0.9824561403508771,
+  "entity_accuracy": 0.7456140350877193,
+  "joint_accuracy": 0.7456140350877193,
+  "exact_mismatch_count": 29,
+  "geometry_macro_f1": 0.9785087719298246,
+  "entity_macro_f1": 0.604295668100016,
+  "geometry_hier_f1": 0.9824561403508771,
+  "entity_hier_f1": 0.7456140350877193,
   "per_label_metrics": {
     "geometry": {
       "LineDS": {
@@ -53,12 +53,12 @@
       },
       "PlainVectorRegion": {
         "precision": 1.0,
-        "recall": 0.8387096774193549,
-        "f1": 0.9122807017543859,
+        "recall": 0.9354838709677419,
+        "f1": 0.9666666666666666,
         "support": 31,
-        "true_positive": 26,
+        "true_positive": 29,
         "false_positive": 0,
-        "false_negative": 5
+        "false_negative": 2
       },
       "PointDS": {
         "precision": 1.0,
@@ -70,24 +70,24 @@
         "false_negative": 0
       },
       "VectorTessellation": {
-        "precision": 0.782608695652174,
+        "precision": 0.9,
         "recall": 1.0,
-        "f1": 0.878048780487805,
+        "f1": 0.9473684210526316,
         "support": 18,
         "true_positive": 18,
-        "false_positive": 5,
+        "false_positive": 2,
         "false_negative": 0
       }
     },
     "entity": {
       "AmountDS": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
         "support": 4,
-        "true_positive": 0,
-        "false_positive": 0,
-        "false_negative": 4
+        "true_positive": 2,
+        "false_positive": 2,
+        "false_negative": 2
       },
       "ContourDS": {
         "precision": 1.0,
@@ -99,21 +99,21 @@
         "false_negative": 0
       },
       "CoverageDS": {
-        "precision": 0.5714285714285714,
-        "recall": 0.6666666666666666,
-        "f1": 0.6153846153846153,
+        "precision": 0.42857142857142855,
+        "recall": 0.5,
+        "f1": 0.4615384615384615,
         "support": 6,
-        "true_positive": 4,
-        "false_positive": 3,
-        "false_negative": 2
+        "true_positive": 3,
+        "false_positive": 4,
+        "false_negative": 3
       },
       "EventDS": {
-        "precision": 0.5,
+        "precision": 0.25,
         "recall": 0.3333333333333333,
-        "f1": 0.4,
+        "f1": 0.28571428571428575,
         "support": 3,
         "true_positive": 1,
-        "false_positive": 1,
+        "false_positive": 3,
         "false_negative": 2
       },
       "ExistenceDS": {
@@ -126,40 +126,40 @@
         "false_negative": 1
       },
       "LatticeDS": {
-        "precision": 0.9230769230769231,
-        "recall": 1.0,
-        "f1": 0.9600000000000001,
+        "precision": 0.9166666666666666,
+        "recall": 0.9166666666666666,
+        "f1": 0.9166666666666666,
         "support": 12,
-        "true_positive": 12,
+        "true_positive": 11,
         "false_positive": 1,
-        "false_negative": 0
+        "false_negative": 1
       },
       "NetworkDS": {
-        "precision": 1.0,
+        "precision": 0.6428571428571429,
         "recall": 1.0,
-        "f1": 1.0,
+        "f1": 0.782608695652174,
         "support": 9,
         "true_positive": 9,
-        "false_positive": 0,
+        "false_positive": 5,
         "false_negative": 0
       },
       "ObjectDS": {
-        "precision": 0.9482758620689655,
-        "recall": 0.873015873015873,
-        "f1": 0.9090909090909091,
+        "precision": 0.9591836734693877,
+        "recall": 0.746031746031746,
+        "f1": 0.8392857142857143,
         "support": 63,
-        "true_positive": 55,
-        "false_positive": 3,
-        "false_negative": 8
+        "true_positive": 47,
+        "false_positive": 2,
+        "false_negative": 16
       },
       "PatchDS": {
-        "precision": 0.4117647058823529,
-        "recall": 0.7777777777777778,
-        "f1": 0.5384615384615384,
+        "precision": 0.3125,
+        "recall": 0.5555555555555556,
+        "f1": 0.39999999999999997,
         "support": 9,
-        "true_positive": 7,
-        "false_positive": 10,
-        "false_negative": 2
+        "true_positive": 5,
+        "false_positive": 11,
+        "false_negative": 4
       },
       "PointMeasuresDS": {
         "precision": 0.75,
@@ -172,5 +172,5 @@
       }
     }
   },
-  "mean_confidence": 0.9561403508771928
+  "mean_confidence": 0.9634210526315788
 }

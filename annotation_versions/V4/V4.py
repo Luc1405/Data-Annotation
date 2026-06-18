@@ -615,6 +615,416 @@ def summarize_polygon_shape_hints(features: list[Any]) -> dict[str, Any]:
     }
 
 
+
+# -----------------------------
+# Generic property profiling and evidence extraction
+# -----------------------------
+def is_missing_property_value(value: Any) -> bool:
+    """Returns True for values that should be treated as empty/missing in summaries."""
+    if value is None:
+        return True
+    if isinstance(value, float) and math.isnan(value):
+        return True
+    if isinstance(value, str) and not value.strip():
+        return True
+    return False
+
+
+def normalize_property_text(value: Any) -> str:
+    """Normalizes field names and categorical values for role detection."""
+    return str(value).strip().lower().replace("_", " ").replace("-", " ")
+
+
+FIELD_ROLE_KEYWORDS = {
+    "quantity_field": {
+        "aantal", "count", "counts", "number", "nummer", "total", "totaal",
+        "sum", "som", "capacity", "capaciteit", "percentage", "percent", "rate",
+        "ratio", "score", "index", "density", "dichtheid", "waarde", "value",
+        "volume", "intensity", "intensiteit", "forecast", "prognose",
+        "vermogen", "opbrengst", "mw", "gwh", "kwh",
+    },
+    "policy_field": {
+        "beleid", "policy", "voorwaarde", "voorwaarden", "selectie", "tenzij",
+        "verbod", "verboden", "restriction", "restricted", "toegestaan", "allowed",
+        "niet toegestaan", "vergunning", "permit", "zone", "zoning", "bestemming",
+        "maatregel", "maatregelen", "bescherming", "beschermd",
+    },
+    "classification_field": {
+        "klasse", "class", "categorie", "category", "type", "soort", "status",
+        "code", "label", "selectie", "niveau", "level", "functie", "function",
+        "gebruik", "use", "bestemming", "classificatie", "classification",
+    },
+    "spatial_name_field": {
+        "naam", "name", "buurtnaam", "buurt", "wijk", "stadsdeel", "gebied",
+        "district", "postcode", "pc4", "pc6", "adres", "address", "locatie",
+        "location", "plaats", "objectnaam",
+    },
+    "time_field": {
+        "jaar", "year", "datum", "date", "tijd", "time", "timestamp", "periode",
+        "period", "start", "eind", "end", "startdatum", "einddatum", "maand",
+        "month", "dag", "day",
+    },
+    "measurement_field": {
+        "meting", "metingen", "meetpunt", "meetwaarde", "measurement", "sensor",
+        "station", "sample", "sampling", "monster", "concentratie", "concentration",
+        "temperatuur", "temperature", "geluid", "noise", "luchtkwaliteit", "air quality",
+        "grondwater", "waterstand", "pollution", "vervuiling",
+    },
+    "identifier_field": {
+        "id", "identifier", "identificatie", "objectid", "fid", "gid", "code",
+        "nummer", "nr", "uuid",
+    },
+    "boolean_presence_field": {
+        "aanwezig", "aanwezigheid", "presence", "exists", "existence", "ja nee",
+        "yes no", "wel niet", "true", "false", "boolean",
+    },
+}
+
+
+def infer_field_roles_from_text(text: str) -> list[str]:
+    """Infers generic semantic roles from a field name and compact value text."""
+    normalized = normalize_property_text(text)
+    roles: list[str] = []
+    for role, keywords in FIELD_ROLE_KEYWORDS.items():
+        # Avoid treating "voorwaarde/voorwaarden" as a quantity just because it
+        # contains the Dutch substring "waarde" (value).
+        if role == "quantity_field" and "voorwaarde" in normalized:
+            continue
+        if any(keyword in normalized for keyword in keywords):
+            roles.append(role)
+    return roles
+
+
+def build_field_profiles(
+    features: list[Any],
+    max_unique_values: int = MAX_UNIQUE_VALUES,
+) -> dict[str, Any]:
+    """
+    Builds generic per-field evidence for unknown datasets.
+
+    The profiles are not labels. They expose distributional facts such as field
+    coverage, numeric ranges, value counts, and inferred property roles so the
+    LLM can judge whether a numeric/policy/category field is central to the layer.
+    """
+    total_features = len(features)
+    stats: dict[str, dict[str, Any]] = {}
+
+    for feature in features:
+        if not isinstance(feature, dict):
+            continue
+        properties = feature.get("properties")
+        if not isinstance(properties, dict):
+            continue
+
+        for raw_key, value in properties.items():
+            key = str(raw_key)
+            field = stats.setdefault(
+                key,
+                {
+                    "present_count": 0,
+                    "non_null_count": 0,
+                    "empty_string_count": 0,
+                    "numeric_values": [],
+                    "categorical_counter": Counter(),
+                    "example_values": [],
+                },
+            )
+            field["present_count"] += 1
+
+            if isinstance(value, str) and not value.strip():
+                field["empty_string_count"] += 1
+
+            if is_missing_property_value(value):
+                continue
+
+            field["non_null_count"] += 1
+            if len(field["example_values"]) < max_unique_values:
+                compacted = compact_value(value)
+                if compacted not in field["example_values"]:
+                    field["example_values"].append(compacted)
+
+            if isinstance(value, bool):
+                field["categorical_counter"][str(value)] += 1
+            elif isinstance(value, (int, float)):
+                field["numeric_values"].append(float(value))
+            else:
+                field["categorical_counter"][str(value)] += 1
+
+    profiles: dict[str, Any] = {}
+    for key, field in stats.items():
+        numeric_values = field["numeric_values"]
+        categorical_counter: Counter[str] = field["categorical_counter"]
+        present_count = int(field["present_count"])
+        non_null_count = int(field["non_null_count"])
+        coverage_ratio = (non_null_count / total_features) if total_features else 0.0
+
+        value_text = " | ".join(str(value) for value in field["example_values"])
+        key_roles = infer_field_roles_from_text(key)
+        value_roles = infer_field_roles_from_text(value_text)
+        # Field names are more reliable than arbitrary value text for role detection.
+        # Value text is used only for roles that are often encoded as categorical values.
+        allowed_value_roles = {"policy_field", "classification_field", "boolean_presence_field"}
+        roles = sorted(set(key_roles + [role for role in value_roles if role in allowed_value_roles]))
+
+        if numeric_values and len(numeric_values) >= max(1, len(categorical_counter)):
+            unique_numeric = sorted(set(numeric_values))
+            profile: dict[str, Any] = {
+                "kind": "numeric",
+                "present_count": present_count,
+                "non_null_count": non_null_count,
+                "coverage_ratio": round(coverage_ratio, 4),
+                "min": min(numeric_values),
+                "max": max(numeric_values),
+                "mean": round(sum(numeric_values) / len(numeric_values), 4),
+                "unique_count": len(unique_numeric),
+                "non_zero_count": int(sum(1 for value in numeric_values if value != 0)),
+                "values_gt_1_count": int(sum(1 for value in numeric_values if value > 1)),
+                "sample_values": unique_numeric[:max_unique_values],
+                "roles": roles,
+            }
+        else:
+            top_values = categorical_counter.most_common(max_unique_values)
+            profile = {
+                "kind": "categorical",
+                "present_count": present_count,
+                "non_null_count": non_null_count,
+                "empty_string_count": int(field["empty_string_count"]),
+                "coverage_ratio": round(coverage_ratio, 4),
+                "unique_count": len(categorical_counter),
+                "top_values": [
+                    {"value": compact_value(value), "count": int(count)}
+                    for value, count in top_values
+                ],
+                "roles": roles,
+            }
+
+        profiles[key] = profile
+
+    return profiles
+
+
+def build_field_roles(field_profiles: dict[str, Any]) -> dict[str, list[str]]:
+    """Extracts a compact field -> roles mapping from field profiles."""
+    roles: dict[str, list[str]] = {}
+    for key, profile in field_profiles.items():
+        field_roles = profile.get("roles", []) if isinstance(profile, dict) else []
+        if field_roles:
+            roles[key] = list(field_roles)
+    return roles
+
+
+def select_representative_sample_properties(
+    features: list[Any],
+    field_profiles: dict[str, Any],
+    max_samples: int | None = None,
+) -> list[dict[str, Any]]:
+    """
+    Selects more representative feature examples than simply taking the first rows.
+
+    Includes first features, features with high numeric values, and features with
+    non-empty policy/text/classification fields when available. This remains
+    generic for unknown datasets and does not use layer-specific names.
+    """
+    if max_samples is None:
+        max_samples = max(MAX_SAMPLE_FEATURES, min(10, MAX_SAMPLE_FEATURES * 2))
+
+    candidate_indices: list[int] = []
+    valid_features = [feature for feature in features if isinstance(feature, dict)]
+
+    def add_index(index: int) -> None:
+        if 0 <= index < len(valid_features) and index not in candidate_indices:
+            candidate_indices.append(index)
+
+    for index in range(min(2, len(valid_features))):
+        add_index(index)
+
+    numeric_fields = [
+        key for key, profile in field_profiles.items()
+        if isinstance(profile, dict) and profile.get("kind") == "numeric"
+    ]
+    text_priority_fields = [
+        key for key, profile in field_profiles.items()
+        if isinstance(profile, dict)
+        and any(role in set(profile.get("roles", [])) for role in {"policy_field", "classification_field", "quantity_field"})
+    ]
+
+    for numeric_field in numeric_fields[:5]:
+        best_index = None
+        best_value = None
+        lowest_index = None
+        lowest_value = None
+        for index, feature in enumerate(valid_features):
+            properties = feature.get("properties")
+            if not isinstance(properties, dict):
+                continue
+            value = properties.get(numeric_field)
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                continue
+            numeric_value = float(value)
+            if best_value is None or numeric_value > best_value:
+                best_value = numeric_value
+                best_index = index
+            if lowest_value is None or numeric_value < lowest_value:
+                lowest_value = numeric_value
+                lowest_index = index
+        if best_index is not None:
+            add_index(best_index)
+        if lowest_index is not None:
+            add_index(lowest_index)
+
+    for text_field in text_priority_fields[:5]:
+        for index, feature in enumerate(valid_features):
+            properties = feature.get("properties")
+            if not isinstance(properties, dict):
+                continue
+            value = properties.get(text_field)
+            if isinstance(value, str) and value.strip():
+                add_index(index)
+                break
+
+    for index in range(len(valid_features)):
+        if len(candidate_indices) >= max_samples:
+            break
+        add_index(index)
+
+    samples: list[dict[str, Any]] = []
+    for index in candidate_indices[:max_samples]:
+        properties = valid_features[index].get("properties")
+        if not isinstance(properties, dict):
+            continue
+        samples.append({str(key): compact_value(value) for key, value in properties.items()})
+
+    return samples
+
+
+def profile_fields_by_role(field_profiles: dict[str, Any], role: str) -> list[str]:
+    return [
+        key for key, profile in field_profiles.items()
+        if isinstance(profile, dict) and role in set(profile.get("roles", []))
+    ]
+
+
+def build_derived_entity_hints(dataset_summary: dict[str, Any]) -> dict[str, Any]:
+    """
+    Builds generic layer-level hints for known confusion pairs.
+
+    These are deliberately phrased as evidence, not labels. They help the model
+    generalize to unknown datasets by exposing patterns such as numeric centrality
+    or systematic policy/classification coverage.
+    """
+    field_profiles = dataset_summary.get("field_profiles", {})
+    if not isinstance(field_profiles, dict):
+        field_profiles = {}
+
+    feature_count = dataset_summary.get("feature_count") or 0
+    geometry_counts = dataset_summary.get("geometry_type_counts", {})
+    polygon_count = 0
+    point_count = 0
+    line_count = 0
+    if isinstance(geometry_counts, dict):
+        polygon_count = int(geometry_counts.get("Polygon", 0)) + int(geometry_counts.get("MultiPolygon", 0))
+        point_count = int(geometry_counts.get("Point", 0)) + int(geometry_counts.get("MultiPoint", 0))
+        line_count = int(geometry_counts.get("LineString", 0)) + int(geometry_counts.get("MultiLineString", 0))
+
+    quantity_fields = profile_fields_by_role(field_profiles, "quantity_field")
+    policy_fields = profile_fields_by_role(field_profiles, "policy_field")
+    class_fields = profile_fields_by_role(field_profiles, "classification_field")
+    spatial_name_fields = profile_fields_by_role(field_profiles, "spatial_name_field")
+    measurement_fields = profile_fields_by_role(field_profiles, "measurement_field")
+    time_fields = profile_fields_by_role(field_profiles, "time_field")
+
+    hints: dict[str, Any] = {}
+
+    strong_quantity_fields = []
+    for field in quantity_fields:
+        profile = field_profiles.get(field, {})
+        if not isinstance(profile, dict) or profile.get("kind") != "numeric":
+            continue
+        coverage_ratio = float(profile.get("coverage_ratio", 0) or 0)
+        unique_count = int(profile.get("unique_count", 0) or 0)
+        values_gt_1_count = int(profile.get("values_gt_1_count", 0) or 0)
+        if coverage_ratio >= 0.75 and (unique_count >= 3 or values_gt_1_count > 0):
+            strong_quantity_fields.append(field)
+
+    if strong_quantity_fields:
+        hints["amount_centrality"] = {
+            "level": "strong" if len(strong_quantity_fields) >= 1 else "moderate",
+            "evidence": [
+                "Quantity-like numeric fields are present in most features.",
+                "These fields have non-trivial numeric variation or values greater than 1.",
+                "Use this to test whether the numeric magnitude is the main mapped phenomenon, not as an automatic label.",
+            ],
+            "fields": strong_quantity_fields[:10],
+            "ambiguity_to_check": "AmountDS vs ObjectDS/PointMeasuresDS/PatchDS/LatticeDS",
+        }
+
+    systematic_class_fields = []
+    for field in sorted(set(policy_fields + class_fields)):
+        profile = field_profiles.get(field, {})
+        if not isinstance(profile, dict):
+            continue
+        coverage_ratio = float(profile.get("coverage_ratio", 0) or 0)
+        unique_count = int(profile.get("unique_count", 0) or 0)
+        if coverage_ratio >= 0.75 and unique_count >= 1:
+            systematic_class_fields.append(field)
+
+    if polygon_count and systematic_class_fields:
+        hints["coverage_vs_patch"] = {
+            "level": "moderate",
+            "evidence": [
+                "Many polygon features carry repeated policy/category/classification fields.",
+                "If these polygons systematically classify an area layer, CoverageDS may be stronger than PatchDS.",
+                "If they are only selected exceptional applicability/phenomenon zones, PatchDS may be stronger.",
+            ],
+            "fields": systematic_class_fields[:10],
+            "ambiguity_to_check": "CoverageDS vs PatchDS",
+        }
+
+    if spatial_name_fields and feature_count:
+        hints["carrier_name_fields"] = {
+            "level": "weak",
+            "evidence": [
+                "Name/location/reporting fields may identify spatial carriers rather than the thematic phenomenon.",
+                "Do not choose ObjectDS or LatticeDS from name fields alone; compare them with thematic fields and MapDescription.",
+            ],
+            "fields": spatial_name_fields[:10],
+        }
+
+    if point_count and measurement_fields:
+        hints["point_measurement"] = {
+            "level": "moderate",
+            "evidence": [
+                "Point features contain measurement/sampling-related fields.",
+                "Check whether points sample a continuous phenomenon before choosing ObjectDS or AmountDS.",
+            ],
+            "fields": measurement_fields[:10],
+            "ambiguity_to_check": "PointMeasuresDS vs ObjectDS/AmountDS",
+        }
+
+    if time_fields:
+        hints["temporal_event_evidence"] = {
+            "level": "weak",
+            "evidence": [
+                "Temporal fields are present, but time fields alone do not make a layer EventDS.",
+                "Use EventDS only when the mapped phenomenon itself happens, occurs, or unfolds in time.",
+            ],
+            "fields": time_fields[:10],
+        }
+
+    if line_count and quantity_fields:
+        hints["line_amount_vs_network"] = {
+            "level": "weak",
+            "evidence": [
+                "Line features have quantity-like fields.",
+                "Prefer NetworkDS when the layer is a connected route/infrastructure system and the values are attributes.",
+                "Use AmountDS only if the amount/flow/intensity is the main mapped phenomenon.",
+            ],
+            "fields": quantity_fields[:10],
+            "ambiguity_to_check": "NetworkDS vs AmountDS",
+        }
+
+    return hints
+
 def flatten_text_values(value: Any, max_items: int = 200) -> list[str]:
     """Collects textual values from nested structures for keyword hinting."""
     texts: list[str] = []
@@ -678,7 +1088,11 @@ def build_entity_evidence(
     text_parts.extend(flatten_text_values(metadata))
     text_parts.extend(flatten_text_values(dataset_summary.get("property_keys", [])))
     text_parts.extend(flatten_text_values(dataset_summary.get("sample_properties", [])))
+    text_parts.extend(flatten_text_values(dataset_summary.get("representative_sample_properties", [])))
     text_parts.extend(flatten_text_values(dataset_summary.get("field_summaries", {})))
+    text_parts.extend(flatten_text_values(dataset_summary.get("field_profiles", {})))
+    text_parts.extend(flatten_text_values(dataset_summary.get("field_roles", {})))
+    text_parts.extend(flatten_text_values(dataset_summary.get("derived_entity_hints", {})))
     corpus = " | ".join(text_parts).lower()
 
     signals: dict[str, Any] = {}
@@ -993,13 +1407,12 @@ def summarize_geojson_for_annotation(
     """
     Summarizes a GeoJSON-like dataset for LLM annotation.
 
-    Keeps:
-    - dataset type
-    - feature count
-    - geometry type counts
-    - property keys
-    - sample properties
+    Keeps compact but informative evidence:
+    - dataset type, feature count, geometry type counts, property keys
+    - first sample properties and representative sample properties
     - numeric/categorical field summaries
+    - richer field profiles with coverage, value counts, and inferred field roles
+    - derived entity hints for common ambiguity pairs
 
     Removes:
     - coordinates
@@ -1016,7 +1429,11 @@ def summarize_geojson_for_annotation(
         "geometry_type_counts": {},
         "property_keys": [],
         "sample_properties": [],
+        "representative_sample_properties": [],
         "field_summaries": {},
+        "field_profiles": {},
+        "field_roles": {},
+        "derived_entity_hints": {},
     }
 
     if not isinstance(features, list):
@@ -1026,7 +1443,7 @@ def summarize_geojson_for_annotation(
     property_key_counter: Counter[str] = Counter()
 
     numeric_values: dict[str, list[float]] = defaultdict(list)
-    categorical_values: dict[str, set[str]] = defaultdict(set)
+    categorical_counters: dict[str, Counter[str]] = defaultdict(Counter)
 
     for feature in features:
         if not isinstance(feature, dict):
@@ -1056,14 +1473,15 @@ def summarize_geojson_for_annotation(
         for key, value in properties.items():
             key = str(key)
 
-            if isinstance(value, bool) or value is None:
+            if is_missing_property_value(value):
                 continue
 
-            if isinstance(value, (int, float)):
+            if isinstance(value, bool):
+                categorical_counters[key][str(value)] += 1
+            elif isinstance(value, (int, float)):
                 numeric_values[key].append(float(value))
             else:
-                if len(categorical_values[key]) < max_unique_values:
-                    categorical_values[key].add(str(value))
+                categorical_counters[key][str(value)] += 1
 
     summary["geometry_type_counts"] = dict(geometry_counter)
     summary["property_keys"] = list(property_key_counter.keys())
@@ -1074,29 +1492,48 @@ def summarize_geojson_for_annotation(
         if not values:
             continue
 
+        unique_values = sorted(set(values))
         field_summaries[key] = {
             "kind": "numeric",
             "min": min(values),
             "max": max(values),
-            "sample_values": values[:max_unique_values],
+            "mean": round(sum(values) / len(values), 4),
+            "unique_count": len(unique_values),
+            "sample_values": unique_values[:max_unique_values],
         }
 
-    for key, values in categorical_values.items():
+    for key, counter in categorical_counters.items():
+        if not counter:
+            continue
+        if key in field_summaries and field_summaries[key].get("kind") == "numeric":
+            continue
         field_summaries[key] = {
             "kind": "categorical",
-            "sample_values": sorted(values)[:max_unique_values],
+            "unique_count": len(counter),
+            "top_values": [
+                {"value": compact_value(value), "count": int(count)}
+                for value, count in counter.most_common(max_unique_values)
+            ],
         }
 
     summary["field_summaries"] = field_summaries
+
+    field_profiles = build_field_profiles(features, max_unique_values=max_unique_values)
+    summary["field_profiles"] = field_profiles
+    summary["field_roles"] = build_field_roles(field_profiles)
+    summary["representative_sample_properties"] = select_representative_sample_properties(
+        features,
+        field_profiles,
+    )
 
     polygon_topology_hints = calculate_polygon_topology_hints(dataset_json)
     if polygon_topology_hints is not None:
         summary["polygon_topology_hints"] = polygon_topology_hints
 
     summary["polygon_shape_hints"] = summarize_polygon_shape_hints(features)
+    summary["derived_entity_hints"] = build_derived_entity_hints(summary)
 
     return summary
-
 
 def summarize_generic_json_for_annotation(
     dataset_json: dict[str, Any] | list[Any],
@@ -1226,7 +1663,11 @@ def build_entity_payload(
         "feature_count": summary.get("feature_count"),
         "property_keys": summary.get("property_keys"),
         "sample_properties": summary.get("sample_properties"),
+        "representative_sample_properties": summary.get("representative_sample_properties"),
         "field_summaries": summary.get("field_summaries"),
+        "field_profiles": summary.get("field_profiles"),
+        "field_roles": summary.get("field_roles"),
+        "derived_entity_hints": summary.get("derived_entity_hints"),
         "polygon_shape_hints": summary.get("polygon_shape_hints"),
     }
     compact_entity_summary = {
@@ -1345,7 +1786,10 @@ Important entity interpretation rules:
 - Use ObjectDS for discrete identifiable objects, places, facilities, assets, projects, or named managed entities.
 - Use PatchDS for selected bounded zones, affected areas, restriction areas, policy areas, or phenomenon extents that do not represent discrete real-world objects and do not form a full-area classification.
 - ObjectDS vs PatchDS distinction: ObjectDS means the feature is the mapped thing; PatchDS means the feature is an area where a condition, policy, phenomenon, or restriction applies.
-- The dataset_summary may contain entity_evidence and polygon_shape_hints. Treat these as weak supporting evidence only; never let them override clear metadata or the decision tree.
+- The dataset_summary may contain entity_evidence, field_profiles, field_roles, representative_sample_properties, derived_entity_hints, and polygon_shape_hints.
+- Treat these as weak supporting evidence only; never let them override clear metadata or the decision tree.
+- Use field_profiles and field_roles to understand whether fields are quantity, policy, classification, name/location, measurement, time, or identifier fields.
+- Use derived_entity_hints to check common ambiguity pairs such as AmountDS vs ObjectDS, CoverageDS vs PatchDS, PointMeasuresDS vs AmountDS, and NetworkDS vs AmountDS.
 - Use entity_evidence to make sure all plausible labels are considered, not as a scoring system.
 - Before selecting ObjectDS or PatchDS, actively rule out stronger labels when plausible: NetworkDS, EventDS, PointMeasuresDS, LatticeDS, CoverageDS, ContourDS, and clear AmountDS.
 - Use AmountDS only when the numeric magnitude itself is the main mapped phenomenon.
@@ -1354,7 +1798,7 @@ Important entity interpretation rules:
 Output rules:
 - Return only valid JSON matching the required schema.
 - Do not invent labels outside the allowed labels.
-- Use the predicted geometry, dataset summary, entity_evidence, attributes, metadata, and MapDescription as evidence.
+- Use the predicted geometry, dataset summary, field_profiles, field_roles, derived_entity_hints, entity_evidence, attributes, metadata, and MapDescription as evidence.
 - If the evidence is imperfect, choose the most likely valid label and lower the confidence.
 - The reasoning_summary should be short and practical, and should mention the decisive entity rule used.
 - The decisive_rule field must name the branch or priority check that determined the final label.
