@@ -1,0 +1,173 @@
+{
+  "run_id": "Baseline_gpt",
+  "provider": "gpt",
+  "model": "gpt-5.4-mini",
+  "started_at": "2026-06-18T10:00:32.063355+00:00",
+  "completed_at": "2026-06-18T10:05:25.191689+00:00",
+  "input_csv_path": "input_data\\ams_coreconcept_annotations.csv",
+  "output_dir": "output\\runs\\Baseline_gpt",
+  "provenance": {
+    "git_commit": "92bf4a8160d870d0f2a6545be87529422828ebec",
+    "git_branch": "main",
+    "git_dirty": true,
+    "script_path": "annotation_versions\\Baseline\\layer_annotation.py",
+    "script_sha256": "57e4e365eb7b9fa7c9a90bd0687358a4180dbbd400288c064d6327aec4ec1319",
+    "decision_tree_path": "annotation_versions\\Baseline\\decision_tree.txt",
+    "decision_tree_sha256": "e979438328c1963ab8d689a0730ebe2356881906ecb7877581ee18e76c237c94",
+    "input_csv_sha256": "226ba9d3e9d38edb7a26d3917f7d958307b11415c8bcdb9bb8e896d534844be2",
+    "runtime_config": {
+      "openai_model": "gpt-5.4-mini",
+      "gemini_model": "gemini-3.1-flash-lite",
+      "request_delay_seconds": 0.75,
+      "max_retries": 8,
+      "max_backoff_seconds": 60.0,
+      "max_sample_features": 5,
+      "max_unique_values": 10,
+      "max_property_string_length": 300
+    }
+  },
+  "total_rows": 114,
+  "completed_rows": 114,
+  "error_rows": 0,
+  "geometry_accuracy": 0.9210526315789473,
+  "entity_accuracy": 0.7894736842105263,
+  "joint_accuracy": 0.7456140350877193,
+  "exact_mismatch_count": 29,
+  "geometry_macro_f1": 0.9022120334620334,
+  "entity_macro_f1": 0.5730550348742602,
+  "geometry_hier_f1": 0.9657657657657657,
+  "entity_hier_f1": 0.8782489740082079,
+  "per_label_metrics": {
+    "geometry": {
+      "LineDS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 9,
+        "true_positive": 9,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "PlainVectorRegion": {
+        "precision": 0.8484848484848485,
+        "recall": 0.9032258064516129,
+        "f1": 0.875,
+        "support": 31,
+        "true_positive": 28,
+        "false_positive": 5,
+        "false_negative": 3
+      },
+      "PointDS": {
+        "precision": 1.0,
+        "recall": 0.9821428571428571,
+        "f1": 0.9909909909909909,
+        "support": 56,
+        "true_positive": 55,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "VectorTessellation": {
+        "precision": 0.7647058823529411,
+        "recall": 0.7222222222222222,
+        "f1": 0.7428571428571428,
+        "support": 18,
+        "true_positive": 13,
+        "false_positive": 4,
+        "false_negative": 5
+      }
+    },
+    "entity": {
+      "AmountDS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4,
+        "true_positive": 0,
+        "false_positive": 2,
+        "false_negative": 4
+      },
+      "ContourDS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "CoverageDS": {
+        "precision": 0.5,
+        "recall": 0.6666666666666666,
+        "f1": 0.5714285714285715,
+        "support": 6,
+        "true_positive": 4,
+        "false_positive": 4,
+        "false_negative": 2
+      },
+      "EventDS": {
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1": 0.3333333333333333,
+        "support": 3,
+        "true_positive": 1,
+        "false_positive": 2,
+        "false_negative": 2
+      },
+      "ExistenceDS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "LatticeDS": {
+        "precision": 0.9230769230769231,
+        "recall": 1.0,
+        "f1": 0.9600000000000001,
+        "support": 12,
+        "true_positive": 12,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "NetworkDS": {
+        "precision": 1.0,
+        "recall": 0.8888888888888888,
+        "f1": 0.9411764705882353,
+        "support": 9,
+        "true_positive": 8,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "ObjectDS": {
+        "precision": 0.9166666666666666,
+        "recall": 0.873015873015873,
+        "f1": 0.894308943089431,
+        "support": 63,
+        "true_positive": 55,
+        "false_positive": 5,
+        "false_negative": 8
+      },
+      "PatchDS": {
+        "precision": 0.3076923076923077,
+        "recall": 0.4444444444444444,
+        "f1": 0.3636363636363637,
+        "support": 9,
+        "true_positive": 4,
+        "false_positive": 9,
+        "false_negative": 5
+      },
+      "PointMeasuresDS": {
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.6666666666666666,
+        "support": 3,
+        "true_positive": 2,
+        "false_positive": 1,
+        "false_negative": 1
+      }
+    }
+  },
+  "mean_confidence": 0.9635964912280702
+}

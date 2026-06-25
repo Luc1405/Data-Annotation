@@ -2,16 +2,16 @@
   "run_id": "V4_gpt",
   "provider": "gpt",
   "model": "gpt-5.4-mini",
-  "started_at": "2026-06-11T10:03:32.400603+00:00",
-  "completed_at": "2026-06-11T10:13:42.052406+00:00",
+  "started_at": "2026-06-18T10:58:38.389703+00:00",
+  "completed_at": "2026-06-18T11:08:29.323999+00:00",
   "input_csv_path": "input_data\\ams_coreconcept_annotations_descr.csv",
   "output_dir": "output\\runs\\V4_gpt",
   "provenance": {
-    "git_commit": "e45347ec2cfcbd47e93e6d90eb256cedbf5428a7",
+    "git_commit": "92bf4a8160d870d0f2a6545be87529422828ebec",
     "git_branch": "main",
     "git_dirty": true,
     "script_path": "annotation_versions\\V4\\V4.py",
-    "script_sha256": "f00358e4613773bad2e60c67506db6ef2d7dce40811784fda472e6f4391c5172",
+    "script_sha256": "973ae1335d8437927c3565366a1d23b5a3477510e51978c6640858f70708fa0c",
     "geometry_decision_tree_path": "annotation_versions\\V4\\geometry_decision_tree.txt",
     "geometry_decision_tree_sha256": "4e069e9a4052e4d02b53af18ae92df38aad9b450c9b5663fbf9a2cf7fc01e058",
     "entity_decision_tree_path": "annotation_versions\\V4\\entity_decision_tree.txt",
@@ -37,9 +37,9 @@
   "joint_accuracy": 0.7456140350877193,
   "exact_mismatch_count": 29,
   "geometry_macro_f1": 0.9785087719298246,
-  "entity_macro_f1": 0.604295668100016,
-  "geometry_hier_f1": 0.9824561403508771,
-  "entity_hier_f1": 0.7456140350877193,
+  "entity_macro_f1": 0.5710457658283745,
+  "geometry_hier_f1": 0.9927797833935018,
+  "entity_hier_f1": 0.853625170998632,
   "per_label_metrics": {
     "geometry": {
       "LineDS": {
@@ -81,13 +81,13 @@
     },
     "entity": {
       "AmountDS": {
-        "precision": 0.5,
-        "recall": 0.5,
-        "f1": 0.5,
+        "precision": 0.3333333333333333,
+        "recall": 0.25,
+        "f1": 0.28571428571428575,
         "support": 4,
-        "true_positive": 2,
+        "true_positive": 1,
         "false_positive": 2,
-        "false_negative": 2
+        "false_negative": 3
       },
       "ContourDS": {
         "precision": 1.0,
@@ -126,51 +126,51 @@
         "false_negative": 1
       },
       "LatticeDS": {
-        "precision": 0.9166666666666666,
-        "recall": 0.9166666666666666,
-        "f1": 0.9166666666666666,
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1": 0.923076923076923,
         "support": 12,
-        "true_positive": 11,
-        "false_positive": 1,
-        "false_negative": 1
+        "true_positive": 12,
+        "false_positive": 2,
+        "false_negative": 0
       },
       "NetworkDS": {
-        "precision": 0.6428571428571429,
+        "precision": 0.6923076923076923,
         "recall": 1.0,
-        "f1": 0.782608695652174,
+        "f1": 0.8181818181818181,
         "support": 9,
         "true_positive": 9,
-        "false_positive": 5,
+        "false_positive": 4,
         "false_negative": 0
       },
       "ObjectDS": {
-        "precision": 0.9591836734693877,
-        "recall": 0.746031746031746,
-        "f1": 0.8392857142857143,
+        "precision": 0.9230769230769231,
+        "recall": 0.7619047619047619,
+        "f1": 0.8347826086956522,
         "support": 63,
-        "true_positive": 47,
-        "false_positive": 2,
-        "false_negative": 16
+        "true_positive": 48,
+        "false_positive": 4,
+        "false_negative": 15
       },
       "PatchDS": {
-        "precision": 0.3125,
+        "precision": 0.35714285714285715,
         "recall": 0.5555555555555556,
-        "f1": 0.39999999999999997,
+        "f1": 0.43478260869565216,
         "support": 9,
         "true_positive": 5,
-        "false_positive": 11,
+        "false_positive": 9,
         "false_negative": 4
       },
       "PointMeasuresDS": {
-        "precision": 0.75,
-        "recall": 1.0,
-        "f1": 0.8571428571428571,
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.6666666666666666,
         "support": 3,
-        "true_positive": 3,
+        "true_positive": 2,
         "false_positive": 1,
-        "false_negative": 0
+        "false_negative": 1
       }
     }
   },
-  "mean_confidence": 0.9634210526315788
+  "mean_confidence": 0.965438596491228
 }

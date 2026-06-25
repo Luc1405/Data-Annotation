@@ -1,0 +1,36 @@
+{
+  "type": "FeatureCollection",
+  "features": [],
+  "pdok_source": {
+    "service_title": "3D Basisvoorziening",
+    "service_description": "De 3D Basisvoorziening is een verzameling van ruimtelijke bestanden die hoogte informatie bevatten. Deze bestanden (collecties) worden op verschillende manieren gegenereerd. Er zijn acht collecties beschikbaar.  De 3D Basisvoorziening kan gebruikt worden op schaalniveaus tussen 1:500 en 1:10.000. De bestanden zijn o.a. gebaseerd op topografie uit de Basisregistratie Grootschalige Topografie (BGT), de gebouwen uit de Basisregistratie Adressen en Gebouwen (BAG), en hoogtes uit luchtfotobeelden en het Actueel Hoogtebestand Nederland (AHN).  Meer informatie over deze dataset en overige producten zoals het downloaden van deze dataset voor analysedoeleinden of een 3D Viewer zijn te vinden op de website van PDOK en in de productbeschrijving.",
+    "service_keywords": [
+      "3D Basisbestand",
+      "gebouwen",
+      "terreinen",
+      "water",
+      "wegen",
+      "DTM",
+      "DSM",
+      "AHN",
+      "hoogte attributen"
+    ],
+    "service_landing_url": "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1?f=json",
+    "collection_id": "digitaalterreinmodel",
+    "collection_title": "Digitaal Terreinmodel (DTM)",
+    "collection_description": "Het DTM wordt gegenereerd op basis van AHN. Dit is een terreinmodel van heel Nederland, waarbij de maaiveld terreinhoogte ter plaatse van gebouwen en water wordt geïnterpoleerd. Het 3D DTM is beschikbaar in het Quantized Mesh formaat voor gebruik in Cesium clients. Het bevat geen attribuut informatie. . Deze wordt alleen aangeboden in de meest recent beschikbare jaargangen van AHN, zie tabel 1 in de productbeschrijving.",
+    "collection_keywords": [
+      "3D",
+      "3D Basisvoorziening",
+      "terreinen",
+      "DTM",
+      "quantized mesh",
+      "cesium"
+    ],
+    "collection_url": "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections/digitaalterreinmodel?f=html",
+    "items_url": "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections/digitaalterreinmodel/quantized-mesh?f=json&limit=1000",
+    "number_matched": null,
+    "number_fetched": 0,
+    "feature_limit_used": 1000
+  }
+}

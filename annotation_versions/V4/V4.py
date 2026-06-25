@@ -31,7 +31,7 @@ SCRIPT_PATH = Path(__file__).resolve()
 BASE_DIR = SCRIPT_PATH.parents[2]
 INPUT_DIR = BASE_DIR / "input_data"
 
-CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations_descr.csv"
+CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations_NEW.csv"
 DATASETS_DIR = INPUT_DIR / "datasets"
 GEOMETRY_DECISION_TREE_PATH = SCRIPT_PATH.parent / "geometry_decision_tree.txt"
 ENTITY_DECISION_TREE_PATH = SCRIPT_PATH.parent / "entity_decision_tree.txt"
@@ -54,7 +54,7 @@ load_dotenv(BASE_DIR / ".env")
 # -----------------------------
 # Config
 # -----------------------------
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.5")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
 GEMINI_API_URL_TEMPLATE = (
     "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"

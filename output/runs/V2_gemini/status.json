@@ -1,7 +1,7 @@
 {
   "run_id": "V2_gemini",
   "provider": "gemini",
-  "model": "gemini-3.1-flash-lite-preview",
+  "model": "gemini-3.1-flash-lite",
   "status": "completed",
   "total_rows": 114,
   "completed_rows": 114,
@@ -9,5 +9,5 @@
   "current_row": null,
   "current_kaartlaag": null,
   "message": "Run completed and artifacts were written.",
-  "updated_at": "2026-05-19T11:11:20.760475+00:00"
+  "updated_at": "2026-06-18T10:41:05.507810+00:00"
 }

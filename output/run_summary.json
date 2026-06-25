@@ -1,0 +1,40 @@
+{
+  "run_id": "PDOK",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "started_at": "2026-06-24T13:45:55.246301+00:00",
+  "completed_at": "2026-06-24T13:49:39.158683+00:00",
+  "input_csv_path": "input_data\\pdok_coreconcept_annotations.csv",
+  "output_dir": "output\\runs\\PDOK",
+  "provenance": {
+    "git_commit": "92bf4a8160d870d0f2a6545be87529422828ebec",
+    "git_branch": "main",
+    "git_dirty": true,
+    "script_path": "annotation_versions\\V3_PDOK\\V3PDOK.py",
+    "script_sha256": "bb1c9749947666b346930ed6d3d1e13f62f7f8c8deaee724b3c6277d421cb0b8",
+    "geometry_decision_tree_path": "annotation_versions\\V3_PDOK\\geometry_decision_tree.txt",
+    "geometry_decision_tree_sha256": "4e069e9a4052e4d02b53af18ae92df38aad9b450c9b5663fbf9a2cf7fc01e058",
+    "entity_decision_tree_path": "annotation_versions\\V3_PDOK\\entity_decision_tree.txt",
+    "entity_decision_tree_sha256": "231ecd20320fac3133f6b5fd76750ea90a88c5f7db46bfaad22be75cd69969e3",
+    "input_csv_sha256": "0548d2c2bf3908102747ec7099714d305e8353c16d0fadc529a14cdde114ac15",
+    "runtime_config": {
+      "openai_model": "gpt-5.4-mini",
+      "gemini_model": "gemini-3.1-flash-lite",
+      "request_delay_seconds": 0.75,
+      "max_retries": 8,
+      "max_backoff_seconds": 60.0,
+      "max_sample_features": 5,
+      "max_unique_values": 10,
+      "max_property_string_length": 300,
+      "max_metadata_string_length": 2500
+    }
+  },
+  "total_rows": 50,
+  "completed_rows": 50,
+  "error_rows": 0,
+  "mean_confidence": 0.9385000000000001,
+  "evaluation": {
+    "enabled": false,
+    "reason": "No performance metrics were calculated because this input is intended for annotation only and does not require expert reference labels."
+  }
+}

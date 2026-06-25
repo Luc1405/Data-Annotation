@@ -130,7 +130,7 @@
     {
       "actual_label": "ObjectDS",
       "predicted_label": "ObjectDS",
-      "count": 55
+      "count": 56
     },
     {
       "actual_label": "ObjectDS",
@@ -150,7 +150,7 @@
     {
       "actual_label": "ObjectDS",
       "predicted_label": "PatchDS",
-      "count": 5
+      "count": 4
     },
     {
       "actual_label": "ObjectDS",
@@ -590,7 +590,7 @@
     {
       "actual_label": "CoverageDS",
       "predicted_label": "PatchDS",
-      "count": 2
+      "count": 1
     },
     {
       "actual_label": "CoverageDS",
@@ -610,7 +610,7 @@
     {
       "actual_label": "CoverageDS",
       "predicted_label": "CoverageDS",
-      "count": 4
+      "count": 5
     },
     {
       "actual_label": "CoverageDS",
@@ -680,7 +680,7 @@
     {
       "actual_label": "__predicted_total",
       "predicted_label": "ObjectDS",
-      "count": 58
+      "count": 59
     },
     {
       "actual_label": "__predicted_total",
@@ -700,7 +700,7 @@
     {
       "actual_label": "__predicted_total",
       "predicted_label": "PatchDS",
-      "count": 17
+      "count": 15
     },
     {
       "actual_label": "__predicted_total",
@@ -720,7 +720,7 @@
     {
       "actual_label": "__predicted_total",
       "predicted_label": "CoverageDS",
-      "count": 7
+      "count": 8
     },
     {
       "actual_label": "__predicted_total",

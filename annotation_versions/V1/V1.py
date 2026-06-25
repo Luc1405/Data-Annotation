@@ -30,7 +30,7 @@ SCRIPT_PATH = Path(__file__).resolve()
 BASE_DIR = SCRIPT_PATH.parents[2]
 INPUT_DIR = BASE_DIR / "input_data"
 
-CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations_descr.csv"
+CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations_NEW.csv"
 DATASETS_DIR = INPUT_DIR / "datasets"
 DECISION_TREE_PATH = SCRIPT_PATH.parent / "decision_tree.txt"
 

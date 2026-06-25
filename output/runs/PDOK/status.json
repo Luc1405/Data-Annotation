@@ -1,0 +1,13 @@
+{
+  "run_id": "PDOK",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "status": "completed",
+  "total_rows": 50,
+  "completed_rows": 50,
+  "error_rows": 0,
+  "current_row": null,
+  "current_kaartlaag": null,
+  "message": "Run completed and artifacts were written.",
+  "updated_at": "2026-06-24T13:49:39.250366+00:00"
+}

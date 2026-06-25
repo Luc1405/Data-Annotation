@@ -1,0 +1,1452 @@
+RowIndex,Title,EnglishTitle,PageLink,MapLink,Kaartlaag,Geometry,Entity,MapDescriptionTitle,MapDescription,MapDescriptionSource,GPTGeometry,GPTEntity,GPTReasoningSummary,GPTError,GPTConfidence,RunID
+0,Corporatiebezit AFWC 2020,Housing association property AFWC 2020,https://maps.amsterdam.nl/open_geodata/?k=208,https://maps.amsterdam.nl/afwc_2020,AFWC_2020,PlainVectorRegion,ObjectDS,Woningcorporatiebezit 2020 Metropoolregio Amsterdam,"Deze interactieve website van de woningen van corporaties in de Metropoolregio Amsterdam is gelanceerd op 1 juli 2019 op de Jaarbijeenkomst van de Amsterdamse Federatie van Woningcorporaties (AFWC) https://www.afwc.nl Medio 2020 is het corporatiebezit op de kaart geactualiseerd (peildatum 1-1-2020). 
+
+De website is de opvolger van de papieren Atlas Sociale Woningbouw, waarvan de eerste editie verscheen in 1992, ter gelegenheid van het 75-jarig jubileum van de AFWC. Deze negende editie (2020) verschijnt net als de vorige editie (2019) alleen als website en niet op papier. Iedere corporatie heeft een eigen kleur. Daarbij is zoveel mogelijk aangesloten bij de kleuren in de eerdere edities van de Atlas.
+
+De website 
+Woningcorporatiebezit 2020
+is tot stand gekomen in opdracht van de Amsterdamse Federatie van Woningcorporaties en vervaardigd door de afdeling Ruimte en Duurzaamheid van de gemeente Amsterdam, team Beeld en Data. Vanaf editie 2019 is het corporatiebezit van 30 woningcorporaties in de gehele Metropoolregio Amsterdam afgebeeld. De editie daarvoor (2017) bevatte Amsterdam, Zaanstreek-Waterland, Amstel-Meerlanden en Almere. Vanaf 2019 is de kaart uitgebreid met Zuid-Kennemerland, IJmond, Gooi- en Vechtstreek en Lelystad.
+
+Op de website staan zo`n 400.000 woningen aangegeven in de gemeenten Aalsmeer, Almere, Amstelveen, Amsterdam, Beemster, Beverwijk, Blaricum, Bloemendaal, Diemen, Edam-Volendam, Gooise Meren, Haarlem, Haarlemmermeer, Heemskerk, Heemstede, Hilversum, Huizen, Landsmeer, Laren, Lelystad, Oostzaan, Ouder-Amstel, Purmerend, Uithoorn, Velsen, Waterland, Weesp, Wijdemeren, Wormerland, Zaanstad en Zandvoort. Het bezit van de aangesloten corporaties buiten deze gemeenten staat niet op de kaart. 
+
+Naast de kaart van het 
+corporatiebezit
+in verschillende kleuren en met een filter op het 
+percentage adressen
+van de betreffende corporatie per deel van een blok, is er ook een aparte 
+bouwperiodekaart
+.
+
+
+Percentage corporatieadressen
+
+De kaart corporatieadressen bevat per (deel van een) bouwblok het percentage woningen dat de betreffende corporatie in bezit heeft. De overige adressen kunnen koopwoningen zijn of particuliere huurwoningen. Als het percentage lager ligt dan 100, wil het niet per definitie zeggen dat de corporatie woningen heeft verkocht. Het blok kan als gemengd blok van huur- en koopwoningen zijn opgeleverd, of er hebben al vanaf de start naast corporatiewoningen, particuliere huurwoningen in het blok gezeten. Bijvoorbeeld omdat de corporatie panden heeft aangekocht in voormalig particulier bezit. De kaart is dus slechts als indicatie te gebruiken. De percentages worden alleen afgebeeld bij woonblokken waarin uitsluitend zelfstandige woningen voorkomen. Bij blokken met onzelfstandige eenheden wordt het percentage niet vermeld. Deze komen namelijk als losse eenheid voor in de databank van de corporaties, terwijl deze in de BAG vaak gezamenlijk een BAG-object vormen. Meenemen van de onzelfstandige eenheden zou dan tot percentages boven de 100 procent kunnen leiden.
+
+
+Bouwperiodekaart
+
+Bij het 90-jarig bestaan van de Amsterdamse Federatie van Woningcorporaties in 2007 werd een speciale bouwjarenkaart uitgebracht met zeven bouwperioden. Ter gelegenheid van het 100-jarige bestaan van de Federatie in 2017 is deze kaart aangevuld met de periode 2008-2016 en uitgebreid met de regio. De acht bouwperioden hebben niet dezelfde lengte, maar markeren omslagen in bouwstijl of bijzondere gebeurtenissen. Voor de kaart 2020 is de laatste bouwperiode verlengd tot en met 2019.
+
+• Vóór 1909: De voorlopers van de woningcorporaties
+• 1909 - 1918: De eerste woningwetwoningen
+• 1919 - 1945: Periode `20 – `40
+• 1946 - 1966: Vroeg naoorlogse stadsuitbreidingen
+• 1967 - 1975: Hoogbouw
+• 1976 - 1989: Stadsvernieuwing en uitbreiding
+• 1990 - 2007: Differentiatie en menging in hoge dichtheid
+• 2008 – 2019: Transformatie, duurzaamheid en tijdelijkheid als kans
+
+
+Bronvermelding
+
+Bron corporatiebezit: Databank, Amsterdamse Federatie van Woningcorporaties / Platform Woningcorporaties Noordvleugel Randstad (PWNR), peildatum 1-1-2020
+Aangevuld met gegevens van de corporaties in de Metropoolregio Amsterdam die niet voorkomen in de databank van de AFWC.
+
+Bron totaal aantal adressen Kadaster/BAG. Bouwjaar en bouwperiode zijn afkomstig van de betreffende corporatie aangevuld met de gegevens uit het Kadaster/BAG (panden met een onbekend bouwjaar worden niet ingekleurd).
+
+Aan deze kaart kunnen geen rechten worden ontleend.",https://maps.amsterdam.nl/afwc_2020,PlainVectorRegion,ObjectDS,"Polygons depict discrete housing-block/object footprints for housing association ownership, not a near-complete tessellation; the decisive entity rule is object-level housing assets with numeric attributes, not an amount layer.",,0.96,V1_gpt
+1,Archeologische beerputten,Archaeological cesspits,https://maps.amsterdam.nl/open_geodata/?k=273,https://maps.amsterdam.nl/archeologie,ARCHEO_BEERPUT_VONDST,PointDS,ObjectDS,Publiekskaart Archeologie,"Amsterdam kent een rijke verzameling aan archeologische vindplaatsen. Dit kunnen losse voorwerpen of scherven zijn maar ook allerlei structuren zoals afval- en ophogingslagen, funderingen, kelders, beerputten, verdedigingsmuren of gedempte waterwegen. Deze archeologische sporen zijn bijzonder omdat ze verbonden zijn met het dagelijkse leven vanaf het allereerste begin van de stad. De afgelopen 45 jaar heeft Monumenten en Archeologie bij bouwprojecten overal in de stad onderzoek uitgevoerd. Op deze kaart worden een selectie van vindplaatsen online toegankelijk gemaakt, in combinatie met vijf historische kaarten als onderlegger. 
+
+Ieder vlakje op de kaart geeft een doorkijk naar de geschiedenis van die specifieke plek. Door op één van deze archeologische locaties te klikken verschijnen het adres, gegevens over het onderzoek en de vondsten, een foto en een verwijzing naar meer achtergrondinformatie. 
+
+Disclaimer
+De inhoud van deze kaart is niet volledig en niet up-to-date. De informatie is bedoeld voor een breed publiek en niet voor professionals
+Monumenten en Archeologie (MenA) is de bronhouder van de aangeboden kaartlagen en dient vermeld te worden indien u verwijst naar deze kaartlagen.",https://maps.amsterdam.nl/archeologie,PointDS,ObjectDS,"Point layer of selected archaeological cesspits/find spots with addresses and photos; each point represents a discrete archaeological object/location, not a measurement or event.",,0.97,V1_gpt
+2,Archeologische waterbodems,Archaeological water soils,https://maps.amsterdam.nl/open_geodata/?k=274,https://maps.amsterdam.nl/archeologie,ARCHEO_WATERBODEMS,PointDS,ObjectDS,Publiekskaart Archeologie,"Amsterdam kent een rijke verzameling aan archeologische vindplaatsen. Dit kunnen losse voorwerpen of scherven zijn maar ook allerlei structuren zoals afval- en ophogingslagen, funderingen, kelders, beerputten, verdedigingsmuren of gedempte waterwegen. Deze archeologische sporen zijn bijzonder omdat ze verbonden zijn met het dagelijkse leven vanaf het allereerste begin van de stad. De afgelopen 45 jaar heeft Monumenten en Archeologie bij bouwprojecten overal in de stad onderzoek uitgevoerd. Op deze kaart worden een selectie van vindplaatsen online toegankelijk gemaakt, in combinatie met vijf historische kaarten als onderlegger. 
+
+Ieder vlakje op de kaart geeft een doorkijk naar de geschiedenis van die specifieke plek. Door op één van deze archeologische locaties te klikken verschijnen het adres, gegevens over het onderzoek en de vondsten, een foto en een verwijzing naar meer achtergrondinformatie. 
+
+Disclaimer
+De inhoud van deze kaart is niet volledig en niet up-to-date. De informatie is bedoeld voor een breed publiek en niet voor professionals
+Monumenten en Archeologie (MenA) is de bronhouder van de aangeboden kaartlagen en dient vermeld te worden indien u verwijst naar deze kaartlagen.",https://maps.amsterdam.nl/archeologie,PointDS,ObjectDS,"Point features mark selected archaeological find locations; each point represents a discrete archaeological object/site entry with location, category, description, and object code, so this is an ObjectDS rather than an amount or event layer.",,0.94,V1_gpt
+3,Archeologische vindplaatsen,Archaeological sites,https://maps.amsterdam.nl/open_geodata/?k=101,https://maps.amsterdam.nl/archeologie,ARCHEOVINDPLAATSEN,PlainVectorRegion,ObjectDS,Publiekskaart Archeologie,"Amsterdam kent een rijke verzameling aan archeologische vindplaatsen. Dit kunnen losse voorwerpen of scherven zijn maar ook allerlei structuren zoals afval- en ophogingslagen, funderingen, kelders, beerputten, verdedigingsmuren of gedempte waterwegen. Deze archeologische sporen zijn bijzonder omdat ze verbonden zijn met het dagelijkse leven vanaf het allereerste begin van de stad. De afgelopen 45 jaar heeft Monumenten en Archeologie bij bouwprojecten overal in de stad onderzoek uitgevoerd. Op deze kaart worden een selectie van vindplaatsen online toegankelijk gemaakt, in combinatie met vijf historische kaarten als onderlegger. 
+
+Ieder vlakje op de kaart geeft een doorkijk naar de geschiedenis van die specifieke plek. Door op één van deze archeologische locaties te klikken verschijnen het adres, gegevens over het onderzoek en de vondsten, een foto en een verwijzing naar meer achtergrondinformatie. 
+
+Disclaimer
+De inhoud van deze kaart is niet volledig en niet up-to-date. De informatie is bedoeld voor een breed publiek en niet voor professionals
+Monumenten en Archeologie (MenA) is de bronhouder van de aangeboden kaartlagen en dient vermeld te worden indien u verwijst naar deze kaartlagen.",https://maps.amsterdam.nl/archeologie,PlainVectorRegion,ObjectDS,"These polygons are selected archaeological site footprints, not a full-area partition; the map describes discrete archaeological finds/sites with names, addresses, and investigation details, so the decisive rules are plain region + object.",,0.96,V1_gpt
+4,Barbecue,Barbecue,https://maps.amsterdam.nl/open_geodata/?k=319,https://maps.amsterdam.nl/bbq,BBQ,PlainVectorRegion,ObjectDS,Barbecueën in parken en plantsoenen,"U ziet op deze kaart waar u wel en niet mag barbecueën. 
+Op de rode plekken mag u niet barbecueën.
+Op de gele plekken gebruikt u de aangewezen barbecueplekken.
+U vindt alle barbecueregels op de website van de gemeente",https://maps.amsterdam.nl/bbq,PlainVectorRegion,PatchDS,"Polygons mark selected BBQ restriction/permission zones in parks, not a full-area partition; this fits patch zones rather than tessellation or objects.",,0.98,V1_gpt
+5,Beschermde stads- en dorpsgezichten,Conservation areas,https://maps.amsterdam.nl/open_geodata/?k=125,https://maps.amsterdam.nl/cultuurhistorie,BESCHERMDESTADSGEZICHTEN,PlainVectorRegion,ObjectDS,Cultuurhistorische waarden,"De geschiedenis van een gebied kan een inspiratiebron zijn voor de ontwikkeling van de stad. Op deze kaart zijn gebiedsgericht cultuurhistorische waarden en historische stedenbouwkundige ontwikkelingen in beeld gebracht.
+
+Cultuurhistorische waarden per gebied
+Bij cultuurhistorische waarden gaat het over sporen, objecten, patronen en structuren die zichtbaar of niet zichtbaar onderdeel uitmaken van onze leefomgeving en een beeld geven van een historische situatie of ontwikkeling. In veel gevallen bepalen deze cultuurhistorische waarden de identiteit van een plek of gebied. Ze dragen bij aan een aantrekkelijke woonomgeving en vestigingsklimaat en bieden aanknopingspunten voor toekomstige ontwikkelingen. Het is daarom van belang deze cultuurhistorische waarden te betrekken in de planvorming en mee te wegen in de besluitvorming over de inrichting van een gebied (via bijvoorbeeld een bestemmingsplan, stedenbouwkundig plan of herinrichtingsplan voor de openbare ruimte). 
+
+Per gebied kan doorgeklikt worden naar meer informatie over de historisch stedenbouwkundige ontwikkeling van een gebied en de bovengrondse cultuurhistorische waarden. Deze informatie is afkomstig uit de Cultuurhistorische Verkenningen (CHV’s) die door Bureau Monumenten & Archeologie zijn gemaakt. De CHV’s zijn meestal gemaakt in het kader van de actualisatie van een bestemmingsplan. Dit verklaart waarom de CHV’s nog niet heel Amsterdam beslaan en waarom de grenzen niet altijd overeenkomen met de historische bouwperiodes waarin de stad zich ontwikkelde. 
+
+Gebieden met beschermde status
+Een aantal gebieden in Amsterdam is zodanig van cultuurhistorische waarde dat daaraan een beschermde status is toegekend: UNESCO Werelderfgoed en rijks en gemeentelijk beschermde stads- en dorpsgezichten. De begrenzing van deze beschermde gebieden is op deze kaart te vinden met daaraan gekoppeld meer informatie. 
+
+Bovengronds en ondergronds
+De kaart is dynamisch en wordt regelmatig aangevuld met nieuwe informatie over de bovengrondse cultuurhistorie van de stad. Voor ondergrondse cultuurhistorische waarden kunt u terecht op de archeologische kaart: http://maps.amsterdam.nl/archeologie.
+
+Bron beelden: BMA, Beeldbank Stadsarchief Amsterdam of zoals vermeld in de rapportages die u kunt downloaden.",https://maps.amsterdam.nl/cultuurhistorie,PlainVectorRegion,ObjectDS,"Polygons are isolated conservation area boundaries, not a complete partition, so PlainVectorRegion. The layer represents named protected city/district conservation areas with status and designation dates, i.e. bounded real-world objects, so ObjectDS.",,0.96,V1_gpt
+6,Wilde bijen,Wild bees,https://maps.amsterdam.nl/open_geodata/?k=135,https://maps.amsterdam.nl/bijen,BIJEN,PointDS,AmountDS,Wilde bijen,"Wilde bijen
+
+Wilde bijen zijn in 2014, 2015 en 2016 op een aantal locaties in Amsterdam geïnventariseerd. Dit is een herhaling van het onderzoek van 1998. Een uitgebreid verslag van de bevindingen van deze twee onderzoeken kunt u binnenkort hier vinden. In 2017 is op vijftien plaatsen in het Amsterdamse bos waargenomen. Het verslag vindt u hier.
+Ook in 2017 is op een aantal plaatsen in Nieuwwest geïnventariseerd. Hier vindt u het bijbehorende verslag. 
+In 2019 is er in elf stadsparken geïnventariseerd. Het verslag van dit onderzoek vindt u hier.",https://maps.amsterdam.nl/bijen,PointDS,EventDS,Point observations record wild bee inventories at locations and years; the decisive rule is event/occurrence at point locations rather than object or amount mapping.,,0.88,V1_gpt
+7,Honingbijen,Honey bees,https://maps.amsterdam.nl/open_geodata/?k=136,https://maps.amsterdam.nl/honingbijen,BIJEN_HONING,PointDS,AmountDS,Honingbijen,"Op elke locatie staan een x-aantal bijenkasten = bijenvolken.
+
+De dataset voor deze kaart wordt regelmatig 'bijgewerkt'. 
+U kunt zelf wijzigingen of aanvullingen mailen naar onderstaand contactpersoon.",https://maps.amsterdam.nl/honingbijen,PointDS,AmountDS,"Point locations show bee hives/colonies at each site, and the mapped main phenomenon is the numeric amount of colonies/hives (Aantal_volken / Aantal_kasten), so this is a point amount layer.",,0.98,V1_gpt
+8,Bodemkwaliteit,Soil quality,https://maps.amsterdam.nl/open_geodata/?k=57,https://maps.amsterdam.nl/bodemkwaliteit,BODEMKWALITEIT,PlainVectorRegion,PatchDS,Bodemkwaliteit,"De Bodemkwaliteitskaart geeft informatie over de diffuse bodemkwaliteit in zones.
+Binnen een zone is de gemiddelde kwaliteit min of meer gelijk, terwijl er tussen zones duidelijke verschillen in kwaliteit kunnen zijn.
+De kaarten worden in Amsterdam gebruikt voor het bepalen van de mogelijkheden van hergebruik voor vrijkomende grond of gekeurde grond.
+Ze zijn bedoeld voor iedereen die van plan is grond toe te passen in Amsterdam (stadsdelen, aannemers, adviesbureau`s, etc.). 
+
+De kaart geldt niet voor lokaties die historisch zijn belast door puntbronnen (bijv. fabriekslokaties of benzinestations).
+Daarom dient vóór het gebruik van de kaart altijd een historisch onderzoek te worden uitgevoerd om te weten of de herkomst- of toepassingslokatie niet historisch belast is.",https://maps.amsterdam.nl/bodemkwaliteit,VectorTessellation,CoverageDS,"Polygon zones form a near-partition with strong tessellation hints. The layer is a full-area soil-quality classification with category fields for zone and soil function, so CoverageDS is the best fit.",,0.96,V1_gpt
+9,Bomen (deel 1),Trees (part 1),https://maps.amsterdam.nl/open_geodata/?k=254,https://maps.amsterdam.nl/bomen,BOMEN,PointDS,ObjectDS,Bomen,"Zie bomen.amsterdam.nl voor uitgebreide informatie over de bomen.
+
+
+De weergave van bomen op deze kaart is niet `real-time`. Op deze kaart kunnen bomen staan die inmiddels zijn omgewaaid of gekapt. In vrijwel alle gevallen wordt een omgewaaide of gekapte boom herplant. Zodra de boom geplant is en onze inspecteurs weer hun ronde doen (om de drie jaar) komt de boom weer op de kaart.
+
+Deze Maps-kaart maakt gebruik van een Web Map Service (WMS) van het gemeentelijk Datapunt. Deze WMS is verbonden met de dataset van het gemeentelijk beheersysteem GISIB. De kaart van het Datapunt is identiek aan deze kaart op Maps Amsterdam.",https://maps.amsterdam.nl/bomen,PointDS,ObjectDS,"Point map of individual trees with identifiers, species, height, owner and manager; the main phenomenon is discrete tree objects, not a measurement or event.",,0.99,V1_gpt
+10,Bomen (deel 2),Trees (part 2),https://maps.amsterdam.nl/open_geodata/?k=255,https://maps.amsterdam.nl/bomen,BOMEN_2,PointDS,ObjectDS,Bomen,"Zie bomen.amsterdam.nl voor uitgebreide informatie over de bomen.
+
+
+De weergave van bomen op deze kaart is niet `real-time`. Op deze kaart kunnen bomen staan die inmiddels zijn omgewaaid of gekapt. In vrijwel alle gevallen wordt een omgewaaide of gekapte boom herplant. Zodra de boom geplant is en onze inspecteurs weer hun ronde doen (om de drie jaar) komt de boom weer op de kaart.
+
+Deze Maps-kaart maakt gebruik van een Web Map Service (WMS) van het gemeentelijk Datapunt. Deze WMS is verbonden met de dataset van het gemeentelijk beheersysteem GISIB. De kaart van het Datapunt is identiek aan deze kaart op Maps Amsterdam.",https://maps.amsterdam.nl/bomen,PointDS,ObjectDS,"Point layer of individual trees; each feature is a distinct real-world object (tree) with descriptive attributes, so ObjectDS rather than AmountDS or EventDS.",,0.99,V1_gpt
+11,Bomen (deel 3),Trees (part 3),https://maps.amsterdam.nl/open_geodata/?k=256,https://maps.amsterdam.nl/bomen,BOMEN_3,PointDS,ObjectDS,Bomen,"Zie bomen.amsterdam.nl voor uitgebreide informatie over de bomen.
+
+
+De weergave van bomen op deze kaart is niet `real-time`. Op deze kaart kunnen bomen staan die inmiddels zijn omgewaaid of gekapt. In vrijwel alle gevallen wordt een omgewaaide of gekapte boom herplant. Zodra de boom geplant is en onze inspecteurs weer hun ronde doen (om de drie jaar) komt de boom weer op de kaart.
+
+Deze Maps-kaart maakt gebruik van een Web Map Service (WMS) van het gemeentelijk Datapunt. Deze WMS is verbonden met de dataset van het gemeentelijk beheersysteem GISIB. De kaart van het Datapunt is identiek aan deze kaart op Maps Amsterdam.",https://maps.amsterdam.nl/bomen,PointDS,ObjectDS,"Point layer of individual trees; each feature is a distinct real-world object, not a measurement or event.",,0.99,V1_gpt
+12,Bomen (deel 4),Trees (part 4),https://maps.amsterdam.nl/open_geodata/?k=257,https://maps.amsterdam.nl/bomen,BOMEN_4,PointDS,ObjectDS,Bomen,"Zie bomen.amsterdam.nl voor uitgebreide informatie over de bomen.
+
+
+De weergave van bomen op deze kaart is niet `real-time`. Op deze kaart kunnen bomen staan die inmiddels zijn omgewaaid of gekapt. In vrijwel alle gevallen wordt een omgewaaide of gekapte boom herplant. Zodra de boom geplant is en onze inspecteurs weer hun ronde doen (om de drie jaar) komt de boom weer op de kaart.
+
+Deze Maps-kaart maakt gebruik van een Web Map Service (WMS) van het gemeentelijk Datapunt. Deze WMS is verbonden met de dataset van het gemeentelijk beheersysteem GISIB. De kaart van het Datapunt is identiek aan deze kaart op Maps Amsterdam.",https://maps.amsterdam.nl/bomen,PointDS,ObjectDS,"Point features represent individual trees (distinct, countable objects) with species and planting attributes; numeric fields are object attributes, not the main phenomenon.",,0.99,V1_gpt
+13,Buurtcompost,Neighborhood compost,https://maps.amsterdam.nl/open_geodata/?k=228,https://maps.amsterdam.nl/buurtcompost,BUURTCOMPOST,PointDS,ObjectDS,Compost maken met de buurt,"Composteren
+
+Op deze kaart staan lokale initiatieven verzameld die gfe inzamelen en daar compost van maken. De gemeente Amsterdam gaat de komende jaren in meer wijken het gfe apart inzamelen. En Amsterdammers voorlichten over het belang van composteren. Dit is onderdeel van de Voedselstrategie van de gemeente Amsterdam.
+Zie voor meer informatie de factsheet over composteren in Amsterdam: Composteren in Amsterdam
+
+
+Voedselinitiatieven
+
+Met de Voedselstrategie zet Amsterdam de komende jaren in op een gezond, eerlijk, duurzaam en betaalbaar lokaal voedselsysteem, waarbij alle Amsterdammers voordeel hebben van de verandering. Dit wordt samen gedaan met initiatiefnemers, (kennis)instituten, overheden, boeren en bedrijven. Op deze kaart zijn sociale voedselinitiatieven en stadslandbouw initiatieven vermeld: maps.amsterdam.nl/voedselinitiatieven
+
+Zie voor meer informatie over de Voedselstrategie: Volg het beleid: Voedselstrategie Amsterdam.
+
+U kunt aan de opbouw van deze kaart meewerken. Kent u compostinitiatieven die niet op de kaart staan, heeft u aanvullende informatie of correcties? Neem dan contact op via onderstaand e-mailadres.",https://maps.amsterdam.nl/buurtcompost,PointDS,ObjectDS,"Point layer of discrete compost initiatives at street locations; each point represents a real-world facility/initiative, not a measurement or event.",,0.98,V1_gpt
+14,Cameragebieden,Camera areas,https://maps.amsterdam.nl/open_geodata/?k=149,https://maps.amsterdam.nl/overlast,CAMERAGEBIEDEN,PlainVectorRegion,ExistenceDS,Veiligheid en overlast,De gebieden op deze kaart zijn via webservices (WFS) afkomstig van het Dataplatform van de Gemeente Amsterdam: https://api.data.amsterdam.nl/v1/wfs/overlastgebieden/,https://maps.amsterdam.nl/overlast,PlainVectorRegion,PatchDS,"Polygons are selected overlast/camera areas, not a full partition, so PlainVectorRegion. The layer represents bounded special zones of camera coverage around named places, which fits PatchDS rather than reporting units or full coverage.",,0.96,V1_gpt
+15,Canadese populieren,Canadian poplars,https://maps.amsterdam.nl/open_geodata/?k=232,https://maps.amsterdam.nl/canadese_populieren,CANADESE_POPULIEREN,PointDS,ObjectDS,Bijzondere bomen + Adviezen bescherming en beheer (CBH),"Groeikaart
+
+Deze kaart met bijzondere bomen is een groeikaart. Momenteel wordt de lijst met bijzondere bomen gebiedsgewijs geactualiseerd en geharmoniseerd. Per stadsdeel/stadsgebied wordt de kaart steeds verder opgevuld en bijgewerkt. 
+
+Onder de knop vastgestelde beschermstatus staan alle bomen die (her)beoordeeld worden of al opnieuw vastgesteld zijn. Hier vind je ook de (nieuw geplante) toekomstbomen.
+
+Onder de knop geadviseerde beschermstatus staan de bomen waarbij de CBH al een actualiserings-advies heeft uitgebracht. De CBH is een door B&W benoemde onafhankelijk adviescommissie. Meer over deze commissie lees je rechtsonder op de kaart onder Bijzondere bomen en de adviescommissie CBH.
+
+Door het op de kaart aanklikken van een boom, zie je meer informatie en kan je extra informatie downloaden (N.B. dat kan nu dus nog niet bij alle bomen). Niet alle bomen op deze kaart staan al precies op de juiste plek, maar ze staan dan wel in de buurt van hun werkelijke locatie.",https://maps.amsterdam.nl/bomen_bijzonder,PointDS,ObjectDS,"Point features represent individual Canadian poplar trees with identifiers, species, and management status; this is an object layer, not a measurement or event layer.",,0.99,V1_gpt
+16,Sensoren Crowd Monitoring Systeem Amsterdam,Sensors Crowd Monitoring System Amsterdam,https://maps.amsterdam.nl/open_geodata/?k=264,https://maps.amsterdam.nl/cmsa,CROWDSENSOREN,PointDS,ObjectDS,Sensoren Crowd Monitoring Systeem Amsterdam,"Op deze kaart staan alle telsystemen van het Langzaam Verkeer Monitoringsysteem (Voorheen Crowd Monitoring Systeem) Amsterdam ingetekend. Klikken op een object toont meer informatie over dat object.
+Telsystemen winnen informatie in over langzaam verkeer: voetgangers en fietsersstromen.
+
+Meer informatie: https://data.amsterdam.nl/data/datasets/PnrmHN-YvSqjhw/langzaam-verkeer-monitoringsysteem-amsterdam-lvma/",https://maps.amsterdam.nl/cmsa,PointDS,ObjectDS,"Points represent discrete sensor/camera installations in the crowd monitoring system; this is an object layer, not a measurement or event layer.",,0.99,V1_gpt
+17,Cultuurhistorische verkenningen,Cultural historic explorations,https://maps.amsterdam.nl/open_geodata/?k=126,https://maps.amsterdam.nl/cultuurhistorie,CULTUURHISTORIE_VERKENNINGEN,PlainVectorRegion,EventDS,Cultuurhistorische waarden,"De geschiedenis van een gebied kan een inspiratiebron zijn voor de ontwikkeling van de stad. Op deze kaart zijn gebiedsgericht cultuurhistorische waarden en historische stedenbouwkundige ontwikkelingen in beeld gebracht.
+
+Cultuurhistorische waarden per gebied
+Bij cultuurhistorische waarden gaat het over sporen, objecten, patronen en structuren die zichtbaar of niet zichtbaar onderdeel uitmaken van onze leefomgeving en een beeld geven van een historische situatie of ontwikkeling. In veel gevallen bepalen deze cultuurhistorische waarden de identiteit van een plek of gebied. Ze dragen bij aan een aantrekkelijke woonomgeving en vestigingsklimaat en bieden aanknopingspunten voor toekomstige ontwikkelingen. Het is daarom van belang deze cultuurhistorische waarden te betrekken in de planvorming en mee te wegen in de besluitvorming over de inrichting van een gebied (via bijvoorbeeld een bestemmingsplan, stedenbouwkundig plan of herinrichtingsplan voor de openbare ruimte). 
+
+Per gebied kan doorgeklikt worden naar meer informatie over de historisch stedenbouwkundige ontwikkeling van een gebied en de bovengrondse cultuurhistorische waarden. Deze informatie is afkomstig uit de Cultuurhistorische Verkenningen (CHV’s) die door Bureau Monumenten & Archeologie zijn gemaakt. De CHV’s zijn meestal gemaakt in het kader van de actualisatie van een bestemmingsplan. Dit verklaart waarom de CHV’s nog niet heel Amsterdam beslaan en waarom de grenzen niet altijd overeenkomen met de historische bouwperiodes waarin de stad zich ontwikkelde. 
+
+Gebieden met beschermde status
+Een aantal gebieden in Amsterdam is zodanig van cultuurhistorische waarde dat daaraan een beschermde status is toegekend: UNESCO Werelderfgoed en rijks en gemeentelijk beschermde stads- en dorpsgezichten. De begrenzing van deze beschermde gebieden is op deze kaart te vinden met daaraan gekoppeld meer informatie. 
+
+Bovengronds en ondergronds
+De kaart is dynamisch en wordt regelmatig aangevuld met nieuwe informatie over de bovengrondse cultuurhistorie van de stad. Voor ondergrondse cultuurhistorische waarden kunt u terecht op de archeologische kaart: http://maps.amsterdam.nl/archeologie.
+
+Bron beelden: BMA, Beeldbank Stadsarchief Amsterdam of zoals vermeld in de rapportages die u kunt downloaden.",https://maps.amsterdam.nl/cultuurhistorie,PlainVectorRegion,PatchDS,"Polygon areas mark selected culture-historical exploration zones and protected areas, not a full reporting tessellation; this fits bounded patch areas. The map is about culture-historical values of areas, so PatchDS is the best entity.",,0.88,V1_gpt
+18,Duizendknoop,Knotweed,https://maps.amsterdam.nl/open_geodata/?k=247,https://maps.amsterdam.nl/duizendknoop,DUIZENDKNOOP,PointDS,ObjectDS,Japanse duizendknoop,"De Japanse duizendknoop is een woekerplant die veel schade veroorzaakt. Zijn wortels gaan dwars door beton, kademuren en straten. De plant is moeilijk te bestrijden. Daarom hebben we uw hulp hard nodig. Ziet u deze plant, meld het dan via: Gemeente website",https://maps.amsterdam.nl/duizendknoop,PointDS,ObjectDS,"Point features represent individual knotweed sightings/locations; the numeric area field is just an attribute, so this is an object layer rather than amount or event.",,0.98,V1_gpt
+19,Ecopassages,Ecopassages,https://maps.amsterdam.nl/open_geodata/?k=63,https://maps.amsterdam.nl/ecopassages,ECOPASSAGES,PointDS,ObjectDS,Ecologische structuur (AES) en passages,"De ecologische structuur verbindt de groene gebieden met elkaar en vergroot daarmee het leefgebied voor dier- en plantensoorten. De Amsterdamse ecologische structuur betreft een netwerk van zowel grote als kleine `groene` en `blauwe` gebieden en maakt het verbindende groene netwerk binnen de stad en de verbinding met het omringende landschap zichtbaar en is essentieel voor de biodiversiteit.
+
+Om het stelsel van groene verbindingen goed te laten functioneren is het van belang dat ecologische knelpunten worden opgelost. Op de kaart is de ecologische structuur en zijn de op te heffen barrières (knelpunten) in beeld gebracht. 
+
+De Provincie Noord-Holland is bronhouder van de kaarten van het Natuurnetwerk Nederland (NNN), de vroegere EHS. Wijzigingen in deze dataset worden hier niet bijgehouden. Zie voor de laatste versie en de correcte begrenzing de kaarten van de Provincie: Kaarten Provincie Voor het kaartbeeld zijn de grenzen op deze kaart gegeneraliseerd.
+
+Het ministerie van Economische Zaken is verantwoordelijk voor de begrenzing van Natura 2000-gebieden. Alle informatie is hier te vinden.
+
+Voor meer informatie over de ecologische structuur van Amsterdam zie hier",https://maps.amsterdam.nl/ecopassages,PointDS,PatchDS,"Point features mark ecological barrier/passage locations, not measurements or objects. The layer is about selected issue sites and solution locations along the ecological network, so PatchDS fits better than ObjectDS or AmountDS.",,0.97,V1_gpt
+20,Energie - Potentiele gebieden windenergie,Energy - Potential areas of wind energy,https://maps.amsterdam.nl/open_geodata/?k=96,https://maps.amsterdam.nl/energie_zonwind,ENERGIE_WINDVISIE,PlainVectorRegion,AmountDS,,,,PlainVectorRegion,ObjectDS,"Polygon features are isolated potential wind-energy sites rather than a tessellating area cover, so PlainVectorRegion. The decisive entity rule is object: each polygon is a distinct proposed wind-energy location with capacity/production attributes, not a coverage or amount map.",,0.95,V1_gpt
+21,Verkiezingen Europarlement 2019,Elections Europarliament 2019,https://maps.amsterdam.nl/open_geodata/?k=282,https://maps.amsterdam.nl/europarlement2019,EP19,PointDS,ObjectDS,Atlas Verkiezingen,"In deze Atlas Verkiezingen zijn de kaarten met uitslagen per stemlocaties van verschillende verkiezingen samengevoegd.
+
+De cirkelgroottes zijn tussen de verkiezingen onderling vergelijkbaar.
+Dat betekent dat eenzelfde cirkelgrootte bij elke verkiezing hetzelfde aantal of dezelfde verhouding voorstelt. 
+De cirkelgroottes tussen Amsterdam en Zaanstad zijn verschillend, omdat de gebiedsgrootte verschillend is er er verder op Zaanstad is ingezoomd.
+Voor de berekening van de cirkelgrootte van aantallen is een lineaire schaal gebruikt. Hierdoor worden verschillen tussen weinig en veel stemmen wat uitvergroot. 
+Voor de leesbaarheid van de taartpunt-grafiekjes is een vierkantswortel schaal gebruikt, die de verschillen wat middelen.
+
+De kaarten zijn individueel te bekijken op:
+2024 - Europees Parlement
+2023 - Tweede Kamer
+2023 - Provinciale Staten
+2022 - Gemeenteraad
+2021 - Tweede Kamer
+2019 - Europees Parlement
+2019 - Provinciale Staten
+2018 - Gemeenteraad
+2017 - Tweede Kamer
+
+Zie ook de Atlas Verkiezingen Zaanstad",https://maps.amsterdam.nl/atlas_verkiezingen,PointDS,AmountDS,"Point locations are voting stations, but the layer’s main phenomenon is the numeric election result at each station (votes, turnout, percentages). By the point-amount rule, this is AmountDS rather than ObjectDS.",,0.98,V1_gpt
+22,Eikenprocessierups (nesten),Oak processionary caterpillar (nesting),https://maps.amsterdam.nl/open_geodata/?k=67,https://maps.amsterdam.nl/eikenprocessierups,EPR_NESTEN,PointDS,ObjectDS,Eikenprocessierups,"Deze kaart toont op welke plekken in de stad nesten van de eikenprocessierups zijn aangetroffen. De kaart is real-time verbonden met het registratiesysteem waarin doorlopend mutaties plaatsvinden. Als een nest is verwijderd, dan wordt dat ook aangegeven. Naarmate het overlastseizoen vordert, zullen steeds meer aangetroffen en verwijderde nesten zichtbaar zijn. Aan het begin van het seizoen zijn nog niet alle eikenbomen gecontroleerd. 
+
+De urgentie wordt bepaald aan de hand van de grootte van het nest, het aantal nesten per boom en het aantal aangetaste bomen:
+
+
+Urgent
+
+Formaat nest: Tennisbalformaat (< 10 cm) of voetbalformaat (> 10 cm)
+Aantal nesten:> 5 tennisbalformaat of ≥ 1 voetbalformaat
+Aantal aangetaste bomen per 10 bomen:>5 tennisbalformaat of ≥ 1 voetbalformaat
+
+
+Standaard
+
+Formaat nest: Tennisbalformaat
+Aantal nesten: 2 t/m 5
+Aantal aangetaste bomen per 10 bomen: 2 t/m 5
+Maximaal: 2 t/m 5 nesten per individuele boom zonder nest in omliggende bomen.
+
+
+Laag
+
+Formaat nest: Tennisbalformaat
+Aantal nesten: 1
+Aantal aangetaste bomen per 10 bomen: 1
+Maximaal: 1 tennisbal per individuele boom
+
+
+Niet te bestrijden
+
+Er zijn wel nesten geregistreerd, maar deze kunnen niet worden bereikt met een klimploeg of hoogwerker.
+
+
+Gemeld
+
+Er is een melding ontvangen over een nest. Deze moet nog worden geregistreerd.
+
+
+Deels bestreden
+
+Een deel van de boom is schoongemaakt (bijv. de stam), maar de rest volgt later.
+
+
+Bestreden
+
+Nesten zijn verwijderd.
+
+De haren van de rupsen kunnen gezondheidsklachten opleveren. De rupsen leven in bolle spinselnestjes. Deze zijn gebonden aan eikenbomen en vaak maar moeilijk vindbaar hoger in de boom, maar soms zijn ze groter en met rupsen te zien op de stammen van de eiken.
+
+U kunt aan een boom zien of een rupsennest bekend is bij de gemeente. In dat geval is er een stuk rood-wit lint aan gehangen. Heeft u een rupsnest gezien in een boom zonder lint?
+En weet u zeker dat het een eikenprocesierupsnest is en niet de rupsen van de spinselmot zijn? 
+Geef dan de locatie van het nest door aan de gemeente via 14020 of via meldingen.amsterdam.nl of via www.amsterdam.nl/eikenprocessierups.
+
+Meer informatie vindt u op www.amsterdam.nl/eikenprocessierups",https://maps.amsterdam.nl/eikenprocessierups,PointDS,EventDS,"Point features mark reported/remediated oak processionary caterpillar nest occurrences at tree locations, with real-time mutation dates; the decisive rule is event-at-point rather than object inventory.",,0.95,V1_gpt
+23,Fietstaxi - gebieden,Pedicabs - areas,https://maps.amsterdam.nl/open_geodata/?k=140,https://maps.amsterdam.nl/fietstaxi,FIETSTAXI,PlainVectorRegion,PatchDS,,,,PlainVectorRegion,PatchDS,"Polygons mark selected pedicab prohibition/permission areas, not a full-area partition, so PlainVectorRegion; the theme is bounded restriction zones, so PatchDS.",,0.97,V1_gpt
+24,Fietstaxi - standplaatsen,Pedicabs - pitches,https://maps.amsterdam.nl/open_geodata/?k=141,https://maps.amsterdam.nl/fietstaxi,FIETSTAXI_STANDPLAATSEN,PointDS,ObjectDS,,,,PointDS,ObjectDS,"Point layer of pedicab standplaatsen (pitches); each point is a distinct real-world location/object, not a measurement or event.",,0.99,V1_gpt
+25,Niet-woonfuncties (Functiekaart),Non-residential functions (Function Map),https://maps.amsterdam.nl/open_geodata/?k=49,https://maps.amsterdam.nl/functiekaart,FUNCTIEKAART,PointDS,ObjectDS,Niet-woonfuncties (Functiekaart),"Update: BAG-dataset 19 januari 2026.
+Er zijn geen historische Functiekaarten beschikbaar.
+
+
+De Functiekaart is gebaseerd op het Gebruiksdoel, de WOZ-objectsoort en de gebruiksoppervlaktes in de dataset van de BAG-verblijfsobjecten.
+De Functiekaart laat alleen de niet-woonfuncties zien. De Functiemix geeft de combinatie met de woonfuncties weer.
+
+De Functiekaart is geen officiële basisregistratie en is bedoeld voor planologische analyses en niet voor handhavings- of toetsingsdoeleinden. 
+
+De kaart heeft `eigen` Functies die afgeleid zijn van het BAG-gebruiksdoel en de WOZ-objectsoort. In de meeste gevallen komen het Gebruiksdoel en de Objectsoort met elkaar overeen, maar het komt ook regelmatig voor dat ze elkaar tegenspreken. Ook kunnen er meerdere gebruiksdoelen en/of meerdere objectsoorten bij een verblijfsobject (hoofdadres) zijn geregistreerd. In veel van die gevallen is via panoramabeelden bekeken welke functie het betreft. 
+
+
+Terugmeldingen zijn zeer welkom
+
+Bij aanklikken van een locatie op de kaart verschijnt informatie over de Functie. Als een Functie volgens u niet klopt, kunt u dit terugmelden via een formulier.
+
+
+Uitgezonderde functies
+
+Woonzorg-complexen zoals verzorgings-, verpleeg- en opvanghuizen zijn aangemerkt als woonfunctie en niet als voorziening en staan daarom niet op deze Functiekaart van niet-woonfuncties. Dit geldt ook voor gemeenschappelijke (bijeenkomst)ruimtes, of een atelier van bewoner(s) in bv. een appartementencomplex.
+Adressen met parkeer- en transportfuncties (b.v. garages en metrostation-ingangen, vaak ondergrondse gebouwen voor opslag van auto`s of doorstroming van mensen), maar ook andere onbemensde functies zijn lastig als wonen, werken of voorziening te kwalificeren en zijn daarom achterwege gelaten.
+
+Wat komt nog meer niet in de Functiekaart?
+
+
+Adressen met Status = Verbouwing of Buiten gebruik of Gevormd. De Status moet dus zijn In gebruik (wel of niet ingemeten).
+
+WOZ-objectsoort bevat `in aanbouw` of `bouwterrein`.
+
+Gebruiksoppervlaktes kleiner dan 10m2.
+
+Gebruiksoppervlaktes kleiner dan 100m2 bij Gebruiksdoel = overige gebruiksfuncties en Objectsoort = leeg of opstal of Opslag/magazijn.
+
+Gebruiksoppervlaktes kleiner dan 100m2 bij Gebruiksdoel = industriefuncties en Objectsoort = Opslag/magazijn.
+
+Een paar duizend adressen die onduidelijk waren, zijn handmatig gecheckt op de panoramabeelden en via Google en op die manier is er een Functie toegekend.
+Tip: Activeer de onderste knop van de knoppenbalk rechts van de kaart en klik dan op een pand. Alle adressen in dat pand verschijnen, met ook het meest recente Gebruiksdoel en de WOZ-objectsoort en de Functie zoals op deze kaart.",https://maps.amsterdam.nl/functiekaart,PointDS,ObjectDS,"Point features represent individual BAG verblijfsobject/adres locations with a classified non-residential function; this is an object layer, not a measurement or event layer.",,0.99,V1_gpt
+26,Functiemix,Function mix,https://maps.amsterdam.nl/open_geodata/?k=310,https://maps.amsterdam.nl/functiemix,FUNCTIEMIX,PlainVectorRegion,PatchDS;AmountDS,Functiemix,"Update: BAG-dataset 12 juli 2022
+
+
+De Functiemix is gebaseerd op de Functiekaart.
+De functies in de Functiekaart zijn gecategoriseerd als Voorzieningen of Werken. Onduidelijke en Onbemensde functies doen niet mee. De BAG-woonverblijfsobjecten zijn toegevoegd als Wonen.
+Per blokstraat zijn de gebruiksoppervlaktes per categorie bij elkaar opgeteld, waarna de percentages zijn berekend.
+
+Als meer dan 70% van de gebruiksoppervlakte in een blokstraat bestaat uit Wonen, dan is dit op de kaart aangegeven in de Wonen-kleur. Hetzelfde geldt voor 70% Voorzieningen en 70% Werken.
+
+Voor een mix van twee functies geldt dat er minder dan 15% van de derde functie aanwezig is een blokstraat. Bijvoorbeeld: Wonen-Voorzieningen geldt als er voor geen van beide functies meer dan 70% is en er minder dan 15% Werken is.
+
+Het restant is dan de mix van de 3 functies Wonen-Voorzieningen-Werken: geen van deze heeft meer dan 70% en ook niet minder dan 15%.
+
+
+Wonen boven voorzieningen en werken
+
+Er wordt regelmatig gewoond boven voorzieningen en (kleinere) werkfuncties. De oppervlakte voor Wonen overheerst daardoor de oppervlaktes voor Voorzieningen en Werken. De mix van functies komt daardoor niet goed uit de (kaart)verf: veel blokstraten bevatten meer dan 70% wonen, terwijl een paar voorzieningen of bedrijven al een behoorlijke andere beleving geven in een straat.
+Daarom is de oppervlakte voor Wonen met 50% verminderd alvorens de percentages zijn berekend. Hierdoor wordt meer de op straat ervaren functiemix weergegeven.
+De getoonde gebruiksoppervlakte voor Wonen in het infovenstertje bij aanklikken, is dus 50% van de werkelijke oppervlakte.
+
+Als de oppervlakte in de BAG = 1, dan is de oppervlakte onbekend. In die gevallen is 50m2 toegekend, om de functie niet geheel te verliezen. 
+
+
+Wat is een blokstraat?
+
+Een bouwblok bestaat meestal uit 4 straatzijden, die qua functies veel kunnen verschillen. Een bouwblok heeft een bouwblokcode en een straat heeft een straatnaam. De combinatie daarvan geeft dan 4 Bouwblokstraatnamen.
+
+Bekijk hier de Functiekaart.",https://maps.amsterdam.nl/functiemix,PlainVectorRegion,CoverageDS,"Polygon layer maps block-street function-mix classes (WON/VZN/WRK) with percentages, but polygons are not a complete tessellation of the study area; it is a selected thematic coverage of area units. CoverageDS fits the full-area categorical function classification, while topology hints support PlainVectorRegion.",,0.92,V1_gpt
+27,Wijken,Neighborhoods,https://maps.amsterdam.nl/open_geodata/?k=200,https://maps.amsterdam.nl/gebiedsindeling,GEBIED_BUURTCOMBINATIES,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"Neighborhood administrative units form a near-complete polygon partition, so geometry is VectorTessellation. They are reporting/statistical areas with codes and attributes, so entity is LatticeDS.",,0.99,V1_gpt
+28,Wijken excl.water,Neighborhoods excl.water,https://maps.amsterdam.nl/open_geodata/?k=201,https://maps.amsterdam.nl/gebiedsindeling,GEBIED_BUURTCOMBINATIES_EXWATER,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"Neighborhoods/buurten are reporting administrative units that partition the city area; topology strongly supports tessellation, and the layer is a lattice of statistical/administrative areas with codes and area attributes.",,0.99,V1_gpt
+29,Buurten,Neighborhoods,https://maps.amsterdam.nl/open_geodata/?k=198,https://maps.amsterdam.nl/gebiedsindeling,GEBIED_BUURTEN,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"Neighborhood polygons form a near-complete administrative partition of Amsterdam, with strong tessellation topology and coded reporting-unit fields (Buurt, Buurtcombinatie_code, Stadsdeel_code).",,0.99,V1_gpt
+30,Buurten excl.water,Neighborhoods excl.water,https://maps.amsterdam.nl/open_geodata/?k=199,https://maps.amsterdam.nl/gebiedsindeling,GEBIED_BUURTEN_EXWATER,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"Neighborhood polygons form a near-complete administrative partition with strong shared-boundary topology, so Geometry is VectorTessellation. The layer represents buurten/neighborhood reporting units with codes and area attributes, which fits LatticeDS.",,0.99,V1_gpt
+31,Stadsdelen,City districts,https://maps.amsterdam.nl/open_geodata/?k=202,https://maps.amsterdam.nl/gebiedsindeling,GEBIED_STADSDELEN,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"City districts are administrative reporting units that partition Amsterdam, and the polygon topology strongly supports a tessellation.",,0.98,V1_gpt
+32,Stadsdelen excl.water,City districts excl.water,https://maps.amsterdam.nl/open_geodata/?k=203,https://maps.amsterdam.nl/gebiedsindeling,GEBIED_STADSDELEN_EXWATER,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"These polygons are Amsterdam city districts, which are administrative/statistical reporting units forming a near-complete partition; classify as tessellation and LatticeDS despite numeric area attributes.",,0.98,V1_gpt
+33,22 Gebieden,22 Areas,https://maps.amsterdam.nl/open_geodata/?k=204,https://maps.amsterdam.nl/gebiedsindeling,GEBIEDEN22,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"The layer represents Amsterdam area units (Buurten/Wijken/Gebieden/Stadsdelen) that partition the city, and the topology strongly supports a tessellation; the polygons are reporting/administrative units, so LatticeDS.",,0.98,V1_gpt
+34,22 Gebieden excl.water,22 Areas excluding water,https://maps.amsterdam.nl/open_geodata/?k=205,https://maps.amsterdam.nl/gebiedsindeling,GEBIEDEN22_EXWATER,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"The polygons are Amsterdam gebieds/neighbourhood-style reporting units that form a near-complete partition, with strong tessellation topology hints. The decisive entity rule is reporting/statistical units -> LatticeDS.",,0.99,V1_gpt
+35,25 Praktijkgebieden,25 Practice areas,https://maps.amsterdam.nl/open_geodata/?k=268,https://maps.amsterdam.nl/gebiedsindeling,GEBIEDEN25,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"This is a tessellated set of Amsterdam practice areas/stadsdelen that form an administrative/statistical partition. The decisive rule is reporting-unit geography, so Entity is LatticeDS.",,0.98,V1_gpt
+36,25 Praktijkgebieden excl.water,25 Practice areas excluding water,https://maps.amsterdam.nl/open_geodata/?k=269,https://maps.amsterdam.nl/gebiedsindeling,GEBIEDEN25_EXWATER,VectorTessellation,LatticeDS,"Buurten, Wijken, Gebieden, Stadsdelen en (regio)Gemeenten","Stadsdelen
+Wijken
+Gebieden
+Buurten",https://maps.amsterdam.nl/gebiedsindeling,VectorTessellation,LatticeDS,"Polygon regions form a near-partition of Amsterdam practice areas/neighbourhood units, with high shared boundaries and adjacency, so VectorTessellation. The named administrative/statistical areas with area attributes fit the reporting-unit rule, so LatticeDS.",,0.98,V1_gpt
+37,Geluidscontouren industrie,Noise contours industry,https://maps.amsterdam.nl/open_geodata/?k=263,https://maps.amsterdam.nl/geluid2,GELUID_INDUSTRIE,PlainVectorRegion,ContourDS,Geluidskaart 2021,"Op de Geluidskaart Amsterdam is de (berekende) geluidbelasting weergegeven voor de belangrijkste verkeersbronnen in de stad. De geluidsbelasting (in decibellen oftewel dB) is voor twee situaties weergegeven:
+
+de gemiddelde geluidsbelasting over het etmaal, uitgedrukt in de Europese geluidsmaat Lden (Lday-evening-night).
+de gemiddelde geluidsbelasting in de nachtperiode (van 23 uur tot 7 uur), uitgedrukt in de Europese geluidsmaat Lnight. Nachtelijk lawaai in onze woonomgeving kan de slaap verstoren.
+Alleen voor industrielawaai wordt nog een Nederlandse geluidsmaat - de etmaalwaarde - gebruikt, die weergegeven wordt in dB(A). Onderstaand worden de verschillende begrippen nader verklaard.
+U kunt in het invoerveld rechtsboven de geluidskaarten ook een adres invoeren om bijvoorbeeld de situatie voor uw eigen woonomgeving weer te geven.
+
+
+Beschrijving van de opgenomen kaarten
+
+Wegverkeer
+Bij de berekeningen voor wegverkeer is uitgegaan van de verkeersintensiteiten op de wegen zoals die door de afdeling Verkeer en Openbare ruime (VOR) zijn geregistreerd. Per weg is daarbij aangegeven hoeveel motoren, personenauto’s, bussen, middelzware en zware vrachtauto’s gemiddeld per uur gedurende de dag- avond- en nachtperiode passeren. Aan de hand van het soort wegdekverharding (asfalt, klinkers), de wettelijk toegestane rijsnelheid en de eventuele aanwezigheid van geluidsschermen is de geluidbelasting in de omgeving van de weg berekend. Wegverkeerslawaai omvat het totale geluid van motoren, auto’s, bussen, vrachtwagens én trams.
+
+Railverkeer en luchtvaartlawaai
+Voor railverkeer- en luchtvaartlawaai zijn de gegevens beschikbaar gesteld door de bronbeheerders, te weten ProRail en het ministerie van Infrastructuur en Milieu.
+
+Industrielawaai
+Voor industrielawaai zijn de geluidniveaus ook weergegeven vanaf 55 dB (Lden) en vanaf 50 dB (Lnight). Ook is de grens van de gezoneerde industrieterreinen aangegeven alsmede de terreinafbakening van de 55 dB-inrichtingen. 
+
+
+Verklaring van begrippen
+
+dB of dB(A)
+Met deze afkorting wordt `decibel` bedoeld. Het is de eenheid waarmee de sterkte van het geluid wordt uitgedrukt. In de wetgeving wordt een onderscheid gemaakt tussen dB en dB(A). Met dB worden de decibels bedoeld die zijn uitgedrukt in de Europese geluidsmaat Lden terwijl met dB(A) de decibels worden uitgedrukt als etmaalwaarde.
+
+Lden
+Lden is een manier om de jaargemiddelde geluidsbelasting uit te drukken. Deze dosismaat wordt gebruikt voor omgevingslawaai. Sinds 2004 zijn alle Europese landen verplicht om de Lden te gebruiken. Voor Lden wordt het etmaal verdeeld in een:
+
+Dagperiode van 07.00 - 19.00 uur
+Avondperiode van 19.00 - 23.00 uur
+Nachtperiode van 23.00 - 07.00 uur.
+Bij het geluid in de avond en de nachtperiode wordt 5 resp. 10 dB opgeteld omdat geluid in deze perioden hinderlijker is dan overdag. Tenslotte worden deze waarden `logaritmisch` gemiddeld. Het resultaat wordt Lden genoemd. Het wordt gebruikt om de hinder in beeld te brengen.
+
+Lnight
+Met Lnight wordt de geluidsbelasting gedurende de nachtperiode (23.00 - 07.00 uur) bedoeld. Hiermee wordt de mate van slaapverstoring in beeld gebracht.
+
+Etmaalwaarde
+Ook de etmaalwaarde is een manier om de geluidsbelasting uit te drukken. Het is echter geen jaargemiddelde maar de hoogste waarde van de volgende drie:
+
+de geluidsbelasting gedurende de dagperiode (07.00 - 19.00 uur)
+de geluidsbelasting gedurende de avondperiode (19.00 - 23.00 uur), vermeerderd met een toeslag van 5 dB(A)
+De geluidsbelasting gedurende de nachtperiode (23.00 - 07.00 uur), vermeerderd met een toeslag van 10 dB(A).
+In de Nederlandse wetgeving en ook in de geluidskaarten wordt alleen nog voor industrielawaai de etmaalwaarde voorgeschreven. Voor alle andere bronnen wordt uitgegaan van de Europese geluidsmaat (de Lden).",https://maps.amsterdam.nl/geluid,PlainVectorRegion,PatchDS,"Polygon noise-contour zones for industrial noise are selected bounded areas, not a full tessellation or reporting units; the decisive entity rule is patch (selected phenomenon zones), with polygons representing contour areas rather than objects or coverage.",,0.93,V1_gpt
+38,Geluidscontouren luchtvaart,Noise contours air traffic,https://maps.amsterdam.nl/open_geodata/?k=252,https://maps.amsterdam.nl/geluid,GELUID_LUCHTVAART_LDEN,PlainVectorRegion,ContourDS,Geluidskaart 2021,"Op de Geluidskaart Amsterdam is de (berekende) geluidbelasting weergegeven voor de belangrijkste verkeersbronnen in de stad. De geluidsbelasting (in decibellen oftewel dB) is voor twee situaties weergegeven:
+
+de gemiddelde geluidsbelasting over het etmaal, uitgedrukt in de Europese geluidsmaat Lden (Lday-evening-night).
+de gemiddelde geluidsbelasting in de nachtperiode (van 23 uur tot 7 uur), uitgedrukt in de Europese geluidsmaat Lnight. Nachtelijk lawaai in onze woonomgeving kan de slaap verstoren.
+Alleen voor industrielawaai wordt nog een Nederlandse geluidsmaat - de etmaalwaarde - gebruikt, die weergegeven wordt in dB(A). Onderstaand worden de verschillende begrippen nader verklaard.
+U kunt in het invoerveld rechtsboven de geluidskaarten ook een adres invoeren om bijvoorbeeld de situatie voor uw eigen woonomgeving weer te geven.
+
+
+Beschrijving van de opgenomen kaarten
+
+Wegverkeer
+Bij de berekeningen voor wegverkeer is uitgegaan van de verkeersintensiteiten op de wegen zoals die door de afdeling Verkeer en Openbare ruime (VOR) zijn geregistreerd. Per weg is daarbij aangegeven hoeveel motoren, personenauto’s, bussen, middelzware en zware vrachtauto’s gemiddeld per uur gedurende de dag- avond- en nachtperiode passeren. Aan de hand van het soort wegdekverharding (asfalt, klinkers), de wettelijk toegestane rijsnelheid en de eventuele aanwezigheid van geluidsschermen is de geluidbelasting in de omgeving van de weg berekend. Wegverkeerslawaai omvat het totale geluid van motoren, auto’s, bussen, vrachtwagens én trams.
+
+Railverkeer en luchtvaartlawaai
+Voor railverkeer- en luchtvaartlawaai zijn de gegevens beschikbaar gesteld door de bronbeheerders, te weten ProRail en het ministerie van Infrastructuur en Milieu.
+
+Industrielawaai
+Voor industrielawaai zijn de geluidniveaus ook weergegeven vanaf 55 dB (Lden) en vanaf 50 dB (Lnight). Ook is de grens van de gezoneerde industrieterreinen aangegeven alsmede de terreinafbakening van de 55 dB-inrichtingen. 
+
+
+Verklaring van begrippen
+
+dB of dB(A)
+Met deze afkorting wordt `decibel` bedoeld. Het is de eenheid waarmee de sterkte van het geluid wordt uitgedrukt. In de wetgeving wordt een onderscheid gemaakt tussen dB en dB(A). Met dB worden de decibels bedoeld die zijn uitgedrukt in de Europese geluidsmaat Lden terwijl met dB(A) de decibels worden uitgedrukt als etmaalwaarde.
+
+Lden
+Lden is een manier om de jaargemiddelde geluidsbelasting uit te drukken. Deze dosismaat wordt gebruikt voor omgevingslawaai. Sinds 2004 zijn alle Europese landen verplicht om de Lden te gebruiken. Voor Lden wordt het etmaal verdeeld in een:
+
+Dagperiode van 07.00 - 19.00 uur
+Avondperiode van 19.00 - 23.00 uur
+Nachtperiode van 23.00 - 07.00 uur.
+Bij het geluid in de avond en de nachtperiode wordt 5 resp. 10 dB opgeteld omdat geluid in deze perioden hinderlijker is dan overdag. Tenslotte worden deze waarden `logaritmisch` gemiddeld. Het resultaat wordt Lden genoemd. Het wordt gebruikt om de hinder in beeld te brengen.
+
+Lnight
+Met Lnight wordt de geluidsbelasting gedurende de nachtperiode (23.00 - 07.00 uur) bedoeld. Hiermee wordt de mate van slaapverstoring in beeld gebracht.
+
+Etmaalwaarde
+Ook de etmaalwaarde is een manier om de geluidsbelasting uit te drukken. Het is echter geen jaargemiddelde maar de hoogste waarde van de volgende drie:
+
+de geluidsbelasting gedurende de dagperiode (07.00 - 19.00 uur)
+de geluidsbelasting gedurende de avondperiode (19.00 - 23.00 uur), vermeerderd met een toeslag van 5 dB(A)
+De geluidsbelasting gedurende de nachtperiode (23.00 - 07.00 uur), vermeerderd met een toeslag van 10 dB(A).
+In de Nederlandse wetgeving en ook in de geluidskaarten wordt alleen nog voor industrielawaai de etmaalwaarde voorgeschreven. Voor alle andere bronnen wordt uitgegaan van de Europese geluidsmaat (de Lden).",https://maps.amsterdam.nl/geluid,PlainVectorRegion,ContourDS,"Polygon contour zones for aircraft noise; the class bands (55-60, 60-65, etc.) indicate isoline/interval contours rather than reporting units or a full thematic coverage.",,0.92,V1_gpt
+39,Geluidscontouren verkeer (deel 1),Noise contours traffic (part 1),https://maps.amsterdam.nl/open_geodata/?k=267,https://maps.amsterdam.nl/geluid1,GELUID_VERKEER,PlainVectorRegion,ContourDS,Geluidskaart 2021,"Op de Geluidskaart Amsterdam is de (berekende) geluidbelasting weergegeven voor de belangrijkste verkeersbronnen in de stad. De geluidsbelasting (in decibellen oftewel dB) is voor twee situaties weergegeven:
+
+de gemiddelde geluidsbelasting over het etmaal, uitgedrukt in de Europese geluidsmaat Lden (Lday-evening-night).
+de gemiddelde geluidsbelasting in de nachtperiode (van 23 uur tot 7 uur), uitgedrukt in de Europese geluidsmaat Lnight. Nachtelijk lawaai in onze woonomgeving kan de slaap verstoren.
+Alleen voor industrielawaai wordt nog een Nederlandse geluidsmaat - de etmaalwaarde - gebruikt, die weergegeven wordt in dB(A). Onderstaand worden de verschillende begrippen nader verklaard.
+U kunt in het invoerveld rechtsboven de geluidskaarten ook een adres invoeren om bijvoorbeeld de situatie voor uw eigen woonomgeving weer te geven.
+
+
+Beschrijving van de opgenomen kaarten
+
+Wegverkeer
+Bij de berekeningen voor wegverkeer is uitgegaan van de verkeersintensiteiten op de wegen zoals die door de afdeling Verkeer en Openbare ruime (VOR) zijn geregistreerd. Per weg is daarbij aangegeven hoeveel motoren, personenauto’s, bussen, middelzware en zware vrachtauto’s gemiddeld per uur gedurende de dag- avond- en nachtperiode passeren. Aan de hand van het soort wegdekverharding (asfalt, klinkers), de wettelijk toegestane rijsnelheid en de eventuele aanwezigheid van geluidsschermen is de geluidbelasting in de omgeving van de weg berekend. Wegverkeerslawaai omvat het totale geluid van motoren, auto’s, bussen, vrachtwagens én trams.
+
+Railverkeer en luchtvaartlawaai
+Voor railverkeer- en luchtvaartlawaai zijn de gegevens beschikbaar gesteld door de bronbeheerders, te weten ProRail en het ministerie van Infrastructuur en Milieu.
+
+Industrielawaai
+Voor industrielawaai zijn de geluidniveaus ook weergegeven vanaf 55 dB (Lden) en vanaf 50 dB (Lnight). Ook is de grens van de gezoneerde industrieterreinen aangegeven alsmede de terreinafbakening van de 55 dB-inrichtingen. 
+
+
+Verklaring van begrippen
+
+dB of dB(A)
+Met deze afkorting wordt `decibel` bedoeld. Het is de eenheid waarmee de sterkte van het geluid wordt uitgedrukt. In de wetgeving wordt een onderscheid gemaakt tussen dB en dB(A). Met dB worden de decibels bedoeld die zijn uitgedrukt in de Europese geluidsmaat Lden terwijl met dB(A) de decibels worden uitgedrukt als etmaalwaarde.
+
+Lden
+Lden is een manier om de jaargemiddelde geluidsbelasting uit te drukken. Deze dosismaat wordt gebruikt voor omgevingslawaai. Sinds 2004 zijn alle Europese landen verplicht om de Lden te gebruiken. Voor Lden wordt het etmaal verdeeld in een:
+
+Dagperiode van 07.00 - 19.00 uur
+Avondperiode van 19.00 - 23.00 uur
+Nachtperiode van 23.00 - 07.00 uur.
+Bij het geluid in de avond en de nachtperiode wordt 5 resp. 10 dB opgeteld omdat geluid in deze perioden hinderlijker is dan overdag. Tenslotte worden deze waarden `logaritmisch` gemiddeld. Het resultaat wordt Lden genoemd. Het wordt gebruikt om de hinder in beeld te brengen.
+
+Lnight
+Met Lnight wordt de geluidsbelasting gedurende de nachtperiode (23.00 - 07.00 uur) bedoeld. Hiermee wordt de mate van slaapverstoring in beeld gebracht.
+
+Etmaalwaarde
+Ook de etmaalwaarde is een manier om de geluidsbelasting uit te drukken. Het is echter geen jaargemiddelde maar de hoogste waarde van de volgende drie:
+
+de geluidsbelasting gedurende de dagperiode (07.00 - 19.00 uur)
+de geluidsbelasting gedurende de avondperiode (19.00 - 23.00 uur), vermeerderd met een toeslag van 5 dB(A)
+De geluidsbelasting gedurende de nachtperiode (23.00 - 07.00 uur), vermeerderd met een toeslag van 10 dB(A).
+In de Nederlandse wetgeving en ook in de geluidskaarten wordt alleen nog voor industrielawaai de etmaalwaarde voorgeschreven. Voor alle andere bronnen wordt uitgegaan van de Europese geluidsmaat (de Lden).",https://maps.amsterdam.nl/geluid,PlainVectorRegion,ContourDS,"The layer shows noise-level polygon bands such as 50-55 dB and >70 dB, so the main phenomenon is contour/interval classification rather than reporting units. Although polygons are highly adjacent, the map is a set of noise contour zones, not a full administrative tessellation.",,0.96,V1_gpt
+40,Geluidscontouren verkeer (deel 2),Noise contours traffic (part 2),https://maps.amsterdam.nl/open_geodata/?k=134,https://maps.amsterdam.nl/geluid,GELUID_VERKEER_2,PlainVectorRegion,ContourDS,Geluidskaart 2021,"Op de Geluidskaart Amsterdam is de (berekende) geluidbelasting weergegeven voor de belangrijkste verkeersbronnen in de stad. De geluidsbelasting (in decibellen oftewel dB) is voor twee situaties weergegeven:
+
+de gemiddelde geluidsbelasting over het etmaal, uitgedrukt in de Europese geluidsmaat Lden (Lday-evening-night).
+de gemiddelde geluidsbelasting in de nachtperiode (van 23 uur tot 7 uur), uitgedrukt in de Europese geluidsmaat Lnight. Nachtelijk lawaai in onze woonomgeving kan de slaap verstoren.
+Alleen voor industrielawaai wordt nog een Nederlandse geluidsmaat - de etmaalwaarde - gebruikt, die weergegeven wordt in dB(A). Onderstaand worden de verschillende begrippen nader verklaard.
+U kunt in het invoerveld rechtsboven de geluidskaarten ook een adres invoeren om bijvoorbeeld de situatie voor uw eigen woonomgeving weer te geven.
+
+
+Beschrijving van de opgenomen kaarten
+
+Wegverkeer
+Bij de berekeningen voor wegverkeer is uitgegaan van de verkeersintensiteiten op de wegen zoals die door de afdeling Verkeer en Openbare ruime (VOR) zijn geregistreerd. Per weg is daarbij aangegeven hoeveel motoren, personenauto’s, bussen, middelzware en zware vrachtauto’s gemiddeld per uur gedurende de dag- avond- en nachtperiode passeren. Aan de hand van het soort wegdekverharding (asfalt, klinkers), de wettelijk toegestane rijsnelheid en de eventuele aanwezigheid van geluidsschermen is de geluidbelasting in de omgeving van de weg berekend. Wegverkeerslawaai omvat het totale geluid van motoren, auto’s, bussen, vrachtwagens én trams.
+
+Railverkeer en luchtvaartlawaai
+Voor railverkeer- en luchtvaartlawaai zijn de gegevens beschikbaar gesteld door de bronbeheerders, te weten ProRail en het ministerie van Infrastructuur en Milieu.
+
+Industrielawaai
+Voor industrielawaai zijn de geluidniveaus ook weergegeven vanaf 55 dB (Lden) en vanaf 50 dB (Lnight). Ook is de grens van de gezoneerde industrieterreinen aangegeven alsmede de terreinafbakening van de 55 dB-inrichtingen. 
+
+
+Verklaring van begrippen
+
+dB of dB(A)
+Met deze afkorting wordt `decibel` bedoeld. Het is de eenheid waarmee de sterkte van het geluid wordt uitgedrukt. In de wetgeving wordt een onderscheid gemaakt tussen dB en dB(A). Met dB worden de decibels bedoeld die zijn uitgedrukt in de Europese geluidsmaat Lden terwijl met dB(A) de decibels worden uitgedrukt als etmaalwaarde.
+
+Lden
+Lden is een manier om de jaargemiddelde geluidsbelasting uit te drukken. Deze dosismaat wordt gebruikt voor omgevingslawaai. Sinds 2004 zijn alle Europese landen verplicht om de Lden te gebruiken. Voor Lden wordt het etmaal verdeeld in een:
+
+Dagperiode van 07.00 - 19.00 uur
+Avondperiode van 19.00 - 23.00 uur
+Nachtperiode van 23.00 - 07.00 uur.
+Bij het geluid in de avond en de nachtperiode wordt 5 resp. 10 dB opgeteld omdat geluid in deze perioden hinderlijker is dan overdag. Tenslotte worden deze waarden `logaritmisch` gemiddeld. Het resultaat wordt Lden genoemd. Het wordt gebruikt om de hinder in beeld te brengen.
+
+Lnight
+Met Lnight wordt de geluidsbelasting gedurende de nachtperiode (23.00 - 07.00 uur) bedoeld. Hiermee wordt de mate van slaapverstoring in beeld gebracht.
+
+Etmaalwaarde
+Ook de etmaalwaarde is een manier om de geluidsbelasting uit te drukken. Het is echter geen jaargemiddelde maar de hoogste waarde van de volgende drie:
+
+de geluidsbelasting gedurende de dagperiode (07.00 - 19.00 uur)
+de geluidsbelasting gedurende de avondperiode (19.00 - 23.00 uur), vermeerderd met een toeslag van 5 dB(A)
+De geluidsbelasting gedurende de nachtperiode (23.00 - 07.00 uur), vermeerderd met een toeslag van 10 dB(A).
+In de Nederlandse wetgeving en ook in de geluidskaarten wordt alleen nog voor industrielawaai de etmaalwaarde voorgeschreven. Voor alle andere bronnen wordt uitgegaan van de Europese geluidsmaat (de Lden).",https://maps.amsterdam.nl/geluid,PlainVectorRegion,ContourDS,"Polygon noise-contour bands with class labels like 50-55 dB and 55-60 dB indicate isoline/interval zones, so ContourDS. Despite many adjacent polygons, the polygons overlap and are contour fragments rather than a complete tessellation, so PlainVectorRegion.",,0.97,V1_gpt
+41,Verkiezingen Gemeenteraad 2018,Elections Municipality 2018,https://maps.amsterdam.nl/open_geodata/?k=250,https://maps.amsterdam.nl/gemeenteraad2018,GEMEENTERAAD2018,PointDS,ObjectDS,Atlas Verkiezingen,"In deze Atlas Verkiezingen zijn de kaarten met uitslagen per stemlocaties van verschillende verkiezingen samengevoegd.
+
+De cirkelgroottes zijn tussen de verkiezingen onderling vergelijkbaar.
+Dat betekent dat eenzelfde cirkelgrootte bij elke verkiezing hetzelfde aantal of dezelfde verhouding voorstelt. 
+De cirkelgroottes tussen Amsterdam en Zaanstad zijn verschillend, omdat de gebiedsgrootte verschillend is er er verder op Zaanstad is ingezoomd.
+Voor de berekening van de cirkelgrootte van aantallen is een lineaire schaal gebruikt. Hierdoor worden verschillen tussen weinig en veel stemmen wat uitvergroot. 
+Voor de leesbaarheid van de taartpunt-grafiekjes is een vierkantswortel schaal gebruikt, die de verschillen wat middelen.
+
+De kaarten zijn individueel te bekijken op:
+2024 - Europees Parlement
+2023 - Tweede Kamer
+2023 - Provinciale Staten
+2022 - Gemeenteraad
+2021 - Tweede Kamer
+2019 - Europees Parlement
+2019 - Provinciale Staten
+2018 - Gemeenteraad
+2017 - Tweede Kamer
+
+Zie ook de Atlas Verkiezingen Zaanstad",https://maps.amsterdam.nl/atlas_verkiezingen,PointDS,AmountDS,"Point features are voting locations/stembureaus, and the main mapped phenomenon is numeric vote totals and percentages shown by circle size; this is a point amount layer rather than point objects alone.",,0.98,V1_gpt
+42,Groene daken,Green roofs,https://maps.amsterdam.nl/open_geodata/?k=51,https://maps.amsterdam.nl/groene_daken,GROENE_DAKEN,PointDS,ObjectDS,Groene en multifunctionele daken,Op deze kaart vind je een overzicht van groene en multifunctionele daken in Amsterdam. Staat je dak er nog niet bij? Laat het ons dan weten. Dan zetten we jouw dak erbij.,https://maps.amsterdam.nl/dakenlandschap,PointDS,ObjectDS,"Point layer of identifiable green-roof locations/addresses in Amsterdam; the main phenomenon is discrete roof objects/projects, not measurements. Numeric fields are just attributes, so ObjectDS.",,0.98,V1_gpt
+43,Grondgebruik 2017,Land use 2017,https://maps.amsterdam.nl/open_geodata/?k=152,https://maps.amsterdam.nl/grondgebruik,GRONDGEBRUIK_2017,VectorTessellation,CoverageDS,,,,VectorTessellation,CoverageDS,Land use polygons form a near-complete partition with strong tessellation topology; the coded classes indicate exhaustive area-wide thematic coverage rather than individual objects or patches.,,0.99,V1_gpt
+44,Historische bebouwing,Historical buildings,https://maps.amsterdam.nl/open_geodata/?k=118,https://maps.amsterdam.nl/archeologie,HISTORISCHE_BEBOUWING,PointDS,ObjectDS,Publiekskaart Archeologie,"Amsterdam kent een rijke verzameling aan archeologische vindplaatsen. Dit kunnen losse voorwerpen of scherven zijn maar ook allerlei structuren zoals afval- en ophogingslagen, funderingen, kelders, beerputten, verdedigingsmuren of gedempte waterwegen. Deze archeologische sporen zijn bijzonder omdat ze verbonden zijn met het dagelijkse leven vanaf het allereerste begin van de stad. De afgelopen 45 jaar heeft Monumenten en Archeologie bij bouwprojecten overal in de stad onderzoek uitgevoerd. Op deze kaart worden een selectie van vindplaatsen online toegankelijk gemaakt, in combinatie met vijf historische kaarten als onderlegger. 
+
+Ieder vlakje op de kaart geeft een doorkijk naar de geschiedenis van die specifieke plek. Door op één van deze archeologische locaties te klikken verschijnen het adres, gegevens over het onderzoek en de vondsten, een foto en een verwijzing naar meer achtergrondinformatie. 
+
+Disclaimer
+De inhoud van deze kaart is niet volledig en niet up-to-date. De informatie is bedoeld voor een breed publiek en niet voor professionals
+Monumenten en Archeologie (MenA) is de bronhouder van de aangeboden kaartlagen en dient vermeld te worden indien u verwijst naar deze kaartlagen.",https://maps.amsterdam.nl/archeologie,PointDS,ObjectDS,"The layer maps discrete historical buildings/sites as selectable places with names, functions, and dates. Geometry is points, and the main phenomenon is identifiable objects rather than events or amounts.",,0.99,V1_gpt
+45,Hoe groot is Amsterdam,How big is Amsterdam,https://maps.amsterdam.nl/open_geodata/?k=166,https://maps.amsterdam.nl/hoegroot,HOEGROOT,PlainVectorRegion,ObjectDS,Hoe groot is Amsterdam?,"Verschuif de grenzen van Amsterdam (gemeente, agglomeratie, metropoolregio) over een andere plaats op de wereld om de oppervlakte te vergelijken.
+
+Klik (herhaaldelijk) op het vlak om het te roteren.
+Ctrl-klik om de ander kant op te roteren.
+De rotatie blijft niet behouden bij verschuiven.
+
+Click (repeatedly) on the shape to rotate.
+Ctrl-click to rotate the other way.
+The rotation is not maintained when dragged.",https://maps.amsterdam.nl/hoegroot,PlainVectorRegion,ObjectDS,"The layer depicts three selectable Amsterdam boundary shapes used as comparison objects, not a reporting-unit partition or full coverage. The decisive rule is object/area feature semantics with isolated polygons, so PlainVectorRegion + ObjectDS.",,0.92,V1_gpt
+46,Honden uitren- en verbodsgebieden,Dogs run and ban areas,https://maps.amsterdam.nl/open_geodata/?k=245,https://maps.amsterdam.nl/honden,HONDEN,PlainVectorRegion,PatchDS,Hondenlosloop- en verbodsgebieden,"Overal op straat en in parken en plantsoenen moeten honden zijn aangelijnd. Tenzij met bordjes is aangegeven dat honden mogen loslopen/uitrennen (groene gebieden op de kaart) of dat honden er niet mogen komen, ook niet aangelijnd (rode gebieden op de kaart). Soms is dat in een bepaalde periode van het jaar (blauwe gebieden op de kaart).
+
+Deze uitrengebieden, verbodsgebieden en restrictiegebieden worden door de stadsdelen vastgesteld. Speeltuinen en speelplekken, sportparken en sportplekken, schoolpleinen en zwembadjes zijn sowieso verbodsgebieden, ook als ze niet op deze kaart zijn aangegeven.
+
+Vragen of opmerkingen over een bepaald uitlaatgebied kunnen worden gemaild aan de gebiedsmakelaar van de buurt waarin dit gebied gelegen is. Deze gebiedsmakelaars zijn te vinden op de gemeentelijke pagina: https://www.amsterdam.nl/buurten/
+
+Deze kaart is niet juridisch leidend of bindend.",https://maps.amsterdam.nl/honden,PlainVectorRegion,PatchDS,"Polygon areas mark selected dog off-leash, prohibition, and restriction zones, not a full-area partition; topology also supports PlainVectorRegion. Entity is PatchDS because these are bounded special-use areas/phenomenon patches rather than objects or reporting units.",,0.98,V1_gpt
+47,Hoofdgroenstructuur (HGS),Main Green Structure,https://maps.amsterdam.nl/open_geodata/?k=55,https://maps.amsterdam.nl/hoofdgroenstructuur,HOOFDGROENSTRUCTUUR,PlainVectorRegion,ObjectDS,Hoofdgroenstructuur,"De Hoofdgroenstructuur omvat de minimaal benodigde hoeveelheid groen die Amsterdam wil borgen, bestaande uit gebieden die waardevol zijn voor de stad en de metropool. Zij vervullen een onmisbare functie voor groene recreatie, verbetering leefklimaat, waterhuishouding, hittedemping, verbetering luchtkwaliteit, biodiversiteit en voedselproductie. Behoud van cultuurhistorische waarden en een gevarieerd totaalaanbod aan groen zijn belangrijke aspecten.
+
+In de Hoofdgroenstructuur zijn die gebieden opgenomen waar de functies groen en groene recreatie voorop staan. Woningbouw, werkgerelateerde functies, wegenaanleg of het vestigen van voorzieningen die verkeer aantrekken of die ten koste gaan van groen zijn niet in overeenstemming met de doelstellingen van de structuurvisie. Ingrepen die de recreatieve gebruikswaarde en/of de natuurwaarde of andere functies van het groen verhogen worden juist gestimuleerd.
+
+Ingrepen in de Hoofdgroenstructuur worden door de Technische Adviescommissie Hoofdgroenstructuur (TAC) op inpasbaarheid beoordeeld. De TAC is een externe commissie samengesteld uit deskundigen op het gebied van landschap(sarchitectuur), cultuurhistorie, ecologie, recreatie, beleving, stedenbouw, groenbeheer, sport, volkstuinen en natuur- en milieueducatie. De beoordelingscriteria zijn opgenomen in tabellen (zie pagina 245) van de structuurvisie. Daarin staat per groentype aangegeven welke ingrepen wel en niet zijn toegestaan. De gebieden zijn terug te vinden op deze interactieve kaart van de Hoofdgroenstructuur.
+
+
+Gebruik van de kaart en TAC adviezen
+
+Om de adviezen zichtbaar te maken dient zowel een jaar als een thema te worden aangevinkt in de legenda. In 2012 zijn ten opzichte van de vorige versie van de Hoofdgroenstructuurkaart de nodige aanpassingen gedaan met als resultaat een netto-uitbreiding van Hoofdgroenstructuur met 745 hectare. Er zijn echter ook enkele delen uitgehaald. Enkele oudere TAC adviezen vallen daardoor buiten de huidige Hoofdgroenstructuur.
+
+Meer informatie over de Structuurvisie vindt u hier
+Meer informatie over de TAC vindt u hier
+
+Voor inhoudelijke vragen kunt u terecht bij het secretariaat: secretariaatTAC@amsterdam.nl",https://maps.amsterdam.nl/hoofdgroenstructuur,PlainVectorRegion,PatchDS,"The layer maps selected green-structure areas and protected green zones, not a full-area partition or reporting units; polygons are discrete bounded patches. The decisive rule is PatchDS for selected phenomenon areas.",,0.96,V1_gpt
+48,Iepen particulier,Elm trees - private,https://maps.amsterdam.nl/open_geodata/?k=330,https://maps.amsterdam.nl/iepen,IEPEN_PARTICULIER,PointDS,ObjectDS,Bijzondere bomen + Adviezen bescherming en beheer (CBH),"Groeikaart
+
+Deze kaart met bijzondere bomen is een groeikaart. Momenteel wordt de lijst met bijzondere bomen gebiedsgewijs geactualiseerd en geharmoniseerd. Per stadsdeel/stadsgebied wordt de kaart steeds verder opgevuld en bijgewerkt. 
+
+Onder de knop vastgestelde beschermstatus staan alle bomen die (her)beoordeeld worden of al opnieuw vastgesteld zijn. Hier vind je ook de (nieuw geplante) toekomstbomen.
+
+Onder de knop geadviseerde beschermstatus staan de bomen waarbij de CBH al een actualiserings-advies heeft uitgebracht. De CBH is een door B&W benoemde onafhankelijk adviescommissie. Meer over deze commissie lees je rechtsonder op de kaart onder Bijzondere bomen en de adviescommissie CBH.
+
+Door het op de kaart aanklikken van een boom, zie je meer informatie en kan je extra informatie downloaden (N.B. dat kan nu dus nog niet bij alle bomen). Niet alle bomen op deze kaart staan al precies op de juiste plek, maar ze staan dan wel in de buurt van hun werkelijke locatie.",https://maps.amsterdam.nl/bomen_bijzonder,PointDS,ObjectDS,"Point layer of individual elm trees; the decisive rule is ObjectDS for distinct real-world objects, with PointDS geometry.",,0.98,V1_gpt
+49,Jongeren- en Studentenhuisvesting,Youth and Student Housing,https://maps.amsterdam.nl/open_geodata/?k=115,https://maps.amsterdam.nl/jongerenstudentenhuisvesting,JONGERENSTUDENTENHUISVESTING,PointDS,ObjectDS,,,,PointDS,ObjectDS,"Point features mark discrete housing projects/buildings with names, addresses, owners, and dwelling counts; the numeric field is an attribute, not the main phenomenon, so this is an object layer.",,0.98,V1_gpt
+50,Kastanjebloedingsziekte,Chestnut bleeding disorder,https://maps.amsterdam.nl/open_geodata/?k=93,https://maps.amsterdam.nl/kastanjes,KASTANJES,PointDS,ObjectDS,Bijzondere bomen + Adviezen bescherming en beheer (CBH),"Groeikaart
+
+Deze kaart met bijzondere bomen is een groeikaart. Momenteel wordt de lijst met bijzondere bomen gebiedsgewijs geactualiseerd en geharmoniseerd. Per stadsdeel/stadsgebied wordt de kaart steeds verder opgevuld en bijgewerkt. 
+
+Onder de knop vastgestelde beschermstatus staan alle bomen die (her)beoordeeld worden of al opnieuw vastgesteld zijn. Hier vind je ook de (nieuw geplante) toekomstbomen.
+
+Onder de knop geadviseerde beschermstatus staan de bomen waarbij de CBH al een actualiserings-advies heeft uitgebracht. De CBH is een door B&W benoemde onafhankelijk adviescommissie. Meer over deze commissie lees je rechtsonder op de kaart onder Bijzondere bomen en de adviescommissie CBH.
+
+Door het op de kaart aanklikken van een boom, zie je meer informatie en kan je extra informatie downloaden (N.B. dat kan nu dus nog niet bij alle bomen). Niet alle bomen op deze kaart staan al precies op de juiste plek, maar ze staan dan wel in de buurt van hun werkelijke locatie.",https://maps.amsterdam.nl/bomen_bijzonder,PointDS,ObjectDS,"Point features represent individual chestnut trees, a set of identifiable objects. The numeric field is just an ID, and the layer is an object inventory with condition attributes, not a measurement layer.",,0.98,V1_gpt
+51,Klimaat - Droogte,Climate - Drought,https://maps.amsterdam.nl/open_geodata/?k=317,https://maps.amsterdam.nl/klimaatadaptatie,KLIMAAT_DROOGTE,PointDS,PointMeasuresDS,Klimaatadaptatie,"Volgens de KNMI`14-klimaatscenario`s moeten we in de toekomst rekening houden met hogere temperaturen, een sneller stijgende zeespiegel, nattere winters, heftigere buien en drogere zomers in Nederland. Door de opwarming van de aarde worden buien steeds heftiger en komen ze vaker voor. De riolen in de stad krijgen hierdoor veel meer water te verwerken dan voorheen. Daarnaast zijn de laaggelegen gebieden in Amsterdam het meest kwetsbaar voor eventuele overstromingen vanuit onder andere de Noordzee (IJmuiden) en de rivier de Lek. Ook neemt de kans op extreme hitte en langdurige droogte toe.
+
+In het Deltaplan Ruimtelijke Adaptatie is afgesproken dat alle overheden uiterlijk in 2019 klimaatstresstesten hebben uitgevoerd op de thema`s hitte, droogte, wateroverlast en overstromingen en dat deze voor iedereen toegankelijk zijn. Met behulp van stresstesten zijn de kwetsbaarheden voor deze thema`s in Amsterdam in kaart gebracht. De uitkomsten van deze stresstesten worden gebruikt bij het opstellen van een klimaatadaptatiestrategie voor Amsterdam.
+
+In deze atlas vindt u per thema (hitte, droogte, wateroverlast en overstromingen) een kaart van onze stad. De kaarten zijn constant in ontwikkeling en worden aangepast zodra er nieuwe informatie beschikbaar is.
+
+Wilt u een vraag stellen of een idee delen? Dan kunt u mailen naar onderstaand mailadres.
+
+
+De hittestresskaart bestaat uit duizenden tiles/afbeeldingen en is derhalve niet als geodataset beschikbaar op Maps Data.",https://maps.amsterdam.nl/klimaatadaptatie,PointDS,PointMeasuresDS,"Point features sample a continuous climate/hydrology field (Maaiveld, GLG, GLG_maaiveld), so this is a point measurement layer rather than objects or amounts.",,0.94,V1_gpt
+52,Klimaat - Overstroming,Climate - Flood,https://maps.amsterdam.nl/open_geodata/?k=318,https://maps.amsterdam.nl/klimaatadaptatie,KLIMAAT_OVERSTROMING,VectorTessellation,CoverageDS,Klimaatadaptatie,"Volgens de KNMI`14-klimaatscenario`s moeten we in de toekomst rekening houden met hogere temperaturen, een sneller stijgende zeespiegel, nattere winters, heftigere buien en drogere zomers in Nederland. Door de opwarming van de aarde worden buien steeds heftiger en komen ze vaker voor. De riolen in de stad krijgen hierdoor veel meer water te verwerken dan voorheen. Daarnaast zijn de laaggelegen gebieden in Amsterdam het meest kwetsbaar voor eventuele overstromingen vanuit onder andere de Noordzee (IJmuiden) en de rivier de Lek. Ook neemt de kans op extreme hitte en langdurige droogte toe.
+
+In het Deltaplan Ruimtelijke Adaptatie is afgesproken dat alle overheden uiterlijk in 2019 klimaatstresstesten hebben uitgevoerd op de thema`s hitte, droogte, wateroverlast en overstromingen en dat deze voor iedereen toegankelijk zijn. Met behulp van stresstesten zijn de kwetsbaarheden voor deze thema`s in Amsterdam in kaart gebracht. De uitkomsten van deze stresstesten worden gebruikt bij het opstellen van een klimaatadaptatiestrategie voor Amsterdam.
+
+In deze atlas vindt u per thema (hitte, droogte, wateroverlast en overstromingen) een kaart van onze stad. De kaarten zijn constant in ontwikkeling en worden aangepast zodra er nieuwe informatie beschikbaar is.
+
+Wilt u een vraag stellen of een idee delen? Dan kunt u mailen naar onderstaand mailadres.
+
+
+De hittestresskaart bestaat uit duizenden tiles/afbeeldingen en is derhalve niet als geodataset beschikbaar op Maps Data.",https://maps.amsterdam.nl/klimaatadaptatie,VectorTessellation,ContourDS,"The polygons form a near-partition with strong shared boundaries, so VectorTessellation. The layer maps flood risk classes by probability/depth bands, which are contour-like interval zones rather than objects or reporting units.",,0.96,V1_gpt
+53,Markten,Markets,https://maps.amsterdam.nl/open_geodata/?k=123,https://maps.amsterdam.nl/markten,MARKTEN,PointDS,ObjectDS,"Markten, winkelgebieden en straathandel","Op deze kaart ziet u alle dag- en weekmarkten die op vaste tijden en vaste locaties in Amsterdam worden gehouden. Daarnaast zijn er op verschillende momenten door het jaar heen en op allerlei locaties in Amsterdam bijzondere markten op feesten en evenementen die door een buurt of een vereniging worden georganiseerd. Raadpleeg hiervoor de evenementenkalender van uw stadsdeel. 
+
+De meeste markten worden beheerd door het Marktbureau van de gemeente Amsterdam. De marktkooplieden die op deze markten staan hebben een marktpas en/of een (dag)vergunning nodig voor een plaatsje op de markt. Zie www.amsterdam.nl/markt/ 
+Bij een aantal markten is het beheer in particuliere handen. De organisatoren hebben hiervoor een evenementenvergunning nodig. Marktkooplieden en ondernemers kunnen zich bij deze organisaties inschrijven en/of een kraam aanvragen.",https://maps.amsterdam.nl/markten,PointDS,ObjectDS,"Point features represent named market locations with opening days/times; this is a set of discrete places/venues, not a measurement or event layer.",,0.99,V1_gpt
+54,Groene monumenten,Green monuments,https://maps.amsterdam.nl/open_geodata/?k=68,https://maps.amsterdam.nl/monumentaal_groen,MONUMENTAAL_GROEN,PointDS,ObjectDS,Bijzondere bomen + Adviezen bescherming en beheer (CBH),"Groeikaart
+
+Deze kaart met bijzondere bomen is een groeikaart. Momenteel wordt de lijst met bijzondere bomen gebiedsgewijs geactualiseerd en geharmoniseerd. Per stadsdeel/stadsgebied wordt de kaart steeds verder opgevuld en bijgewerkt. 
+
+Onder de knop vastgestelde beschermstatus staan alle bomen die (her)beoordeeld worden of al opnieuw vastgesteld zijn. Hier vind je ook de (nieuw geplante) toekomstbomen.
+
+Onder de knop geadviseerde beschermstatus staan de bomen waarbij de CBH al een actualiserings-advies heeft uitgebracht. De CBH is een door B&W benoemde onafhankelijk adviescommissie. Meer over deze commissie lees je rechtsonder op de kaart onder Bijzondere bomen en de adviescommissie CBH.
+
+Door het op de kaart aanklikken van een boom, zie je meer informatie en kan je extra informatie downloaden (N.B. dat kan nu dus nog niet bij alle bomen). Niet alle bomen op deze kaart staan al precies op de juiste plek, maar ze staan dan wel in de buurt van hun werkelijke locatie.",https://maps.amsterdam.nl/bomen_bijzonder,PointDS,ObjectDS,"Point features representing discrete named green monuments/bomen with status and registry attributes; classify as object points, not amounts or events.",,0.98,V1_gpt
+55,Monumentale bomen,Monumental trees,https://maps.amsterdam.nl/open_geodata/?k=59,https://maps.amsterdam.nl/monumentaal_groen,MONUMENTALE_BOMEN,PointDS,ObjectDS,Bijzondere bomen + Adviezen bescherming en beheer (CBH),"Groeikaart
+
+Deze kaart met bijzondere bomen is een groeikaart. Momenteel wordt de lijst met bijzondere bomen gebiedsgewijs geactualiseerd en geharmoniseerd. Per stadsdeel/stadsgebied wordt de kaart steeds verder opgevuld en bijgewerkt. 
+
+Onder de knop vastgestelde beschermstatus staan alle bomen die (her)beoordeeld worden of al opnieuw vastgesteld zijn. Hier vind je ook de (nieuw geplante) toekomstbomen.
+
+Onder de knop geadviseerde beschermstatus staan de bomen waarbij de CBH al een actualiserings-advies heeft uitgebracht. De CBH is een door B&W benoemde onafhankelijk adviescommissie. Meer over deze commissie lees je rechtsonder op de kaart onder Bijzondere bomen en de adviescommissie CBH.
+
+Door het op de kaart aanklikken van een boom, zie je meer informatie en kan je extra informatie downloaden (N.B. dat kan nu dus nog niet bij alle bomen). Niet alle bomen op deze kaart staan al precies op de juiste plek, maar ze staan dan wel in de buurt van hun werkelijke locatie.",https://maps.amsterdam.nl/bomen_bijzonder,PointDS,ObjectDS,"Point layer of individual monumental trees; each point represents a distinct real-world object, not a measurement or event.",,0.99,V1_gpt
+56,Monumenten,Monuments,https://maps.amsterdam.nl/open_geodata/?k=155,https://maps.amsterdam.nl/monumenten,MONUMENTEN,PointDS,ObjectDS,Monumenten,"Deze interactieve kaart toont alle monumenten in de gemeente Amsterdam. Er wordt onderscheid gemaakt tussen rijksmonumenten (blauw) , gemeentelijke monumenten (rood) en gemeentelijke monumenten in procedure (oranje). Ook is er onderscheid tussen gebouwen en niet-gebouwen. 
+De kaart wordt via webservices vanuit het Datapunt van de Gemeente Amsterdam gevoed.
+
+
+Disclaimer
+
+Monumenten & Archeologie (MA) is de bronhouder van de aangeboden kaartlaag en dient vermeld te worden indien u verwijst naar deze kaart. MA kan niet aansprakelijk worden gehouden voor de gevolgen van het gebruik van gegevens op deze website. Er is veel zorg besteed aan de inhoudelijke kwaliteit van de informatie. Onderzoek is echter steeds gaande. Onvolledigheden, veranderingen door voortschrijden van inzichten of andere gebreken kunnen niet worden uitgesloten.",https://maps.amsterdam.nl/monumenten,PointDS,ObjectDS,"Point features represent discrete monuments (buildings, artworks, sites) with status/type attributes; this is an object layer, not an amount or event layer.",,0.99,V1_gpt
+57,Muurplanten,Quay wall plants,https://maps.amsterdam.nl/open_geodata/?k=106,https://maps.amsterdam.nl/muurplanten,MUURPLANTEN,PointDS,ObjectDS,Te behouden (muur)flora,"In Amsterdam groeien bijzondere planten. Ze groeien op kademuren, brugconstructies en steenglooiingen, maar ook op overige locaties. Enkele soorten zijn beschermd onder de Wet natuurbescherming (Wnb). Voor andere soorten heeft de gemeente vanuit nationaal perspectief een bijzondere verantwoordelijkheid (zorgplicht), bijvoorbeeld omdat deze planten maar op een of twee locaties in Nederland groeien. Deze plantensoorten zijn opgenomen in de Amsterdamse gedragscode flora en fauna en zijn aangeduid met de categorie Amsterdamse beleidssoorten + (ABS+). Op de kaart zijn de actuele groeiplaatsen (2022) van deze soorten weergegeven. Met ingang van 2024 wordt hun voorkomen tweejaarlijks onderzocht en daarop de kaartbeelden geactualiseerd.
+
+De Amsterdamse gedragscode flora en fauna kent ook Amsterdamse beleidssoorten+ voor `overige flora`, waaronder veel orchideeën. De groeiplaatsen van deze soorten zijn niet aangegeven op de kaart, maar in de Amsterdamse gedragscode is opgenomen welk stappenplan doorlopen moet worden bij (potentiële) aanwezigheid van deze soorten.
+
+Op de kaart is een selectie opgenomen van de Amsterdamse beleidssoorten die vallen in de categorie `overige muurflora` van de Amsterdamse gedragscode flora en fauna. De kaartinformatie stamt uit 2013 en is nog t/m 2023 raadpleegbaar. De gegevens zullen naar verwachting worden geactualiseerd.
+
+Voor locaties waar te behouden planten aanwezig zijn, geldt dat hier rekening mee gehouden moet worden bij ruimtelijke inrichting en beheer en onderhoud. Meer informatie over de bescherming van flora en de bijbehorende maatregelen zijn te vinden in 
+de Amsterdamse gedragscode flora en fauna. 
+
+Ook op locaties waar geen flora met een bijzondere status voorkomt, heeft de gemeente de ambitie om in te zetten op biotoopontwikkeling en behoud van (algemene) soorten.",https://maps.amsterdam.nl/muurflora,PointDS,ExistenceDS,"Point layer of actual plant growth locations; the main mapped phenomenon is presence of protected quay wall flora, not numeric counts. The yearly Aantal fields are attributes, so existence/presence at points is the decisive rule.",,0.93,V1_gpt
+58,NO2 metingen 4-weken,NO2 measurements 4 weeks,https://maps.amsterdam.nl/open_geodata/?k=331,https://maps.amsterdam.nl/no2,NO2_4WEKEN,PointDS,PointMeasuresDS,Luchtkwaliteit - NO₂-metingen,"Inhoud
+
+
+
+Wat voor informatie is hier te vinden
+
+Disclaimer
+
+Automatische meetstations en NO₂-buisjes
+
+Wat is NO₂? - NO₂ en gezondheid
+
+Welke factoren zijn van invloed op de NO₂ concentratie?
+
+Verschillende meetpunten
+
+Wettelijke toetsing
+
+Wat voor informatie is hier te vinden
+
+Hieronder vindt u algemene informatie over stikstofdioxide (NO₂), de metingen, meetpunten, wettelijk kader en invloed op de gezondheid. Wat u hier NIET zult vinden is een interpretatie van de recente meetresultaten. De gemeten NO₂ concentraties worden enkele maanden na afloop van elk kalenderjaar samengevat en in perspectief geplaatst in de jaarrapportages van de GGD Amsterdam. Deze zijn te downloaden via www.luchtmeetnet.nl.
+
+
+Disclaimer
+
+De meetresultaten kunnen nog worden bijgesteld in het kader van de kwaliteitscontrole die standaard op de meetgegevens plaatsvindt. 
+De data is definitief als het jaarrapport is gepubliceerd. De data op de website zijn dus indicatief en er kunnen geen rechten aan worden ontleend. 
+
+
+Automatische meetstations en NO₂-buisjes
+
+Op de kaart worden de NO₂ metingen getoond in Amsterdam en (wijde) omgeving die door de GGD Amsterdam worden uitgevoerd. Er staan zowel automatische meetstations (volgens de Europese meetstandaarden) als de diffuse metingen op de website.
+
+De automatische metingen worden uitgevoerd op meetstations (onderdeel van het landelijk luchtmeetnet) en de buisjesmetingen met NO₂-buisjes, ook wel Palmes buisjes genoemd. De automatische meetstations meten 24 uur per dag en 7 dagen per week verschillende luchtverontreinigende componenten. Dit gebeurt met methoden die voldoen aan de wettelijke (EU) eisen. De uurgemiddelde metingen zijn te bekijken via de website www.luchtmeetnet.nl. In aanvulling op deze automatische meetstations wordt op een groot aantal plekken verspreid over de stad de jaargemiddelde NO₂-concentratie gemeten met een eenvoudige en goedkopere, passieve meetmethode. Dit zijn de NO₂- buisjes. Na `ijking` van de buisjes aan het automatisch meetnet kunnen hiermee betrouwbare 4-weeksgemiddelden worden bepaald. Met de NO₂-buisjes worden geen uur- of dagwaarden gemeten. De meetmethode voldoet weliswaar niet aan de wettelijke eisen, maar geeft wel een betrouwbaar beeld van de jaargemiddelde NO₂ concentratie. De metingen geven dus meer inzicht in verschillen en spreiding van hogere en lagere NO₂ concentraties in de stad en omgeving. Het NO₂-buisjes netwerk geeft daardoor een gedetailleerd en betrouwbaar beeld van de luchtkwaliteit in Amsterdam. 
+
+
+Wat is NO₂?
+
+NO₂ is stikstofdioxide. NO₂ is een gas dat ontstaat bij verbrandingsprocessen, zoals in de motor van een auto. Het is een belangrijke indicator voor de luchtverontreiniging door verkeer. Een veel gebruikte maat om de hoeveelheid of concentratie NO₂ in de lucht uit te drukken is microgram per kubieke meter buitenlucht. Microgram per kubieke meter wordt vaak korter geschreven als: μg/m3. Hoe hoger de concentratie (μg/m3) NO₂, hoe slechter de luchtkwaliteit is.
+
+
+NO₂ en gezondheid
+
+Blootstelling aan NO₂ kan samenhangen met een verminderde longfunctie. Ook een toename van luchtwegklachten en astma-aanvallen en een verhoogde gevoeligheid voor infecties komen voor. Omdat NO₂ in de buitenlucht altijd voorkomt in combinatie met andere door het verkeer uitgestoten componenten (zoals roetdeeltjes), is niet goed duidelijk in hoeverre dit aan het NO₂ zelf ligt of dat NO₂ vooral (ook) een indicator is voor het mengsel van schadelijke stoffen. De wereld gezondheidsorganisatie (WHO) heeft voor NO₂ een gezondheidskundige advieswaarde opgesteld voor lange termijn blootstelling. Dit is 10 microgram per kubieke meter (m3) als jaargemiddelde concentratie. Vanuit het oogpunt van gezondheid is het belangrijk dat de concentraties luchtverontreiniging zo laag mogelijk zijn. 
+
+
+Welke factoren zijn van invloed op de NO₂ concentratie?
+
+Het weer heeft een grote invloed op de NO₂ concentratie: in de zomer zijn de concentraties (veel) lager dan in de winter. Ook binnen een seizoen kunnen de 4-weeksgemiddelde concentraties sterk variëren. De windrichting en windkracht bepaalt onder andere hoeveel NO₂ er komt `aanwaaien` en in welke mate de verontreiniging ‘blijft hangen’. De 4-weeks gemiddelde concentraties kunnen daarom niet worden vergeleken met de grenswaarde voor het jaargemiddelde. De 4-weeksgemiddelden kunnen wel met elkaar worden vergeleken, en geven dan informatie over relatief meer of minder verontreinigde plekken. In Amsterdam is het verkeer de belangrijkste bron van NO₂. Daarom is op plekken met veel verkeer de NO₂ concentratie hoger dan op plekken met weinig verkeer. Op de kaart zijn de straat- en snelweglocaties de plekken met veel verkeer en de achtergrondlocaties de plekken met weinig verkeer.
+
+
+Verschillende meetpunten
+
+De NO₂-buisjes hangen op verschillende plekken in de stad en omgeving. Er zijn zes type meetpunten te onderscheiden. Dit zijn: achtergrond, straat, snelweg, waterweg, luchtvaart en industrie. Op de kaart zijn ook de automatische meetstations toegevoegd.
+
+
+Achtergrond: dit zijn plekken waar weinig tot geen verkeer is. Rustige straten in een woonwijk zijn hier een voorbeeld van. De NO₂ concentratie is hier lager dan op de andere meetpunten.
+
+Straat: dit zijn plekken aan drukke straten waar veel verkeer rijdt. Een voorbeeld hiervan zijn de buisjes op de Stadhouderskade in Amsterdam.
+
+Snelweg: dit zijn plekken langs een snelweg, zoals langs de Ring A10.
+
+Waterweg: dit zijn plekken waar scheepvaart langskomt, zoals op het Java-eiland.
+
+Luchtvaart: dit zijn plekken die in de buurt van Schiphol liggen. Het gaat om de automatische meetstations Badhoevedorp, Hoofddorp en Oude Meer.
+
+Industrie: dit zijn plekken in de buurt van industriële activiteiten zoals in de IJmond en bij het Havengebied van Amsterdam.
+Op de kaart worden ook de door de GGD Amsterdam beheerde automatische meetstations getoond. Deze zijn te herkennen aan de naam `GGD meetstation`. Na het klikken op het bolletje staat er bij Type meting `Automatisch meetnet`. Bij NO₂-buisjes staat er bij Type meting `Palmes`. Op de meetstations worden 24 uur per dag en 7 dagen per week metingen uitgevoerd. Deze metingen kunnen via luchtmeetnet.nl worden bekeken. Op deze site is ook te zien waar de meetstations liggen. Om een goede vergelijking met de NO₂-buisjes te kunnen maken worden de 4-weeksgemiddelden getoond. Deze 4-weeksgemiddelden zijn de gemiddelden over dezelfde periode als de NO₂-buisjes. De jaargemiddelde waardes van de meetstations, die op maps.amsterdam.nl/no2 worden getoond, zijn gebaseerd op de periode 1 januari tot en met 31 december. Deze waardes kunnen iets afwijken van het gemiddelde van de dertien 4-weeksgemiddelden. De metingen van de NO₂-buisjes starten namelijk niet precies op 1 januari en eindigen niet precies op 31 december. 
+
+Door de concentraties op straat-, snelweg-, industrie- of waterweglocaties te vergelijken met nabij gelegen achtergrondlocaties, kan iets gezegd worden over de bijdrage van de betreffende straat, snelweg, industrie of waterweg aan de lokale concentratie. 
+
+
+Wettelijke toetsing
+
+Wettelijke toetsing van de luchtkwaliteit gebeurt in Nederland op basis van berekeningen. Deze berekeningen worden jaarlijks uitgevoerd door het RIVM met de Monitoringstool. Meetgegevens van onder andere de GGD Amsterdam leveren input voor deze modelberekeningen. In de wetgeving is vastgelegd dat de luchtkwaliteit wordt berekend op wettelijke toetspunten. In de praktijk is dit in steden meestal aan de gevel van woningen of andere gebouwen waar mensen langdurig verblijven. Deze wettelijke toetsing met behulp van de Monitoringstool wordt aan het einde van elk jaar uitgevoerd voor het voorgaande kalenderjaar. Uitgebreide informatie over de Monitoringstool is te vinden op nsl-monitoring.nl. In Europa is afgesproken om de wettelijke grenswaarde voor NO₂ in 2030 aan te passen naar 20 microgram per m3.
+
+Nieuwe meetlocaties worden zoveel mogelijk geplaatst op wettelijke toetsafstand (aan de gevel). De wettelijke toetsafstand is in het verleden echter enkele malen gewijzigd, en het was (en is) niet altijd mogelijk om exact op wettelijke toetsafstand te meten. Voor een goed beeld van de ontwikkeling van de luchtkwaliteit is het belangrijk om metingen langdurig op exact dezelfde plek uit te voeren. Een groot deel van de NO₂-buisjes metingen wordt daarom niet op wettelijke toetsafstand uitgevoerd, maar dichterbij de weg. Als je op een punt op de kaart klikt dan is te zien of het buisje op wettelijke toetsafstand hangt (ja/nee) en op welke afstand het buisje van de gevel hangt (in meters). De buisjes waarbij de afstand 0.1 meter is hangen aan de gevel.",https://maps.amsterdam.nl/no2,PointDS,PointMeasuresDS,"The layer represents NO2 measurements at monitoring locations (stations/buisjes), so the main phenomenon is point-sampled environmental measurement. Geometry is point-based despite the MultiPolygon encoding, and the decisive entity rule is point measurements, not amount or object.",,0.98,V1_gpt
+59,NO2 metingen locaties,NO2 measurements locations,https://maps.amsterdam.nl/open_geodata/?k=308,https://maps.amsterdam.nl/no2,NO2_LOCATIES,PointDS,ObjectDS,Luchtkwaliteit - NO₂-metingen,"Inhoud
+
+
+
+Wat voor informatie is hier te vinden
+
+Disclaimer
+
+Automatische meetstations en NO₂-buisjes
+
+Wat is NO₂? - NO₂ en gezondheid
+
+Welke factoren zijn van invloed op de NO₂ concentratie?
+
+Verschillende meetpunten
+
+Wettelijke toetsing
+
+Wat voor informatie is hier te vinden
+
+Hieronder vindt u algemene informatie over stikstofdioxide (NO₂), de metingen, meetpunten, wettelijk kader en invloed op de gezondheid. Wat u hier NIET zult vinden is een interpretatie van de recente meetresultaten. De gemeten NO₂ concentraties worden enkele maanden na afloop van elk kalenderjaar samengevat en in perspectief geplaatst in de jaarrapportages van de GGD Amsterdam. Deze zijn te downloaden via www.luchtmeetnet.nl.
+
+
+Disclaimer
+
+De meetresultaten kunnen nog worden bijgesteld in het kader van de kwaliteitscontrole die standaard op de meetgegevens plaatsvindt. 
+De data is definitief als het jaarrapport is gepubliceerd. De data op de website zijn dus indicatief en er kunnen geen rechten aan worden ontleend. 
+
+
+Automatische meetstations en NO₂-buisjes
+
+Op de kaart worden de NO₂ metingen getoond in Amsterdam en (wijde) omgeving die door de GGD Amsterdam worden uitgevoerd. Er staan zowel automatische meetstations (volgens de Europese meetstandaarden) als de diffuse metingen op de website.
+
+De automatische metingen worden uitgevoerd op meetstations (onderdeel van het landelijk luchtmeetnet) en de buisjesmetingen met NO₂-buisjes, ook wel Palmes buisjes genoemd. De automatische meetstations meten 24 uur per dag en 7 dagen per week verschillende luchtverontreinigende componenten. Dit gebeurt met methoden die voldoen aan de wettelijke (EU) eisen. De uurgemiddelde metingen zijn te bekijken via de website www.luchtmeetnet.nl. In aanvulling op deze automatische meetstations wordt op een groot aantal plekken verspreid over de stad de jaargemiddelde NO₂-concentratie gemeten met een eenvoudige en goedkopere, passieve meetmethode. Dit zijn de NO₂- buisjes. Na `ijking` van de buisjes aan het automatisch meetnet kunnen hiermee betrouwbare 4-weeksgemiddelden worden bepaald. Met de NO₂-buisjes worden geen uur- of dagwaarden gemeten. De meetmethode voldoet weliswaar niet aan de wettelijke eisen, maar geeft wel een betrouwbaar beeld van de jaargemiddelde NO₂ concentratie. De metingen geven dus meer inzicht in verschillen en spreiding van hogere en lagere NO₂ concentraties in de stad en omgeving. Het NO₂-buisjes netwerk geeft daardoor een gedetailleerd en betrouwbaar beeld van de luchtkwaliteit in Amsterdam. 
+
+
+Wat is NO₂?
+
+NO₂ is stikstofdioxide. NO₂ is een gas dat ontstaat bij verbrandingsprocessen, zoals in de motor van een auto. Het is een belangrijke indicator voor de luchtverontreiniging door verkeer. Een veel gebruikte maat om de hoeveelheid of concentratie NO₂ in de lucht uit te drukken is microgram per kubieke meter buitenlucht. Microgram per kubieke meter wordt vaak korter geschreven als: μg/m3. Hoe hoger de concentratie (μg/m3) NO₂, hoe slechter de luchtkwaliteit is.
+
+
+NO₂ en gezondheid
+
+Blootstelling aan NO₂ kan samenhangen met een verminderde longfunctie. Ook een toename van luchtwegklachten en astma-aanvallen en een verhoogde gevoeligheid voor infecties komen voor. Omdat NO₂ in de buitenlucht altijd voorkomt in combinatie met andere door het verkeer uitgestoten componenten (zoals roetdeeltjes), is niet goed duidelijk in hoeverre dit aan het NO₂ zelf ligt of dat NO₂ vooral (ook) een indicator is voor het mengsel van schadelijke stoffen. De wereld gezondheidsorganisatie (WHO) heeft voor NO₂ een gezondheidskundige advieswaarde opgesteld voor lange termijn blootstelling. Dit is 10 microgram per kubieke meter (m3) als jaargemiddelde concentratie. Vanuit het oogpunt van gezondheid is het belangrijk dat de concentraties luchtverontreiniging zo laag mogelijk zijn. 
+
+
+Welke factoren zijn van invloed op de NO₂ concentratie?
+
+Het weer heeft een grote invloed op de NO₂ concentratie: in de zomer zijn de concentraties (veel) lager dan in de winter. Ook binnen een seizoen kunnen de 4-weeksgemiddelde concentraties sterk variëren. De windrichting en windkracht bepaalt onder andere hoeveel NO₂ er komt `aanwaaien` en in welke mate de verontreiniging ‘blijft hangen’. De 4-weeks gemiddelde concentraties kunnen daarom niet worden vergeleken met de grenswaarde voor het jaargemiddelde. De 4-weeksgemiddelden kunnen wel met elkaar worden vergeleken, en geven dan informatie over relatief meer of minder verontreinigde plekken. In Amsterdam is het verkeer de belangrijkste bron van NO₂. Daarom is op plekken met veel verkeer de NO₂ concentratie hoger dan op plekken met weinig verkeer. Op de kaart zijn de straat- en snelweglocaties de plekken met veel verkeer en de achtergrondlocaties de plekken met weinig verkeer.
+
+
+Verschillende meetpunten
+
+De NO₂-buisjes hangen op verschillende plekken in de stad en omgeving. Er zijn zes type meetpunten te onderscheiden. Dit zijn: achtergrond, straat, snelweg, waterweg, luchtvaart en industrie. Op de kaart zijn ook de automatische meetstations toegevoegd.
+
+
+Achtergrond: dit zijn plekken waar weinig tot geen verkeer is. Rustige straten in een woonwijk zijn hier een voorbeeld van. De NO₂ concentratie is hier lager dan op de andere meetpunten.
+
+Straat: dit zijn plekken aan drukke straten waar veel verkeer rijdt. Een voorbeeld hiervan zijn de buisjes op de Stadhouderskade in Amsterdam.
+
+Snelweg: dit zijn plekken langs een snelweg, zoals langs de Ring A10.
+
+Waterweg: dit zijn plekken waar scheepvaart langskomt, zoals op het Java-eiland.
+
+Luchtvaart: dit zijn plekken die in de buurt van Schiphol liggen. Het gaat om de automatische meetstations Badhoevedorp, Hoofddorp en Oude Meer.
+
+Industrie: dit zijn plekken in de buurt van industriële activiteiten zoals in de IJmond en bij het Havengebied van Amsterdam.
+Op de kaart worden ook de door de GGD Amsterdam beheerde automatische meetstations getoond. Deze zijn te herkennen aan de naam `GGD meetstation`. Na het klikken op het bolletje staat er bij Type meting `Automatisch meetnet`. Bij NO₂-buisjes staat er bij Type meting `Palmes`. Op de meetstations worden 24 uur per dag en 7 dagen per week metingen uitgevoerd. Deze metingen kunnen via luchtmeetnet.nl worden bekeken. Op deze site is ook te zien waar de meetstations liggen. Om een goede vergelijking met de NO₂-buisjes te kunnen maken worden de 4-weeksgemiddelden getoond. Deze 4-weeksgemiddelden zijn de gemiddelden over dezelfde periode als de NO₂-buisjes. De jaargemiddelde waardes van de meetstations, die op maps.amsterdam.nl/no2 worden getoond, zijn gebaseerd op de periode 1 januari tot en met 31 december. Deze waardes kunnen iets afwijken van het gemiddelde van de dertien 4-weeksgemiddelden. De metingen van de NO₂-buisjes starten namelijk niet precies op 1 januari en eindigen niet precies op 31 december. 
+
+Door de concentraties op straat-, snelweg-, industrie- of waterweglocaties te vergelijken met nabij gelegen achtergrondlocaties, kan iets gezegd worden over de bijdrage van de betreffende straat, snelweg, industrie of waterweg aan de lokale concentratie. 
+
+
+Wettelijke toetsing
+
+Wettelijke toetsing van de luchtkwaliteit gebeurt in Nederland op basis van berekeningen. Deze berekeningen worden jaarlijks uitgevoerd door het RIVM met de Monitoringstool. Meetgegevens van onder andere de GGD Amsterdam leveren input voor deze modelberekeningen. In de wetgeving is vastgelegd dat de luchtkwaliteit wordt berekend op wettelijke toetspunten. In de praktijk is dit in steden meestal aan de gevel van woningen of andere gebouwen waar mensen langdurig verblijven. Deze wettelijke toetsing met behulp van de Monitoringstool wordt aan het einde van elk jaar uitgevoerd voor het voorgaande kalenderjaar. Uitgebreide informatie over de Monitoringstool is te vinden op nsl-monitoring.nl. In Europa is afgesproken om de wettelijke grenswaarde voor NO₂ in 2030 aan te passen naar 20 microgram per m3.
+
+Nieuwe meetlocaties worden zoveel mogelijk geplaatst op wettelijke toetsafstand (aan de gevel). De wettelijke toetsafstand is in het verleden echter enkele malen gewijzigd, en het was (en is) niet altijd mogelijk om exact op wettelijke toetsafstand te meten. Voor een goed beeld van de ontwikkeling van de luchtkwaliteit is het belangrijk om metingen langdurig op exact dezelfde plek uit te voeren. Een groot deel van de NO₂-buisjes metingen wordt daarom niet op wettelijke toetsafstand uitgevoerd, maar dichterbij de weg. Als je op een punt op de kaart klikt dan is te zien of het buisje op wettelijke toetsafstand hangt (ja/nee) en op welke afstand het buisje van de gevel hangt (in meters). De buisjes waarbij de afstand 0.1 meter is hangen aan de gevel.",https://maps.amsterdam.nl/no2,PointDS,PointMeasuresDS,"Point locations representing NO2 measurement sites; the main phenomenon is sampled air-quality measurements, not the points as objects. Rule used: point measurements at locations -> PointMeasuresDS.",,0.98,V1_gpt
+60,Oergeul,Primeval gulch,https://maps.amsterdam.nl/open_geodata/?k=242,https://maps.amsterdam.nl/oergeul,OERGEUL,PlainVectorRegion,PatchDS,De oergeul,"Bij stedelijke ontwikkelingen rondom het IJ is het van belang om rekening te houden met de ligging van de Oergeul. Met de Oergeul of het Oer-IJ wordt de oude getijdengeul bedoeld die de voorloper was van het huidige IJ-meer. Kenmerkend voor de Oergeul is dat de 1e en 2e zandlaag hier deels of volledig zijn geërodeerd en dat deze geul vervolgens is opgevuld met slappe klei en sliblagen tot een diepte van maximaal NAP -30 m. 
+
+De afwezigheid van deze draagkrachtige lagen is daarmee mede bepalend voor ontwikkelingen in plangebieden rondom het IJ, zoals Haven-Stad, IJburg en het Zeeburgereiland. Civieltechnische constructies binnen het geulengebied zullen naar verwachting vrijwel allemaal op de 3e zandlaag gefundeerd moeten worden wat resulteert in funderingspalen tot een diepte van maximaal 60 m -NAP voor het centrum en havengebied. Doordat de kosten van funderen aanzienlijk hoger zijn in het gebied van het Oer-IJ, wordt er vaak besloten het stedenbouwkundig ontwerp hier op aan te passen, bijvoorbeeld door in het gebied van het Oer-IJ hoogbouw te plaatsen (Zeeburgereiland), niet te bouwen (Strandeiland) of te funderen op staal. Ook zullen zettingen bij ophogingen ter plaatse van de Oergeul groter zijn. 
+
+In het verleden is de Oergeul minstens tweemaal eerder in kaart gebracht, doordat er nu meer grondonderzoek beschikbaar is, is deze kaart weer toe aan een update. Deze kaarten, OMEGAM (1980) en Rijks Geologische Dienst (1990), geven een nogal verschillend beeld van de ligging van de Oergeul. Voor een project bij Haven-Stad kwam uit een analyse van beschikbare sonderingen een ander beeld van de ligging van de Oergeul naar voren dan verwacht op basis van de oude kaarten. Dit vormde de aanleiding om te starten met een actualisatie van de kaart van de Oergeul voor Havenstad en later heel Amsterdam. 
+
+
+Figuur 1: Standaard bodemopbouw van Amsterdam, met 3 voorbeeld sonderingen (conusweerstand) (de Gans, 2011).
+
+
+Conclusies en Disclaimer
+
+De kaart van de Oergeul is vernieuwd op basis van de sonderingen bekend bij het Ingenieursbureau in najaar 2017. De nauwkeurigheid is evenredig met de dichtheid aan sonderingen. daar waar de hoeveelheid sonderingen groot is, is de Oergeul met meer zekerheid ingetekend dan waar de hoeveelheid aanwezige sonderingen laag is. De Oergeul zoals weergegeven in de kaart blijft een interpretatie, bij gebruik dient hier rekening mee te worden gehouden. De plaatsnauwkeurigheid (GPS) van de gebruikte sonderingen is niet meegenomen bij de interpretatie. GPS metingen zijn de afgelopen jaren steeds nauwkeuriger geworden. Door onnauwkeurigheden in locatiebepaling en conversies tussen coördinatenstelsels (RD old naar RD new), kan het zijn dat de kaartlocatie van grondonderzoek afwijkt van de juiste locatie.
+De kaart komt het best tot zijn recht wanneer deze wordt afgebeeld in combinatie met het grondonderzoek waar hij op gebaseerd is. 
+
+
+Contact
+
+Wanneer je aanvullende informatie (sonderingen, boringen) hebt, geïnteresseerd bent om mee te denken in de doorontwikkeling óf gewoon meer inzicht wilt krijgen in de ligging van de Oergeul binnen jouw plangebied, neem dan contact op met Duco de Vries (
+duco.de.vries@amsterdam.nl
+) of Nienke Lanting (
+n.lanting@amsterdam.nl
+). Voor de doorontwikkeling en kansen en risico`s van de ondergrond in de brede zin binnen projecten kun je contact opnemen met Lidwien Besselink (
+l.besselink@amsterdam.nl
+).",https://maps.amsterdam.nl/oergeul,PlainVectorRegion,PatchDS,"Polygon layer for the Oergeul old-gulch area is a selected bounded zone, not a reporting unit or full-area coverage; topology also shows isolated polygons, supporting PlainVectorRegion and PatchDS.",,0.96,V1_gpt
+61,Oergeul - sonderingen,Primeval gulch - soundings,https://maps.amsterdam.nl/open_geodata/?k=243,https://maps.amsterdam.nl/oergeul,OERGEUL_SONDERINGEN,PointDS,PointMeasuresDS;EventDS,De oergeul,"Bij stedelijke ontwikkelingen rondom het IJ is het van belang om rekening te houden met de ligging van de Oergeul. Met de Oergeul of het Oer-IJ wordt de oude getijdengeul bedoeld die de voorloper was van het huidige IJ-meer. Kenmerkend voor de Oergeul is dat de 1e en 2e zandlaag hier deels of volledig zijn geërodeerd en dat deze geul vervolgens is opgevuld met slappe klei en sliblagen tot een diepte van maximaal NAP -30 m. 
+
+De afwezigheid van deze draagkrachtige lagen is daarmee mede bepalend voor ontwikkelingen in plangebieden rondom het IJ, zoals Haven-Stad, IJburg en het Zeeburgereiland. Civieltechnische constructies binnen het geulengebied zullen naar verwachting vrijwel allemaal op de 3e zandlaag gefundeerd moeten worden wat resulteert in funderingspalen tot een diepte van maximaal 60 m -NAP voor het centrum en havengebied. Doordat de kosten van funderen aanzienlijk hoger zijn in het gebied van het Oer-IJ, wordt er vaak besloten het stedenbouwkundig ontwerp hier op aan te passen, bijvoorbeeld door in het gebied van het Oer-IJ hoogbouw te plaatsen (Zeeburgereiland), niet te bouwen (Strandeiland) of te funderen op staal. Ook zullen zettingen bij ophogingen ter plaatse van de Oergeul groter zijn. 
+
+In het verleden is de Oergeul minstens tweemaal eerder in kaart gebracht, doordat er nu meer grondonderzoek beschikbaar is, is deze kaart weer toe aan een update. Deze kaarten, OMEGAM (1980) en Rijks Geologische Dienst (1990), geven een nogal verschillend beeld van de ligging van de Oergeul. Voor een project bij Haven-Stad kwam uit een analyse van beschikbare sonderingen een ander beeld van de ligging van de Oergeul naar voren dan verwacht op basis van de oude kaarten. Dit vormde de aanleiding om te starten met een actualisatie van de kaart van de Oergeul voor Havenstad en later heel Amsterdam. 
+
+
+Figuur 1: Standaard bodemopbouw van Amsterdam, met 3 voorbeeld sonderingen (conusweerstand) (de Gans, 2011).
+
+
+Conclusies en Disclaimer
+
+De kaart van de Oergeul is vernieuwd op basis van de sonderingen bekend bij het Ingenieursbureau in najaar 2017. De nauwkeurigheid is evenredig met de dichtheid aan sonderingen. daar waar de hoeveelheid sonderingen groot is, is de Oergeul met meer zekerheid ingetekend dan waar de hoeveelheid aanwezige sonderingen laag is. De Oergeul zoals weergegeven in de kaart blijft een interpretatie, bij gebruik dient hier rekening mee te worden gehouden. De plaatsnauwkeurigheid (GPS) van de gebruikte sonderingen is niet meegenomen bij de interpretatie. GPS metingen zijn de afgelopen jaren steeds nauwkeuriger geworden. Door onnauwkeurigheden in locatiebepaling en conversies tussen coördinatenstelsels (RD old naar RD new), kan het zijn dat de kaartlocatie van grondonderzoek afwijkt van de juiste locatie.
+De kaart komt het best tot zijn recht wanneer deze wordt afgebeeld in combinatie met het grondonderzoek waar hij op gebaseerd is. 
+
+
+Contact
+
+Wanneer je aanvullende informatie (sonderingen, boringen) hebt, geïnteresseerd bent om mee te denken in de doorontwikkeling óf gewoon meer inzicht wilt krijgen in de ligging van de Oergeul binnen jouw plangebied, neem dan contact op met Duco de Vries (
+duco.de.vries@amsterdam.nl
+) of Nienke Lanting (
+n.lanting@amsterdam.nl
+). Voor de doorontwikkeling en kansen en risico`s van de ondergrond in de brede zin binnen projecten kun je contact opnemen met Lidwien Besselink (
+l.besselink@amsterdam.nl
+).",https://maps.amsterdam.nl/oergeul,PointDS,PointMeasuresDS,Point layer of boreholes/soundings with depth measurements; main phenomenon is sampled ground/soil measurement data rather than objects or events.,,0.98,V1_gpt
+62,Ontwikkelbuurten,Development neighbourhoods,https://maps.amsterdam.nl/open_geodata/?k=279,https://maps.amsterdam.nl/ontwikkelbuurten,ONTWIKKELBUURTEN,PlainVectorRegion,ObjectDS,,,,PlainVectorRegion,ObjectDS,"Polygons represent named development neighbourhoods/projects rather than a full statistical partition, so PlainVectorRegion. The decisive entity rule is object-like bounded places/projects with codes and names, not amounts or coverage.",,0.92,V1_gpt
+63,Openbare toiletten,Public toilets,https://maps.amsterdam.nl/open_geodata/?k=240,https://maps.amsterdam.nl/openbare_toiletten,OPENBARE_TOILETTEN,PointDS,ObjectDS,Openbare toiletten,"Op deze kaart zie je de gemeentelijke toiletvoorzieningen in de openbare ruimte, in de gemeentelijke fietsenstallingen, in onze (kantoor)gebouwen en in onze parkeergarages. De toiletten in autoparkeergarages zijn alleen te bereiken met een parkeerkaart, dus niet volledig openbaar. 
+
+De uriliften (verzinkbare toiletvoorzieningen) zijn alleen `s nachts te gebruiken. Seizoenstoiletten zijn mobiele toiletcabines en staan er alleen in de zomermaanden. 
+
+Mis je een gemeentelijk openbaar toilet, of vind je een fout op de kaart? Geef het dan aan ons door. We werken er aan om onze data te verbeteren. 
+
+Alle toiletten in de stad die beschikbaar zijn voor mensen met `hoge nood`, dus óók bij horeca, politiebureaus, bibliotheken en andere semiopenbare gebouwen, zijn te vinden via de speciale Hoge Nood App. Wil je onderweg een volledig overzicht van alle toiletten die in de buurt beschikbaar zijn, dan kun je gratis deze app downloaden op je smartphone. Daarin vind je óók alle toiletten van de gemeente.",https://maps.amsterdam.nl/openbare_toiletten,PointDS,ObjectDS,"Point features representing discrete public toilet facilities and related access types; numeric price is just an attribute, so classify as ObjectDS rather than AmountDS.",,0.99,V1_gpt
+64,Overnachtingsbeleid,Overnight policy,https://maps.amsterdam.nl/open_geodata/?k=227,https://maps.amsterdam.nl/overnachtingsbeleid,OVERNACHTINGSBELEID,VectorTessellation,CoverageDS,Overnachtingsbeleid,[No description embedded on page],https://maps.amsterdam.nl/overnachtingsbeleid,VectorTessellation,PatchDS,"The polygons are neighborhood-like areas with high shared boundaries, so they form a tessellation. The layer marks selected policy zones/conditions for overnight policy rather than a full reporting unit or object layer, so PatchDS fits best.",,0.94,V1_gpt
+65,Parkeernormen Auto,Parking standards Cars,https://maps.amsterdam.nl/open_geodata/?k=239,https://maps.amsterdam.nl/parkeernormen,PARKEERNORMEN,VectorTessellation,CoverageDS,Parkeernormen Auto,"Gebiedsindeling horende bij de Nota Parkeernormen Auto. Per gebied zijn verschillende eisen van toepassing bij nieuwbouwprojecten. 
+
+Voor uitgebreide toelichting lees de Parkeernormen",https://maps.amsterdam.nl/parkeernormen,VectorTessellation,CoverageDS,"The polygons form a partition-like area-based zoning layer for parking standards, with strong tessellation hints and categorical area classes (A/B/C), so this is a VectorTessellation and a full-area thematic CoverageDS.",,0.97,V1_gpt
+66,"Parken, plantsoenen en recreatief groen",City parks en public green,https://maps.amsterdam.nl/open_geodata/?k=99,https://maps.amsterdam.nl/stadsparken,PARKPLANTSOENGROEN,PlainVectorRegion,ObjectDS,"Stadsparken, plantsoenen en recreatief groen","In Amsterdam is het parkbezoek de laatste jaren explosief gestegen. Niet alleen bezoeken meer Amsterdammers de parken, ze doen dat ook veel vaker. Bovendien is het activiteitenpatroon veranderd: naast de traditionele activiteiten als wandelen, fietsen en van de natuur genieten, zijn daar veel en verschillende activiteiten bijgekomen als sporten, joggen, picknicken, lezen, werken, horecabezoek en het bijwonen van culturele evenementen.
+Het park is een wezenlijk onderdeel van het stedelijk leven van alledag geworden. Zo wezenlijk dat de helft van de nieuwe bewoners aangeeft dat de aanwezigheid van een stadspark met deze gevarieerde mogelijkheden een belangrijke reden is geweest zich op een bepaalde plek te vestigen. Dat geldt overigens ook voor bijna de helft van de startende ondernemingen in Amsterdam. ‘Succesvolle’ parken zijn een niet te veronachtzamen vestigingsmotief geworden. Deze feitelijkheden zijn gebaseerd op de twee Grote Groenonderzoeken uit 1996 en 2008.
+
+Op de eerste mooie lente dag in april 2011 was het Vondelpark overvol. Zo vol dat de ME er aan te pas moest komen om het Vondelpark na een grote vechtpartij te ontruimen. Dit terwijl het nabijgelegen Rembrandtpark op dat moment zo goed als leeg was. 
+Hoe kunnen we deze excessen voorkomen? Parken als het Rembrandtpark en het Flevopark staan op het punt om herontdekt te worden. Hoe stimuleren we die ontwikkeling en wat is daarvoor nodig? Om antwoord te krijgen op deze vragen is het belangrijk om alle gegevens van de Amsterdamse parken op orde te hebben.
+
+De 
+Atlas Stadsparken Amsterdam >
+geeft een overzicht van een aantal ruimtelijke elementen, de bereikbaarheid, de ontsluiting, de voorzieningen en gegevens uit het Grote Groen Onderzoek m.b.t. het gebruik. Het is in die zin een aanvulling op het Grote Groen Onderzoek. Juist de combinatie van alle gegevens tezamen met de beleving van de gebruikers geeft inzicht in het functioneren en het succes van een park.
+Deze Atlas laat de diversiteit van de parken in de stad zien. Elk park heeft z’n eigen context zowel ruimtelijk als sociaal-economisch. De beleving van de gebruikers is per doelgroep verschillend en kan per jaar veranderen door nieuwe trends in het gebruik van parken.
+Het doel van de Atlas is om professionals inzicht te geven in de beschikbare gegevens van parken. Nieuwe ontwikkelingen en aanvullingen over de Amsterdamse parken zijn welkom en kunnen worden opgenomen in de Atlas. Daarvoor kunt u contact opnemen met de bronhouder.",https://maps.amsterdam.nl/stadsparken,PlainVectorRegion,ObjectDS,"Polygons represent named parks and green spaces as discrete bounded objects, not a full tessellation; the park/plantsoen layer is object-focused, with area as an attribute rather than the main phenomenon.",,0.96,V1_gpt
+67,Postcode4-buurten,Zipcode4 shapes,https://maps.amsterdam.nl/open_geodata/?k=192,https://maps.amsterdam.nl/postcode,PC4_BUURTEN,VectorTessellation,LatticeDS,Postcode6 en Postcode4 vlakken,"Elk adres in de BAG heeft een postcode6.
+Rond elk adres is een buffertje (vlakje) gemaakt. 
+Buffertjes met dezelfde postcode zijn samengevoegd tot 1 postcodevlak. 
+Bij hoekpanden met adressen aan beide straatzijden overlappen soms postcodevlakken.
+Soms loopt een postcodevlak in een andere straat verder.
+Het kan voorkomen dat een BAG-adres een verkeerde postcode heeft.
+
+De postcode4-gebieden volgen zoveel als mogelijk de administratieve buurtgrenzen.
+
+De postcode6-punten MRA (1 punt per postcode6) zijn berekend als de gemiddelde coördinaat van de verblijfsobjecten, de standplaatsen en de ligplaatsen met dezelfde postcode6.",https://maps.amsterdam.nl/postcode,VectorTessellation,LatticeDS,"Postcode4 areas are reporting/statistical units and the polygons form a near-complete partition with high shared boundaries, so this is a VectorTessellation and a LatticeDS.",,0.98,V1_gpt
+68,Postcode4-buurten excl. water,Zipcode4 shapes excl. water,https://maps.amsterdam.nl/open_geodata/?k=193,https://maps.amsterdam.nl/postcode,PC4_BUURTEN_EXWATER,VectorTessellation,LatticeDS,Postcode6 en Postcode4 vlakken,"Elk adres in de BAG heeft een postcode6.
+Rond elk adres is een buffertje (vlakje) gemaakt. 
+Buffertjes met dezelfde postcode zijn samengevoegd tot 1 postcodevlak. 
+Bij hoekpanden met adressen aan beide straatzijden overlappen soms postcodevlakken.
+Soms loopt een postcodevlak in een andere straat verder.
+Het kan voorkomen dat een BAG-adres een verkeerde postcode heeft.
+
+De postcode4-gebieden volgen zoveel als mogelijk de administratieve buurtgrenzen.
+
+De postcode6-punten MRA (1 punt per postcode6) zijn berekend als de gemiddelde coördinaat van de verblijfsobjecten, de standplaatsen en de ligplaatsen met dezelfde postcode6.",https://maps.amsterdam.nl/postcode,VectorTessellation,LatticeDS,"Postcode4 areas are administrative/reporting units that partition the city closely, and the topology hints strongly support a tessellation. The decisive entity rule is reporting/statistical units -> LatticeDS, not AmountDS despite the area field.",,0.98,V1_gpt
+69,Postcode6-vlakken BAG,Zipcode6 shapes,https://maps.amsterdam.nl/open_geodata/?k=191,https://maps.amsterdam.nl/postcode,PC6_VLAKKEN_BAG,PlainVectorRegion,ObjectDS,Postcode6 en Postcode4 vlakken,"Elk adres in de BAG heeft een postcode6.
+Rond elk adres is een buffertje (vlakje) gemaakt. 
+Buffertjes met dezelfde postcode zijn samengevoegd tot 1 postcodevlak. 
+Bij hoekpanden met adressen aan beide straatzijden overlappen soms postcodevlakken.
+Soms loopt een postcodevlak in een andere straat verder.
+Het kan voorkomen dat een BAG-adres een verkeerde postcode heeft.
+
+De postcode4-gebieden volgen zoveel als mogelijk de administratieve buurtgrenzen.
+
+De postcode6-punten MRA (1 punt per postcode6) zijn berekend als de gemiddelde coördinaat van de verblijfsobjecten, de standplaatsen en de ligplaatsen met dezelfde postcode6.",https://maps.amsterdam.nl/postcode,PlainVectorRegion,LatticeDS,"The layer maps postcode6 polygon units with a postcode code attribute; these are reporting/statistical units rather than a full tessellation of the study area. Classified as LatticeDS, with PlainVectorRegion because the polygons are overlapping postcode areas and do not form a clean partition.",,0.92,V1_gpt
+70,Plusnetten en Hoofdnetten,Plus and Main networks infrastructure,https://maps.amsterdam.nl/open_geodata/?k=233,https://maps.amsterdam.nl/plushoofdnetten,PLUSHOOFDNETTEN,LineDS,NetworkDS,Plusnetten en hoofdnetten infrastructuur,"Deze kaart is geactualiseerd op 3 juli 2023 n.a.v. aanpassingen aan het Beleidskader Verkeersnetten in het eerste kwartaal van 2023
+
+Met het benoemen van Plus- en Hoofdnetten laat Amsterdam zien waar welke vervoerwijze het meeste prioriteit verdient bij de toedeling van ruimte in straten en voorrang op kruisingen. 
+De wijze waarop dit gebeurt staat beschreven in het Beleidskader Verkeersnetten Amsterdam, dat op 24 januari 2018 is vastgesteld door de Gemeenteraad. 
+Meer informatie over het Beleidskader is te vinden op https://www.amsterdam.nl/parkeren-verkeer/infrastructuur/verkeersnetten
+
+
+Plusnetten
+
+Gericht op het bieden van (doorstroom)kwaliteit voor grote verkeersstromen met de hoogste prioriteit als er afwegingen gemaakt moeten worden tussen netwerken.
+
+
+Hoofdnetten
+
+Gericht op het behouden van voldoende ruimte om het verkeer af te kunnen wikkelen.",https://maps.amsterdam.nl/plushoofdnetten,LineDS,NetworkDS,"LineString infrastructure layer for plus and main transport networks; decisive rule is connected route/network system, not numeric attributes.",,0.99,V1_gpt
+71,Plusnetten Voetgangersgebied,Plusnetworks pedestrians,https://maps.amsterdam.nl/open_geodata/?k=84,https://maps.amsterdam.nl/plushoofdnetten,PLUSHOOFDNETTEN_VOETGEBIED,PlainVectorRegion,PatchDS,Plusnetten en hoofdnetten infrastructuur,"Deze kaart is geactualiseerd op 3 juli 2023 n.a.v. aanpassingen aan het Beleidskader Verkeersnetten in het eerste kwartaal van 2023
+
+Met het benoemen van Plus- en Hoofdnetten laat Amsterdam zien waar welke vervoerwijze het meeste prioriteit verdient bij de toedeling van ruimte in straten en voorrang op kruisingen. 
+De wijze waarop dit gebeurt staat beschreven in het Beleidskader Verkeersnetten Amsterdam, dat op 24 januari 2018 is vastgesteld door de Gemeenteraad. 
+Meer informatie over het Beleidskader is te vinden op https://www.amsterdam.nl/parkeren-verkeer/infrastructuur/verkeersnetten
+
+
+Plusnetten
+
+Gericht op het bieden van (doorstroom)kwaliteit voor grote verkeersstromen met de hoogste prioriteit als er afwegingen gemaakt moeten worden tussen netwerken.
+
+
+Hoofdnetten
+
+Gericht op het behouden van voldoende ruimte om het verkeer af te kunnen wikkelen.",https://maps.amsterdam.nl/plushoofdnetten,PlainVectorRegion,NetworkDS,"The layer maps pedestrian plus/hoofdnet infrastructure zones, i.e. a transport network system. Polygons are discrete network areas rather than a tessellated coverage, so PlainVectorRegion with NetworkDS.",,0.96,V1_gpt
+72,Privacy - Masten,Privacy - Masts,https://maps.amsterdam.nl/open_geodata/?k=304,https://maps.amsterdam.nl/privacy,PRIVACY_AISMASTEN,PointDS,ObjectDS,Persoonsgegevensverwerking in de openbare ruimte,"Persoonsgegevensverwerkingen onder verantwoordelijkheid van het college van B&W van de gemeente Amsterdam in de openbare ruimte van de gemeente Amsterdam.
+
+
+Deze kaart vertelt u waar onder verantwoordelijkheid van het college van B&W van de gemeente Amsterdam in de openbare ruimte persoonsgegevens verwerkt worden, en voor welk doel dit gebeurt. De Algemene Verordening Gegevensbescherming (AVG) is van toepassing op deze persoonsgegevensverwerkingen. 
+Klik op een gekleurde stip op de kaart voor de privacyverklaring die bij een bepaalde camera of sensor hoort. In deze privacyverklaring staat meer gedetailleerde informatie over hoe de gemeente Amsterdam met uw persoonsgegevens omgaat. 
+
+Als u informatie wilt over de verwerking van uw persoonsgegevens door de gemeente Amsterdam die niet in de openbare ruimte plaatsvinden, of als u wilt weten hoe u een klacht kunt indienen, klik dan hier.
+
+N.B. De camera’s die onder verantwoordelijkheid van de burgemeester in het kader van de handhaving van de openbare orde zijn geplaatst, vallen niet onder de AVG en staan niet op deze kaart. De locaties van deze openbare-orde-camera’s treft u elders op de website van de gemeente Amsterdam aan.",https://maps.amsterdam.nl/privacy,PointDS,ObjectDS,"Point layer of named camera/sensor locations; each point is a distinct real-world object, not a measurement or event. The decisive rule is object points.",,0.97,V1_gpt
+73,Privacy - Overig,Privacy - Other,https://maps.amsterdam.nl/open_geodata/?k=306,https://maps.amsterdam.nl/privacy,PRIVACY_OVERIG,PointDS,ObjectDS,Persoonsgegevensverwerking in de openbare ruimte,"Persoonsgegevensverwerkingen onder verantwoordelijkheid van het college van B&W van de gemeente Amsterdam in de openbare ruimte van de gemeente Amsterdam.
+
+
+Deze kaart vertelt u waar onder verantwoordelijkheid van het college van B&W van de gemeente Amsterdam in de openbare ruimte persoonsgegevens verwerkt worden, en voor welk doel dit gebeurt. De Algemene Verordening Gegevensbescherming (AVG) is van toepassing op deze persoonsgegevensverwerkingen. 
+Klik op een gekleurde stip op de kaart voor de privacyverklaring die bij een bepaalde camera of sensor hoort. In deze privacyverklaring staat meer gedetailleerde informatie over hoe de gemeente Amsterdam met uw persoonsgegevens omgaat. 
+
+Als u informatie wilt over de verwerking van uw persoonsgegevens door de gemeente Amsterdam die niet in de openbare ruimte plaatsvinden, of als u wilt weten hoe u een klacht kunt indienen, klik dan hier.
+
+N.B. De camera’s die onder verantwoordelijkheid van de burgemeester in het kader van de handhaving van de openbare orde zijn geplaatst, vallen niet onder de AVG en staan niet op deze kaart. De locaties van deze openbare-orde-camera’s treft u elders op de website van de gemeente Amsterdam aan.",https://maps.amsterdam.nl/privacy,PointDS,EventDS,"Point layer of privacy-related camera/sensor locations; each point represents a monitored/privacy-processing occurrence tied to specific investigations and pilots, so PointDS with EventDS is the best fit.",,0.92,V1_gpt
+74,Privacy - Wagenparkscan,Privacy - Car fleet scan,https://maps.amsterdam.nl/open_geodata/?k=305,https://maps.amsterdam.nl/privacy,PRIVACY_WAGENPARKSCAN,PointDS,ObjectDS,Persoonsgegevensverwerking in de openbare ruimte,"Persoonsgegevensverwerkingen onder verantwoordelijkheid van het college van B&W van de gemeente Amsterdam in de openbare ruimte van de gemeente Amsterdam.
+
+
+Deze kaart vertelt u waar onder verantwoordelijkheid van het college van B&W van de gemeente Amsterdam in de openbare ruimte persoonsgegevens verwerkt worden, en voor welk doel dit gebeurt. De Algemene Verordening Gegevensbescherming (AVG) is van toepassing op deze persoonsgegevensverwerkingen. 
+Klik op een gekleurde stip op de kaart voor de privacyverklaring die bij een bepaalde camera of sensor hoort. In deze privacyverklaring staat meer gedetailleerde informatie over hoe de gemeente Amsterdam met uw persoonsgegevens omgaat. 
+
+Als u informatie wilt over de verwerking van uw persoonsgegevens door de gemeente Amsterdam die niet in de openbare ruimte plaatsvinden, of als u wilt weten hoe u een klacht kunt indienen, klik dan hier.
+
+N.B. De camera’s die onder verantwoordelijkheid van de burgemeester in het kader van de handhaving van de openbare orde zijn geplaatst, vallen niet onder de AVG en staan niet op deze kaart. De locaties van deze openbare-orde-camera’s treft u elders op de website van de gemeente Amsterdam aan.",https://maps.amsterdam.nl/privacy,PointDS,ObjectDS,"Point layer of named scan/camera/sensor locations with addresses and privacy statements; each point represents a distinct real-world object, not a measurement or event.",,0.98,V1_gpt
+75,Verkiezingen Provinciale Staten 2019,Elections Provinces 2019,https://maps.amsterdam.nl/open_geodata/?k=280,https://maps.amsterdam.nl/provincialestaten2019,PS19,PointDS,EventDS,Atlas Verkiezingen,"In deze Atlas Verkiezingen zijn de kaarten met uitslagen per stemlocaties van verschillende verkiezingen samengevoegd.
+
+De cirkelgroottes zijn tussen de verkiezingen onderling vergelijkbaar.
+Dat betekent dat eenzelfde cirkelgrootte bij elke verkiezing hetzelfde aantal of dezelfde verhouding voorstelt. 
+De cirkelgroottes tussen Amsterdam en Zaanstad zijn verschillend, omdat de gebiedsgrootte verschillend is er er verder op Zaanstad is ingezoomd.
+Voor de berekening van de cirkelgrootte van aantallen is een lineaire schaal gebruikt. Hierdoor worden verschillen tussen weinig en veel stemmen wat uitvergroot. 
+Voor de leesbaarheid van de taartpunt-grafiekjes is een vierkantswortel schaal gebruikt, die de verschillen wat middelen.
+
+De kaarten zijn individueel te bekijken op:
+2024 - Europees Parlement
+2023 - Tweede Kamer
+2023 - Provinciale Staten
+2022 - Gemeenteraad
+2021 - Tweede Kamer
+2019 - Europees Parlement
+2019 - Provinciale Staten
+2018 - Gemeenteraad
+2017 - Tweede Kamer
+
+Zie ook de Atlas Verkiezingen Zaanstad",https://maps.amsterdam.nl/atlas_verkiezingen,PointDS,EventDS,"Point features mark stemlocaties for the 2019 Provincial States election, and the main phenomenon is an election occurrence/result at each location, so PointDS + EventDS.",,0.98,V1_gpt
+76,Rainproof - Hoog grondwater,Rainproof - High groundwater,https://maps.amsterdam.nl/open_geodata/?k=290,https://maps.amsterdam.nl/rainproof,RAINPROOF_DRAINAGE,PlainVectorRegion,PatchDS,Amsterdam Rainproof,"Amsterdam Rainproof
+
+Het oplossen van knelpunten is urgent om overlast en schade bij extreme neerslag te voorkomen. Waternet werkt er hard aan om het rioolstelsel, dat nu gemiddeld 20 mm neerslag per uur kan verwerken, op orde te houden. De stad streeft er verder naar om in 2050 buien van 60 mm per uur te kunnen verwerken zonder schade. Het vergroten van de rioolcapaciteit kost echter veel geld en zou de stad in een bouwput veranderen. Het lukt dus alleen om al dat regenwater te verwerken als iedereen (gemeente, Waternet, bedrijven, burgers) hieraan bijdraagt. Minstens zo belangrijk zijn daarom de bovengrondse maatregelen om de sponswerking van de stad vergroten. En dat biedt kansen, want Rainproof inrichten betekent een groenere, leefbaardere en robuustere stad. Dit is een verantwoordelijkheid van alle (publieke en private) eigenaren, bewoners en mensen die werken aan de stad. Waternet en de Gemeente Amsterdam werken daarom samen om deze knelpunten op te lossen. Ook u kunt wat doen! Samen maken we de stad 
+Rainproof
+. Elke druppel telt! 
+
+Vragen? Neem contact op via info@rainproof.nl of met uw contactpersoon bij Waternet. 
+
+Voor meer informatie over de effecten van klimaatverandering voor Amsterdam, bekijk de KNMI studie of de Klimaatatlas van Waterschap Amstel, Gooi en Vecht. 
+
+
+3Di-modelanalyse 
+
+De knelpunten zijn opgesteld op basis van het 3Di-model, aanvullende GIS-analyses en expertbeoordeling. 3Di is een interactief en integraal hydrodynamisch modelinstrumentarium voor waterberekeningen. Met dit model is bekeken waar Amsterdam kwetsbaar is bij een fictieve bui van 60 mm per uur die 2 uur aanhoudt. De stad is aan de hand van de verschillende hydrologische processen in 4 kaartlagen opgedeeld. Dat zijn een hoogtekaart (AHN2), een weerstandskaart en een infiltratiekaart met daaraan gekoppeld het rioleringsmodel. Het geeft een beeld van hoe het water wordt afgevoerd en waar dit op het maaiveld achterblijft. Het is daarmee een simulatie van water op straat. Uit de berekening wordt duidelijk dat een extreme bui zowel op particulier als op openbaar terrein voor overlast kan zorgen en mogelijk tot schade kan leiden. 
+
+
+Disclaimer 
+
+De gepresenteerde resultaten op deze kaart geven een indicatie van de te verwachten overlastlocaties bij hevige neerslag. In de modellering is zowel de stroming van regenwater over het maaiveld als de afvoer via de riolering opgenomen. Interactie met het oppervlaktewater en grondwater zijn in deze berekening niet meegenomen. Er is aangenomen dat alle daken zijn aangesloten op het rioolstelsel en alle binnentuinen in afgesloten woonblokken niet. Lokaal kan dit afwijken. Op basis van luchtfoto’s is er een inschatting gemaakt van de mate van verharding. De gehanteerde maaiveldhoogte is gebaseerd op de hoogtekaart AHN2 uit 2010. Wijzigingen in hoogtes van na die tijd zijn hier niet in verwerkt. Gezien bovenstaande is het mogelijk dat de gepresenteerde wateroverlast in de praktijk niet altijd (in die mate) wordt herkend. Aan de absolute waarden kunnen geen rechten worden ontleend.",https://maps.amsterdam.nl/rainproof,PlainVectorRegion,PatchDS,"Polygons mark selected rainproof drainage concern areas with a categorical possible/not possible status, not a full-area tessellation or reporting units. This fits a bounded phenomenon patch rather than coverage or lattice.",,0.93,V1_gpt
+77,Rainproof - Hydro-eenheden,Rainproof - Hydro units,https://maps.amsterdam.nl/open_geodata/?k=289,https://maps.amsterdam.nl/rainproof,RAINPROOF_HYDRO_EENHEDEN,PlainVectorRegion,ObjectDS,Amsterdam Rainproof,"Amsterdam Rainproof
+
+Het oplossen van knelpunten is urgent om overlast en schade bij extreme neerslag te voorkomen. Waternet werkt er hard aan om het rioolstelsel, dat nu gemiddeld 20 mm neerslag per uur kan verwerken, op orde te houden. De stad streeft er verder naar om in 2050 buien van 60 mm per uur te kunnen verwerken zonder schade. Het vergroten van de rioolcapaciteit kost echter veel geld en zou de stad in een bouwput veranderen. Het lukt dus alleen om al dat regenwater te verwerken als iedereen (gemeente, Waternet, bedrijven, burgers) hieraan bijdraagt. Minstens zo belangrijk zijn daarom de bovengrondse maatregelen om de sponswerking van de stad vergroten. En dat biedt kansen, want Rainproof inrichten betekent een groenere, leefbaardere en robuustere stad. Dit is een verantwoordelijkheid van alle (publieke en private) eigenaren, bewoners en mensen die werken aan de stad. Waternet en de Gemeente Amsterdam werken daarom samen om deze knelpunten op te lossen. Ook u kunt wat doen! Samen maken we de stad 
+Rainproof
+. Elke druppel telt! 
+
+Vragen? Neem contact op via info@rainproof.nl of met uw contactpersoon bij Waternet. 
+
+Voor meer informatie over de effecten van klimaatverandering voor Amsterdam, bekijk de KNMI studie of de Klimaatatlas van Waterschap Amstel, Gooi en Vecht. 
+
+
+3Di-modelanalyse 
+
+De knelpunten zijn opgesteld op basis van het 3Di-model, aanvullende GIS-analyses en expertbeoordeling. 3Di is een interactief en integraal hydrodynamisch modelinstrumentarium voor waterberekeningen. Met dit model is bekeken waar Amsterdam kwetsbaar is bij een fictieve bui van 60 mm per uur die 2 uur aanhoudt. De stad is aan de hand van de verschillende hydrologische processen in 4 kaartlagen opgedeeld. Dat zijn een hoogtekaart (AHN2), een weerstandskaart en een infiltratiekaart met daaraan gekoppeld het rioleringsmodel. Het geeft een beeld van hoe het water wordt afgevoerd en waar dit op het maaiveld achterblijft. Het is daarmee een simulatie van water op straat. Uit de berekening wordt duidelijk dat een extreme bui zowel op particulier als op openbaar terrein voor overlast kan zorgen en mogelijk tot schade kan leiden. 
+
+
+Disclaimer 
+
+De gepresenteerde resultaten op deze kaart geven een indicatie van de te verwachten overlastlocaties bij hevige neerslag. In de modellering is zowel de stroming van regenwater over het maaiveld als de afvoer via de riolering opgenomen. Interactie met het oppervlaktewater en grondwater zijn in deze berekening niet meegenomen. Er is aangenomen dat alle daken zijn aangesloten op het rioolstelsel en alle binnentuinen in afgesloten woonblokken niet. Lokaal kan dit afwijken. Op basis van luchtfoto’s is er een inschatting gemaakt van de mate van verharding. De gehanteerde maaiveldhoogte is gebaseerd op de hoogtekaart AHN2 uit 2010. Wijzigingen in hoogtes van na die tijd zijn hier niet in verwerkt. Gezien bovenstaande is het mogelijk dat de gepresenteerde wateroverlast in de praktijk niet altijd (in die mate) wordt herkend. Aan de absolute waarden kunnen geen rechten worden ontleend.",https://maps.amsterdam.nl/rainproof,PlainVectorRegion,PatchDS,"Polygons are isolated hydro-unit areas tied to Rainproof problem locations and solution PDFs, not a full administrative/reporting tessellation. The layer represents bounded intervention/issue zones, so PatchDS; polygon topology also supports PlainVectorRegion.",,0.95,V1_gpt
+78,Rainproof - Knelpunten,Rainproof - Bottlenecks,https://maps.amsterdam.nl/open_geodata/?k=288,https://maps.amsterdam.nl/rainproof,RAINPROOF_KNELPUNTEN,PlainVectorRegion,ObjectDS,Amsterdam Rainproof,"Amsterdam Rainproof
+
+Het oplossen van knelpunten is urgent om overlast en schade bij extreme neerslag te voorkomen. Waternet werkt er hard aan om het rioolstelsel, dat nu gemiddeld 20 mm neerslag per uur kan verwerken, op orde te houden. De stad streeft er verder naar om in 2050 buien van 60 mm per uur te kunnen verwerken zonder schade. Het vergroten van de rioolcapaciteit kost echter veel geld en zou de stad in een bouwput veranderen. Het lukt dus alleen om al dat regenwater te verwerken als iedereen (gemeente, Waternet, bedrijven, burgers) hieraan bijdraagt. Minstens zo belangrijk zijn daarom de bovengrondse maatregelen om de sponswerking van de stad vergroten. En dat biedt kansen, want Rainproof inrichten betekent een groenere, leefbaardere en robuustere stad. Dit is een verantwoordelijkheid van alle (publieke en private) eigenaren, bewoners en mensen die werken aan de stad. Waternet en de Gemeente Amsterdam werken daarom samen om deze knelpunten op te lossen. Ook u kunt wat doen! Samen maken we de stad 
+Rainproof
+. Elke druppel telt! 
+
+Vragen? Neem contact op via info@rainproof.nl of met uw contactpersoon bij Waternet. 
+
+Voor meer informatie over de effecten van klimaatverandering voor Amsterdam, bekijk de KNMI studie of de Klimaatatlas van Waterschap Amstel, Gooi en Vecht. 
+
+
+3Di-modelanalyse 
+
+De knelpunten zijn opgesteld op basis van het 3Di-model, aanvullende GIS-analyses en expertbeoordeling. 3Di is een interactief en integraal hydrodynamisch modelinstrumentarium voor waterberekeningen. Met dit model is bekeken waar Amsterdam kwetsbaar is bij een fictieve bui van 60 mm per uur die 2 uur aanhoudt. De stad is aan de hand van de verschillende hydrologische processen in 4 kaartlagen opgedeeld. Dat zijn een hoogtekaart (AHN2), een weerstandskaart en een infiltratiekaart met daaraan gekoppeld het rioleringsmodel. Het geeft een beeld van hoe het water wordt afgevoerd en waar dit op het maaiveld achterblijft. Het is daarmee een simulatie van water op straat. Uit de berekening wordt duidelijk dat een extreme bui zowel op particulier als op openbaar terrein voor overlast kan zorgen en mogelijk tot schade kan leiden. 
+
+
+Disclaimer 
+
+De gepresenteerde resultaten op deze kaart geven een indicatie van de te verwachten overlastlocaties bij hevige neerslag. In de modellering is zowel de stroming van regenwater over het maaiveld als de afvoer via de riolering opgenomen. Interactie met het oppervlaktewater en grondwater zijn in deze berekening niet meegenomen. Er is aangenomen dat alle daken zijn aangesloten op het rioolstelsel en alle binnentuinen in afgesloten woonblokken niet. Lokaal kan dit afwijken. Op basis van luchtfoto’s is er een inschatting gemaakt van de mate van verharding. De gehanteerde maaiveldhoogte is gebaseerd op de hoogtekaart AHN2 uit 2010. Wijzigingen in hoogtes van na die tijd zijn hier niet in verwerkt. Gezien bovenstaande is het mogelijk dat de gepresenteerde wateroverlast in de praktijk niet altijd (in die mate) wordt herkend. Aan de absolute waarden kunnen geen rechten worden ontleend.",https://maps.amsterdam.nl/rainproof,PlainVectorRegion,PatchDS,"These polygons are selected rainwater bottleneck zones/areas of concern, not a full tessellation or reporting units. The layer represents bounded problem patches identified by model analysis and expert review.",,0.98,V1_gpt
+79,Rainproof - Polderriool,Rainproof - Polder sewerage,https://maps.amsterdam.nl/open_geodata/?k=291,https://maps.amsterdam.nl/rainproof,RAINPROOF_POLDERRIOOL,PlainVectorRegion,PatchDS,Amsterdam Rainproof,"Amsterdam Rainproof
+
+Het oplossen van knelpunten is urgent om overlast en schade bij extreme neerslag te voorkomen. Waternet werkt er hard aan om het rioolstelsel, dat nu gemiddeld 20 mm neerslag per uur kan verwerken, op orde te houden. De stad streeft er verder naar om in 2050 buien van 60 mm per uur te kunnen verwerken zonder schade. Het vergroten van de rioolcapaciteit kost echter veel geld en zou de stad in een bouwput veranderen. Het lukt dus alleen om al dat regenwater te verwerken als iedereen (gemeente, Waternet, bedrijven, burgers) hieraan bijdraagt. Minstens zo belangrijk zijn daarom de bovengrondse maatregelen om de sponswerking van de stad vergroten. En dat biedt kansen, want Rainproof inrichten betekent een groenere, leefbaardere en robuustere stad. Dit is een verantwoordelijkheid van alle (publieke en private) eigenaren, bewoners en mensen die werken aan de stad. Waternet en de Gemeente Amsterdam werken daarom samen om deze knelpunten op te lossen. Ook u kunt wat doen! Samen maken we de stad 
+Rainproof
+. Elke druppel telt! 
+
+Vragen? Neem contact op via info@rainproof.nl of met uw contactpersoon bij Waternet. 
+
+Voor meer informatie over de effecten van klimaatverandering voor Amsterdam, bekijk de KNMI studie of de Klimaatatlas van Waterschap Amstel, Gooi en Vecht. 
+
+
+3Di-modelanalyse 
+
+De knelpunten zijn opgesteld op basis van het 3Di-model, aanvullende GIS-analyses en expertbeoordeling. 3Di is een interactief en integraal hydrodynamisch modelinstrumentarium voor waterberekeningen. Met dit model is bekeken waar Amsterdam kwetsbaar is bij een fictieve bui van 60 mm per uur die 2 uur aanhoudt. De stad is aan de hand van de verschillende hydrologische processen in 4 kaartlagen opgedeeld. Dat zijn een hoogtekaart (AHN2), een weerstandskaart en een infiltratiekaart met daaraan gekoppeld het rioleringsmodel. Het geeft een beeld van hoe het water wordt afgevoerd en waar dit op het maaiveld achterblijft. Het is daarmee een simulatie van water op straat. Uit de berekening wordt duidelijk dat een extreme bui zowel op particulier als op openbaar terrein voor overlast kan zorgen en mogelijk tot schade kan leiden. 
+
+
+Disclaimer 
+
+De gepresenteerde resultaten op deze kaart geven een indicatie van de te verwachten overlastlocaties bij hevige neerslag. In de modellering is zowel de stroming van regenwater over het maaiveld als de afvoer via de riolering opgenomen. Interactie met het oppervlaktewater en grondwater zijn in deze berekening niet meegenomen. Er is aangenomen dat alle daken zijn aangesloten op het rioolstelsel en alle binnentuinen in afgesloten woonblokken niet. Lokaal kan dit afwijken. Op basis van luchtfoto’s is er een inschatting gemaakt van de mate van verharding. De gehanteerde maaiveldhoogte is gebaseerd op de hoogtekaart AHN2 uit 2010. Wijzigingen in hoogtes van na die tijd zijn hier niet in verwerkt. Gezien bovenstaande is het mogelijk dat de gepresenteerde wateroverlast in de praktijk niet altijd (in die mate) wordt herkend. Aan de absolute waarden kunnen geen rechten worden ontleend.",https://maps.amsterdam.nl/rainproof,PlainVectorRegion,PatchDS,"Polygon patches marking modeled rainproof sewerage problem locations; they are selected bounded zones, not a reporting-unit tessellation or full-area coverage.",,0.94,V1_gpt
+80,Religie,Religion,https://maps.amsterdam.nl/open_geodata/?k=314,https://maps.amsterdam.nl/religie,RELIGIE,PointDS,ObjectDS,,,,PointDS,ObjectDS,"Point features represent discrete religious buildings/places (churches, mosques, temples) with names, addresses, and categories, so this is PointDS with ObjectDS rather than amounts or events.",,0.98,V1_gpt
+81,Voetpaden breedte,Sidewalks width,https://maps.amsterdam.nl/open_geodata/?k=299,https://maps.amsterdam.nl/sidewalks,SIDEWALKS,LineDS,NetworkDS,Voetpaden breedte,"Op deze kaart staat de informatie die is verzameld bij het inventariseren van voetpadbreedtes. Deze informatie is gebruikt bij diverse onderzoeken als input voor het voetgangersbeleid van Amsterdam. 
+Let op: de breedtes op deze kaart zijn de totale breedte van het voetpad. Hierbij is dus nog geen rekening gehouden met obstakels. 
+De Walkability-kaart geeft de uitkomst van het vervolgonderzoek weer. In dát onderzoek zijn zo veel mogelijk obstakels digitaal in kaart gebracht en gecombineerd met de beschikbare breedte en drukte.",https://maps.amsterdam.nl/sidewalks,LineDS,NetworkDS,"Line geometries representing sidewalk segments along streets; this is a connected transport/walking infrastructure network with width attributes, so NetworkDS.",,0.96,V1_gpt
+82,Snorfiets naar de rijbaan,Mopeds on the roadway,https://maps.amsterdam.nl/open_geodata/?k=265,https://maps.amsterdam.nl/snorfietsnaarrijbaan,SNORFIETSLIJNEN,LineDS,NetworkDS,Snorfiets naar de rijbaan (Definitief verkeersbesluit),"Deze kaart is de visualisatie van het definitieve verkeersbesluit Snorfiets naar de rijbaan, gepubliceerd in de Staatscourant van 17 december 2018.
+Alhoewel de Gemeente haar uiterste best heeft gedaan om alle regels in het verkeersbesluit weer te geven als lijnen op de kaart, kunnen aan de kaart geen rechten worden ontleend. Het gepubliceerde verkeersbesluit is juridisch leidend.
+
+Nog niet alle (nieuwe) vrijliggende fietspaden zijn opgenomen in het Verkeersbesluit. Daarom volgt in juli een aanvullend Verkeersbesluit, waarin ook een aantal correcties zullen komen op het eerste Verkeersbesluit. 
+De kaart weerspiegelt zoveel mogelijk al deze aanvullingen en correcties.
+De werkelijkheid op straat (zoals met borden aangegeven) kan nu dus nog afwijken van wat aangegeven is op de kaart.
+
+De kaart zal in de loop van het jaar ook niet verder worden bijgehouden en daarom op een gegeven moment worden verwijderd.",https://maps.amsterdam.nl/snorfietsnaarrijbaan,LineDS,NetworkDS,"LineString features describe roadway segments affected by the mopeds-on-roadway traffic decision, so this is a route/infrastructure network layer.",,0.98,V1_gpt
+83,Openbare Sportplekken,Public playgrounds,https://maps.amsterdam.nl/open_geodata/?k=56,https://maps.amsterdam.nl/sport,SPORT_OPENBAAR,PointDS,ObjectDS,Sportvoorzieningen,"Webpagina Sportpunt Gemeente Amsterdam^https://www.amsterdam.nl/sociaaldomein/sport/contact-sportprofessionals/sportpunt/
+
+Zie ook de kaart met sportaanbieders^https://kaart.amsterdam.nl/sport.",https://maps.amsterdam.nl/sport,PointDS,ObjectDS,"Point features represent discrete public sports/playground facilities (named locations with attributes like surface and fencing), so this is an object layer, not an amount or event layer.",,0.99,V1_gpt
+84,Stadslandbouw (locaties),City farming (locations),https://maps.amsterdam.nl/open_geodata/?k=62,https://maps.amsterdam.nl/stadslandbouw,STADSLANDBOUW_PUNT,PointDS,ObjectDS,Stadslandbouw,"Stadslandbouw is het telen, oogsten, bewerken en afzetten van voedsel in of in de nabijheid van de stad. Voedselproductie staat centraal, als onderneming, als burgerinitiatief of als hobby, maar is nooit het enige doel van de activiteit: educatie, zorg, participatie, recreatie kunnen daar ook bij horen. Het is een wereldwijde trend in de grote steden. Ook in Amsterdam komt stadslandbouw sterk opzetten. De gemeente Amsterdam stimuleert en ondersteunt bewoners en ondernemers die met stadslandbouw aan de slag willen gaan.
+
+Deze kaart is in opbouw en daarom nog niet volledig. U kunt aan de opbouw van deze kaart meewerken. Kent u locaties met stadslandbouw die niet op de kaart staan, heeft u aanvullende informatie of correcties? Neem dan contact op met de onderstaande inhoudelijk contactpersoon.",https://maps.amsterdam.nl/stadslandbouw,PointDS,ObjectDS,"Point locations of city farming sites; each point represents a distinct real-world place/facility with name, address, and status, so ObjectDS rather than AmountDS or EventDS.",,0.98,V1_gpt
+85,Stadslandbouw (terreinen),City farming (terrains),https://maps.amsterdam.nl/open_geodata/?k=76,https://maps.amsterdam.nl/stadslandbouw,STADSLANDBOUW_VLAK,PlainVectorRegion,ObjectDS,Stadslandbouw,"Stadslandbouw is het telen, oogsten, bewerken en afzetten van voedsel in of in de nabijheid van de stad. Voedselproductie staat centraal, als onderneming, als burgerinitiatief of als hobby, maar is nooit het enige doel van de activiteit: educatie, zorg, participatie, recreatie kunnen daar ook bij horen. Het is een wereldwijde trend in de grote steden. Ook in Amsterdam komt stadslandbouw sterk opzetten. De gemeente Amsterdam stimuleert en ondersteunt bewoners en ondernemers die met stadslandbouw aan de slag willen gaan.
+
+Deze kaart is in opbouw en daarom nog niet volledig. U kunt aan de opbouw van deze kaart meewerken. Kent u locaties met stadslandbouw die niet op de kaart staan, heeft u aanvullende informatie of correcties? Neem dan contact op met de onderstaande inhoudelijk contactpersoon.",https://maps.amsterdam.nl/stadslandbouw,PlainVectorRegion,ObjectDS,"Polygons represent named city farming sites/terrains (parks, school gardens, volkstuin complexes), not a reporting tessellation; topology also shows isolated polygons, supporting PlainVectorRegion. The main phenomenon is discrete bounded objects, so ObjectDS.",,0.97,V1_gpt
+86,Stadsloods,City pilot,https://maps.amsterdam.nl/open_geodata/?k=66,https://maps.amsterdam.nl/stadsloods,STADSLOODS,PointDS,ObjectDS,Stadsloods,"Op deze kaart staat aangegeven waar ruimtezoekers met hulp van de stadsloods zich de afgelopen 9 jaar hebben gevestigd. De stadsloods van de gemeente Amsterdam werkt stadsbreed en adviseert een breed scala van ruimtezoekers met bijzondere huisvestingseisen bij het vinden van de juiste plek in Amsterdam en in de regio. Zij draagt bij aan het terugdringen van de leegstand in gemeentelijk en strategisch vastgoed en adviseert projectbureaus en stadsdelen over de programmatische invulling van gebieden. 
+Dit doet zij vanuit een helicopterview over de stad en maakt daarbij de ruimtelijke afweging wanneer het gaat om de juiste functie op de juiste plek. 
+De stadsloods vervult een onmisbare rol in het bij elkaar brengen van partijen en faciliteert een breed scala aan ondernemingen en organisatie en levert daarmee een bijdrage aan de ontwikkeling van de stad.
+
+http://www.amsterdam.nl/stadsloods",https://maps.amsterdam.nl/stadsloods,PointDS,EventDS,"Point features mark where initiatives were established over the past years; the decisive rule is event/occurrence at locations, not point objects or amounts.",,0.98,V1_gpt
+87,Stadsstraten,Major streets,https://maps.amsterdam.nl/open_geodata/?k=275,https://maps.amsterdam.nl/stadsstraat,STADSSTRAAT,LineDS,NetworkDS,Stadsstraten,Meer informatie leest u op deze gemeentelijke webpagina,https://maps.amsterdam.nl/stadsstraat,LineDS,NetworkDS,"Major streets are a connected street infrastructure system, and the features are LineStrings; classify by the network rule.",,0.99,V1_gpt
+88,Stadswarmtekoude - transport,District heating cooling - transport,https://maps.amsterdam.nl/open_geodata/?k=224,https://maps.amsterdam.nl/stadswarmtekoude,STADSWARMTEKOUDE_TRANSPORT,LineDS,NetworkDS,Stadsverwarming en -verkoeling,"De datasets/kaartlagen van de warmte/koudenetten zijn afkomstig van Vattenfall Warmte. Na bewerking door de Gemeente Amsterdam zijn ze op Maps Amsterdam gepubliceerd en ook beschikbaar via Maps Data. De meest recente en gedetailleerde datasets zijn beschikbaar via onderstaand email-adres.
+
+De Transport-lijnen zijn sterk vereenvoudigd en verenkelvoudigd weergegeven ten behoeve van de performance van de kaart.
+De vele Wijk-lijntjes zijn gebufferd tot vlakken.",https://maps.amsterdam.nl/stadswarmtekoude,LineDS,NetworkDS,"Line geometry and the layer represents district heating/cooling transport infrastructure; the decisive rule is network/route system, with transport lines simplified for display.",,0.99,V1_gpt
+89,Stadswarmtekoude - wijk,District heating cooling - neighbourhood,https://maps.amsterdam.nl/open_geodata/?k=301,https://maps.amsterdam.nl/stadswarmtekoude,STADSWARMTEKOUDE_WIJK,PlainVectorRegion,PatchDS,Stadsverwarming en -verkoeling,"De datasets/kaartlagen van de warmte/koudenetten zijn afkomstig van Vattenfall Warmte. Na bewerking door de Gemeente Amsterdam zijn ze op Maps Amsterdam gepubliceerd en ook beschikbaar via Maps Data. De meest recente en gedetailleerde datasets zijn beschikbaar via onderstaand email-adres.
+
+De Transport-lijnen zijn sterk vereenvoudigd en verenkelvoudigd weergegeven ten behoeve van de performance van de kaart.
+De vele Wijk-lijntjes zijn gebufferd tot vlakken.",https://maps.amsterdam.nl/stadswarmtekoude,PlainVectorRegion,NetworkDS,"Polygons are buffered representations of heat/cold network lines, not a full-area partition, so PlainVectorRegion. The main phenomenon is district heating/cooling infrastructure, a network system, despite polygon geometry.",,0.95,V1_gpt
+90,Woningbouwplannen - Strategische ruimte en Verkenning,Housing plans - Strategic space,https://maps.amsterdam.nl/open_geodata/?k=226,https://maps.amsterdam.nl/woningbouwplannen,STRATEGISCHERUIMTE,PlainVectorRegion,ObjectDS,Woningbouwplannen (1-1-2026),"De aantallen vormen de planvoorraad. Dit zijn niet de aantallen die definitief worden gerealiseerd. Ervaring leert dat een deel van de planvoorraad wordt opgeschoven.
+
+
+Niet alle woningbouw initiatieven doorlopen de verschillende plaberumfasen. Met name kleinere particuliere projecten worden in de regel pas toegevoegd aan de monitor zodra er een intentieovereenkomst of afsprakenbrief is getekend. Voor de visualisatie is een intentieovereenkomst `vertaald` naar Principebesluit genomen en een afsprakenbrief naar Investeringsbesluit genomen. 
+
+De datasets en de kaart worden halfjaarlijks bijgewerkt.",https://maps.amsterdam.nl/woningbouwplannen,PlainVectorRegion,PatchDS,"Polygons are selected housing-planning project areas, not a complete tessellation; the layer mainly shows bounded development patches with project names and housing-capacity attributes, so PatchDS fits better than Lattice or Coverage.",,0.96,V1_gpt
+91,Streekproducten,Local farming products,https://maps.amsterdam.nl/open_geodata/?k=58,https://maps.amsterdam.nl/streekproducten,STREEKPRODUCTEN,PointDS,ObjectDS,Voedselinitiatieven,"Met de Voedselstrategie zet Amsterdam de komende jaren in op een gezond, eerlijk, duurzaam en betaalbaar lokaal voedselsysteem, waarbij alle Amsterdammers voordeel hebben van de verandering. Dit wordt samen gedaan met initiatiefnemers, (kennis)instituten, overheden, boeren en bedrijven. Op deze kaart zijn sociale voedselinitiatieven en stadslandbouw initiatieven vermeld.
+
+Zie voor meer informatie: Volg het beleid: Voedselstrategie Amsterdam.
+
+
+Voedselinitiatieven
+
+De voedselinitiatieven zijn opgedeeld in verschillende categorieën:
+
+
+Voedseluitgifte: verspreiden van voedselpakketten
+
+Maaltijduitgifte: verspreiden van gratis maaltijden
+
+Sociaal restaurant: serveren maaltijden tegen geen of geringe betaling (max € 5,-)
+
+Voedselhub: verzamelt geredde overschotten en levert die aan de andere initiatieven
+
+Voedselverbindingsplek: waar uitgifte, sociaal restaurant en stadslandbouw samenkomen
+Zie voor compost-initiatieven deze kaart: Compost maken met de buurt.
+
+
+Stadslandbouw
+
+Stadslandbouw is het telen, oogsten, bewerken en afzetten van voedsel in of in de nabijheid van de stad. Voedselproductie staat centraal, als onderneming, als burgerinitiatief of als hobby, maar is nooit het enige doel van de activiteit: educatie, zorg, participatie, recreatie kunnen daar ook bij horen. Het is een wereldwijde trend in de grote steden. Ook in Amsterdam groeit de vraag naar ruimte voor stadslandbouw initiatieven. De gemeente Amsterdam stimuleert en ondersteunt bewoners en ondernemers die met stadslandbouw aan de slag willen gaan. U kunt aan de opbouw van deze kaart meewerken. Kent u locaties met stadslandbouw die niet op de kaart staan, heeft u aanvullende informatie of correcties? Neem dan contact op met de onderstaande inhoudelijk contactpersoon.
+
+U kunt aan de opbouw van deze kaart meewerken. Kent u voedselinitiatieven of locaties met stadslandbouw die niet op de kaart staan, heeft u aanvullende informatie of correcties? Neem dan contact op via onderstaand e-mailadres",https://maps.amsterdam.nl/voedselinitiatieven,PointDS,ObjectDS,"Point features marking named local food/farming initiatives and farms with addresses and categories; this is a set of discrete real-world objects, not measurements or events.",,0.98,V1_gpt
+92,Tram- en metrolijnen 2018,Tram and metro lines 2018,https://maps.amsterdam.nl/open_geodata/?k=321,https://maps.amsterdam.nl/trammetro,TRAMMETRO_LIJNEN_2018,LineDS,NetworkDS,Tram- en metronet 2026,"Deze kaart visualiseert het netwerk van stations, haltes en lijnen van metro en tram in Amsterdam. Update 30 maart 2026.
+Op de kaart zijn de afzonderlijke haltes binnen een korte loopafstand samengevoegd tot 1 opstappunt.
+
+Tijdelijke omleidingen zijn niet opgenomen.
+Deze kaart toont dus NIET de actuele routes.
+Kijk daarvoor op de website van de GVB",https://maps.amsterdam.nl/trammetro,LineDS,NetworkDS,Line geometries showing tram and metro lines/stations network; decisive rule is connected route/infrastructure system -> NetworkDS.,,0.99,V1_gpt
+93,Tram- en metrolijnen 2020,Tram and metro lines 2020,https://maps.amsterdam.nl/open_geodata/?k=220,https://maps.amsterdam.nl/trammetro,TRAMMETRO_LIJNEN_2020,LineDS,NetworkDS,Tram- en metronet 2026,"Deze kaart visualiseert het netwerk van stations, haltes en lijnen van metro en tram in Amsterdam. Update 30 maart 2026.
+Op de kaart zijn de afzonderlijke haltes binnen een korte loopafstand samengevoegd tot 1 opstappunt.
+
+Tijdelijke omleidingen zijn niet opgenomen.
+Deze kaart toont dus NIET de actuele routes.
+Kijk daarvoor op de website van de GVB",https://maps.amsterdam.nl/trammetro,LineDS,NetworkDS,"LineString features represent the tram and metro line network; metadata explicitly describes routes, stations, haltes, and lines, so this is a connected transport system (NetworkDS).",,0.99,V1_gpt
+94,Tramhaltes en metrostations 2018,Tram stops and metro stations 2018,https://maps.amsterdam.nl/open_geodata/?k=322,https://maps.amsterdam.nl/trammetro,TRAMMETRO_PUNTEN_2018,PointDS,ObjectDS,Tram- en metronet 2026,"Deze kaart visualiseert het netwerk van stations, haltes en lijnen van metro en tram in Amsterdam. Update 30 maart 2026.
+Op de kaart zijn de afzonderlijke haltes binnen een korte loopafstand samengevoegd tot 1 opstappunt.
+
+Tijdelijke omleidingen zijn niet opgenomen.
+Deze kaart toont dus NIET de actuele routes.
+Kijk daarvoor op de website van de GVB",https://maps.amsterdam.nl/trammetro,PointDS,NetworkDS,"Point features represent tram stops/metro stations, but the layer is primarily a transit stop network with line membership attributes; network rule overrides object/amount. ",,0.98,V1_gpt
+95,Tramhaltes en metrostations 2020,Tram stops and metro stations 2020,https://maps.amsterdam.nl/open_geodata/?k=221,https://maps.amsterdam.nl/trammetro,TRAMMETRO_PUNTEN_2020,PointDS,ObjectDS,Tram- en metronet 2026,"Deze kaart visualiseert het netwerk van stations, haltes en lijnen van metro en tram in Amsterdam. Update 30 maart 2026.
+Op de kaart zijn de afzonderlijke haltes binnen een korte loopafstand samengevoegd tot 1 opstappunt.
+
+Tijdelijke omleidingen zijn niet opgenomen.
+Deze kaart toont dus NIET de actuele routes.
+Kijk daarvoor op de website van de GVB",https://maps.amsterdam.nl/trammetro,PointDS,NetworkDS,"Point features represent tram stops and metro stations, and the metadata says they are part of the tram/metro network; the numeric RADIUS is just an attribute, not the main phenomenon.",,0.99,V1_gpt
+96,Verkeerslichten,Traffic lights,https://maps.amsterdam.nl/open_geodata/?k=61,https://maps.amsterdam.nl/verkeerslichten,VERKEERSLICHTEN,PointDS,ObjectDS,Verkeerslichten toen en nu,"Deze interactieve kaart geeft een overzicht van de groei van het aantal met verkeerslichten geregelde kruispunten die bij de gemeente Amsterdam functioneel in beheer zijn.
+Met deze kaart is het mogelijk om met behulp van de tijdschuifbalk zichtbaar te maken welke kruispunten met verkeerslichten elk jaar waren uitgerust. De start ligt in 1932 als het Leidseplein als eerste wordt uitgerust met een `verkeersregeling door middel van lichtsignalen`. Door de tijd heen zijn er ook verkeerslichten verwijderd. Dit is mogelijk vanwege profielwijzigingen of een afnemende verkeersdruk.
+
+Meer achtergrondinformatie bij deze interactieve kaart en over het boek dat Sjoerd Linders heeft geschreven over 100 jaar verkeersregelinstallaaties in Amsterdan vindt u hier >.`>hier >.`>Deze interactieve kaart geeft een overzicht van de groei van het aantal met verkeerslichten geregelde kruispunten die bij de gemeente Amsterdam functioneel in beheer zijn.
+Met deze kaart is het mogelijk om met behulp van de tijdschuifbalk zichtbaar te maken welke kruispunten met verkeerslichten elk jaar waren uitgerust. De start ligt in 1932 als het Leidseplein als eerste wordt uitgerust met een `verkeersregeling door middel van lichtsignalen`. Door de tijd heen zijn er ook verkeerslichten verwijderd. Dit is mogelijk vanwege profielwijzigingen of een afnemende verkeersdruk.
+
+Meer achtergrondinformatie bij deze interactieve kaart en over het boek dat Sjoerd Linders heeft geschreven over 100 jaar verkeersregelinstallaaties in Amsterdan vindt u hier >.",https://maps.amsterdam.nl/verkeerslichten,PointDS,ObjectDS,"Point features represent distinct traffic-light-controlled intersections; the numeric fields are attributes/history, not the main phenomenon. Classified as object points.",,0.98,V1_gpt
+97,Verkeersprognoses,Traffic prognosis,https://maps.amsterdam.nl/open_geodata/?k=253,https://maps.amsterdam.nl/verkeersprognoses,VERKEERSPROGNOSE,LineDS,NetworkDS,Verkeersprognoses Amsterdam 5.0,"De gegevens op deze site bevatten sinds het publiceren van de verkeersprognoses uit VMA5 geen openbaar vervoer (bussen, trams, metro) intensiteiten meer.
+
+Dit is recent gewijzigd: vanuit gemeente Amsterdam leveren we geen intensiteiten meer van het openbaar vervoer. We hebben contact opgenomen met het GVB en zij hebben aangegeven ook niet de informatie te kunnen verstrekken over stadsbus- en tramintensiteiten.
+
+De volgende werkwijze is mogelijk met betrekking tot lucht- en geluidsberekeningen:
+
+
+Voor bus- en tramintensiteiten bevelen we aan om uit te gaan van tramfrequenties op basis van de huidige dienstregeling.
+
+Voor metro intensiteiten bevelen we aan om contact op te nemen met hans.smit@gvb.nl
+
+De gegevens op deze interactieve kaart zijn gebaseerd op het Verkeersmodel Amsterdam (VMA). Het gebied beslaat de Gemeente Amsterdam. De wegen die gerapporteerd zijn, betreffen de grotere doorgaande wegen van de Gemeente Amsterdam.
+
+De volledige GIS-bestanden zijn te downloaden op https://maps.amsterdam.nl/open_geodata/?k=253
+
+Lees hier de Gebruikstoelichting van de data en de Uitgangspunten Verkeersmodel Amsterdam.",https://maps.amsterdam.nl/verkeersprognoses,LineDS,AmountDS,"Line network of Amsterdam roads with traffic prognosis values on each link; the main phenomenon is numeric traffic volume/projection on line features, so LineDS + AmountDS.",,0.98,V1_gpt
+98,Verkiezingen Tweede Kamer 2017,Elections Parliament 2017,https://maps.amsterdam.nl/open_geodata/?k=217,https://maps.amsterdam.nl/verkiezingen2017,VERKIEZINGEN2017,PointDS,ObjectDS,Atlas Verkiezingen,"In deze Atlas Verkiezingen zijn de kaarten met uitslagen per stemlocaties van verschillende verkiezingen samengevoegd.
+
+De cirkelgroottes zijn tussen de verkiezingen onderling vergelijkbaar.
+Dat betekent dat eenzelfde cirkelgrootte bij elke verkiezing hetzelfde aantal of dezelfde verhouding voorstelt. 
+De cirkelgroottes tussen Amsterdam en Zaanstad zijn verschillend, omdat de gebiedsgrootte verschillend is er er verder op Zaanstad is ingezoomd.
+Voor de berekening van de cirkelgrootte van aantallen is een lineaire schaal gebruikt. Hierdoor worden verschillen tussen weinig en veel stemmen wat uitvergroot. 
+Voor de leesbaarheid van de taartpunt-grafiekjes is een vierkantswortel schaal gebruikt, die de verschillen wat middelen.
+
+De kaarten zijn individueel te bekijken op:
+2024 - Europees Parlement
+2023 - Tweede Kamer
+2023 - Provinciale Staten
+2022 - Gemeenteraad
+2021 - Tweede Kamer
+2019 - Europees Parlement
+2019 - Provinciale Staten
+2018 - Gemeenteraad
+2017 - Tweede Kamer
+
+Zie ook de Atlas Verkiezingen Zaanstad",https://maps.amsterdam.nl/atlas_verkiezingen,PointDS,AmountDS,"Point features are voting locations (stemlocaties). The layer mainly maps numeric election results at each point, with circle size representing vote counts/percentages, so this is PointDS with AmountDS.",,0.98,V1_gpt
+99,Vervangen bomen,Tree replacement,https://maps.amsterdam.nl/open_geodata/?k=296,https://maps.amsterdam.nl/vervangen_bomen,VERVANGENBOMEN,PointDS,ObjectDS,,,,PointDS,ObjectDS,"Point features represent individual trees (identified by species, tree ID, planting year, size classes), so this is a point object layer rather than measurements or events.",,0.98,V1_gpt
+100,Verkeersinformatiesystemen,Traffic Information Systems,https://maps.amsterdam.nl/open_geodata/?k=182,https://maps.amsterdam.nl/vis,VIS,PointDS,ObjectDS,Verkeersinformatiesystemen,"Op deze kaart staan nagenoeg alle verkeersinformatiesystemen van de gemeente Amsterdam ingetekend. Klikken op een object toont meer informatie over dat object.
+
+Verkeersinformatiesystemen winnen informatie in óver het verkeer, of verstrekken informatie áán het verkeer. Ook reguleren zij verkeer met kantelwalsen, pollers, slagbomen, e.d. 
+
+De kaart wordt automatisch gevoed door een datastroom (WFS) van het Dataplatform van de Gemeente Amsterdam.",https://maps.amsterdam.nl/vis,PointDS,ObjectDS,"Point features represent identifiable traffic information system objects (cameras, displays, poles) with names/IDs and attributes; this is an object layer, not an amount or event layer.",,0.98,V1_gpt
+101,Verkeersinformatiesystemen - BFA,Traffic Information Systems - BFA,https://maps.amsterdam.nl/open_geodata/?k=266,https://maps.amsterdam.nl/vis,VIS_BFA,PointDS,ObjectDS,Verkeersinformatiesystemen,"Op deze kaart staan nagenoeg alle verkeersinformatiesystemen van de gemeente Amsterdam ingetekend. Klikken op een object toont meer informatie over dat object.
+
+Verkeersinformatiesystemen winnen informatie in óver het verkeer, of verstrekken informatie áán het verkeer. Ook reguleren zij verkeer met kantelwalsen, pollers, slagbomen, e.d. 
+
+De kaart wordt automatisch gevoed door een datastroom (WFS) van het Dataplatform van de Gemeente Amsterdam.",https://maps.amsterdam.nl/vis,PointDS,ObjectDS,"Point features represent distinct traffic information system installations (objects/assets) with IDs, type, and location metadata; not a measurement or event layer.",,0.99,V1_gpt
+102,Broedende vogels,Breeding birds,https://maps.amsterdam.nl/open_geodata/?k=87,https://maps.amsterdam.nl/vogels,VOGELS,PointDS,ObjectDS,"Broedplaatsen van zwaluwen, mussen en spreeuwen","Algemeen
+
+De gierzwaluw en de huismus staan op de indicatieve lijst met ‘vogels waarvan het nest het hele jaar beschermd is’. Dat betekent dat de nesten van deze vogels ook buiten het broedseizoen beschermd zijn. Gierzwaluwen en huismussen broeden in gebouwen. De nesten zijn kwetsbaar, omdat ze eenvoudig over het hoofd worden gezien. Dat laatste geldt ook voor spreeuwen, maar deze nesten zijn buiten het broedseizoen niet beschermd.
+
+
+Gierzwaluwen
+
+De gierzwaluw overwintert in Afrika en is maar kort in de stad om er te broeden. Ze broeden in kolonies en komen ieder jaar terug naar dezelfde nestplaats. 
+De Gemeente Amsterdam laat al sinds 2013 onderzoek naar verblijfplaatsen van gierzwaluwen doen. In vijf jaar is heel Amsterdam (en Diemen en Amstelveen) in kaart gebracht. Stadsdeel Centrum is voor een tweede keer geïnventariseerd. 
+Over de resultaten van vijf jaar onderzoek is een notitie verschenen. Zie 
+Inventarisatie Gierzwaluwen.
+N.B. De inventarisatie wordt zorgvuldig uitgevoerd door specialisten. De methode van inventariseren voldoet echter niet aan de voorwaarden van het kennisdocument gierzwaluw voor wat betreft het aantonen van afwezigheid! Dat betekent dat er om uit te sluiten dat er gierzwaluwen aanwezig zijn soms aanvullend onderzoek nodig zal zijn.
+
+
+Huismussen
+
+Huismussen zijn standvogels. Behalve een nest in een gebouw of een nestkast hebben ze groen in de omgeving nodig. Dichte struiken om in te schuilen, grassen om de zaden van te eten en insecten, die rond planten voorkomen om hun jongen te voeren.
+De huismussen worden sinds 2014 in kaart gebracht. De stadsdelen Centrum, Oost en Zuid zijn inmiddels twee keer geïnventariseerd. In 2018 is het stadsdeel Zuid voor de tweede keer in kaart gebracht.
+
+N.B. De inventarisatie wordt zorgvuldig uitgevoerd. De methode van inventariseren voldoet echter niet aan de voorwaarden van het kennisdocument huismus voor wat betreft het aantonen van afwezigheid! Dat betekent dat er om uit te sluiten dat er huismussen aanwezig zijn soms aanvullend onderzoek nodig zal zijn.
+
+
+Spreeuwen
+
+Er is geen gerichte inventarisatie van spreeuwen. De spreeuwen die we tegenkomen bij de onderzoeken naar gierzwaluwen en huismussen worden op de kaart gezet. Een systematische inventarisatie is dat dus niet. Er zijn dus veel meer broedende spreeuwen dan er op de kaart staan!
+
+
+Huiszwaluw
+
+In 2017 is er een begin gemaakt met de registratie van huiszwaluwennesten. De meeste huiszwaluwen zijn te vinden in het landelijk gebied. Ze broeden onder een overhangende rand van het dak van eengebouw. De kaart voor huiszwaluwen is nog lang niet compleet.
+
+
+Boerenzwaluw
+
+In 2017 is er een begin gemaakt met de registratie van nesten van boerenzwaluwen. De boerenzwaluw broedt in boerenschuren. Vaak staan de deuren altijd open of is er een raam stuk, waardoor ze makkelijk naar binnen kunnen vliegen. Ze broeden echter ook onder bruggen of steigers. 
+
+
+Meer informatie nodig
+
+De meeste verblijfplaatsen geobserveerd vanaf de straatkant, dus wat er achter de gevels gebeurt is maar ten dele bekend. Mocht u nog verblijfplaatsen van gierzwaluwen of huismussen missen op deze kaart of heeft u aanvullende foto’s, schroom dan niet dit te melden via gierzwaluw020@amsterdam.nl. 
+Verblijfplaatsen van huismussen (en spreeuwen) kan u sturen naar huismus020@amsterdam.nl.
+
+Uw (nieuwe) gierzwaluw- of huismusverblijfplaats wordt dan op deze kaart gezet, aangemeld bij de Nationale Databank Flora en Fauna en onder de aandacht gebracht van vergunningverleners. Op deze wijze kunnen we, gezamenlijk, deze bijzondere stadsvogel beter beschermen.",https://maps.amsterdam.nl/vogels,PointDS,ObjectDS,"Point features mark discrete bird nesting locations at addresses; the main phenomenon is identifiable breeding sites/objects, not amounts or events.",,0.98,V1_gpt
+103,Vondelpark zitbanken,Vondelpark benches,https://maps.amsterdam.nl/open_geodata/?k=248,https://maps.amsterdam.nl/vondelpark_zitbanken,VONDELPARK_ZITBANKEN,PointDS,ObjectDS,Adoptie van zitbanken in het Vondelpark,"De zitbanken in het Vondelpark zijn in beheer bij de RVE Stadswerken. 
+Op deze kaart wordt getoond of een bank al dan niet is geadopteerd door een donateur van de Stichting Hart voor het Vondelpark.
+Donaties voor de banken worden geïnd door de fondsbeheerder Stichting Hart voor het Vondelpark, die de gelden beschikbaar stelt zodra een investering in het park uitgevoerd kan worden. Wilt u ook een bank adopteren kijk dan op vondelpark.com of neem contact op via info@vondelpark.com.",https://maps.amsterdam.nl/vondelpark_zitbanken,PointDS,ObjectDS,"Points represent discrete park benches, which are identifiable real-world objects; the numeric fields are just attributes, while the map mainly shows bench adoption status.",,0.99,V1_gpt
+104,Walkability,Walkability,https://maps.amsterdam.nl/open_geodata/?k=298,https://maps.amsterdam.nl/walkability,WALKABILITY,LineDS,NetworkDS;ObjectDS,Voetpaden breedte,"Op deze kaart staat de informatie die is verzameld bij het inventariseren van voetpadbreedtes. Deze informatie is gebruikt bij diverse onderzoeken als input voor het voetgangersbeleid van Amsterdam. 
+Let op: de breedtes op deze kaart zijn de totale breedte van het voetpad. Hierbij is dus nog geen rekening gehouden met obstakels. 
+De Walkability-kaart geeft de uitkomst van het vervolgonderzoek weer. In dát onderzoek zijn zo veel mogelijk obstakels digitaal in kaart gebracht en gecombineerd met de beschikbare breedte en drukte.",https://maps.amsterdam.nl/sidewalks,LineDS,AmountDS,"Line geometry representing street segments/sidewalk stretches; the main mapped phenomenon is walkability/available walking space and crowding ratings along the route network, so it fits a line-based amount/condition layer rather than objects or regions.",,0.98,V1_gpt
+105,Wandkunst,Wall art,https://maps.amsterdam.nl/open_geodata/?k=272,https://maps.amsterdam.nl/wandkunst,WANDKUNST,PointDS,ObjectDS,Naoorlogse Monumentale Wandkunst,"Naoorlogse Monumentale Wandkunst
+
+Generaties groeiden ermee op. Jong en oud kwam er dagelijks langs: onderweg naar werk of school, maar ook in het kantoor of schoolgebouw zélf. De ruim tweehonderd Amsterdamse naoorlogse wandkunstwerken zijn een onmisbaar onderdeel van de stad. Tot op de dag van vandaag geven ze kleur en reliëf aan een periode van hoop, herstel en saamhorigheid.
+
+
+Inventarisatie en waardering
+
+Naar aanleiding van het raadsinitiatief `Monumentale Wandkunst` uit 2016 is een inventarisatie van de nog aanwezige monumentale wandkunst uit de periode 1945-1975 gemaakt. Bij de hierop volgende `quickscan waarden` die werd uitgevoerd, is gebruik gemaakt van een waardestellend kader van monumentale kunst, dat bestaat uit (7) waarderingscriteria die tijdens expertmeetings van het voormalige Instituut Collectie Nederland (ICN, nu Rijksdienst voor het Cultureel Erfgoed) zijn opgesteld om een zo objectief mogelijk beeld te krijgen van de waarde van het object. 
+
+Uitgangspunt bij de (quickscan) waardering van de betreffende kunstwerken op deze kaart, is de `samengevatte` waardering op basis van de volgende 3 criteria: (1) Kunsthistorische waarde, (2) Cultuurhistorische waarde en (3) Architectuurhistorische waarde
+
+
+Top – Belangrijk - Behoudenswaardig
+
+Op basis van de 3 criteria zijn alle kunstwerken gecategoriseerd als (1) Top, (2) Belangrijk of (3) Behoudenswaardig. Deze indeling is gemaakt/getoetst in samenwerking met/door een klankbordgroep van experts. 
+Let wel: waard om te behouden zijn ze allemaal. Ieder kunstwerk op zich voegt immers iets toe aan de openbare ruimte en aan vele andere plekken in gebouwen, en zegt iets over een stijl of kunstenaar. Samen illustreren ze bovendien het verhaal van een stad die na een donkere periode al bouwend haar grenzen verlegde.
+
+
+Kaart en informatie
+
+De kaart is dynamisch en wordt geregeld aangevuld met nieuwe/verbeterde informatie. De teksten (quickscan waarden) behorende bij de kunstwerken zijn, in opdracht van Monumenten en Archeologie, gemeente Amsterdam, opgesteld door Yteke Spoelstra (Monumentaal). 
+Bron beelden: Monumenten en Archeologie, gemeente Amsterdam.",https://maps.amsterdam.nl/wandkunst,PointDS,ObjectDS,"Point geometry with 226 features; each point marks a distinct wall-art artwork at a building address, so the main phenomenon is identifiable cultural objects, not measurements or events.",,0.98,V1_gpt
+106,Welstandniveaus bebouwing,Wealth levels building,https://maps.amsterdam.nl/open_geodata/?k=173,https://maps.amsterdam.nl/welstand,WELSTAND_NIVEAUS,VectorTessellation,CoverageDS,Welstand - De schoonheid van Amsterdam,"Update februari 2025
+
+
+Gebieden en gebouwen verschillen in gebruik en van karakter, maar ook in hun belang voor het aanzicht en de identiteit van de stad. Een plan dat in het ene gebied goed genoeg is, komt mogelijk in het andere niet eens met de hakken over de sloot. Het welstandsniveau is een uitdrukking van de mate van inspanning die bij het opstellen van een plan wordt verwacht ten aanzien van de omgeving en van het bouwwerk op zichzelf.
+
+Voor elk gebied is het gewenste welstandsniveau aangegeven. Het welstandsniveau sluit zoveel mogelijk aan bij het gehanteerde ruimtelijk kwaliteitsbeleid en de gewenste ontwikkelingen. 
+
+Er gelden in Amsterdam vijf welstandsniveaus: 
+
+
+Beschermd
+
+Het beschermde niveau is gereserveerd voor monumenten en beschermde stads- en dorpsgezichten. Hier is behoud van cultuurhistorische waarden en de daarbij behorende kwaliteiten het uitgangspunt voor de welstandstoets. 
+
+
+Bijzonder (sterk)
+
+Bijzonder zijn gebieden waar van een ontwerp mag worden verwacht, dat het een bijdrage levert aan de kwaliteit van de omgeving en aan de kwaliteit van het bouwwerk op zichzelf. Dit zijn onder meer de gebieden met een groot belang voor het aanzien van de stad.
+Het bijzondere niveau is ook van toepassing op gebieden, die in transformatie zijn of in opbouw en waar van de ontwerper of aanvrager een grotere inspanning mag worden verwacht om de kwaliteit van het gebied te helpen opbouwen. 
+
+
+Gewoon
+
+Het niveau gewoon geldt in een groot deel van de stad. Dit zijn gebieden, waar het beleid inzet op beheer van de bestaande kwaliteit. In deze gebieden speelt het aanzien van de stad als geheel een minder grote rol. 
+Hier is het beleid gericht op het praktisch beheer en is het welstands-beleid ondersteunend aan de gangbare kwaliteit van het gebied.
+
+
+Eenvoudig (licht)
+
+In gebieden met het niveau eenvoudig (licht) zijn de ambities beperkt. Het welstandsbeleid is hier gericht op het voorkomen van incidenten, die de kwaliteit van het gebied of een gebouw onredelijk ver naar beneden halen. Hier is de bandbreedte ruimer, zodat zowel beheer als veranderingen een optimale wendbaarheid van het gebied mogelijk maken. 
+
+
+Vrij
+
+In welstandsvrije gebieden geldt geen toets, waarmee op grond van welstand de kwaliteit wordt bewaakt. Hier heeft de stad gekozen om het beheer van de gebiedskwaliteit op een andere wijze te regelen of om het particulier initiatief ruim baan te geven. 
+
+Geen preventieve toetsing
+Naast deze vijf niveaus is er in een aantal gebieden met een aanvullende arcering gekozen voor een terughoudende invulling van het welstands-beleid. Hier vindt vooraf geen toetsing plaats van de veel voorkomende kleine bouwplannen of zelfs van alle soorten bouwplannen. Wie hier een plan maakt, krijgt het vertrouwen en kan zelf het -initiatief nemen bij de interpretatie van rede-lijke eisen van welstand. Van het resultaat wordt verwacht, dat het voldoet. De onder dit regime gerealiseerde bouwwerken mogen niet in ernstige mate strijdig zijn met redelijke eisen van welstand.
+
+In een aantal gevallen hebben bouwwerken op zich een niveau, dat kan afwijken van het gebied waar ze deel van uitmaken. Tenzij anders vermeld, wordt in deze gevallen het hogere niveau gehanteerd. Voorbeelden zijn monumentale gebouwen in gewone welstandsgebieden.
+Voor gebieden in transformatie geldt, zoals in bovengenoemde definitie aangegeven, het welstandsniveau bijzonder. De gebieden waarvoor dit geldt, zijn onderhevig aan veranderingen en het bijzonder welstandsniveau geldt alleen voor de plannen die onderdeel uit maken van de transformatie, de contouren van deze gebieden zijn dan ook niet op deze kaart opgenomen. 
+
+
+Meer informatie over de Schoonheid van Amsterdam leest u hier: Welstand in beeld.",https://maps.amsterdam.nl/welstand,VectorTessellation,CoverageDS,"The polygons form a near-complete administrative-style partition of Amsterdam welstand areas, supported by high shared boundaries and adjacency; the layer is a full-area categorical classification of welstand levels, so CoverageDS.",,0.96,V1_gpt
+107,Welstandsystemen bebouwing,Wealth systems building,https://maps.amsterdam.nl/open_geodata/?k=174,https://maps.amsterdam.nl/welstand,WELSTAND_SYSTEMEN,VectorTessellation,CoverageDS,Welstand - De schoonheid van Amsterdam,"Update februari 2025
+
+
+Gebieden en gebouwen verschillen in gebruik en van karakter, maar ook in hun belang voor het aanzicht en de identiteit van de stad. Een plan dat in het ene gebied goed genoeg is, komt mogelijk in het andere niet eens met de hakken over de sloot. Het welstandsniveau is een uitdrukking van de mate van inspanning die bij het opstellen van een plan wordt verwacht ten aanzien van de omgeving en van het bouwwerk op zichzelf.
+
+Voor elk gebied is het gewenste welstandsniveau aangegeven. Het welstandsniveau sluit zoveel mogelijk aan bij het gehanteerde ruimtelijk kwaliteitsbeleid en de gewenste ontwikkelingen. 
+
+Er gelden in Amsterdam vijf welstandsniveaus: 
+
+
+Beschermd
+
+Het beschermde niveau is gereserveerd voor monumenten en beschermde stads- en dorpsgezichten. Hier is behoud van cultuurhistorische waarden en de daarbij behorende kwaliteiten het uitgangspunt voor de welstandstoets. 
+
+
+Bijzonder (sterk)
+
+Bijzonder zijn gebieden waar van een ontwerp mag worden verwacht, dat het een bijdrage levert aan de kwaliteit van de omgeving en aan de kwaliteit van het bouwwerk op zichzelf. Dit zijn onder meer de gebieden met een groot belang voor het aanzien van de stad.
+Het bijzondere niveau is ook van toepassing op gebieden, die in transformatie zijn of in opbouw en waar van de ontwerper of aanvrager een grotere inspanning mag worden verwacht om de kwaliteit van het gebied te helpen opbouwen. 
+
+
+Gewoon
+
+Het niveau gewoon geldt in een groot deel van de stad. Dit zijn gebieden, waar het beleid inzet op beheer van de bestaande kwaliteit. In deze gebieden speelt het aanzien van de stad als geheel een minder grote rol. 
+Hier is het beleid gericht op het praktisch beheer en is het welstands-beleid ondersteunend aan de gangbare kwaliteit van het gebied.
+
+
+Eenvoudig (licht)
+
+In gebieden met het niveau eenvoudig (licht) zijn de ambities beperkt. Het welstandsbeleid is hier gericht op het voorkomen van incidenten, die de kwaliteit van het gebied of een gebouw onredelijk ver naar beneden halen. Hier is de bandbreedte ruimer, zodat zowel beheer als veranderingen een optimale wendbaarheid van het gebied mogelijk maken. 
+
+
+Vrij
+
+In welstandsvrije gebieden geldt geen toets, waarmee op grond van welstand de kwaliteit wordt bewaakt. Hier heeft de stad gekozen om het beheer van de gebiedskwaliteit op een andere wijze te regelen of om het particulier initiatief ruim baan te geven. 
+
+Geen preventieve toetsing
+Naast deze vijf niveaus is er in een aantal gebieden met een aanvullende arcering gekozen voor een terughoudende invulling van het welstands-beleid. Hier vindt vooraf geen toetsing plaats van de veel voorkomende kleine bouwplannen of zelfs van alle soorten bouwplannen. Wie hier een plan maakt, krijgt het vertrouwen en kan zelf het -initiatief nemen bij de interpretatie van rede-lijke eisen van welstand. Van het resultaat wordt verwacht, dat het voldoet. De onder dit regime gerealiseerde bouwwerken mogen niet in ernstige mate strijdig zijn met redelijke eisen van welstand.
+
+In een aantal gevallen hebben bouwwerken op zich een niveau, dat kan afwijken van het gebied waar ze deel van uitmaken. Tenzij anders vermeld, wordt in deze gevallen het hogere niveau gehanteerd. Voorbeelden zijn monumentale gebouwen in gewone welstandsgebieden.
+Voor gebieden in transformatie geldt, zoals in bovengenoemde definitie aangegeven, het welstandsniveau bijzonder. De gebieden waarvoor dit geldt, zijn onderhevig aan veranderingen en het bijzonder welstandsniveau geldt alleen voor de plannen die onderdeel uit maken van de transformatie, de contouren van deze gebieden zijn dan ook niet op deze kaart opgenomen. 
+
+
+Meer informatie over de Schoonheid van Amsterdam leest u hier: Welstand in beeld.",https://maps.amsterdam.nl/welstand,VectorTessellation,CoverageDS,"Polygons form a near-complete area partition with strong tessellation hints, and the layer is a citywide thematic classification of welstand levels (full-area coverage by category), so CoverageDS.",,0.95,V1_gpt
+108,Amsterdam onder vuur in WOII,Amsterdam under attack in WWII,https://maps.amsterdam.nl/open_geodata/?k=100,https://maps.amsterdam.nl/woii,WOII,PointDS,EventDS,Amsterdam in de Tweede Wereldoorlog,"Let op! Deze kaart kan niet gebruikt worden om te bepalen of aanvullend onderzoek noodzakelijk is bij werkzaamheden in de grond. 
+De gemeente Amsterdam heeft met dat doel een CE-Bodembelastingkaart opgesteld die voldoet aan de eisen van de WSCS-OCE. Deze kaart is te vinden op: data.amsterdam.nl/...
+
+Het Stadsarchief Amsterdam heeft deze kaart gemaakt om inzichtelijk te maken waar en wanneer er in de periode 1940-1945 bommen op Amsterdam zijn gevallen. Op de kaart zijn niet alleen door vliegtuigen afgeworpen bommen te vinden, maar ook neergestorte vliegtuigen, neergekomen luchtafweergranaten, afgeworpen lege benzinetanks etc.
+De informatie bij de inslagen is afkomstig uit de rapporten van de luchtbeschermingsdienst, de dagrapporten van de politie en brandweerarchieven.
+De lijst pretendeert zeker niet volledig te zijn. Van de duizenden bommen die op en rond Amsterdam zijn neergekomen is lang niet altijd terug te vinden waar ze precies zijn terechtgekomen. Door de beknopte verslaglegging is vaak ook niet te herleiden hoeveel bommen er bij een bepaald incident zijn gevallen.
+De politie dagrapporten bieden het publiek wel een mooie bron om verder te gaan met onderzoek naar wat er zich bij hun in de buurt heeft afgespeeld in de periode van de Tweede Wereldoorlog. Deze rapporten zijn in te zien in het informatiecentrum van het Stadsarchief aan de Vijzelstraat.
+Zie ook deze webpagina van het Stadsarchief Archief van de Politie
+
+De locaties (coördinaten) van de oorlogsmonumenten zijn vooralsnog bij benadering.
+
+Gebruik ook de tijdschuifbalk en de transparantieschuif in de de zwarte balk bovenin.",https://maps.amsterdam.nl/woii,PointDS,EventDS,"Point layer of WWII attack/incidence locations with dates; main phenomenon is where and when events occurred, so PointDS + EventDS.",,0.98,V1_gpt
+109,Woningbouwplannen,Housing plans,https://maps.amsterdam.nl/open_geodata/?k=142,https://maps.amsterdam.nl/woningbouwplannen,WONINGBOUWPLANNEN,PlainVectorRegion,ObjectDS,Woningbouwplannen (1-1-2026),"De aantallen vormen de planvoorraad. Dit zijn niet de aantallen die definitief worden gerealiseerd. Ervaring leert dat een deel van de planvoorraad wordt opgeschoven.
+
+
+Niet alle woningbouw initiatieven doorlopen de verschillende plaberumfasen. Met name kleinere particuliere projecten worden in de regel pas toegevoegd aan de monitor zodra er een intentieovereenkomst of afsprakenbrief is getekend. Voor de visualisatie is een intentieovereenkomst `vertaald` naar Principebesluit genomen en een afsprakenbrief naar Investeringsbesluit genomen. 
+
+De datasets en de kaart worden halfjaarlijks bijgewerkt.",https://maps.amsterdam.nl/woningbouwplannen,PlainVectorRegion,AmountDS,"Polygons are discrete housing project areas, not a complete administrative tessellation, so PlainVectorRegion. The main mapped phenomenon is the housing plan quantities (Totaal and breakdown counts), making it an AmountDS rather than an object or patch layer.",,0.92,V1_gpt
+110,Zelfbouwkavels,Do-it-yourself plots,https://maps.amsterdam.nl/open_geodata/?k=60,https://maps.amsterdam.nl/zelfbouwkavels,ZELFBOUWKAVELS,PointDS,ObjectDS,Zelfbouwkavels,"Wilt u zelf een huis (laten) ontwerpen en (laten) bouwen? Dit is nu mogelijk op verschillende plekken in Amsterdam. Realiseer uw woning, die volledig voldoet aan uw woonwensen.
+Op deze kaart vindt u meer informatie over het aanbod van zelfbouwkavels in Amsterdam. Meer informatie vindt u op https://www.amsterdam.nl/zelfbouw.
+
+Voor de beschikbaarheid van de kavel kunt u contact opnemen met de contactpersoon van het desbetreffende project. Naast deze contactpersonen per kavel, kunt u voor algemene informatie terecht bij de bronhouder.
+Dit is een kaart in ontwikkeling en wordt regelmatig geactualiseerd.",https://maps.amsterdam.nl/zelfbouwkavels,PointDS,ObjectDS,"Point layer of discrete self-build plot projects; each point represents a named plot/project with attributes, so ObjectDS rather than AmountDS or EventDS.",,0.98,V1_gpt
+111,Zonnepanelen op erfgoed,Solar panels on heritage,https://maps.amsterdam.nl/open_geodata/?k=320,https://maps.amsterdam.nl/zonnedaken_erfgoed,ZONNEDAKEN_ERFGOED,PlainVectorRegion,ObjectDS,Zonnepanelen en erfgoed - dakeninventarisatie,"Dit is een indicatieve kaart. Deze kaart geeft een beeld van de plaatsingsmogelijkheden van zonnepanelen op de daken van Amsterdam, bekeken vanuit een ruimtelijk-cultuurhistorisch perspectief. Amsterdam heeft veel rijks- en gemeentelijke monumenten, beschermde stads- en dorpsgezichten en andere gebieden met cultuurhistorische waarde. Vaak wordt gedacht dat in die gebieden en op individuele monumenten geen zonnepanelen zijn toegestaan. Dat is niet juist. Wel wordt in de regelgeving rekening gehouden met historische waarde en met de kwaliteit van het stadsbeeld. Deze kaart laat zien dat in alle delen van de stad, zelfs in de historische binnenstad, ruime mogelijkheden bestaan voor het plaatsen van panelen. 
+
+Deze kaart gaat niet over de energie-technische geschiktheid van de Amsterdamse daken. Daarvoor kan de Zonatlas worden geraadpleegd.
+
+De individuele panden zijn uitgesplitst in twee categorieën, die een indruk geven van de ruimte voor het plaatsen van zonnepanelen:
+
+Mogelijkheden (groen en grijs)
+Beperkte mogelijkheden (bruin)
+Mogelijkheden (groen) houdt in dat er panelen op andere dakvlakken dan het voordakvlak kunnen. Dat kan ook op een bijgebouw of aanbouw zijn.
+Het woord beperkt houdt in dat mogelijk maar op een deel van het dak zonnepanelen zijn toegestaan. Slechts in sommige gevallen zijn er geen mogelijkheden. 
+Hoe ruim of beperkt plaatsingsmogelijkheden precies zijn, kan (voorafgaand aan een vergunningaanvraag) in overleg met de gemeente worden bepaald, duurzaamerfgoed@amsterdam.nl . Plaatsen van zonnepanelen is vaak maatwerk. Zichtbaarheid vanuit de openbare ruimte vormt een belangrijk criterium binnen de beschermde stadsgezichten en bij monumenten.
+
+
+Zonnepanelen in de historische binnenstad, het kan wel
+
+De luchtfoto van de stad laat zien dat platte en andere geschikte daken, ook in het historisch centrum en de beschermde stadsgezichten, beter benut kunnen worden. Regels over ruimtelijke kwaliteit en monumentale waarden blijken daarvoor veel minder vaak de oorzaak te zijn dan wordt gedacht. De vele groene en niet-gekleurde vlakken laten zien waar regels niet of nauwelijks in de weg staan. Bovendien is zelfs op de bruine vlakken (historisch erfgoed) in overleg toch vaak ruimte te vinden voor plaatsing van zonnepanelen. 
+
+
+Het grotere plaatje
+
+De mogelijkheden voor zonne-energie zijn op het grote schaalniveau te bekijken. De kaart toont de daken in hun samenhang binnen straten en bouwblokken in de omgeving en ook in samenhang met de hele stad. Er komen gegevens in beeld die zonder kaart niet opvallen. Bijvoorbeeld de grote mogelijkheden in de hele stad om elkaar energie te leveren. Het hele dakenlandschap van de stad is zichtbaar als veld met verschillende mogelijkheden en een gezamenlijke opgave.
+
+
+Overige informatie
+
+Loket Duurzaam Erfgoed
+Bepalingen voor zonnepanelen
+Beleidskader Monumenten
+Omgevingsloket onder de kop Bouwen en verbouwen, Zonnepaneel of -collector
+
+
+Disclaimer
+
+De kaart is indicatief en onderhevig aan updates als gevolg van ontwikkelingen in de bebouwing en als gevolg van nieuw beleid. Er kunnen geen rechten aan worden ontleend met betrekking tot vergunningverlening.",https://maps.amsterdam.nl/zonnedaken_erfgoed,PlainVectorRegion,PatchDS,"Polygon layer of individual buildings/daks with categorical suitability for solar panels on heritage sites; these are selected bounded zones rather than a reporting tessellation, so PatchDS with PlainVectorRegion.",,0.88,V1_gpt
+112,Zonnepanelen,Solar panels,https://maps.amsterdam.nl/open_geodata/?k=251,https://maps.amsterdam.nl/zonnepanelen,ZONNEPANELEN2017,PointDS,AmountDS,Zonnepanelen - toename van aantal en vermogen,"In opdracht van de Gemeente Amsterdam heeft het bureau Readar de zonnepanelen in Amsterdam in kaart gebracht. De zonnepanelen zijn gedetecteerd op basis van de gemeentelijke luchtfoto’s. Hiervoor is een automatische detectie gebruikt die handmatig is gecontroleerd. 
+
+De luchtfoto’s worden genomen in het voorjaar en de inventarisaties per jaar betreffen dus momentopnames. Het ingeschatte vermogen is weergegeven in Wattpiek (Wp).
+
+Teken een selectievlak om het totaal aantal systemen en geschatte vermogen binnen dat gebied te bepalen.",https://maps.amsterdam.nl/zonnepanelen,PointDS,AmountDS,"Point features represent detected solar-panel installations, and the mapped meaning is the numeric amount/capacity (panel count and watt-peak). This fits point-based AmountDS rather than ObjectDS.",,0.98,V1_gpt
+113,Zwemwater,Swimming water,https://maps.amsterdam.nl/open_geodata/?k=218,https://maps.amsterdam.nl/zwemwater,ZWEMWATER,PointDS,ObjectDS,Zwem- en speelwater,"Deze kaart bevat alle formele zwemplekken en waterspeelplekken in de stad.
+De officiële buitenzwemplekken worden gemonitord op waterkwaliteit en hebben een stabiel voldoende kwaliteit is. Voor meer informatie over de officiële zwemplekken, kijk op www.zwemwater.nl
+
+
+
+# === Replacements for the 404 / outdated maps ===",https://maps.amsterdam.nl/zwemwater,PointDS,ObjectDS,"Points mark named swimming and play-water locations; they are discrete facilities/places, so this is an object layer rather than amount, event, or measurement.",,0.98,V1_gpt

@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "features": [],
+  "pdok_source": {
+    "service_title": "BRT TOP10NL",
+    "service_description": "TOP10NL is een digitaal objectgericht kaartbestand wat ten grondslag ligt aan de topografische kaart 1:10000 en wat veelvuldig in diverse GIS- en CAD-systemen wordt gebruikt voor ondergrond, analyse-, en beheers- en planningsactiviteiten.",
+    "service_keywords": [
+      "basisregistratie topografie",
+      "BRT",
+      "TOP10NL",
+      "kadaster",
+      "topografie",
+      "topografische kaart",
+      "vector tiles"
+    ],
+    "service_landing_url": "https://api.pdok.nl/brt/top10nl/ogc/v1?f=json",
+    "collection_id": "geografisch_gebied_punt",
+    "collection_title": "Geografisch Gebied Punt",
+    "collection_description": "Begrensd en benoemd gebied dat door een geografische eenheid beschreven wordt. Geometrietype is punt.",
+    "collection_keywords": [
+      "geografisch gebied",
+      "geografische gebieden",
+      "bank",
+      "ondiepte",
+      "plaat",
+      "bosgebied",
+      "duingebied",
+      "eiland",
+      "geul",
+      "vaargeul",
+      "heidegebied",
+      "heuvel",
+      "berg",
+      "kaap",
+      "hoek",
+      "polder",
+      "streek",
+      "veld",
+      "terp",
+      "wierde",
+      "wad",
+      "watergebied",
+      "zee",
+      "zeegat",
+      "zeearm"
+    ],
+    "collection_url": "https://api.pdok.nl/brt/top10nl/ogc/v1/collections/geografisch_gebied_punt?f=html",
+    "items_url": "https://api.pdok.nl/brt/top10nl/ogc/v1/collections/geografisch_gebied_punt/items?f=json&limit=1000",
+    "number_matched": null,
+    "number_fetched": 0,
+    "feature_limit_used": 1000
+  }
+}

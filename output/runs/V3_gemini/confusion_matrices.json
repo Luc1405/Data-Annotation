@@ -130,7 +130,7 @@
     {
       "actual_label": "ObjectDS",
       "predicted_label": "ObjectDS",
-      "count": 58
+      "count": 57
     },
     {
       "actual_label": "ObjectDS",
@@ -165,7 +165,7 @@
     {
       "actual_label": "ObjectDS",
       "predicted_label": "PointMeasuresDS",
-      "count": 0
+      "count": 1
     },
     {
       "actual_label": "ObjectDS",
@@ -200,7 +200,7 @@
     {
       "actual_label": "AmountDS",
       "predicted_label": "EventDS",
-      "count": 1
+      "count": 0
     },
     {
       "actual_label": "AmountDS",
@@ -220,7 +220,7 @@
     {
       "actual_label": "AmountDS",
       "predicted_label": "PointMeasuresDS",
-      "count": 0
+      "count": 1
     },
     {
       "actual_label": "AmountDS",
@@ -370,7 +370,7 @@
     {
       "actual_label": "PatchDS",
       "predicted_label": "PatchDS",
-      "count": 8
+      "count": 7
     },
     {
       "actual_label": "PatchDS",
@@ -390,7 +390,7 @@
     {
       "actual_label": "PatchDS",
       "predicted_label": "CoverageDS",
-      "count": 1
+      "count": 2
     },
     {
       "actual_label": "PatchDS",
@@ -515,7 +515,7 @@
     {
       "actual_label": "PointMeasuresDS",
       "predicted_label": "ObjectDS",
-      "count": 1
+      "count": 0
     },
     {
       "actual_label": "PointMeasuresDS",
@@ -550,7 +550,7 @@
     {
       "actual_label": "PointMeasuresDS",
       "predicted_label": "PointMeasuresDS",
-      "count": 2
+      "count": 3
     },
     {
       "actual_label": "PointMeasuresDS",
@@ -590,7 +590,7 @@
     {
       "actual_label": "CoverageDS",
       "predicted_label": "PatchDS",
-      "count": 4
+      "count": 1
     },
     {
       "actual_label": "CoverageDS",
@@ -600,7 +600,7 @@
     {
       "actual_label": "CoverageDS",
       "predicted_label": "ContourDS",
-      "count": 0
+      "count": 1
     },
     {
       "actual_label": "CoverageDS",
@@ -610,7 +610,7 @@
     {
       "actual_label": "CoverageDS",
       "predicted_label": "CoverageDS",
-      "count": 2
+      "count": 4
     },
     {
       "actual_label": "CoverageDS",
@@ -645,7 +645,7 @@
     {
       "actual_label": "NetworkDS",
       "predicted_label": "PatchDS",
-      "count": 1
+      "count": 0
     },
     {
       "actual_label": "NetworkDS",
@@ -670,7 +670,7 @@
     {
       "actual_label": "NetworkDS",
       "predicted_label": "NetworkDS",
-      "count": 8
+      "count": 9
     },
     {
       "actual_label": "NetworkDS",
@@ -680,7 +680,7 @@
     {
       "actual_label": "__predicted_total",
       "predicted_label": "ObjectDS",
-      "count": 63
+      "count": 61
     },
     {
       "actual_label": "__predicted_total",
@@ -695,12 +695,12 @@
     {
       "actual_label": "__predicted_total",
       "predicted_label": "EventDS",
-      "count": 2
+      "count": 1
     },
     {
       "actual_label": "__predicted_total",
       "predicted_label": "PatchDS",
-      "count": 19
+      "count": 14
     },
     {
       "actual_label": "__predicted_total",
@@ -710,22 +710,22 @@
     {
       "actual_label": "__predicted_total",
       "predicted_label": "ContourDS",
-      "count": 4
+      "count": 5
     },
     {
       "actual_label": "__predicted_total",
       "predicted_label": "PointMeasuresDS",
-      "count": 2
+      "count": 5
     },
     {
       "actual_label": "__predicted_total",
       "predicted_label": "CoverageDS",
-      "count": 3
+      "count": 6
     },
     {
       "actual_label": "__predicted_total",
       "predicted_label": "NetworkDS",
-      "count": 8
+      "count": 9
     },
     {
       "actual_label": "__predicted_total",

@@ -30,7 +30,7 @@ SCRIPT_PATH = Path(__file__).resolve()
 BASE_DIR = SCRIPT_PATH.parents[2]
 INPUT_DIR = BASE_DIR / "input_data"
 
-CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations.csv"
+CSV_PATH = INPUT_DIR / "ams_coreconcept_annotations_NEW.csv"
 DATASETS_DIR = INPUT_DIR / "datasets"
 DECISION_TREE_PATH = SCRIPT_PATH.parent / "decision_tree.txt"
 
@@ -65,6 +65,18 @@ MAX_BACKOFF_SECONDS = float(os.getenv("MAX_BACKOFF_SECONDS", "60"))
 MAX_SAMPLE_FEATURES = int(os.getenv("MAX_SAMPLE_FEATURES", "5"))
 MAX_UNIQUE_VALUES = int(os.getenv("MAX_UNIQUE_VALUES", "10"))
 MAX_PROPERTY_STRING_LENGTH = int(os.getenv("MAX_PROPERTY_STRING_LENGTH", "300"))
+
+# The source annotation CSV is semicolon-delimited by default.
+# The generated run artifacts stay comma-delimited by default because
+# dashboard/scripts/import_run_to_db.py reads them with csv.DictReader's
+# default comma delimiter.
+INPUT_CSV_DELIMITER = os.getenv("INPUT_CSV_DELIMITER", os.getenv("CSV_DELIMITER", ";"))
+OUTPUT_CSV_DELIMITER = os.getenv("OUTPUT_CSV_DELIMITER", ",")
+
+if INPUT_CSV_DELIMITER == r"\t":
+    INPUT_CSV_DELIMITER = "\t"
+if OUTPUT_CSV_DELIMITER == r"\t":
+    OUTPUT_CSV_DELIMITER = "\t"
 
 
 GEOMETRY_TYPES = [
@@ -183,6 +195,47 @@ def load_text_file(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+def read_csv_with_project_delimiter(csv_path: Path) -> pd.DataFrame:
+    """
+    Reads a CSV using the project delimiter.
+
+    The default delimiter is semicolon (;), because the Amsterdam annotation
+    CSV contains comma-rich description text and uses semicolons between columns.
+    A comma fallback is kept so older comma-separated files still work.
+    """
+    delimiter_candidates = [INPUT_CSV_DELIMITER]
+    for fallback_delimiter in [",", ";"]:
+        if fallback_delimiter not in delimiter_candidates:
+            delimiter_candidates.append(fallback_delimiter)
+
+    last_df: pd.DataFrame | None = None
+    for delimiter in delimiter_candidates:
+        df = pd.read_csv(csv_path, sep=delimiter, encoding="utf-8-sig")
+        last_df = df
+        if len(df.columns) > 1:
+            return df
+
+    if last_df is None:
+        raise RuntimeError(f"Unable to read CSV: {csv_path}")
+
+    return last_df
+
+
+def write_output_csv(
+    df: pd.DataFrame,
+    csv_path: Path,
+    *,
+    index: bool = False,
+) -> None:
+    """
+    Writes generated run artifact CSVs.
+
+    These outputs remain comma-delimited by default so the existing dashboard
+    import script can read annotations.csv with csv.DictReader(handle).
+    """
+    df.to_csv(csv_path, index=index, sep=OUTPUT_CSV_DELIMITER)
+
+
 def load_annotations(csv_path: Path) -> pd.DataFrame:
     """
     Loads the annotation CSV.
@@ -190,16 +243,13 @@ def load_annotations(csv_path: Path) -> pd.DataFrame:
     Expected columns:
     Title, EnglishTitle, PageLink, MapLink, Kaartlaag, Geometry, Entity
 
-    First tries comma-separated CSV.
-    If that produces one column, retries semicolon-separated CSV.
+    Uses semicolon-separated CSV by default. Set INPUT_CSV_DELIMITER or
+    CSV_DELIMITER in .env to override the input delimiter.
     """
     if not csv_path.exists():
         raise FileNotFoundError(f"CSV not found: {csv_path}")
 
-    df = pd.read_csv(csv_path, encoding="utf-8-sig")
-
-    if len(df.columns) == 1:
-        df = pd.read_csv(csv_path, sep=";", encoding="utf-8-sig")
+    df = read_csv_with_project_delimiter(csv_path)
 
     expected_columns = [
         "Title",
@@ -802,6 +852,8 @@ def build_run_provenance(input_csv_path: Path) -> dict[str, Any]:
             "max_sample_features": MAX_SAMPLE_FEATURES,
             "max_unique_values": MAX_UNIQUE_VALUES,
             "max_property_string_length": MAX_PROPERTY_STRING_LENGTH,
+            "input_csv_delimiter": INPUT_CSV_DELIMITER,
+            "output_csv_delimiter": OUTPUT_CSV_DELIMITER,
         },
     }
 
@@ -1092,13 +1144,13 @@ def write_run_artifacts(
     matrices_json_path = run_dir / "confusion_matrices.json"
     metrics_json_path = run_dir / "run_metrics.json"
 
-    df.to_csv(output_csv_path, index=False)
+    write_output_csv(df, output_csv_path, index=False)
 
     geometry_matrix = build_confusion_matrix(df, "Geometry", "GPTGeometry", GEOMETRY_TYPES)
     entity_matrix = build_confusion_matrix(df, "Entity", "GPTEntity", ENTITY_TYPES)
 
-    geometry_matrix.to_csv(geometry_matrix_path)
-    entity_matrix.to_csv(entity_matrix_path)
+    write_output_csv(geometry_matrix, geometry_matrix_path, index=True)
+    write_output_csv(entity_matrix, entity_matrix_path, index=True)
 
     total_rows = int(len(df))
     completed_rows = int((df["GPTGeometry"].notna() & df["GPTError"].isna()).sum())
@@ -1287,7 +1339,7 @@ def run_annotation_for_provider(
                 print(f"[{provider_config.name}] Skipping row {idx}: empty Kaartlaag")
                 df.at[idx, "GPTError"] = "Empty Kaartlaag"
                 error_count += 1
-                df.to_csv(run_dir / "annotations.csv", index=False)
+                write_output_csv(df, run_dir / "annotations.csv", index=False)
                 continue
 
             try:
@@ -1345,7 +1397,7 @@ def run_annotation_for_provider(
                 jsonl_file.write(json.dumps(result, ensure_ascii=False) + "\n")
                 jsonl_file.flush()
 
-                df.to_csv(run_dir / "annotations.csv", index=False)
+                write_output_csv(df, run_dir / "annotations.csv", index=False)
 
                 print(
                     f"[{provider_config.name}] Processed row {idx}: {kaartlaag} "
@@ -1384,7 +1436,7 @@ def run_annotation_for_provider(
                 jsonl_file.flush()
 
                 df.at[idx, "GPTError"] = str(error_message)
-                df.to_csv(run_dir / "annotations.csv", index=False)
+                write_output_csv(df, run_dir / "annotations.csv", index=False)
 
                 print(f"[{provider_config.name}] Error on row {idx} / {kaartlaag}: {error_message}")
                 write_run_status(

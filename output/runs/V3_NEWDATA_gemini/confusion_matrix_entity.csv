@@ -1,0 +1,12 @@
+,ObjectDS,AmountDS,ExistenceDS,EventDS,PatchDS,LatticeDS,ContourDS,PointMeasuresDS,CoverageDS,NetworkDS,__actual_total
+ObjectDS,57,0,0,0,0,1,0,1,0,0,59
+AmountDS,3,0,0,0,1,0,0,0,0,0,4
+ExistenceDS,0,0,0,0,0,0,0,0,0,0,0
+EventDS,1,0,0,1,0,0,0,0,0,0,2
+PatchDS,1,0,0,0,12,0,0,0,2,0,15
+LatticeDS,0,0,0,0,0,12,0,0,0,0,12
+ContourDS,0,0,0,0,0,0,4,0,0,0,4
+PointMeasuresDS,0,0,0,0,0,0,0,3,0,0,3
+CoverageDS,0,0,0,0,1,0,1,0,4,0,6
+NetworkDS,0,0,0,0,0,0,0,0,0,9,9
+__predicted_total,62,0,0,1,14,13,5,4,6,9,114

@@ -1,0 +1,1498 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00161750",
+        "objectid": null,
+        "objecttype": "",
+        "omschrijving": "Op de aangewezen ligplaatsen met de (BAG) adressen Taludweg 20 en 22 liggen 2 bouwwerken met omgevingsvergunning bouwen en gebruik woonfunctie.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-10-15T11:26:59.589061Z",
+        "tijdstip_statuswijziging": "2024-10-15T11:37:42.009276Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.434351030346351,
+          51.9273944218606
+        ]
+      },
+      "id": "1831aab8-ef4b-5a22-a965-f2cff0ab5e0a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00161747",
+        "objectid": "519159",
+        "objecttype": "Terrein",
+        "omschrijving": "Hier staat een bouwwerk o.b.v. omgevingsvergunning bouwen",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-10-15T11:16:26.043531Z",
+        "tijdstip_statuswijziging": "2024-10-15T11:37:35.115588Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.434441242803145,
+          51.92759378797382
+        ]
+      },
+      "id": "5636080d-7fa4-515a-a287-01782d4e3f88"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00162867",
+        "objectid": "162274",
+        "objecttype": "Terrein",
+        "omschrijving": "In de 3D weergave is hier een vlak zichtbaar dat niet bestaat in het echt.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-10-29T10:19:50.507725Z",
+        "tijdstip_statuswijziging": "2024-10-29T10:31:24.785935Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10779299521395,
+          52.09251871938504
+        ]
+      },
+      "id": "eacda2fe-1832-5695-84ca-ec9828b941ca"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00155572",
+        "objectid": "3321524",
+        "objecttype": "Terrein",
+        "omschrijving": "Er zit een gat in de weg",
+        "status": "Goedgekeurd, ingepland door bronhouder",
+        "tijdstip_registratie": "2024-07-13T09:40:26.131775Z",
+        "tijdstip_statuswijziging": "2024-10-23T07:43:18.80311Z",
+        "toelichting": "Dit wordt bij de volgende jaargang opgelost"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.73838305840396,
+          51.974679969793435
+        ]
+      },
+      "id": "52eea049-b422-5b4e-ab0a-bd3d6684ef32"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00165639",
+        "objectid": "5685922",
+        "objecttype": "Terrein",
+        "omschrijving": "hier is al enige tijd een rotonde",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-12-05T11:17:50.36669Z",
+        "tijdstip_statuswijziging": "2024-12-05T15:23:55.293183Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.740615179665285,
+          52.167677938452584
+        ]
+      },
+      "id": "abd7d3d3-a513-5671-8136-f922a8b26517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00159696",
+        "objectid": "1001730",
+        "objecttype": "Gebouw",
+        "omschrijving": "Huis is in 2020 door mij uitgebouwd. In BAG staat het gebouwvlak correct. 3D mist er 4 meter. ",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-09-24T06:40:53.348474Z",
+        "tijdstip_statuswijziging": "2024-09-24T12:58:32.236669Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.97047630619468,
+          52.21886891480935
+        ]
+      },
+      "id": "ec390e2a-8dbe-5ade-a0d2-45d6a7544262"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00159697",
+        "objectid": "1211967",
+        "objecttype": "Gebouw",
+        "omschrijving": "Dit is een ondergrondse fietsenkelder",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-09-24T06:41:19.652271Z",
+        "tijdstip_statuswijziging": "2024-09-24T12:58:38.020856Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.292178393912676,
+          51.9627900500447
+        ]
+      },
+      "id": "79cb6187-0b2f-58f7-ba3f-2c63d6ea76a7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00159698",
+        "objectid": "1161834",
+        "objecttype": "Terrein",
+        "omschrijving": "Nieuwe woning (Parklaan 42) ontbreekt nog op de kaart",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-09-24T06:45:33.196598Z",
+        "tijdstip_statuswijziging": "2024-09-24T12:58:43.305506Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.348148845912468,
+          52.04027829056583
+        ]
+      },
+      "id": "86a00404-d9cd-5eb2-a61a-851fd21146b5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00155829",
+        "objectid": "6991599",
+        "objecttype": "Gebouw",
+        "omschrijving": "Dit zijn 4 flatgebouwen, zie bijlage.",
+        "status": "Goedgekeurd, ingepland door bronhouder",
+        "tijdstip_registratie": "2024-07-17T14:14:27.132105Z",
+        "tijdstip_statuswijziging": "2024-10-23T08:08:52.037534Z",
+        "toelichting": "Wij streven ernaar om dit bij de volgende jaargang op te lossen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.9731696941969155,
+          52.21342233527529
+        ]
+      },
+      "id": "d05c2286-c6e2-5f6d-97d6-bfac61680b11"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00155619",
+        "objectid": "6819933",
+        "objecttype": "Terrein",
+        "omschrijving": "Overgang van wegdeel op nivo 0 en plus 1 is hier niet juist",
+        "status": "Goedgekeurd, ingepland door bronhouder",
+        "tijdstip_registratie": "2024-07-15T09:31:50.682734Z",
+        "tijdstip_statuswijziging": "2024-10-23T07:51:16.501733Z",
+        "toelichting": "Dit wordt bij de volgende jaargang opgelost"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.548714034222299,
+          53.208810526570865
+        ]
+      },
+      "id": "2cdeb6bd-7c1f-58f7-b922-34d9885052cb"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00155779",
+        "objectid": "6826122",
+        "objecttype": "Gebouw",
+        "omschrijving": "Dit gebouw is een parkeerkelder en ligt dus onder de grond",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-07-17T06:21:08.970107Z",
+        "tijdstip_statuswijziging": "2024-07-18T06:09:26.418006Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.869564970153737,
+          52.294780442707136
+        ]
+      },
+      "id": "dd3afc9c-2acc-5c74-bbb8-9189bd4bbc5d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00156957",
+        "objectid": "6541861",
+        "objecttype": "Terrein",
+        "omschrijving": "De garage hier ontbreekt.",
+        "status": "Goedgekeurd, ingepland door bronhouder",
+        "tijdstip_registratie": "2024-08-06T08:00:46.837647Z",
+        "tijdstip_statuswijziging": "2024-10-23T08:10:10.42978Z",
+        "toelichting": "Wij streven ernaar om dit bij de volgende jaargang op te lossen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.307039726533266,
+          52.16603874001224
+        ]
+      },
+      "id": "195f2c6a-7053-5f60-8a2e-5551f235a26e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00159695",
+        "objectid": "1523574",
+        "objecttype": "Gebouw",
+        "omschrijving": "De partytent is afgebroken. Dat weet ik omdat ik recent eigenaar geworden ben van het huis. ",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-09-24T06:33:39.210843Z",
+        "tijdstip_statuswijziging": "2024-09-24T12:58:25.82748Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.076394373358638,
+          52.29322796082148
+        ]
+      },
+      "id": "7f89994d-5f99-536b-a6d0-a8ca88e18602"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00157463",
+        "objectid": "3364939",
+        "objecttype": "Terrein",
+        "omschrijving": "vreemd artefact",
+        "status": "Goedgekeurd, ingepland door bronhouder",
+        "tijdstip_registratie": "2024-08-16T14:16:51.306296Z",
+        "tijdstip_statuswijziging": "2024-10-23T08:11:02.209823Z",
+        "toelichting": "Wij streven ernaar om dit bij de volgende jaargang op te lossen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.678447780627158,
+          52.02589017220859
+        ]
+      },
+      "id": "89f4517c-b3d7-5592-a075-17fed044d839"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00158593",
+        "objectid": "6938664",
+        "objecttype": "Terrein",
+        "omschrijving": "Hoog grijs vlak, hoger dan bebouwing",
+        "status": "Goedgekeurd, ingepland door bronhouder",
+        "tijdstip_registratie": "2024-09-09T11:58:40.38701Z",
+        "tijdstip_statuswijziging": "2024-10-23T08:12:04.775442Z",
+        "toelichting": "Wij streven ernaar om dit bij de volgende jaargang op te lossen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.457081793283472,
+          51.90969544019467
+        ]
+      },
+      "id": "b51c9d6d-7386-5d0d-b144-08ad4d6429ce"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00159690",
+        "objectid": "654021",
+        "objecttype": "Gebouw",
+        "omschrijving": "dit is geen pand meer",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-09-24T06:20:40.675521Z",
+        "tijdstip_statuswijziging": "2024-09-24T06:34:00.690583Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.213432358612689,
+          52.248523645981216
+        ]
+      },
+      "id": "e9ead30d-7f90-5cda-baa0-25435fa2510d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00159694",
+        "objectid": "1536050",
+        "objecttype": "Gebouw",
+        "omschrijving": "Gebouwtje staat er niet (meer) Dat weet ik omdat ik het huis net gekocht heb.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-09-24T06:32:17.637219Z",
+        "tijdstip_statuswijziging": "2024-09-24T12:58:19.236374Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0758012177763945,
+          52.29330580103049
+        ]
+      },
+      "id": "5cc366e3-7b9b-5a7d-a06c-f837c9c67029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00159699",
+        "objectid": "185666",
+        "objecttype": "Terrein",
+        "omschrijving": "de rotonde die daar recenelijk geplaatst is en ook is er een brbug die eroverheen gaan",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-09-24T07:23:57.822185Z",
+        "tijdstip_statuswijziging": "2024-09-24T12:58:51.512095Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.000643784758545,
+          51.52486112180854
+        ]
+      },
+      "id": "ec89ff06-5c40-5fc6-8c17-e1a5a26deb0d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00161763",
+        "objectid": "9506085",
+        "objecttype": "Gebouw",
+        "omschrijving": "de vanaf de straat bekeken linkerkant van het object is een recht doorlopende gevel.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-10-15T13:55:38.016284Z",
+        "tijdstip_statuswijziging": "2024-10-15T14:09:28.096202Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.947035542148267,
+          52.20067391324169
+        ]
+      },
+      "id": "441eaeff-c1a6-54ba-9a2f-ceef90cb0628"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00155780",
+        "objectid": "6822635",
+        "objecttype": "Gebouw",
+        "omschrijving": "Op bouw van het gebouw gaat mis, het gebouw is nu juist de missende vorm binnende de andere vormen",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-07-17T06:22:22.402667Z",
+        "tijdstip_statuswijziging": "2024-07-18T06:09:31.248961Z",
+        "toelichting": "Nog te beoordelen met behulp van meerdere datasets (BAG, luchtfoto, etc)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8757943081367765,
+          52.29587642656655
+        ]
+      },
+      "id": "bf26e0cd-456b-5379-9311-1b5dfaedebc4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00162242",
+        "objectid": null,
+        "objecttype": null,
+        "omschrijving": "Flatgebouwen zijn in 3D onjuist, lees te groot, weergegeven.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-10-23T09:43:03.968647Z",
+        "tijdstip_statuswijziging": "2024-10-23T09:44:21.705454Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.8959384647166155,
+          52.79878226796017
+        ]
+      },
+      "id": "ca049379-bf14-5c9d-8ff5-319710663c7f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00165509",
+        "objectid": "1433998",
+        "objecttype": "Terrein",
+        "omschrijving": "Deze brug bestaat niet meer.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2024-12-02T15:11:45.266053Z",
+        "tijdstip_statuswijziging": "2024-12-03T05:07:36.286844Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.363547887194295,
+          51.730701328747195
+        ]
+      },
+      "id": "286a09ff-dd55-58c5-bfc2-b65301fc469d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00169044",
+        "objectid": null,
+        "objecttype": null,
+        "omschrijving": "Ik ben begonnen met het gebruiken van 3D-kaarten en ontdekte dat in uw systeem staat dat de Oranje Kerk slechts 18 meter hoog is. Dit klopt echter niet. Met toren is het minimaal 45 meter, of misschien zelfs wel 50 meter.\n\nI've started using 3d maps and found out that in your system it says that oranje kerks is only 18 meters height, but this is not right, it is at least 45 meters with tower or maybe even 50 meters.\n\nPls correct this, because it is strange and confused me at map",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-02-05T13:27:21.691243Z",
+        "tijdstip_statuswijziging": "2025-02-05T15:32:53.643862Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.895030909620135,
+          52.35284469524097
+        ]
+      },
+      "id": "73159d5f-fa3b-5676-ad78-4e42276f2662"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00155802",
+        "objectid": null,
+        "objecttype": "",
+        "omschrijving": "pand ontbreekt",
+        "status": "Goedgekeurd, ingepland door bronhouder",
+        "tijdstip_registratie": "2024-07-17T09:51:26.95501Z",
+        "tijdstip_statuswijziging": "2024-10-23T08:03:59.755717Z",
+        "toelichting": "Dit wordt bij de volgende jaargang opgelost"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.488813918134876,
+          52.67394062139306
+        ]
+      },
+      "id": "2f3cc8c8-993f-55e3-8675-f639e116a07a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00169152",
+        "objectid": null,
+        "objecttype": "",
+        "omschrijving": "Het 3D terreindeel ontbreekt hier",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-02-06T13:46:19.672765Z",
+        "tijdstip_statuswijziging": "2025-02-06T13:50:11.282141Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.094843449910408,
+          52.50352044173687
+        ]
+      },
+      "id": "425c29ed-f0c8-5132-99c1-6be83af47d5e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00169163",
+        "objectid": null,
+        "objecttype": "",
+        "omschrijving": "Hier is geen 3D terreindeel",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-02-06T14:45:26.387659Z",
+        "tijdstip_statuswijziging": "2025-02-10T06:31:11.85973Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.088647607854896,
+          52.505339973078016
+        ]
+      },
+      "id": "8cc632a2-6246-523c-9de6-b386ce20641d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00162261",
+        "objectid": null,
+        "objecttype": "",
+        "omschrijving": "Er ontbreekt hoogtedata, bovendien heeft de weg hier in de buurt rare hoogtewaardes",
+        "status": "Goedgekeurd, ingepland door bronhouder",
+        "tijdstip_registratie": "2024-10-23T12:27:59.654111Z",
+        "tijdstip_statuswijziging": "2025-02-12T15:38:13.564291Z",
+        "toelichting": "Het vullen van het gat in de data is niet voldoende. Er zijn in de buurt van het gat rare hoogtewaardes in de weg en enkele sloten. Wij streven ernaar om dit bij de volgende jaargang op te lossen. "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.625484175642285,
+          51.555601450126964
+        ]
+      },
+      "id": "0d5adffd-ccd1-55d3-b3a9-e5c5f2fc3994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00169742",
+        "objectid": "3859637",
+        "objecttype": "Terrein",
+        "omschrijving": "Tussenliggende voetpaden zijn boomspiegels, niet meer aanwezig.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-02-13T14:29:02.167732Z",
+        "tijdstip_statuswijziging": "2025-02-14T07:26:20.295958Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.149588047385876,
+          52.25730111727368
+        ]
+      },
+      "id": "c10dd7cf-46e3-5672-9770-5f36ee01ee72"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00171038",
+        "objectid": "3960452",
+        "objecttype": "Terrein",
+        "omschrijving": "Gebouwen ontbreken",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-02-24T14:13:59.058956Z",
+        "tijdstip_statuswijziging": "2025-02-25T06:32:41.861037Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.718106606119588,
+          52.53393881310587
+        ]
+      },
+      "id": "ba1b59e1-dedf-502a-8744-7cfc737218c5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00171037",
+        "objectid": "3960496",
+        "objecttype": "Terrein",
+        "omschrijving": "Gebouwen ontbreken",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-02-24T14:12:24.550511Z",
+        "tijdstip_statuswijziging": "2025-02-25T06:32:41.861688Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.72040857445596,
+          52.53363186181085
+        ]
+      },
+      "id": "95a47a9a-1821-55f2-8855-b4be5510184c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00171183",
+        "objectid": "952747",
+        "objecttype": "Terrein",
+        "omschrijving": "Water loopt niet in een vlak ",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-02-25T18:56:24.946182Z",
+        "tijdstip_statuswijziging": "2025-02-26T05:51:55.861886Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.904064615063979,
+          52.38228973392665
+        ]
+      },
+      "id": "7d7147f1-9aef-50d2-b891-7413e19f8df5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00172533",
+        "objectid": "5013864",
+        "objecttype": "Terrein",
+        "omschrijving": "op de 3d kaart is dit perseel niet vlak terwijl het wel vlak is wanneer je er voor staat.\nhttps://maps.app.goo.gl/WTUR845CNNS5F4yW7",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-03-13T12:13:24.590171Z",
+        "tijdstip_statuswijziging": "2025-03-14T05:52:01.136657Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.780541794618598,
+          53.15246193049101
+        ]
+      },
+      "id": "0583a374-4c2c-5018-a498-085fcbad80f8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00174447",
+        "objectid": "1878515",
+        "objecttype": "Gebouw",
+        "omschrijving": "Hoogte klopt niet, vermoedelijk is de hoogte gepakt van omliggende bomen",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-04-11T11:35:40.999671Z",
+        "tijdstip_statuswijziging": "2025-04-11T13:21:44.931502Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.304783119735041,
+          52.16914602988845
+        ]
+      },
+      "id": "e92f26b0-2dac-52fd-a6b6-0a436414765c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00175072",
+        "objectid": "5429745",
+        "objecttype": "Gebouw",
+        "omschrijving": "De hoogte van dit gebouw klopt niet. Dit is enkel een schuurtje",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-04-23T18:21:17.21623Z",
+        "tijdstip_statuswijziging": "2025-04-24T05:47:42.464805Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.929832854214718,
+          51.93978115287504
+        ]
+      },
+      "id": "e2d68fb8-d945-5c31-ae3f-bfc7c48a5d34"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00187371",
+        "objectid": "1501202",
+        "objecttype": "Gebouw",
+        "omschrijving": "Dakkapel in LoD 2.2 (versie 2023) lijkt niet te kloppen (zie attachment), want loopt schuin.\nMr. Teppemastraat 7, Renkum",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-09-29T07:18:19.362875Z",
+        "tijdstip_statuswijziging": "2025-09-29T07:55:38.359362Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.735123337849576,
+          51.97544124380164
+        ]
+      },
+      "id": "42149ea5-d217-5a1d-a010-b0c4ee1a5bba"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00187841",
+        "objectid": null,
+        "objecttype": null,
+        "omschrijving": "Stadion Feyenoord heeft op de 3D-kaart maar één tribune ipv een volledig atadion",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-10-06T05:53:49.194862Z",
+        "tijdstip_statuswijziging": "2025-10-06T06:01:03.768053Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.5230135062012735,
+          51.89411537167339
+        ]
+      },
+      "id": "b58faa9f-b73c-5965-8526-fc437b317eb0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00188672",
+        "objectid": "6581819",
+        "objecttype": "Terrein",
+        "omschrijving": "Hier ontbreekt de complete nieuwe (verdiepte) ligging van Ring Zuid",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-10-16T11:29:31.918132Z",
+        "tijdstip_statuswijziging": "2025-10-16T12:09:58.509908Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.568124624785347,
+          53.20396070076811
+        ]
+      },
+      "id": "5b22c7f1-211f-5b94-a4bd-103d6676681d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00190727",
+        "objectid": "174183",
+        "objecttype": "Terrein",
+        "omschrijving": "Hier zit een enorme spike.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-11-14T07:54:07.43164Z",
+        "tijdstip_statuswijziging": "2025-11-14T08:46:33.061543Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.172491153605486,
+          52.34166786547995
+        ]
+      },
+      "id": "9852cead-c8b9-580a-8282-fc797bcefd59"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00192996",
+        "objectid": "8806845",
+        "objecttype": "Gebouw",
+        "omschrijving": "Contouren zijn nog van het oude gebouw. Dit is gesloopt en daarvoor in de plaats zijn losse woningen gekomen. Zie daarvoor b.v. BAG, en/of BGT",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-12-14T14:32:14.347148Z",
+        "tijdstip_statuswijziging": "2025-12-15T07:01:38.301488Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.07534463065873,
+          53.297949159096106
+        ]
+      },
+      "id": "15613390-8f11-5d76-9d51-9184883e2b42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00193692",
+        "objectid": "2156471",
+        "objecttype": "Gebouw",
+        "omschrijving": "Uw kaart verbeeldt hier de oude bedrijfsgebouwtjes op de werf, die sinds juli 2024 al zijn gesloopt. Er is nu een nieuwbouwproject met twee grote woongebouwen in staat van (bijna) voltooiing. Bovendien zijn de oude damwanden langs de werf op Hoogte Kadijk 145 gesloopt en vervangen door nieuwe stalen damwanden, die niet op dezelfde plek staan als waar de oude damwanden stonden. Er is aan de kopse kant van de werf (noordzijde) een stuk waterbodem in de Nieuwevaart gedempt. De nieuwe perceelgrenzen zijn niet definitief bepaald.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-12-29T23:12:06.512582Z",
+        "tijdstip_statuswijziging": "2026-01-05T08:48:10.952747Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.919114946172394,
+          52.36819206102341
+        ]
+      },
+      "id": "a82ff085-55b7-5d05-bb1d-1611f3dd6117"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00193691",
+        "objectid": "2156468",
+        "objecttype": "Gebouw",
+        "omschrijving": "Uw kaart verbeeldt hier de oude bedrijfsgebouwtjes op de werf, die sinds juli 2024 al zijn gesloopt. Er is nu een nieuwbouwproject met twee grote woongebouwen in staat van (bijna) voltooiing. Bovendien zijn de oude damwanden langs de werf op Hoogte Kadijk 145 gesloopt en vervangen door nieuwe stalen damwanden, die niet op dezelfde plek staan als waar de oude damwanden stonden. Er is aan de kopse kant van de werf (noordzijde) een stuk waterbodem in de Nieuwevaart gedempt. De nieuwe perceelgrenzen zijn niet definitief bepaald.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-12-29T23:08:58.806561Z",
+        "tijdstip_statuswijziging": "2026-01-05T08:48:10.953008Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.919209883411722,
+          52.36836615061333
+        ]
+      },
+      "id": "2aa42def-89a0-5cb4-9a5f-bec780ae3253"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00193747",
+        "objectid": null,
+        "objecttype": null,
+        "omschrijving": "Uw kaart verbeeldt hier in 3D de oude bedrijfsgebouwtjes op de werf, die sinds juli 2024 al zijn gesloopt. Er is nu op de kadastrale percelen O 5202 en O 5203 anderhalf jaar een nieuwbouwproject in uitvoering met twee grote woongebouwen, inmiddels in staat van spoedige voltooiing in 2026. In 2024 zijn de oude damwanden langs de werf op Hoogte Kadijk 145 aan de Entrepotdoksluis en de Nieuwevaart gesloopt en vervangen door nieuwe stalen damwanden, die niet op dezelfde plek staan als waar de oude damwanden stonden. Er is aan de kopse kant van de werf (noordzijde) een stuk waterbodem in de Nieuwevaart gedempt. De nieuwe perceelgrenzen liggen dus anders en zijn met de nieuwe perceelgroottes door het Kadaster en BGT nog niet definitief bepaald. Waterschap AGV is verantwoordelijk voor aanlevering van de juiste gegevens in uw BGT. Het Kadaster stelt, dat perceelgrenzen tussen O5202 en O 5203, alsook tussen O 5203 en O 5294 nog slechts voorlopige grenzen zijn, definitieve vaststelling moet volgen. De Gemeente Amsterdam is de grondeigenaar.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-12-31T08:30:54.943509Z",
+        "tijdstip_statuswijziging": "2026-01-05T08:48:10.95185Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.919267661006958,
+          52.36838841993395
+        ]
+      },
+      "id": "c4c2ef92-5b6c-5555-a001-dfc7ac16c5f5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00193744",
+        "objectid": null,
+        "objecttype": null,
+        "omschrijving": "Uw kaart verbeeldt hier in 3D de oude bedrijfsgebouwtjes op de werf, die sinds juli 2024 al zijn gesloopt. Er is nu op de kadastrale percelen O 5203 en O 5202 anderhalf jaar een nieuwbouwproject in uitvoering met twee grote woongebouwen, inmiddels in staat van spoedige voltooiing in 2026. In 2024 zijn de oude damwanden langs de werf op Hoogte Kadijk 145 gesloopt en vervangen door nieuwe stalen damwanden, die niet op dezelfde plek staan als waar de oude damwanden stonden. Er is aan de kopse kant van de werf (noordzijde) een stuk waterbodem in de Nieuwevaart gedempt. De nieuwe perceelgrenzen liggen dus anders en zijn met de nieuwe perceelgroottes door het Kadaster en BGT nog niet definitief bepaald. Waterschap AGV is verantwoordelijk voor aanlevering van de juiste gegevens in uw BGT. Het Kadaster stelt, dat perceelgrenzen tussen O5202 en O 5203, alsook tussen O 5203 en O 5294 nog slechts voorlopige grenzen zijn, definitieve vaststelling moet volgen.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-12-31T08:30:28.895896Z",
+        "tijdstip_statuswijziging": "2026-01-05T08:48:10.952447Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.919301974371786,
+          52.36849708206305
+        ]
+      },
+      "id": "a595fead-eebb-5436-ab9b-a92810d8410d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00193619",
+        "objectid": "1229025",
+        "objecttype": "Gebouw",
+        "omschrijving": "aanbouw vooraan aan de havenstraat is ruim na 1978 gebouwd , zie google earth",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-12-27T23:16:14.279613Z",
+        "tijdstip_statuswijziging": "2026-01-05T08:48:10.953252Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.29452194761145,
+          51.94824641677986
+        ]
+      },
+      "id": "03b79a86-0732-5bb0-9d76-ac74ebbe7b63"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00193746",
+        "objectid": null,
+        "objecttype": null,
+        "omschrijving": "Uw kaart verbeeldt hier in 3D de oude bedrijfsgebouwtjes op de werf, die sinds juli 2024 al zijn gesloopt. Er is nu op de kadastrale percelen O 5202 en O 5203 anderhalf jaar een nieuwbouwproject in uitvoering met twee grote woongebouwen, inmiddels in staat van spoedige voltooiing in 2026. In 2024 zijn de oude damwanden langs de werf op Hoogte Kadijk 145 aan de Entrepotdoksluis en de Nieuwevaart gesloopt en vervangen door nieuwe stalen damwanden, die niet op dezelfde plek staan als waar de oude damwanden stonden. Er is aan de kopse kant van de werf (noordzijde) een stuk waterbodem in de Nieuwevaart gedempt. De nieuwe perceelgrenzen liggen dus anders en zijn met de nieuwe perceelgroottes door het Kadaster en BGT nog niet definitief bepaald. Waterschap AGV is verantwoordelijk voor aanlevering van de juiste gegevens in uw BGT. Het Kadaster stelt, dat perceelgrenzen tussen O5202 en O 5203, alsook tussen O 5203 en O 5294 nog slechts voorlopige grenzen zijn, definitieve vaststelling moet volgen. De Gemeente Amsterdam is de grondeigenaar.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2025-12-31T08:30:54.936776Z",
+        "tijdstip_statuswijziging": "2026-01-05T08:48:10.952187Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.919267661006958,
+          52.36838841993395
+        ]
+      },
+      "id": "dace8f86-1d9d-52d2-8128-948c16a3f9d5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00194150",
+        "objectid": "7679247",
+        "objecttype": "Gebouw",
+        "omschrijving": "Gezien in LoD 2.3 (2023) \nVerschillende fouten:\n- Meetfouten ?\n- Uitbouw begane grond (grondoppervlak) is tot dakrand doorgetrokken",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-01-08T16:10:57.201401Z",
+        "tijdstip_statuswijziging": "2026-01-09T06:49:41.792333Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.736217630793549,
+          51.97512625905568
+        ]
+      },
+      "id": "dc9a468e-fdbd-5a07-a371-b7327ad9ad3d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00194790",
+        "objectid": null,
+        "objecttype": "Gebouw",
+        "omschrijving": "De Stevenskerk zweeft boven de grond. Waarschijnlijk moet de grond hoger liggen.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-01-20T07:54:35.986963Z",
+        "tijdstip_statuswijziging": "2026-01-20T09:48:14.818025Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.862443105461788,
+          51.847964330607645
+        ]
+      },
+      "id": "c280710e-65b8-5775-8eb3-2b1d238727b6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00195437",
+        "objectid": null,
+        "objecttype": "Terrein",
+        "omschrijving": "omschrijving/classificatie van de sloot wordt gebruikt in RVO -GLB regeling.\ndeze staat nu als kort of niet droogvallende waterloop. De sloot heeft geen afvoerfunctie en staat wel droog. Kortom in dit zou aangepast moeten worden naar een droge sloot classificatie",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-01-29T10:02:15.041026Z",
+        "tijdstip_statuswijziging": "2026-01-29T11:45:30.827934Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.749488908228582,
+          51.20519548109908
+        ]
+      },
+      "id": "c471ae57-a27c-5454-9d8c-2e756ec66162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00195438",
+        "objectid": null,
+        "objecttype": "Terrein",
+        "omschrijving": "omschrijving/classificatie van de sloot wordt gebruikt in RVO -GLB regeling. deze staat nu als kort of niet droogvallende waterloop. De sloot heeft een beduidend hoger niveau als afvoerende sloot waar deze op uitkomt en staat wel droog. Kortom dit zou aangepast moeten worden naar een droge sloot classificatie",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-01-29T10:07:13.167411Z",
+        "tijdstip_statuswijziging": "2026-01-29T11:45:47.31733Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.754930286874551,
+          51.20327111563786
+        ]
+      },
+      "id": "bca1f9eb-4fec-5d5f-a742-8866cc356bad"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00196016",
+        "objectid": null,
+        "objecttype": "Gebouw",
+        "omschrijving": "De huisnummers staan verkeerd 7a is het meest westelijke gedeelte lang en smal en 7 is het oostelijke huis.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-02-05T21:21:14.50423Z",
+        "tijdstip_statuswijziging": "2026-02-06T05:36:22.331362Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.4409880558143815,
+          52.19421617352647
+        ]
+      },
+      "id": "778470b9-30fc-5739-843f-250434c4d252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00196428",
+        "objectid": null,
+        "objecttype": "Terrein",
+        "omschrijving": "Dit is een pad achter de huizen zonder hoogteverschil. Dit is er nu onterecht wel te zien.",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-02-11T15:59:36.162597Z",
+        "tijdstip_statuswijziging": "2026-02-12T10:19:45.054051Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.007799622449856,
+          52.19238875827758
+        ]
+      },
+      "id": "e9eb81e2-1673-5aa7-a922-0dfdb03ba1c4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00196728",
+        "objectid": null,
+        "objecttype": "Mieriksveld 21, 3124CK Schiedam",
+        "omschrijving": "Goedendag,\nbij de 2 D weergave zie ik aan de achterzijde onze serre wel.\nbij de 3 D weergave zie ik aan de achterkant onze serre niet.\n",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-02-16T18:57:14.460683Z",
+        "tijdstip_statuswijziging": "2026-02-17T07:53:22.208898Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.377615591726935,
+          51.9461831518898
+        ]
+      },
+      "id": "4999b301-f5df-5942-8ba1-20bd2d7c2fea"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00197250",
+        "objectid": null,
+        "objecttype": null,
+        "omschrijving": "Op de kaart en vooral op de 3D afbeelding, is de bebouwing massief gevuld tot aan de hoogste verdieping van het pand Laagte Kadijk. In feite lopen alleen de twee beneden vediepingen door tot aan het gebouw Hoogte Kadijk 30/32. Ik heb al gemeld dat daarbinnen (binnen de laagste 2 verdiepingen) de contouren van de binnentuin ontbreken, en dus ook de onbebouwde grond in die binnentuin niet zichtbaar is in de 3D representatie. ",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-02-23T13:10:09.82934Z",
+        "tijdstip_statuswijziging": "2026-02-23T13:28:20.064435Z",
+        "toelichting": "Deze terugmelding is doorgestuurd vanuit BGT. De originele melding vindt u met nummer BGT00193775. De behandelaar gaf de volgende toelichting: Pand Hoogte Kadijk is aangepast in BAg en BGT zie melding (BGT00193774), wanneer is de volgende updat van 3DB?"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.913153284493919,
+          52.36979489684568
+        ]
+      },
+      "id": "210b2b5e-659a-540e-bc9f-ed6d7075970a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00197645",
+        "objectid": null,
+        "objecttype": "Jan Timmerstraat 4, 8821LT Kimswerd",
+        "omschrijving": "Op de 3D kaart kloppen een aantal zaken niet. De uitbouw achter de oorspronkelijke nummer 2 is er al sinds 2009 niet meer. In de 2 D tekening is dit al hersteld. Er zitten sinds 2010, 4 schoorsteenkappen op ipv 2. De opbouwen van achterkant zitten er niet. ",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-02-26T12:30:34.300193Z",
+        "tijdstip_statuswijziging": "2026-02-26T13:29:13.502387Z",
+        "toelichting": "In onderzoek"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.43906566767681,
+          53.1419531984274
+        ]
+      },
+      "id": "df181923-a125-5cc2-bda5-66d1970c96bd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00201742",
+        "objectid": null,
+        "objecttype": "",
+        "omschrijving": "Het gebouw zweeft een stukje boven de grond",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-04-20T17:51:39.716816Z",
+        "tijdstip_statuswijziging": "2026-04-21T08:50:54.194718Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.864389914892666,
+          51.84885455633713
+        ]
+      },
+      "id": "4cc5a5db-3312-5215-b457-2d35b7413860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00205057",
+        "objectid": null,
+        "objecttype": "Terrein",
+        "omschrijving": "De aanbouw van 2025 Lindelaan 20 is niet opgenomen op de kaart",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-06-01T12:47:21.409691Z",
+        "tijdstip_statuswijziging": "2026-06-01T13:52:36.201105Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.281005097567944,
+          51.86477169368598
+        ]
+      },
+      "id": "7240ee41-53e0-5776-b6ea-93839981631a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00205303",
+        "objectid": null,
+        "objecttype": "Laan van de Mensenrechten 206, 7331VV Apeldoorn",
+        "omschrijving": "regfergerger",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-06-04T08:23:48.021816Z",
+        "tijdstip_statuswijziging": "2026-06-04T13:45:58.315853Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.966299678364036,
+          52.2086772624467
+        ]
+      },
+      "id": "39812760-536a-512d-80c4-5004b520baa1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00206600",
+        "objectid": null,
+        "objecttype": "",
+        "omschrijving": "Hier staat een gebouw. ",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-06-16T16:08:17.241419Z",
+        "tijdstip_statuswijziging": "2026-06-17T04:16:43.35566Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.221968126720201,
+          52.367963792390306
+        ]
+      },
+      "id": "5f798f4c-8209-503d-9e58-40bee6cdaf37"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00206599",
+        "objectid": null,
+        "objecttype": "Terrein",
+        "omschrijving": "Dit gebouw heeft weinig detail. ",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-06-16T16:07:34.645184Z",
+        "tijdstip_statuswijziging": "2026-06-17T04:16:43.355344Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.219207665531865,
+          52.3693424312453
+        ]
+      },
+      "id": "b6ed254e-ec40-59f4-9a59-79c404498f66"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "bronhoudercode": "K0001",
+        "bronhoudernaam": "Kadaster",
+        "hoogte_vanaf_maaiveld": null,
+        "meldingsnummer_volledig": "3DB00206601",
+        "objectid": null,
+        "objecttype": "Terrein",
+        "omschrijving": "De delen van het overbruggingsdeel sluiten niet aan. Hierdoor zitten er grote gaten",
+        "status": "In onderzoek",
+        "tijdstip_registratie": "2026-06-16T16:09:17.564745Z",
+        "tijdstip_statuswijziging": "2026-06-17T04:16:43.355919Z",
+        "toelichting": "In onderzoek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.227106863467436,
+          52.376333667530545
+        ]
+      },
+      "id": "b0ff221e-0967-58f2-9e1e-d1e1ee23ef90"
+    }
+  ],
+  "pdok_source": {
+    "service_title": "3D Terugmeldingen",
+    "service_description": "De 3D terugmeldingenservice bevat alle recente meldingen op 3D objecten waar twijfel over de juistheid bestaat.De service toont de locatie, inhoud en status van de meldingen. Ook een vermoedelijke fout in de 3D geconstateerd? Doe een melding op https://www.verbeterdekaart.nl",
+    "service_keywords": [
+      "3D Basisvoorziening",
+      "terugmeldingen",
+      "in onderzoek register",
+      "verbeter de kaart",
+      "3D",
+      "3D Tiles",
+      "3D Objecten",
+      "2D Objecten",
+      "DTM",
+      "Digital Terrain Model",
+      "Digitaal Terrein Model",
+      "DSM",
+      "Digital Surface Model",
+      "Digitaal Oppervlakte Model",
+      "Puntenwolken",
+      "Kadaster",
+      "3D Basisbestand",
+      "3D Hoogtestatistieken"
+    ],
+    "service_landing_url": "https://api.pdok.nl/kadaster/3d-basisvoorziening-terugmeldingen/ogc/v1?f=json",
+    "collection_id": "kad3dbasisvoorzieningterugmeldingen",
+    "collection_title": "3D Terugmeldingen",
+    "collection_description": "Alle recente 3D terugmeldingen gedaan door 3D gebruikers.",
+    "collection_keywords": [
+      "3D Basisvoorziening",
+      "terugmeldingen",
+      "in onderzoek register",
+      "verbeter de kaart",
+      "3D",
+      "3D Tiles",
+      "3D Objecten",
+      "2D Objecten",
+      "DTM",
+      "Digital Terrain Model",
+      "Digitaal Terrein Model",
+      "DSM",
+      "Digital Surface Model",
+      "Digitaal Oppervlakte Model",
+      "Puntenwolken",
+      "Kadaster",
+      "3D Basisbestand",
+      "3D Hoogtestatistieken"
+    ],
+    "collection_url": "https://api.pdok.nl/kadaster/3d-basisvoorziening-terugmeldingen/ogc/v1/collections/kad3dbasisvoorzieningterugmeldingen?f=html",
+    "items_url": "https://api.pdok.nl/kadaster/3d-basisvoorziening-terugmeldingen/ogc/v1/collections/kad3dbasisvoorzieningterugmeldingen/items?f=json&limit=1000",
+    "number_matched": null,
+    "number_fetched": 60,
+    "feature_limit_used": 1000
+  }
+}

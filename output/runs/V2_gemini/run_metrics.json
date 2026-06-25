@@ -1,23 +1,23 @@
 {
   "run_id": "V2_gemini",
   "provider": "gemini",
-  "model": "gemini-3.1-flash-lite-preview",
-  "started_at": "2026-05-19T11:00:34.077297+00:00",
-  "completed_at": "2026-05-19T11:11:20.605796+00:00",
-  "input_csv_path": "input_data\\ams_coreconcept_annotations.csv",
+  "model": "gemini-3.1-flash-lite",
+  "started_at": "2026-06-18T10:38:01.345238+00:00",
+  "completed_at": "2026-06-18T10:41:05.387991+00:00",
+  "input_csv_path": "input_data\\ams_coreconcept_annotations_descr.csv",
   "output_dir": "output\\runs\\V2_gemini",
   "provenance": {
-    "git_commit": "3dacac64796fea9e9da6774c57ad0ba0c5741e84",
+    "git_commit": "92bf4a8160d870d0f2a6545be87529422828ebec",
     "git_branch": "main",
     "git_dirty": true,
     "script_path": "annotation_versions\\V2_patchobject\\V2_patchobject.py",
-    "script_sha256": "f9dc775f340c02f270e88d7b181514dceaa3a4758139421e12dc3899a713636f",
+    "script_sha256": "fffe40fe98b58ddb8c0565ac858f237f762ecd500af6bdf9f38cae098b057786",
     "decision_tree_path": "annotation_versions\\V2_patchobject\\decision_tree.txt",
     "decision_tree_sha256": "ff0b2af8065f742de3c725b1c926343513978cf1422c96bddacde489fdb05bd6",
-    "input_csv_sha256": "226ba9d3e9d38edb7a26d3917f7d958307b11415c8bcdb9bb8e896d534844be2",
+    "input_csv_sha256": "bdc4c34bc1357f0c725b10be3aae5b012597823ea94d187380b27c85bda7975a",
     "runtime_config": {
       "openai_model": "gpt-5.4-mini",
-      "gemini_model": "gemini-3.1-flash-lite-preview",
+      "gemini_model": "gemini-3.1-flash-lite",
       "request_delay_seconds": 0.75,
       "max_retries": 8,
       "max_backoff_seconds": 60.0,
@@ -29,12 +29,14 @@
   "total_rows": 114,
   "completed_rows": 114,
   "error_rows": 0,
-  "geometry_accuracy": 0.9385964912280702,
-  "entity_accuracy": 0.8070175438596491,
-  "joint_accuracy": 0.7894736842105263,
-  "exact_mismatch_count": 24,
-  "geometry_macro_f1": 0.9267070237658472,
-  "entity_macro_f1": 0.45888314865619173,
+  "geometry_accuracy": 0.9473684210526315,
+  "entity_accuracy": 0.8245614035087719,
+  "joint_accuracy": 0.8245614035087719,
+  "exact_mismatch_count": 20,
+  "geometry_macro_f1": 0.938595962033462,
+  "entity_macro_f1": 0.6125166083916084,
+  "geometry_hier_f1": 0.9765765765765766,
+  "entity_hier_f1": 0.9010989010989011,
   "per_label_metrics": {
     "geometry": {
       "LineDS": {
@@ -47,12 +49,12 @@
         "false_negative": 0
       },
       "PlainVectorRegion": {
-        "precision": 0.8529411764705882,
+        "precision": 0.8787878787878788,
         "recall": 0.9354838709677419,
-        "f1": 0.8923076923076922,
+        "f1": 0.90625,
         "support": 31,
         "true_positive": 29,
-        "false_positive": 5,
+        "false_positive": 4,
         "false_negative": 2
       },
       "PointDS": {
@@ -65,13 +67,13 @@
         "false_negative": 1
       },
       "VectorTessellation": {
-        "precision": 0.875,
-        "recall": 0.7777777777777778,
-        "f1": 0.823529411764706,
+        "precision": 0.8823529411764706,
+        "recall": 0.8333333333333334,
+        "f1": 0.8571428571428571,
         "support": 18,
-        "true_positive": 14,
+        "true_positive": 15,
         "false_positive": 2,
-        "false_negative": 4
+        "false_negative": 3
       }
     },
     "entity": {
@@ -130,69 +132,42 @@
         "false_negative": 0
       },
       "NetworkDS": {
-        "precision": 0.8888888888888888,
-        "recall": 1.0,
-        "f1": 0.9411764705882353,
-        "support": 8,
-        "true_positive": 8,
-        "false_positive": 1,
-        "false_negative": 0
-      },
-      "NetworkDS;ObjectDS": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "support": 1,
-        "true_positive": 0,
+        "precision": 1.0,
+        "recall": 0.7777777777777778,
+        "f1": 0.8750000000000001,
+        "support": 9,
+        "true_positive": 7,
         "false_positive": 0,
-        "false_negative": 1
+        "false_negative": 2
       },
       "ObjectDS": {
-        "precision": 0.890625,
-        "recall": 0.9047619047619048,
-        "f1": 0.8976377952755906,
+        "precision": 0.8923076923076924,
+        "recall": 0.9206349206349206,
+        "f1": 0.90625,
         "support": 63,
-        "true_positive": 57,
+        "true_positive": 58,
         "false_positive": 7,
-        "false_negative": 6
+        "false_negative": 5
       },
       "PatchDS": {
-        "precision": 0.35714285714285715,
-        "recall": 0.625,
-        "f1": 0.45454545454545453,
-        "support": 8,
-        "true_positive": 5,
-        "false_positive": 9,
-        "false_negative": 3
-      },
-      "PatchDS;AmountDS": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "support": 1,
-        "true_positive": 0,
-        "false_positive": 0,
-        "false_negative": 1
+        "precision": 0.4117647058823529,
+        "recall": 0.7777777777777778,
+        "f1": 0.5384615384615384,
+        "support": 9,
+        "true_positive": 7,
+        "false_positive": 10,
+        "false_negative": 2
       },
       "PointMeasuresDS": {
-        "precision": 0.5,
-        "recall": 1.0,
-        "f1": 0.6666666666666666,
-        "support": 2,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "support": 3,
         "true_positive": 2,
-        "false_positive": 2,
-        "false_negative": 0
-      },
-      "PointMeasuresDS;EventDS": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "support": 1,
-        "true_positive": 0,
         "false_positive": 0,
         "false_negative": 1
       }
     }
   },
-  "mean_confidence": 0.9473684210526317
+  "mean_confidence": 0.9495614035087719
 }
